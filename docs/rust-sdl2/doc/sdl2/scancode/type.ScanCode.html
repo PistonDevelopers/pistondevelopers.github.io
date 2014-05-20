@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The sdl2 library documentation.">
+
+    <title>sdl2::scancode::ScanCode - Rust</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+</head>
+<body>
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <section class="sidebar">
+        
+
+        <p class='location'><a href='../index.html'>sdl2</a>&#8203;::<a href='index.html'>scancode</a></p>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Search documentation..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content type">
+<h1 class='fqn'>Enum <a href='../index.html'>sdl2</a>::<a href='index.html'>scancode</a>::<a class='type' href=''>ScanCode</a><a class='source' href='../../src/sdl2/src/sdl2/generated/scancode.rs.html#10-254'>[src]</a></h1>
+<pre class='rust enum'>pub enum ScanCode {
+    UnknownScanCode,
+    AScanCode,
+    BScanCode,
+    CScanCode,
+    DScanCode,
+    EScanCode,
+    FScanCode,
+    GScanCode,
+    HScanCode,
+    IScanCode,
+    JScanCode,
+    KScanCode,
+    LScanCode,
+    MScanCode,
+    NScanCode,
+    OScanCode,
+    PScanCode,
+    QScanCode,
+    RScanCode,
+    SScanCode,
+    TScanCode,
+    UScanCode,
+    VScanCode,
+    WScanCode,
+    XScanCode,
+    YScanCode,
+    ZScanCode,
+    Num1ScanCode,
+    Num2ScanCode,
+    Num3ScanCode,
+    Num4ScanCode,
+    Num5ScanCode,
+    Num6ScanCode,
+    Num7ScanCode,
+    Num8ScanCode,
+    Num9ScanCode,
+    Num0ScanCode,
+    ReturnScanCode,
+    EscapeScanCode,
+    BackspaceScanCode,
+    TabScanCode,
+    SpaceScanCode,
+    MinusScanCode,
+    EqualsScanCode,
+    LeftBracketScanCode,
+    RightBracketScanCode,
+    BackslashScanCode,
+    NonUsHashScanCode,
+    SemicolonScanCode,
+    ApostropheScanCode,
+    GraveScanCode,
+    CommaScanCode,
+    PeriodScanCode,
+    SlashScanCode,
+    CapsLockScanCode,
+    F1ScanCode,
+    F2ScanCode,
+    F3ScanCode,
+    F4ScanCode,
+    F5ScanCode,
+    F6ScanCode,
+    F7ScanCode,
+    F8ScanCode,
+    F9ScanCode,
+    F10ScanCode,
+    F11ScanCode,
+    F12ScanCode,
+    PrintScreenScanCode,
+    ScrollLockScanCode,
+    PauseScanCode,
+    InsertScanCode,
+    HomeScanCode,
+    PageUpScanCode,
+    DeleteScanCode,
+    EndScanCode,
+    PageDownScanCode,
+    RightScanCode,
+    LeftScanCode,
+    DownScanCode,
+    UpScanCode,
+    NumLockClearScanCode,
+    KpDivideScanCode,
+    KpMultiplyScanCode,
+    KpMinusScanCode,
+    KpPlusScanCode,
+    KpEnterScanCode,
+    Kp1ScanCode,
+    Kp2ScanCode,
+    Kp3ScanCode,
+    Kp4ScanCode,
+    Kp5ScanCode,
+    Kp6ScanCode,
+    Kp7ScanCode,
+    Kp8ScanCode,
+    Kp9ScanCode,
+    Kp0ScanCode,
+    KpPeriodScanCode,
+    NonUsBackslashScanCode,
+    ApplicationScanCode,
+    PowerScanCode,
+    KpEqualsScanCode,
+    F13ScanCode,
+    F14ScanCode,
+    F15ScanCode,
+    F16ScanCode,
+    F17ScanCode,
+    F18ScanCode,
+    F19ScanCode,
+    F20ScanCode,
+    F21ScanCode,
+    F22ScanCode,
+    F23ScanCode,
+    F24ScanCode,
+    ExecuteScanCode,
+    HelpScanCode,
+    MenuScanCode,
+    SelectScanCode,
+    StopScanCode,
+    AgainScanCode,
+    UndoScanCode,
+    CutScanCode,
+    CopyScanCode,
+    PasteScanCode,
+    FindScanCode,
+    MuteScanCode,
+    VolumeUpScanCode,
+    VolumeDownScanCode,
+    KpCommaScanCode,
+    KpEqualsAS400ScanCode,
+    International1ScanCode,
+    International2ScanCode,
+    International3ScanCode,
+    International4ScanCode,
+    International5ScanCode,
+    International6ScanCode,
+    International7ScanCode,
+    International8ScanCode,
+    International9ScanCode,
+    Lang1ScanCode,
+    Lang2ScanCode,
+    Lang3ScanCode,
+    Lang4ScanCode,
+    Lang5ScanCode,
+    Lang6ScanCode,
+    Lang7ScanCode,
+    Lang8ScanCode,
+    Lang9ScanCode,
+    AltEraseScanCode,
+    SysReqScanCode,
+    CancelScanCode,
+    ClearScanCode,
+    PriorScanCode,
+    Return2ScanCode,
+    SeparatorScanCode,
+    OutScanCode,
+    OperScanCode,
+    ClearAgainScanCode,
+    CrseScanCode,
+    ExseLScanCode,
+    Kp00ScanCode,
+    Kp000ScanCode,
+    ThousandsSeparatorScanCode,
+    DecimalSeparatorScanCode,
+    CurrencyUnitScanCode,
+    CurrencySubUnitScanCode,
+    KpLeftParenScanCode,
+    KpRightParenScanCode,
+    KpLeftBraceScanCode,
+    KpRightBraceScanCode,
+    KpTabScanCode,
+    KpBackspaceScanCode,
+    KpAScanCode,
+    KpBScanCode,
+    KpCScanCode,
+    KpDScanCode,
+    KpEScanCode,
+    KpFScanCode,
+    KpXorScanCode,
+    KpPowerScanCode,
+    KpPercentScanCode,
+    KpLessScanCode,
+    KpGreaterScanCode,
+    KpAmpersandScanCode,
+    KpDblAmpersandScanCode,
+    KpVerticalBarScanCode,
+    KpDblVerticalBarScanCode,
+    KpColonScanCode,
+    KpHashScanCode,
+    KpSpaceScanCode,
+    KpAtScanCode,
+    KpExclamScanCode,
+    KpMemStoreScanCode,
+    KpMemRecallScanCode,
+    KpMemClearScanCode,
+    KpMemAddScanCode,
+    KpMemSubtractScanCode,
+    KpMemMultiplyScanCode,
+    KpMemDivideScanCode,
+    KpPlusMinusScanCode,
+    KpClearScanCode,
+    KpClearEntryScanCode,
+    KpBinaryScanCode,
+    KpOoctalScanCode,
+    KpDecimalScanCode,
+    KpHexadecimalScanCode,
+    LCtrlScanCode,
+    LShiftScanCode,
+    LAltScanCode,
+    LGuiScanCode,
+    RCtrlScanCode,
+    RShiftScanCode,
+    RAltScanCode,
+    RGuiScanCode,
+    ModeScanCode,
+    AudioNextScanCode,
+    AudioPrevScanCode,
+    AudioStopScanCode,
+    AudioPlayScanCode,
+    AudioMuteScanCode,
+    MediaSelectScanCode,
+    WwwScanCode,
+    MailScanCode,
+    CalculatorScanCode,
+    ComputerScanCode,
+    AcSearchScanCode,
+    AcHomeScanCode,
+    AcBackScanCode,
+    AcForwardScanCode,
+    AcStopScanCode,
+    AcRefreshScanCode,
+    AcBookmarksScanCode,
+    BrightnessDownScanCode,
+    BrightnessUpScanCode,
+    DisplaySwitchScanCode,
+    KbdIllumToggleScanCode,
+    KbdIllumDownScanCode,
+    KbdIllumUpScanCode,
+    EjectScanCode,
+    SleepScanCode,
+    App1ScanCode,
+    App2ScanCode,
+    NumScanCode,
+}</pre><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.UnknownScanCode'><code>UnknownScanCode</code></td><td></td></tr><tr><td id='variant.AScanCode'><code>AScanCode</code></td><td></td></tr><tr><td id='variant.BScanCode'><code>BScanCode</code></td><td></td></tr><tr><td id='variant.CScanCode'><code>CScanCode</code></td><td></td></tr><tr><td id='variant.DScanCode'><code>DScanCode</code></td><td></td></tr><tr><td id='variant.EScanCode'><code>EScanCode</code></td><td></td></tr><tr><td id='variant.FScanCode'><code>FScanCode</code></td><td></td></tr><tr><td id='variant.GScanCode'><code>GScanCode</code></td><td></td></tr><tr><td id='variant.HScanCode'><code>HScanCode</code></td><td></td></tr><tr><td id='variant.IScanCode'><code>IScanCode</code></td><td></td></tr><tr><td id='variant.JScanCode'><code>JScanCode</code></td><td></td></tr><tr><td id='variant.KScanCode'><code>KScanCode</code></td><td></td></tr><tr><td id='variant.LScanCode'><code>LScanCode</code></td><td></td></tr><tr><td id='variant.MScanCode'><code>MScanCode</code></td><td></td></tr><tr><td id='variant.NScanCode'><code>NScanCode</code></td><td></td></tr><tr><td id='variant.OScanCode'><code>OScanCode</code></td><td></td></tr><tr><td id='variant.PScanCode'><code>PScanCode</code></td><td></td></tr><tr><td id='variant.QScanCode'><code>QScanCode</code></td><td></td></tr><tr><td id='variant.RScanCode'><code>RScanCode</code></td><td></td></tr><tr><td id='variant.SScanCode'><code>SScanCode</code></td><td></td></tr><tr><td id='variant.TScanCode'><code>TScanCode</code></td><td></td></tr><tr><td id='variant.UScanCode'><code>UScanCode</code></td><td></td></tr><tr><td id='variant.VScanCode'><code>VScanCode</code></td><td></td></tr><tr><td id='variant.WScanCode'><code>WScanCode</code></td><td></td></tr><tr><td id='variant.XScanCode'><code>XScanCode</code></td><td></td></tr><tr><td id='variant.YScanCode'><code>YScanCode</code></td><td></td></tr><tr><td id='variant.ZScanCode'><code>ZScanCode</code></td><td></td></tr><tr><td id='variant.Num1ScanCode'><code>Num1ScanCode</code></td><td></td></tr><tr><td id='variant.Num2ScanCode'><code>Num2ScanCode</code></td><td></td></tr><tr><td id='variant.Num3ScanCode'><code>Num3ScanCode</code></td><td></td></tr><tr><td id='variant.Num4ScanCode'><code>Num4ScanCode</code></td><td></td></tr><tr><td id='variant.Num5ScanCode'><code>Num5ScanCode</code></td><td></td></tr><tr><td id='variant.Num6ScanCode'><code>Num6ScanCode</code></td><td></td></tr><tr><td id='variant.Num7ScanCode'><code>Num7ScanCode</code></td><td></td></tr><tr><td id='variant.Num8ScanCode'><code>Num8ScanCode</code></td><td></td></tr><tr><td id='variant.Num9ScanCode'><code>Num9ScanCode</code></td><td></td></tr><tr><td id='variant.Num0ScanCode'><code>Num0ScanCode</code></td><td></td></tr><tr><td id='variant.ReturnScanCode'><code>ReturnScanCode</code></td><td></td></tr><tr><td id='variant.EscapeScanCode'><code>EscapeScanCode</code></td><td></td></tr><tr><td id='variant.BackspaceScanCode'><code>BackspaceScanCode</code></td><td></td></tr><tr><td id='variant.TabScanCode'><code>TabScanCode</code></td><td></td></tr><tr><td id='variant.SpaceScanCode'><code>SpaceScanCode</code></td><td></td></tr><tr><td id='variant.MinusScanCode'><code>MinusScanCode</code></td><td></td></tr><tr><td id='variant.EqualsScanCode'><code>EqualsScanCode</code></td><td></td></tr><tr><td id='variant.LeftBracketScanCode'><code>LeftBracketScanCode</code></td><td></td></tr><tr><td id='variant.RightBracketScanCode'><code>RightBracketScanCode</code></td><td></td></tr><tr><td id='variant.BackslashScanCode'><code>BackslashScanCode</code></td><td></td></tr><tr><td id='variant.NonUsHashScanCode'><code>NonUsHashScanCode</code></td><td></td></tr><tr><td id='variant.SemicolonScanCode'><code>SemicolonScanCode</code></td><td></td></tr><tr><td id='variant.ApostropheScanCode'><code>ApostropheScanCode</code></td><td></td></tr><tr><td id='variant.GraveScanCode'><code>GraveScanCode</code></td><td></td></tr><tr><td id='variant.CommaScanCode'><code>CommaScanCode</code></td><td></td></tr><tr><td id='variant.PeriodScanCode'><code>PeriodScanCode</code></td><td></td></tr><tr><td id='variant.SlashScanCode'><code>SlashScanCode</code></td><td></td></tr><tr><td id='variant.CapsLockScanCode'><code>CapsLockScanCode</code></td><td></td></tr><tr><td id='variant.F1ScanCode'><code>F1ScanCode</code></td><td></td></tr><tr><td id='variant.F2ScanCode'><code>F2ScanCode</code></td><td></td></tr><tr><td id='variant.F3ScanCode'><code>F3ScanCode</code></td><td></td></tr><tr><td id='variant.F4ScanCode'><code>F4ScanCode</code></td><td></td></tr><tr><td id='variant.F5ScanCode'><code>F5ScanCode</code></td><td></td></tr><tr><td id='variant.F6ScanCode'><code>F6ScanCode</code></td><td></td></tr><tr><td id='variant.F7ScanCode'><code>F7ScanCode</code></td><td></td></tr><tr><td id='variant.F8ScanCode'><code>F8ScanCode</code></td><td></td></tr><tr><td id='variant.F9ScanCode'><code>F9ScanCode</code></td><td></td></tr><tr><td id='variant.F10ScanCode'><code>F10ScanCode</code></td><td></td></tr><tr><td id='variant.F11ScanCode'><code>F11ScanCode</code></td><td></td></tr><tr><td id='variant.F12ScanCode'><code>F12ScanCode</code></td><td></td></tr><tr><td id='variant.PrintScreenScanCode'><code>PrintScreenScanCode</code></td><td></td></tr><tr><td id='variant.ScrollLockScanCode'><code>ScrollLockScanCode</code></td><td></td></tr><tr><td id='variant.PauseScanCode'><code>PauseScanCode</code></td><td></td></tr><tr><td id='variant.InsertScanCode'><code>InsertScanCode</code></td><td></td></tr><tr><td id='variant.HomeScanCode'><code>HomeScanCode</code></td><td></td></tr><tr><td id='variant.PageUpScanCode'><code>PageUpScanCode</code></td><td></td></tr><tr><td id='variant.DeleteScanCode'><code>DeleteScanCode</code></td><td></td></tr><tr><td id='variant.EndScanCode'><code>EndScanCode</code></td><td></td></tr><tr><td id='variant.PageDownScanCode'><code>PageDownScanCode</code></td><td></td></tr><tr><td id='variant.RightScanCode'><code>RightScanCode</code></td><td></td></tr><tr><td id='variant.LeftScanCode'><code>LeftScanCode</code></td><td></td></tr><tr><td id='variant.DownScanCode'><code>DownScanCode</code></td><td></td></tr><tr><td id='variant.UpScanCode'><code>UpScanCode</code></td><td></td></tr><tr><td id='variant.NumLockClearScanCode'><code>NumLockClearScanCode</code></td><td></td></tr><tr><td id='variant.KpDivideScanCode'><code>KpDivideScanCode</code></td><td></td></tr><tr><td id='variant.KpMultiplyScanCode'><code>KpMultiplyScanCode</code></td><td></td></tr><tr><td id='variant.KpMinusScanCode'><code>KpMinusScanCode</code></td><td></td></tr><tr><td id='variant.KpPlusScanCode'><code>KpPlusScanCode</code></td><td></td></tr><tr><td id='variant.KpEnterScanCode'><code>KpEnterScanCode</code></td><td></td></tr><tr><td id='variant.Kp1ScanCode'><code>Kp1ScanCode</code></td><td></td></tr><tr><td id='variant.Kp2ScanCode'><code>Kp2ScanCode</code></td><td></td></tr><tr><td id='variant.Kp3ScanCode'><code>Kp3ScanCode</code></td><td></td></tr><tr><td id='variant.Kp4ScanCode'><code>Kp4ScanCode</code></td><td></td></tr><tr><td id='variant.Kp5ScanCode'><code>Kp5ScanCode</code></td><td></td></tr><tr><td id='variant.Kp6ScanCode'><code>Kp6ScanCode</code></td><td></td></tr><tr><td id='variant.Kp7ScanCode'><code>Kp7ScanCode</code></td><td></td></tr><tr><td id='variant.Kp8ScanCode'><code>Kp8ScanCode</code></td><td></td></tr><tr><td id='variant.Kp9ScanCode'><code>Kp9ScanCode</code></td><td></td></tr><tr><td id='variant.Kp0ScanCode'><code>Kp0ScanCode</code></td><td></td></tr><tr><td id='variant.KpPeriodScanCode'><code>KpPeriodScanCode</code></td><td></td></tr><tr><td id='variant.NonUsBackslashScanCode'><code>NonUsBackslashScanCode</code></td><td></td></tr><tr><td id='variant.ApplicationScanCode'><code>ApplicationScanCode</code></td><td></td></tr><tr><td id='variant.PowerScanCode'><code>PowerScanCode</code></td><td></td></tr><tr><td id='variant.KpEqualsScanCode'><code>KpEqualsScanCode</code></td><td></td></tr><tr><td id='variant.F13ScanCode'><code>F13ScanCode</code></td><td></td></tr><tr><td id='variant.F14ScanCode'><code>F14ScanCode</code></td><td></td></tr><tr><td id='variant.F15ScanCode'><code>F15ScanCode</code></td><td></td></tr><tr><td id='variant.F16ScanCode'><code>F16ScanCode</code></td><td></td></tr><tr><td id='variant.F17ScanCode'><code>F17ScanCode</code></td><td></td></tr><tr><td id='variant.F18ScanCode'><code>F18ScanCode</code></td><td></td></tr><tr><td id='variant.F19ScanCode'><code>F19ScanCode</code></td><td></td></tr><tr><td id='variant.F20ScanCode'><code>F20ScanCode</code></td><td></td></tr><tr><td id='variant.F21ScanCode'><code>F21ScanCode</code></td><td></td></tr><tr><td id='variant.F22ScanCode'><code>F22ScanCode</code></td><td></td></tr><tr><td id='variant.F23ScanCode'><code>F23ScanCode</code></td><td></td></tr><tr><td id='variant.F24ScanCode'><code>F24ScanCode</code></td><td></td></tr><tr><td id='variant.ExecuteScanCode'><code>ExecuteScanCode</code></td><td></td></tr><tr><td id='variant.HelpScanCode'><code>HelpScanCode</code></td><td></td></tr><tr><td id='variant.MenuScanCode'><code>MenuScanCode</code></td><td></td></tr><tr><td id='variant.SelectScanCode'><code>SelectScanCode</code></td><td></td></tr><tr><td id='variant.StopScanCode'><code>StopScanCode</code></td><td></td></tr><tr><td id='variant.AgainScanCode'><code>AgainScanCode</code></td><td></td></tr><tr><td id='variant.UndoScanCode'><code>UndoScanCode</code></td><td></td></tr><tr><td id='variant.CutScanCode'><code>CutScanCode</code></td><td></td></tr><tr><td id='variant.CopyScanCode'><code>CopyScanCode</code></td><td></td></tr><tr><td id='variant.PasteScanCode'><code>PasteScanCode</code></td><td></td></tr><tr><td id='variant.FindScanCode'><code>FindScanCode</code></td><td></td></tr><tr><td id='variant.MuteScanCode'><code>MuteScanCode</code></td><td></td></tr><tr><td id='variant.VolumeUpScanCode'><code>VolumeUpScanCode</code></td><td></td></tr><tr><td id='variant.VolumeDownScanCode'><code>VolumeDownScanCode</code></td><td></td></tr><tr><td id='variant.KpCommaScanCode'><code>KpCommaScanCode</code></td><td></td></tr><tr><td id='variant.KpEqualsAS400ScanCode'><code>KpEqualsAS400ScanCode</code></td><td></td></tr><tr><td id='variant.International1ScanCode'><code>International1ScanCode</code></td><td></td></tr><tr><td id='variant.International2ScanCode'><code>International2ScanCode</code></td><td></td></tr><tr><td id='variant.International3ScanCode'><code>International3ScanCode</code></td><td></td></tr><tr><td id='variant.International4ScanCode'><code>International4ScanCode</code></td><td></td></tr><tr><td id='variant.International5ScanCode'><code>International5ScanCode</code></td><td></td></tr><tr><td id='variant.International6ScanCode'><code>International6ScanCode</code></td><td></td></tr><tr><td id='variant.International7ScanCode'><code>International7ScanCode</code></td><td></td></tr><tr><td id='variant.International8ScanCode'><code>International8ScanCode</code></td><td></td></tr><tr><td id='variant.International9ScanCode'><code>International9ScanCode</code></td><td></td></tr><tr><td id='variant.Lang1ScanCode'><code>Lang1ScanCode</code></td><td></td></tr><tr><td id='variant.Lang2ScanCode'><code>Lang2ScanCode</code></td><td></td></tr><tr><td id='variant.Lang3ScanCode'><code>Lang3ScanCode</code></td><td></td></tr><tr><td id='variant.Lang4ScanCode'><code>Lang4ScanCode</code></td><td></td></tr><tr><td id='variant.Lang5ScanCode'><code>Lang5ScanCode</code></td><td></td></tr><tr><td id='variant.Lang6ScanCode'><code>Lang6ScanCode</code></td><td></td></tr><tr><td id='variant.Lang7ScanCode'><code>Lang7ScanCode</code></td><td></td></tr><tr><td id='variant.Lang8ScanCode'><code>Lang8ScanCode</code></td><td></td></tr><tr><td id='variant.Lang9ScanCode'><code>Lang9ScanCode</code></td><td></td></tr><tr><td id='variant.AltEraseScanCode'><code>AltEraseScanCode</code></td><td></td></tr><tr><td id='variant.SysReqScanCode'><code>SysReqScanCode</code></td><td></td></tr><tr><td id='variant.CancelScanCode'><code>CancelScanCode</code></td><td></td></tr><tr><td id='variant.ClearScanCode'><code>ClearScanCode</code></td><td></td></tr><tr><td id='variant.PriorScanCode'><code>PriorScanCode</code></td><td></td></tr><tr><td id='variant.Return2ScanCode'><code>Return2ScanCode</code></td><td></td></tr><tr><td id='variant.SeparatorScanCode'><code>SeparatorScanCode</code></td><td></td></tr><tr><td id='variant.OutScanCode'><code>OutScanCode</code></td><td></td></tr><tr><td id='variant.OperScanCode'><code>OperScanCode</code></td><td></td></tr><tr><td id='variant.ClearAgainScanCode'><code>ClearAgainScanCode</code></td><td></td></tr><tr><td id='variant.CrseScanCode'><code>CrseScanCode</code></td><td></td></tr><tr><td id='variant.ExseLScanCode'><code>ExseLScanCode</code></td><td></td></tr><tr><td id='variant.Kp00ScanCode'><code>Kp00ScanCode</code></td><td></td></tr><tr><td id='variant.Kp000ScanCode'><code>Kp000ScanCode</code></td><td></td></tr><tr><td id='variant.ThousandsSeparatorScanCode'><code>ThousandsSeparatorScanCode</code></td><td></td></tr><tr><td id='variant.DecimalSeparatorScanCode'><code>DecimalSeparatorScanCode</code></td><td></td></tr><tr><td id='variant.CurrencyUnitScanCode'><code>CurrencyUnitScanCode</code></td><td></td></tr><tr><td id='variant.CurrencySubUnitScanCode'><code>CurrencySubUnitScanCode</code></td><td></td></tr><tr><td id='variant.KpLeftParenScanCode'><code>KpLeftParenScanCode</code></td><td></td></tr><tr><td id='variant.KpRightParenScanCode'><code>KpRightParenScanCode</code></td><td></td></tr><tr><td id='variant.KpLeftBraceScanCode'><code>KpLeftBraceScanCode</code></td><td></td></tr><tr><td id='variant.KpRightBraceScanCode'><code>KpRightBraceScanCode</code></td><td></td></tr><tr><td id='variant.KpTabScanCode'><code>KpTabScanCode</code></td><td></td></tr><tr><td id='variant.KpBackspaceScanCode'><code>KpBackspaceScanCode</code></td><td></td></tr><tr><td id='variant.KpAScanCode'><code>KpAScanCode</code></td><td></td></tr><tr><td id='variant.KpBScanCode'><code>KpBScanCode</code></td><td></td></tr><tr><td id='variant.KpCScanCode'><code>KpCScanCode</code></td><td></td></tr><tr><td id='variant.KpDScanCode'><code>KpDScanCode</code></td><td></td></tr><tr><td id='variant.KpEScanCode'><code>KpEScanCode</code></td><td></td></tr><tr><td id='variant.KpFScanCode'><code>KpFScanCode</code></td><td></td></tr><tr><td id='variant.KpXorScanCode'><code>KpXorScanCode</code></td><td></td></tr><tr><td id='variant.KpPowerScanCode'><code>KpPowerScanCode</code></td><td></td></tr><tr><td id='variant.KpPercentScanCode'><code>KpPercentScanCode</code></td><td></td></tr><tr><td id='variant.KpLessScanCode'><code>KpLessScanCode</code></td><td></td></tr><tr><td id='variant.KpGreaterScanCode'><code>KpGreaterScanCode</code></td><td></td></tr><tr><td id='variant.KpAmpersandScanCode'><code>KpAmpersandScanCode</code></td><td></td></tr><tr><td id='variant.KpDblAmpersandScanCode'><code>KpDblAmpersandScanCode</code></td><td></td></tr><tr><td id='variant.KpVerticalBarScanCode'><code>KpVerticalBarScanCode</code></td><td></td></tr><tr><td id='variant.KpDblVerticalBarScanCode'><code>KpDblVerticalBarScanCode</code></td><td></td></tr><tr><td id='variant.KpColonScanCode'><code>KpColonScanCode</code></td><td></td></tr><tr><td id='variant.KpHashScanCode'><code>KpHashScanCode</code></td><td></td></tr><tr><td id='variant.KpSpaceScanCode'><code>KpSpaceScanCode</code></td><td></td></tr><tr><td id='variant.KpAtScanCode'><code>KpAtScanCode</code></td><td></td></tr><tr><td id='variant.KpExclamScanCode'><code>KpExclamScanCode</code></td><td></td></tr><tr><td id='variant.KpMemStoreScanCode'><code>KpMemStoreScanCode</code></td><td></td></tr><tr><td id='variant.KpMemRecallScanCode'><code>KpMemRecallScanCode</code></td><td></td></tr><tr><td id='variant.KpMemClearScanCode'><code>KpMemClearScanCode</code></td><td></td></tr><tr><td id='variant.KpMemAddScanCode'><code>KpMemAddScanCode</code></td><td></td></tr><tr><td id='variant.KpMemSubtractScanCode'><code>KpMemSubtractScanCode</code></td><td></td></tr><tr><td id='variant.KpMemMultiplyScanCode'><code>KpMemMultiplyScanCode</code></td><td></td></tr><tr><td id='variant.KpMemDivideScanCode'><code>KpMemDivideScanCode</code></td><td></td></tr><tr><td id='variant.KpPlusMinusScanCode'><code>KpPlusMinusScanCode</code></td><td></td></tr><tr><td id='variant.KpClearScanCode'><code>KpClearScanCode</code></td><td></td></tr><tr><td id='variant.KpClearEntryScanCode'><code>KpClearEntryScanCode</code></td><td></td></tr><tr><td id='variant.KpBinaryScanCode'><code>KpBinaryScanCode</code></td><td></td></tr><tr><td id='variant.KpOoctalScanCode'><code>KpOoctalScanCode</code></td><td></td></tr><tr><td id='variant.KpDecimalScanCode'><code>KpDecimalScanCode</code></td><td></td></tr><tr><td id='variant.KpHexadecimalScanCode'><code>KpHexadecimalScanCode</code></td><td></td></tr><tr><td id='variant.LCtrlScanCode'><code>LCtrlScanCode</code></td><td></td></tr><tr><td id='variant.LShiftScanCode'><code>LShiftScanCode</code></td><td></td></tr><tr><td id='variant.LAltScanCode'><code>LAltScanCode</code></td><td></td></tr><tr><td id='variant.LGuiScanCode'><code>LGuiScanCode</code></td><td></td></tr><tr><td id='variant.RCtrlScanCode'><code>RCtrlScanCode</code></td><td></td></tr><tr><td id='variant.RShiftScanCode'><code>RShiftScanCode</code></td><td></td></tr><tr><td id='variant.RAltScanCode'><code>RAltScanCode</code></td><td></td></tr><tr><td id='variant.RGuiScanCode'><code>RGuiScanCode</code></td><td></td></tr><tr><td id='variant.ModeScanCode'><code>ModeScanCode</code></td><td></td></tr><tr><td id='variant.AudioNextScanCode'><code>AudioNextScanCode</code></td><td></td></tr><tr><td id='variant.AudioPrevScanCode'><code>AudioPrevScanCode</code></td><td></td></tr><tr><td id='variant.AudioStopScanCode'><code>AudioStopScanCode</code></td><td></td></tr><tr><td id='variant.AudioPlayScanCode'><code>AudioPlayScanCode</code></td><td></td></tr><tr><td id='variant.AudioMuteScanCode'><code>AudioMuteScanCode</code></td><td></td></tr><tr><td id='variant.MediaSelectScanCode'><code>MediaSelectScanCode</code></td><td></td></tr><tr><td id='variant.WwwScanCode'><code>WwwScanCode</code></td><td></td></tr><tr><td id='variant.MailScanCode'><code>MailScanCode</code></td><td></td></tr><tr><td id='variant.CalculatorScanCode'><code>CalculatorScanCode</code></td><td></td></tr><tr><td id='variant.ComputerScanCode'><code>ComputerScanCode</code></td><td></td></tr><tr><td id='variant.AcSearchScanCode'><code>AcSearchScanCode</code></td><td></td></tr><tr><td id='variant.AcHomeScanCode'><code>AcHomeScanCode</code></td><td></td></tr><tr><td id='variant.AcBackScanCode'><code>AcBackScanCode</code></td><td></td></tr><tr><td id='variant.AcForwardScanCode'><code>AcForwardScanCode</code></td><td></td></tr><tr><td id='variant.AcStopScanCode'><code>AcStopScanCode</code></td><td></td></tr><tr><td id='variant.AcRefreshScanCode'><code>AcRefreshScanCode</code></td><td></td></tr><tr><td id='variant.AcBookmarksScanCode'><code>AcBookmarksScanCode</code></td><td></td></tr><tr><td id='variant.BrightnessDownScanCode'><code>BrightnessDownScanCode</code></td><td></td></tr><tr><td id='variant.BrightnessUpScanCode'><code>BrightnessUpScanCode</code></td><td></td></tr><tr><td id='variant.DisplaySwitchScanCode'><code>DisplaySwitchScanCode</code></td><td></td></tr><tr><td id='variant.KbdIllumToggleScanCode'><code>KbdIllumToggleScanCode</code></td><td></td></tr><tr><td id='variant.KbdIllumDownScanCode'><code>KbdIllumDownScanCode</code></td><td></td></tr><tr><td id='variant.KbdIllumUpScanCode'><code>KbdIllumUpScanCode</code></td><td></td></tr><tr><td id='variant.EjectScanCode'><code>EjectScanCode</code></td><td></td></tr><tr><td id='variant.SleepScanCode'><code>SleepScanCode</code></td><td></td></tr><tr><td id='variant.App1ScanCode'><code>App1ScanCode</code></td><td></td></tr><tr><td id='variant.App2ScanCode'><code>App2ScanCode</code></td><td></td></tr><tr><td id='variant.NumScanCode'><code>NumScanCode</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'><h4 id='method.code' class='method'><code>fn <a href='#method.code' class='fnname'>code</a>(&amp;self) -&gt; i32</code></h4>
+<div class='docblock'><p>Get the code</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/std/hash/trait.Hash.html' title='std::hash::Hash'>Hash</a> for <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'><h4 id='method.hash' class='method'><code>fn <a href='#method.hash' class='fnname'>hash</a>(&amp;self, state: &amp;mut <a class='struct' href='http://static.rust-lang.org/doc/master/std/hash/sip/struct.SipState.html' title='std::hash::sip::SipState'>SipState</a>)</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/num/trait.ToPrimitive.html' title='core::num::ToPrimitive'>ToPrimitive</a> for <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'><h4 id='method.to_i64' class='method'><code>fn <a href='#method.to_i64' class='fnname'>to_i64</a>(&amp;self) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;i64&gt;</code></h4>
+<div class='docblock'><p>Equivalent to <code>self.code()</code></p>
+</div><h4 id='method.to_u64' class='method'><code>fn <a href='#method.to_u64' class='fnname'>to_u64</a>(&amp;self) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;u64&gt;</code></h4>
+<h4 id='method.to_int' class='method'><code>fn <a href='#method.to_int' class='fnname'>to_int</a>(&amp;self) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;int&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/num/trait.FromPrimitive.html' title='core::num::FromPrimitive'>FromPrimitive</a> for <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'><h4 id='method.from_i64' class='method'><code>fn <a href='#method.from_i64' class='fnname'>from_i64</a>(n: i64) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>&gt;</code></h4>
+<div class='docblock'><p>Get a <em>registered</em> scan code.</p>
+
+<p>This will return UnknownScanCode if an unknown code is passed.</p>
+
+<p>For example, <code>from_int(4)</code> will return <code>AScanCode</code>.</p>
+</div><h4 id='method.from_u64' class='method'><code>fn <a href='#method.from_u64' class='fnname'>from_u64</a>(n: u64) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>&gt;</code></h4>
+<h4 id='method.from_int' class='method'><code>fn <a href='#method.from_int' class='fnname'>from_int</a>(n: int) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>&gt;</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://static.rust-lang.org/doc/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/cmp/trait.TotalEq.html' title='core::cmp::TotalEq'>TotalEq</a> for <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'></div><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a></code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>) -&gt; bool</code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>) -&gt; bool</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&uarr;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&darr;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var rootPath = "../../";
+        var currentCrate = "sdl2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

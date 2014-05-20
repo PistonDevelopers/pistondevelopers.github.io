@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The graphics library documentation.">
+
+    <title>graphics::modular_index - Rust</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+</head>
+<body>
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <section class="sidebar">
+        
+
+        <p class='location'><a href='../index.html'>graphics</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='../internal/index.html'>internal</a><br/><a class='mod ' href='../interpolation/index.html'>interpolation</a><br/><a class='mod current' href='../modular_index/index.html'>modular_index</a><br/><a class='mod ' href='../triangulation/index.html'>triangulation</a><br/><a class='mod ' href='../vecmath/index.html'>vecmath</a><br/></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='../struct.BevelBorderLineColorContext.html'>BevelBorderLineColorContext</a><br/><a class='struct ' href='../struct.BevelBorderLineContext.html'>BevelBorderLineContext</a><br/><a class='struct ' href='../struct.BevelRectangleColorContext.html'>BevelRectangleColorContext</a><br/><a class='struct ' href='../struct.BevelRectangleContext.html'>BevelRectangleContext</a><br/><a class='struct ' href='../struct.ColorContext.html'>ColorContext</a><br/><a class='struct ' href='../struct.Context.html'>Context</a><br/><a class='struct ' href='../struct.EllipseColorContext.html'>EllipseColorContext</a><br/><a class='struct ' href='../struct.EllipseContext.html'>EllipseContext</a><br/><a class='struct ' href='../struct.Image.html'>Image</a><br/><a class='struct ' href='../struct.ImageRectangleColorContext.html'>ImageRectangleColorContext</a><br/><a class='struct ' href='../struct.ImageRectangleContext.html'>ImageRectangleContext</a><br/><a class='struct ' href='../struct.LineColorContext.html'>LineColorContext</a><br/><a class='struct ' href='../struct.LineContext.html'>LineContext</a><br/><a class='struct ' href='../struct.PolygonColorContext.html'>PolygonColorContext</a><br/><a class='struct ' href='../struct.PolygonContext.html'>PolygonContext</a><br/><a class='struct ' href='../struct.RectangleColorContext.html'>RectangleColorContext</a><br/><a class='struct ' href='../struct.RectangleContext.html'>RectangleContext</a><br/><a class='struct ' href='../struct.RoundBorderLineColorContext.html'>RoundBorderLineColorContext</a><br/><a class='struct ' href='../struct.RoundBorderLineContext.html'>RoundBorderLineContext</a><br/><a class='struct ' href='../struct.RoundRectangleColorContext.html'>RoundRectangleColorContext</a><br/><a class='struct ' href='../struct.RoundRectangleContext.html'>RoundRectangleContext</a><br/><a class='struct ' href='../struct.SquareBorderLineColorContext.html'>SquareBorderLineColorContext</a><br/><a class='struct ' href='../struct.SquareBorderLineContext.html'>SquareBorderLineContext</a><br/><a class='struct ' href='../struct.TweenColorContext.html'>TweenColorContext</a><br/><a class='struct ' href='../struct.TweenContext.html'>TweenContext</a><br/><a class='struct ' href='../struct.TweenPolygonsColorContext.html'>TweenPolygonsColorContext</a><br/><a class='struct ' href='../struct.TweenPolygonsContext.html'>TweenPolygonsContext</a><br/></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='../trait.AddBevel.html'>AddBevel</a><br/><a class='trait ' href='../trait.AddBevelBorder.html'>AddBevelBorder</a><br/><a class='trait ' href='../trait.AddColor.html'>AddColor</a><br/><a class='trait ' href='../trait.AddEllipse.html'>AddEllipse</a><br/><a class='trait ' href='../trait.AddImage.html'>AddImage</a><br/><a class='trait ' href='../trait.AddLine.html'>AddLine</a><br/><a class='trait ' href='../trait.AddPolygon.html'>AddPolygon</a><br/><a class='trait ' href='../trait.AddPolygons.html'>AddPolygons</a><br/><a class='trait ' href='../trait.AddRectangle.html'>AddRectangle</a><br/><a class='trait ' href='../trait.AddRound.html'>AddRound</a><br/><a class='trait ' href='../trait.AddRoundBorder.html'>AddRoundBorder</a><br/><a class='trait ' href='../trait.AddSquareBorder.html'>AddSquareBorder</a><br/><a class='trait ' href='../trait.AddTween.html'>AddTween</a><br/><a class='trait ' href='../trait.BackEnd.html'>BackEnd</a><br/><a class='trait ' href='../trait.Clear.html'>Clear</a><br/><a class='trait ' href='../trait.Draw.html'>Draw</a><br/><a class='trait ' href='../trait.Fill.html'>Fill</a><br/><a class='trait ' href='../trait.RelativeColor.html'>RelativeColor</a><br/><a class='trait ' href='../trait.RelativeRectangle.html'>RelativeRectangle</a><br/><a class='trait ' href='../trait.RelativeTransform2d.html'>RelativeTransform2d</a><br/><a class='trait ' href='../trait.Stroke.html'>Stroke</a><br/><a class='trait ' href='../trait.View.html'>View</a><br/></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Search documentation..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'>Module <a href='../index.html'>graphics</a>::<a class='mod' href=''>modular_index</a><a class='source' href='../../src/graphics/src/modular_index.rs.html#2-33'>[src]</a></h1>
+<div class='docblock'><p>Helper functions for computing modular index safely.</p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr>
+                        <td><a class='fn' href='fn.next.html'
+                               title='graphics::modular_index::next'>next</a></td>
+                        <td class='docblock short'><p>Computes next modular index safely.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='fn' href='fn.offset.html'
+                               title='graphics::modular_index::offset'>offset</a></td>
+                        <td class='docblock short'><p>Computes modular offset safely for indices.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='fn' href='fn.previous.html'
+                               title='graphics::modular_index::previous'>previous</a></td>
+                        <td class='docblock short'><p>Computes previous modular index safely.</p>
+</td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&uarr;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&darr;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var rootPath = "../../";
+        var currentCrate = "graphics";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
