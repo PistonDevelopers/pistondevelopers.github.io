@@ -187,10 +187,6 @@
 <span id='147'>147</span>
 <span id='148'>148</span>
 <span id='149'>149</span>
-<span id='150'>150</span>
-<span id='151'>151</span>
-<span id='152'>152</span>
-<span id='153'>153</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Create window.
 </span><span class='comment'>
@@ -217,10 +213,8 @@
 </span>    <span class='ident'>events</span>: <span class='ident'>Receiver</span><span class='op'>&lt;</span>(<span class='ident'>f64</span>, <span class='ident'>glfw</span>::<span class='ident'>WindowEvent</span>)<span class='op'>&gt;</span>,
     <span class='doccomment'>/// GLFW context.
 </span>    <span class='ident'>glfw</span>: <span class='ident'>glfw</span>::<span class='ident'>Glfw</span>,
-    <span class='doccomment'>/// Game window settings;
+    <span class='doccomment'>/// Game window settings.
 </span>    <span class='ident'>settings</span>: <span class='ident'>GameWindowSettings</span>,
-
-    <span class='ident'>should_close</span>: <span class='ident'>bool</span>,
     <span class='ident'>event_queue</span>: <span class='ident'>RingBuf</span><span class='op'>&lt;</span><span class='ident'>event</span>::<span class='ident'>Event</span><span class='op'>&gt;</span>,
 }
 
@@ -234,9 +228,9 @@
         <span class='kw'>for</span> (_, <span class='ident'>event</span>) <span class='kw'>in</span> <span class='ident'>glfw</span>::<span class='ident'>flush_messages</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>events</span>) {
             <span class='kw'>match</span> <span class='ident'>event</span> {
                 <span class='ident'>glfw</span>::<span class='ident'>KeyEvent</span>(<span class='ident'>glfw</span>::<span class='ident'>KeyEscape</span>, _, <span class='ident'>glfw</span>::<span class='ident'>Press</span>, _)
-                <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>settings</span>.<span class='ident'>exit_on_esc</span> <span class='op'>=&gt;</span> {
-                    <span class='self'>self</span>.<span class='ident'>should_close</span> <span class='op'>=</span> <span class='boolval'>true</span>;
-                },
+                    <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>settings</span>.<span class='ident'>exit_on_esc</span> <span class='op'>=&gt;</span> {
+                        <span class='self'>self</span>.<span class='ident'>window</span>.<span class='ident'>set_should_close</span>(<span class='boolval'>true</span>);
+                    },
                 <span class='ident'>glfw</span>::<span class='ident'>KeyEvent</span>(<span class='ident'>key</span>, _, <span class='ident'>glfw</span>::<span class='ident'>Press</span>, _) <span class='op'>=&gt;</span> {
                     <span class='self'>self</span>.<span class='ident'>event_queue</span>.<span class='ident'>push_back</span>(
                         <span class='ident'>event</span>::<span class='ident'>KeyPressed</span>(<span class='ident'>glfw_map_key</span>(<span class='ident'>key</span>)));
@@ -289,8 +283,6 @@
             <span class='ident'>events</span>: <span class='ident'>events</span>,
             <span class='ident'>glfw</span>: <span class='ident'>glfw</span>,
             <span class='ident'>settings</span>: <span class='ident'>settings</span>,
-
-            <span class='ident'>should_close</span>: <span class='boolval'>false</span>,
             <span class='ident'>event_queue</span>: <span class='ident'>RingBuf</span>::<span class='op'>&lt;</span><span class='ident'>event</span>::<span class='ident'>Event</span><span class='op'>&gt;</span>::<span class='ident'>new</span>(),
         }
     }
@@ -300,7 +292,7 @@
     }
 
     <span class='kw'>fn</span> <span class='ident'>should_close</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
-        <span class='self'>self</span>.<span class='ident'>should_close</span>
+        <span class='self'>self</span>.<span class='ident'>window</span>.<span class='ident'>should_close</span>()
     }
 
     <span class='kw'>fn</span> <span class='ident'>swap_buffers</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) {
