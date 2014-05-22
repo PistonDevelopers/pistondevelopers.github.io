@@ -300,6 +300,10 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Image</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>Image</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageRectangleContext</span> <span class='op'>=</span> <span class='ident'>image_rectangle_context</span>::<span class='ident'>ImageRectangleContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageRectangleColorContext</span> <span class='op'>=</span> <span class='ident'>image_rectangle_color_context</span>::<span class='ident'>ImageRectangleColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LerpTweenContext</span> <span class='op'>=</span> <span class='ident'>lerp_tween_context</span>::<span class='ident'>LerpTweenContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LerpTweenColorContext</span> <span class='op'>=</span> <span class='ident'>lerp_tween_color_context</span>::<span class='ident'>LerpTweenColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LerpTweenPolygonsContext</span> <span class='op'>=</span> <span class='ident'>lerp_tween_polygons_context</span>::<span class='ident'>LerpTweenPolygonsContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LerpTweenPolygonsColorContext</span> <span class='op'>=</span> <span class='ident'>lerp_tween_polygons_color_context</span>::<span class='ident'>LerpTweenPolygonsColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LineContext</span> <span class='op'>=</span> <span class='ident'>line_context</span>::<span class='ident'>LineContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LineColorContext</span> <span class='op'>=</span> <span class='ident'>line_color_context</span>::<span class='ident'>LineColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>PolygonContext</span> <span class='op'>=</span> <span class='ident'>polygon_context</span>::<span class='ident'>PolygonContext</span>;
@@ -316,10 +320,6 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Stroke</span> <span class='op'>=</span> <span class='ident'>stroke</span>::<span class='ident'>Stroke</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SquareBorderLineColorContext</span> <span class='op'>=</span> <span class='ident'>square_border_line_color_context</span>::<span class='ident'>SquareBorderLineColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SquareBorderLineContext</span> <span class='op'>=</span> <span class='ident'>square_border_line_context</span>::<span class='ident'>SquareBorderLineContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>TweenContext</span> <span class='op'>=</span> <span class='ident'>tween_context</span>::<span class='ident'>TweenContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>TweenColorContext</span> <span class='op'>=</span> <span class='ident'>tween_color_context</span>::<span class='ident'>TweenColorContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>TweenPolygonsContext</span> <span class='op'>=</span> <span class='ident'>tween_polygons_context</span>::<span class='ident'>TweenPolygonsContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>TweenPolygonsColorContext</span> <span class='op'>=</span> <span class='ident'>tween_polygons_color_context</span>::<span class='ident'>TweenPolygonsColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>View</span> <span class='op'>=</span> <span class='ident'>view</span>::<span class='ident'>View</span>;
 
 <span class='kw'>mod</span> <span class='ident'>add_bevel</span>;
@@ -366,10 +366,10 @@
 <span class='kw'>mod</span> <span class='ident'>square_border_line_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>square_border_line_context</span>;
 <span class='kw'>mod</span> <span class='ident'>stroke</span>;
-<span class='kw'>mod</span> <span class='ident'>tween_color_context</span>;
-<span class='kw'>mod</span> <span class='ident'>tween_context</span>;
-<span class='kw'>mod</span> <span class='ident'>tween_polygons_color_context</span>;
-<span class='kw'>mod</span> <span class='ident'>tween_polygons_context</span>;
+<span class='kw'>mod</span> <span class='ident'>lerp_tween_color_context</span>;
+<span class='kw'>mod</span> <span class='ident'>lerp_tween_context</span>;
+<span class='kw'>mod</span> <span class='ident'>lerp_tween_polygons_color_context</span>;
+<span class='kw'>mod</span> <span class='ident'>lerp_tween_polygons_context</span>;
 <span class='kw'>mod</span> <span class='ident'>view</span>;
 
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>internal</span>;

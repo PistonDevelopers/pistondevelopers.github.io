@@ -311,19 +311,43 @@
 <span id='271'>271</span>
 <span id='272'>272</span>
 <span id='273'>273</span>
+<span id='274'>274</span>
+<span id='275'>275</span>
+<span id='276'>276</span>
+<span id='277'>277</span>
+<span id='278'>278</span>
+<span id='279'>279</span>
+<span id='280'>280</span>
+<span id='281'>281</span>
+<span id='282'>282</span>
+<span id='283'>283</span>
+<span id='284'>284</span>
+<span id='285'>285</span>
+<span id='286'>286</span>
+<span id='287'>287</span>
+<span id='288'>288</span>
+<span id='289'>289</span>
+<span id='290'>290</span>
+<span id='291'>291</span>
+<span id='292'>292</span>
+<span id='293'>293</span>
+<span id='294'>294</span>
+<span id='295'>295</span>
+<span id='296'>296</span>
 </pre><pre class='rust '>
 
 <span class='doccomment'>//! Various methods for computing with vectors.
 </span>
 <span class='kw'>use</span> <span class='ident'>internal</span>::{
     <span class='ident'>Area</span>,
+    <span class='ident'>Color</span>,
     <span class='ident'>Line</span>,
     <span class='ident'>Matrix2d</span>,
     <span class='ident'>Polygon</span>,
     <span class='ident'>Ray</span>,
     <span class='ident'>Rectangle</span>,
     <span class='ident'>Vec2d</span>,
-    <span class='ident'>Triangle</span>
+    <span class='ident'>Triangle</span>,
 };
 <span class='kw'>use</span> <span class='ident'>modular_index</span>::{<span class='ident'>previous</span>};
 
@@ -585,6 +609,28 @@
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>triangle_face</span>(<span class='ident'>tri_1</span>), <span class='boolval'>false</span>);
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>triangle_face</span>(<span class='ident'>tri_2</span>), <span class='boolval'>true</span>);
 }
+
+<span class='doccomment'>/// Transform color with hue saturation and value.
+</span><span class='doccomment'>///
+</span><span class='doccomment'>/// Source: http://beesbuzz.biz/code/hsv_color_transforms.php
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>hsv</span>(<span class='ident'>color</span>: <span class='ident'>Color</span>, <span class='ident'>h_rad</span>: <span class='ident'>f32</span>, <span class='ident'>s</span>: <span class='ident'>f32</span>, <span class='ident'>v</span>: <span class='ident'>f32</span>) <span class='op'>-&gt;</span> <span class='ident'>Color</span> {
+    <span class='kw'>let</span> <span class='ident'>vsu</span> <span class='op'>=</span> <span class='ident'>v</span> <span class='op'>*</span> <span class='ident'>s</span> <span class='op'>*</span> <span class='ident'>h_rad</span>.<span class='ident'>cos</span>();
+    <span class='kw'>let</span> <span class='ident'>vsw</span> <span class='op'>=</span> <span class='ident'>v</span> <span class='op'>*</span> <span class='ident'>s</span> <span class='op'>*</span> <span class='ident'>h_rad</span>.<span class='ident'>sin</span>();
+    [
+        (<span class='number'>0.299</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>+</span> <span class='number'>0.701</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>+</span> <span class='number'>0.168</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>0</span>]
+        <span class='op'>+</span> (<span class='number'>0.587</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>-</span> <span class='number'>0.587</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>+</span> <span class='number'>0.330</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>1</span>]
+        <span class='op'>+</span> (<span class='number'>0.114</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>-</span> <span class='number'>0.114</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>-</span> <span class='number'>0.497</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>2</span>],
+        (<span class='number'>0.299</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>-</span> <span class='number'>0.299</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>-</span> <span class='number'>0.328</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>0</span>]
+        <span class='op'>+</span> (<span class='number'>0.587</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>+</span> <span class='number'>0.413</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>+</span> <span class='number'>0.035</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>1</span>]
+        <span class='op'>+</span> (<span class='number'>0.114</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>-</span> <span class='number'>0.114</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>+</span> <span class='number'>0.292</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>2</span>],
+        (<span class='number'>0.299</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>-</span> <span class='number'>0.3</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>+</span> <span class='number'>1.25</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>0</span>]
+        <span class='op'>+</span> (<span class='number'>0.587</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>-</span> <span class='number'>0.588</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>-</span> <span class='number'>1.05</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>1</span>]
+        <span class='op'>+</span> (<span class='number'>0.114</span> <span class='op'>*</span> <span class='ident'>v</span> <span class='op'>+</span> <span class='number'>0.886</span> <span class='op'>*</span> <span class='ident'>vsu</span> <span class='op'>-</span> <span class='number'>0.203</span> <span class='op'>*</span> <span class='ident'>vsw</span>) <span class='op'>*</span> <span class='ident'>color</span>[<span class='number'>2</span>],
+        <span class='ident'>color</span>[<span class='number'>3</span>],
+    ]
+}
+
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
