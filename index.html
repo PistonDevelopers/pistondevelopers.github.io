@@ -38,16 +38,16 @@ categories : [piston]
         <h3>Rectangle Example</h3>
         
         {% highlight Rust %}
-        use graphics::*;
-        use piston::{Game, Gl};
-        
-        pub struct App { ... } // your application data
-        
-        impl Game for App {
-            fn render(&self, c: &Context, gl: &mut Gl) {
-                c.rect(0.0, 0.0, 0.5, 0.5).rgb(1.0, 0.0, 0.0).fill(gl);
-            }
-        }
+use graphics::*;
+use piston::{Game, Gl};
+
+pub struct App { ... } // your application data
+
+impl Game for App {
+    fn render(&self, c: &Context, gl: &mut Gl) {
+        c.rect(0.0, 0.0, 0.5, 0.5).rgb(1.0, 0.0, 0.0).fill(gl);
+    }
+}
         {% endhighlight %}
          
         <p><a href="https://github.com/PistonDevelopers/piston">View on Github</a></p>   
