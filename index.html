@@ -8,11 +8,11 @@ categories : [piston]
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Pistondevelopers.github.io : The website for Piston community and development" />
+    <meta name="description" content="Piston: A user friendly game engine written in rust" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Pistondevelopers.github.io</title>
+    <title>Piston</title>
   </head>
 
   <body>
@@ -22,8 +22,8 @@ categories : [piston]
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/PistonDevelopers/Piston">View on GitHub</a>
 
-          <h1 id="project_title">PistonDevelopers.github.io</h1>
-          <h2 id="project_tagline">Piston game engine community and development</h2>
+          <h1 id="project_title">Piston</h1>
+          <h2 id="project_tagline">A user friendly game engine written in rust</h2>
 
         </header>
     </div>
@@ -32,25 +32,25 @@ categories : [piston]
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 
-<h3>About Piston</h3>
-<p>Piston is a user friendly open source game engine written in Rust, started by Sven Nilsen.</p>
-
-<h3>Rectangle Example</h3>
-
-{% highlight Rust %}
-use graphics::*;
-use piston::{Game, Gl};
-
-pub struct App { ... } // your application data
-
-impl Game for App {
-    fn render(&self, c: &Context, gl: &mut Gl) {
-        c.rect(0.0, 0.0, 0.5, 0.5).rgb(1.0, 0.0, 0.0).fill(gl);
-    }
-}
-{% endhighlight %}
- 
-<p><a href="https://github.com/PistonDevelopers/piston">View on Github</a></p>   
+        <h3>About Piston</h3>
+        <p>Piston is a user friendly open source game engine written in Rust, started by Sven Nilsen.</p>
+        
+        <h3>Rectangle Example</h3>
+        
+        {% highlight Rust %}
+        use graphics::*;
+        use piston::{Game, Gl};
+        
+        pub struct App { ... } // your application data
+        
+        impl Game for App {
+            fn render(&self, c: &Context, gl: &mut Gl) {
+                c.rect(0.0, 0.0, 0.5, 0.5).rgb(1.0, 0.0, 0.0).fill(gl);
+            }
+        }
+        {% endhighlight %}
+         
+        <p><a href="https://github.com/PistonDevelopers/piston">View on Github</a></p>   
 
       </section>
     </div>
