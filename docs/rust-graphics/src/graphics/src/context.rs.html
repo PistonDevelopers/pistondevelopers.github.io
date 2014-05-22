@@ -285,6 +285,7 @@
 <span id='245'>245</span>
 <span id='246'>246</span>
 <span id='247'>247</span>
+<span id='248'>248</span>
 </pre><pre class='rust '>
 
 <span class='kw'>use</span> {
@@ -304,7 +305,7 @@
     <span class='ident'>LineContext</span>,
     <span class='ident'>PolygonContext</span>,
     <span class='ident'>RectangleContext</span>,
-    <span class='ident'>TweenContext</span>,
+    <span class='ident'>LerpTweenContext</span>,
     <span class='ident'>Value</span>,
 };
 <span class='kw'>use</span> <span class='ident'>internal</span>::{
@@ -511,10 +512,11 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>AddTween</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>TweenContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;&gt;</span> <span class='kw'>for</span> <span class='ident'>Context</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>AddTween</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>LerpTweenContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>Context</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>lerp</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>tween_factor</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>TweenContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-        <span class='ident'>TweenContext</span> {
+    <span class='kw'>fn</span> <span class='ident'>lerp</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>tween_factor</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>LerpTweenContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+        <span class='ident'>LerpTweenContext</span> {
             <span class='ident'>base</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>base</span>.<span class='ident'>get</span>()),
             <span class='ident'>transform</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()),
             <span class='ident'>tween_factor</span>: <span class='ident'>Value</span>(<span class='ident'>tween_factor</span>),
