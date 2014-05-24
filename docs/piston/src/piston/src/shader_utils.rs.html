@@ -118,12 +118,22 @@
 <span id='78'>78</span>
 <span id='79'>79</span>
 <span id='80'>80</span>
+<span id='81'>81</span>
+<span id='82'>82</span>
+<span id='83'>83</span>
+<span id='84'>84</span>
+<span id='85'>85</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Helper functions for dealing with shaders.
 </span><span class='comment'>
 // External crates.
 </span><span class='kw'>use</span> <span class='ident'>gl</span>;
-<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::<span class='op'>*</span>;<span class='comment'>
+<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::{
+    <span class='ident'>GLchar</span>,
+    <span class='ident'>GLenum</span>,
+    <span class='ident'>GLint</span>,
+    <span class='ident'>GLuint</span>,
+};<span class='comment'>
 
 //use std::io;
 //use std::path;
@@ -131,13 +141,13 @@
 
 <span class='doccomment'>/// Compiles a vertex shader from file and fails if not succeeding.
 </span><span class='comment'>// pub fn compile_shader_file(
-//     shader_type: GLenum, 
+//     shader_type: GLenum,
 //     file: &amp;str
 // ) -&gt; GLuint {
 //     with_shader_file(file, |res| {
 //         match res {
 //             Err(err) =&gt; fail!(&quot;Failed opening shader file &#39;{}&#39;:\r\n{}&quot;, file, err),
-//             Ok(source) =&gt; 
+//             Ok(source) =&gt;
 //                 match compile_shader(shader_type, source) {
 //                     Err(err) =&gt; fail!(&quot;Failed compiling shader file &#39;{}&#39;:\r\n{}&quot;, file, err),
 //                     Ok(shader) =&gt; shader
@@ -180,7 +190,7 @@
     <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='ident'>gl</span>::<span class='ident'>CreateShader</span>(<span class='ident'>shader_type</span>);
     <span class='kw'>unsafe</span> {
         <span class='ident'>source</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ptr</span><span class='op'>|</span> <span class='ident'>gl</span>::<span class='ident'>ShaderSource</span>(<span class='ident'>shader</span>, <span class='number'>1</span>, <span class='kw-2'>&amp;</span><span class='ident'>ptr</span>, <span class='ident'>ptr</span>::<span class='ident'>null</span>()));
-        <span class='ident'>gl</span>::<span class='ident'>CompileShader</span>(<span class='ident'>shader</span>);    
+        <span class='ident'>gl</span>::<span class='ident'>CompileShader</span>(<span class='ident'>shader</span>);
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>status</span> <span class='op'>=</span> <span class='ident'>gl</span>::<span class='ident'>FALSE</span> <span class='kw'>as</span> <span class='ident'>GLint</span>;
         <span class='ident'>gl</span>::<span class='ident'>GetShaderiv</span>(<span class='ident'>shader</span>, <span class='ident'>gl</span>::<span class='ident'>COMPILE_STATUS</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>status</span>);
         <span class='kw'>if</span> <span class='ident'>status</span> <span class='op'>==</span> (<span class='ident'>gl</span>::<span class='ident'>TRUE</span> <span class='kw'>as</span> <span class='ident'>GLint</span>) {
