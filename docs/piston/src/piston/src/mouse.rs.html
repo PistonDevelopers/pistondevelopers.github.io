@@ -69,7 +69,7 @@
 <span class='doccomment'>//! Back-end agnostic mouse buttons.
 </span>
 <span class='doccomment'>/// Represent a mouse button.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>TotalEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Button</span> {
     <span class='doccomment'>/// Unknown mouse button.
 </span>    <span class='ident'>Unknown</span>,

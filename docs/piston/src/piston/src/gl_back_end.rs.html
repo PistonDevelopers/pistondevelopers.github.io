@@ -369,12 +369,20 @@
 <span id='329'>329</span>
 <span id='330'>330</span>
 <span id='331'>331</span>
+<span id='332'>332</span>
+<span id='333'>333</span>
+<span id='334'>334</span>
+<span id='335'>335</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! OpenGL back-end for Rust-Graphics.
 </span><span class='comment'>
 // External crates.
 </span><span class='kw'>use</span> <span class='ident'>gl</span>;
-<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::{
+    <span class='ident'>GLfloat</span>,
+    <span class='ident'>GLsizeiptr</span>,
+    <span class='ident'>GLuint</span>,
+};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>shader_utils</span>::{<span class='ident'>compile_shader</span>};
@@ -386,9 +394,9 @@
 <span class='kw'>static</span> <span class='ident'>VERTEX_SHADER_TRI_LIST_XY_RGBA</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;
 attribute vec4 a_v4Position;
 attribute vec4 a_v4FillColor;
- 
+
 varying vec4 v_v4FillColor;
- 
+
 void main()
 {
     v_v4FillColor = a_v4FillColor;
@@ -398,7 +406,7 @@ void main()
 
 <span class='kw'>static</span> <span class='ident'>FRAGMENT_SHADER_TRI_LIST_XY_RGBA</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;
 varying vec4 v_v4FillColor;
- 
+
 void main()
 {
         gl_FragColor = v_v4FillColor;
@@ -444,7 +452,7 @@ void main()
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>Gl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Creates a new OpenGl back-end.
 </span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(
-        <span class='ident'>gl_data</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>GlData</span>, 
+        <span class='ident'>gl_data</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>GlData</span>,
         <span class='ident'>asset_store</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>AssetStore</span>
     ) <span class='op'>-&gt;</span> <span class='ident'>Gl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
         <span class='ident'>Gl</span> {
@@ -519,7 +527,7 @@ void main()
         <span class='ident'>gl</span>::<span class='ident'>AttachShader</span>(<span class='ident'>program</span>, <span class='ident'>fragment_shader</span>);
         <span class='ident'>gl</span>::<span class='ident'>LinkProgram</span>(<span class='ident'>program</span>);
         <span class='ident'>gl</span>::<span class='ident'>UseProgram</span>(<span class='ident'>program</span>);
-        <span class='kw'>unsafe</span> {        
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>a_v4Position</span> <span class='op'>=</span> <span class='string'>&quot;a_v4Position&quot;</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ptr</span><span class='op'>|</span> <span class='ident'>gl</span>::<span class='ident'>GetAttribLocation</span>(<span class='ident'>program</span>, <span class='ident'>ptr</span>));
             <span class='ident'>gl</span>::<span class='ident'>EnableVertexAttribArray</span>(<span class='ident'>a_v4Position</span> <span class='kw'>as</span> <span class='ident'>GLuint</span>);
             <span class='kw'>let</span> <span class='ident'>a_v4FillColor</span> <span class='op'>=</span> <span class='string'>&quot;a_v4FillColor&quot;</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ptr</span><span class='op'>|</span> <span class='ident'>gl</span>::<span class='ident'>GetAttribLocation</span>(<span class='ident'>program</span>, <span class='ident'>ptr</span>));
@@ -557,7 +565,7 @@ void main()
     <span class='doccomment'>/// Creates a new OpenGl back-end.
 </span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>GlData</span> {<span class='comment'>
         // Load the vertices, color and texture coord buffers.
-        </span><span class='kw'>unsafe</span> {        
+        </span><span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>vbo</span> : [<span class='ident'>GLuint</span>, ..<span class='number'>3</span>] <span class='op'>=</span> [<span class='number'>0</span>, ..<span class='number'>3</span>];
             <span class='ident'>gl</span>::<span class='ident'>GenBuffers</span>(<span class='number'>3</span>, <span class='ident'>vbo</span>.<span class='ident'>as_mut_ptr</span>());
             <span class='kw'>let</span> <span class='ident'>position_id</span> <span class='op'>=</span> <span class='ident'>vbo</span>[<span class='number'>0</span>];
@@ -583,7 +591,7 @@ void main()
                 <span class='kw'>if</span> <span class='ident'>program</span> <span class='op'>==</span> <span class='ident'>current_program</span> { <span class='kw'>return</span>; }
             },
         }
-        
+
         <span class='ident'>gl</span>::<span class='ident'>UseProgram</span>(<span class='ident'>program</span>);
         <span class='self'>self</span>.<span class='ident'>current_program</span> <span class='op'>=</span> <span class='prelude-val'>Some</span>(<span class='ident'>program</span>);
     }
@@ -621,8 +629,8 @@ void main()
     <span class='kw'>fn</span> <span class='ident'>supports_tri_list_xy_f32_rgba_f32</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
 
     <span class='kw'>fn</span> <span class='ident'>tri_list_xy_f32_rgba_f32</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, 
-        <span class='ident'>vertices</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>], 
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>,
+        <span class='ident'>vertices</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>],
         <span class='ident'>colors</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>]
     ) {
         {<span class='comment'>
@@ -658,8 +666,8 @@ void main()
     <span class='kw'>fn</span> <span class='ident'>supports_tri_list_xy_f32_rgba_f32_uv_f32</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
 
     <span class='kw'>fn</span> <span class='ident'>tri_list_xy_f32_rgba_f32_uv_f32</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, 
-        <span class='ident'>vertices</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>], 
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>,
+        <span class='ident'>vertices</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>],
         <span class='ident'>colors</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>],
         <span class='ident'>texture_coords</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>f32</span>]
     ) {

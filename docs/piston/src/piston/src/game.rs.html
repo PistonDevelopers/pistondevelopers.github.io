@@ -230,10 +230,10 @@
 <span class='doccomment'>//! Game loop.
 </span><span class='comment'>
 // External crates.
-</span><span class='kw'>use</span> <span class='ident'>gl</span>;
-<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>time</span>;
-<span class='kw'>use</span> <span class='ident'>graphics</span>::<span class='op'>*</span>;<span class='comment'>
+</span><span class='kw'>use</span> <span class='ident'>graphics</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='ident'>gl</span>;
+<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::<span class='ident'>GLint</span>;
+<span class='kw'>use</span> <span class='ident'>time</span>;<span class='comment'>
 
 // Local crate.
 </span><span class='kw'>use</span> <span class='ident'>Gl</span> <span class='op'>=</span> <span class='ident'>gl_back_end</span>::<span class='ident'>Gl</span>;
@@ -360,7 +360,7 @@
                 <span class='ident'>event</span>::<span class='ident'>MouseMoved</span>(<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>relative_move</span>) <span class='op'>=&gt;</span> {
                     <span class='self'>self</span>.<span class='ident'>mouse_move</span>(<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>asset_store</span>);
                     <span class='kw'>match</span> <span class='ident'>relative_move</span> {
-                        <span class='prelude-val'>Some</span>((<span class='ident'>dx</span>, <span class='ident'>dy</span>)) <span class='op'>=&gt;</span> 
+                        <span class='prelude-val'>Some</span>((<span class='ident'>dx</span>, <span class='ident'>dy</span>)) <span class='op'>=&gt;</span>
                             <span class='self'>self</span>.<span class='ident'>mouse_relative_move</span>(<span class='ident'>dx</span>, <span class='ident'>dy</span>, <span class='ident'>asset_store</span>),
                         <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> {},
                     }
