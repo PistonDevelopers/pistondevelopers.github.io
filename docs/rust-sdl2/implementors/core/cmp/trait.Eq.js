@@ -1,0 +1,10 @@
+(function() {var implementors = {};
+implementors['sdl2'] = {Version:"sdl2/version/struct.Version.html",AudioCVT:"sdl2/audio/struct.AudioCVT.html",AudioStatus:"sdl2/audio/type.AudioStatus.html",Error:"sdl2/sdl/type.Error.html",InitFlag:"sdl2/sdl/struct.InitFlag.html",RWops:"sdl2/rwops/struct.RWops.html",Texture:"sdl2/render/struct.Texture.html",Renderer:"sdl2/render/struct.Renderer.html",RendererFlip:"sdl2/render/type.RendererFlip.html",BlendMode:"sdl2/render/type.BlendMode.html",RendererInfo:"sdl2/render/struct.RendererInfo.html",RendererFlags:"sdl2/render/struct.RendererFlags.html",TextureAccess:"sdl2/render/type.TextureAccess.html",Window:"sdl2/video/struct.Window.html",GLContext:"sdl2/video/struct.GLContext.html",WindowPos:"sdl2/video/type.WindowPos.html",FullscreenType:"sdl2/video/type.FullscreenType.html",WindowFlags:"sdl2/video/struct.WindowFlags.html",DisplayMode:"sdl2/video/struct.DisplayMode.html",GLAttr:"sdl2/video/type.GLAttr.html",PixelFormatFlag:"sdl2/pixels/type.PixelFormatFlag.html",PixelFormat:"sdl2/pixels/struct.PixelFormat.html",Color:"sdl2/pixels/type.Color.html",Palette:"sdl2/pixels/struct.Palette.html",Surface:"sdl2/surface/struct.Surface.html",SurfaceFlag:"sdl2/surface/struct.SurfaceFlag.html",Rect:"sdl2/rect/struct.Rect.html",Point:"sdl2/rect/struct.Point.html",MouseState:"sdl2/mouse/struct.MouseState.html",Mouse:"sdl2/mouse/type.Mouse.html",Cursor:"sdl2/mouse/struct.Cursor.html",SystemCursor:"sdl2/mouse/type.SystemCursor.html",Mod:"sdl2/keyboard/struct.Mod.html",ControllerButton:"sdl2/controller/type.ControllerButton.html",ControllerAxis:"sdl2/controller/type.ControllerAxis.html",HatState:"sdl2/joystick/struct.HatState.html",Finger:"sdl2/touch/struct.Finger.html",ScanCode:"sdl2/scancode/type.ScanCode.html",KeyCode:"sdl2/keycode/type.KeyCode.html",};
+
+                if (window.register_implementors) {
+                    window.register_implementors(implementors);
+                } else {
+                    window.pending_implementors = implementors;
+                }
+            
+})()

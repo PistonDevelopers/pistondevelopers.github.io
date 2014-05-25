@@ -827,6 +827,7 @@
 <span id='787'>787</span>
 <span id='788'>788</span>
 <span id='789'>789</span>
+<span id='790'>790</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>c_float</span>, <span class='ident'>uint32_t</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>;
@@ -1142,7 +1143,8 @@
 }
 
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Window</span> {
     <span class='kw'>pub</span> <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Window</span>,
     <span class='kw'>pub</span> <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1159,7 +1161,7 @@
 }
 
 <span class='kw'>impl</span> <span class='ident'>Window</span> {
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>title</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>x</span>: <span class='ident'>WindowPos</span>, <span class='ident'>y</span>: <span class='ident'>WindowPos</span>, <span class='ident'>width</span>: <span class='ident'>int</span>, <span class='ident'>height</span>: <span class='ident'>int</span>, <span class='ident'>window_flags</span>: <span class='ident'>WindowFlags</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Window</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>title</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>x</span>: <span class='ident'>WindowPos</span>, <span class='ident'>y</span>: <span class='ident'>WindowPos</span>, <span class='ident'>width</span>: <span class='ident'>int</span>, <span class='ident'>height</span>: <span class='ident'>int</span>, <span class='ident'>window_flags</span>: <span class='ident'>WindowFlags</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Window</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>title</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>buff</span><span class='op'>|</span> {
                 <span class='ident'>ll</span>::<span class='ident'>SDL_CreateWindow</span>(
@@ -1180,7 +1182,7 @@
         }
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_id</span>(<span class='ident'>id</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Window</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_id</span>(<span class='ident'>id</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Window</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetWindowFromID</span>(<span class='ident'>id</span>) };
         <span class='kw'>if</span> <span class='ident'>raw</span> <span class='op'>==</span> <span class='ident'>ptr</span>::<span class='ident'>null</span>() {
             <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1189,7 +1191,7 @@
         }
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_index</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_index</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetWindowDisplayIndex</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) };
         <span class='kw'>if</span> <span class='ident'>result</span> <span class='op'>&lt;</span> <span class='number'>0</span> {
             <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1210,7 +1212,7 @@
         }
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_mode</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>display_mode</span>: <span class='kw-2'>&amp;</span><span class='ident'>DisplayMode</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_mode</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>display_mode</span>: <span class='kw-2'>&amp;</span><span class='ident'>DisplayMode</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>dm</span> <span class='op'>=</span> <span class='ident'>empty_sdl_display_mode</span>();
 
         <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
@@ -1248,7 +1250,7 @@
         })
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_title</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>~</span><span class='ident'>str</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_title</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GetWindowTitle</span>(<span class='self'>self</span>.<span class='ident'>raw</span>);
             <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>mem</span>::<span class='ident'>transmute_copy</span>(<span class='kw-2'>&amp;</span><span class='ident'>cstr</span>))
@@ -1338,7 +1340,7 @@
         <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_SetWindowFullscreen</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>fullscreen_type</span> <span class='kw'>as</span> <span class='ident'>uint32_t</span>) <span class='op'>==</span> <span class='number'>0</span> }
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_surface</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Surface</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_surface</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Surface</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetWindowSurface</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) };
 
         <span class='kw'>if</span> <span class='ident'>raw</span> <span class='op'>==</span> <span class='ident'>ptr</span>::<span class='ident'>null</span>() {
@@ -1390,7 +1392,7 @@
         }
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_gamma_ramp</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(<span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span>, <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span>, <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span>), <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_gamma_ramp</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(<span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span>, <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span>, <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span>), <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>red</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>with_capacity</span>(<span class='number'>256</span>);
         <span class='kw'>let</span> <span class='ident'>green</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>with_capacity</span>(<span class='number'>256</span>);
         <span class='kw'>let</span> <span class='ident'>blue</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u16</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>with_capacity</span>(<span class='number'>256</span>);
@@ -1402,7 +1404,7 @@
         }
     }
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_create_context</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GLContext</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_create_context</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GLContext</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GL_CreateContext</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) };
         <span class='kw'>if</span> <span class='ident'>result</span> <span class='op'>==</span> <span class='ident'>ptr</span>::<span class='ident'>null</span>() {
             <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1420,7 +1422,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_num_video_drivers</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_num_video_drivers</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetNumVideoDrivers</span>() };
     <span class='kw'>if</span> <span class='ident'>result</span> <span class='op'>&lt;</span> <span class='number'>0</span> {
         <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1429,7 +1431,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_video_driver</span>(<span class='ident'>id</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='kw-2'>~</span><span class='ident'>str</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_video_driver</span>(<span class='ident'>id</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GetVideoDriver</span>(<span class='ident'>id</span> <span class='kw'>as</span> <span class='ident'>c_int</span>);
         <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>mem</span>::<span class='ident'>transmute_copy</span>(<span class='kw-2'>&amp;</span><span class='ident'>cstr</span>))
@@ -1446,14 +1448,14 @@
     <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_VideoQuit</span>() }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_current_video_driver</span>() <span class='op'>-&gt;</span> <span class='kw-2'>~</span><span class='ident'>str</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_current_video_driver</span>() <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GetCurrentVideoDriver</span>();
         <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>mem</span>::<span class='ident'>transmute_copy</span>(<span class='kw-2'>&amp;</span><span class='ident'>cstr</span>))
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_num_video_displays</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_num_video_displays</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetNumVideoDisplays</span>() };
     <span class='kw'>if</span> <span class='ident'>result</span> <span class='op'>&lt;</span> <span class='number'>0</span> {
         <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1462,14 +1464,14 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_name</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='kw-2'>~</span><span class='ident'>str</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_name</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>cstr</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GetDisplayName</span>(<span class='ident'>display_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>);
         <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>mem</span>::<span class='ident'>transmute_copy</span>(<span class='kw-2'>&amp;</span><span class='ident'>cstr</span>))
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_bounds</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Rect</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_bounds</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Rect</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>out</span>: <span class='ident'>Rect</span> <span class='op'>=</span> <span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>0</span>);
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetDisplayBounds</span>(<span class='ident'>display_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='kw-2'>&amp;</span><span class='ident'>out</span>) <span class='op'>==</span> <span class='number'>0</span> };
 
@@ -1480,7 +1482,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_num_display_modes</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_num_display_modes</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetNumDisplayModes</span>(<span class='ident'>display_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) };
     <span class='kw'>if</span> <span class='ident'>result</span> <span class='op'>&lt;</span> <span class='number'>0</span> {
         <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1489,7 +1491,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>, <span class='ident'>mode_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>, <span class='ident'>mode_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>dm</span> <span class='op'>=</span> <span class='ident'>empty_sdl_display_mode</span>();
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetDisplayMode</span>(<span class='ident'>display_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>mode_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='kw-2'>&amp;</span><span class='ident'>dm</span>) <span class='op'>==</span> <span class='number'>0</span>};
 
@@ -1500,7 +1502,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_desktop_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_desktop_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>dm</span> <span class='op'>=</span> <span class='ident'>empty_sdl_display_mode</span>();
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetDesktopDisplayMode</span>(<span class='ident'>display_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='kw-2'>&amp;</span><span class='ident'>dm</span>) <span class='op'>==</span> <span class='number'>0</span>};
 
@@ -1511,7 +1513,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_current_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_current_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>dm</span> <span class='op'>=</span> <span class='ident'>empty_sdl_display_mode</span>();
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GetCurrentDisplayMode</span>(<span class='ident'>display_index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='kw-2'>&amp;</span><span class='ident'>dm</span>) <span class='op'>==</span> <span class='number'>0</span>};
 
@@ -1522,7 +1524,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_closest_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>, <span class='ident'>mode</span>: <span class='kw-2'>&amp;</span><span class='ident'>DisplayMode</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_closest_display_mode</span>(<span class='ident'>display_index</span>: <span class='ident'>int</span>, <span class='ident'>mode</span>: <span class='kw-2'>&amp;</span><span class='ident'>DisplayMode</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DisplayMode</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>input</span> <span class='op'>=</span> <span class='ident'>mode</span>.<span class='ident'>to_ll</span>();
     <span class='kw'>let</span> <span class='ident'>out</span> <span class='op'>=</span> <span class='ident'>empty_sdl_display_mode</span>();
 
@@ -1547,7 +1549,7 @@
     <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_DisableScreenSaver</span>() }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_load_library</span>(<span class='ident'>path</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_load_library</span>(<span class='ident'>path</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>unsafe</span> {
         <span class='ident'>path</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>path</span><span class='op'>|</span> {
             <span class='kw'>if</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GL_LoadLibrary</span>(<span class='ident'>path</span>) <span class='op'>==</span> <span class='number'>0</span> {
@@ -1581,7 +1583,7 @@
     <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GL_SetAttribute</span>(<span class='ident'>FromPrimitive</span>::<span class='ident'>from_u64</span>(<span class='ident'>attr</span> <span class='kw'>as</span> <span class='ident'>u64</span>).<span class='ident'>unwrap</span>(), <span class='ident'>value</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='op'>==</span> <span class='number'>0</span> }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_get_attribute</span>(<span class='ident'>attr</span>: <span class='ident'>GLAttr</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_get_attribute</span>(<span class='ident'>attr</span>: <span class='ident'>GLAttr</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>int</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>out</span>: <span class='ident'>c_int</span> <span class='op'>=</span> <span class='number'>0</span>;
 
     <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GL_GetAttribute</span>(<span class='ident'>FromPrimitive</span>::<span class='ident'>from_u64</span>(<span class='ident'>attr</span> <span class='kw'>as</span> <span class='ident'>u64</span>).<span class='ident'>unwrap</span>(), <span class='kw-2'>&amp;</span><span class='ident'>out</span>) } <span class='op'>==</span> <span class='number'>0</span>;
@@ -1592,7 +1594,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_get_current_window</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Window</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_get_current_window</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Window</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GL_GetCurrentWindow</span>() };
     <span class='kw'>if</span> <span class='ident'>raw</span> <span class='op'>==</span> <span class='ident'>ptr</span>::<span class='ident'>null</span>() {
         <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1601,7 +1603,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_get_current_context</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GLContext</span>, <span class='kw-2'>~</span><span class='ident'>str</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gl_get_current_context</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GLContext</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ll</span>::<span class='ident'>SDL_GL_GetCurrentContext</span>() };
     <span class='kw'>if</span> <span class='ident'>raw</span> <span class='op'>==</span> <span class='ident'>ptr</span>::<span class='ident'>null</span>() {
         <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())

@@ -47,7 +47,7 @@
     // some fields omitted
 }</pre><div class='docblock'><p>A struct that wraps a <code>*GLFWwindow</code> handle.</p>
 </div><h2 class='fields'>Fields</h2>
-<table><tr><td id='structfield.ptr'><code>ptr</code></td><td></td></tr><tr><td id='structfield.glfw'><code>glfw</code></td><td></td></tr><tr><td id='structfield.is_shared'><code>is_shared</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.create_shared' class='method'><code>fn <a href='#method.create_shared' class='fnname'>create_shared</a>(&amp;self, width: u32, height: u32, title: &amp;str, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://static.rust-lang.org/doc/master/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;(f64, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)&gt;)&gt;</code></h4>
+<table><tr><td id='structfield.ptr'><code>ptr</code></td><td></td></tr><tr><td id='structfield.glfw'><code>glfw</code></td><td></td></tr><tr><td id='structfield.is_shared'><code>is_shared</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.create_shared' class='method'><code>fn <a href='#method.create_shared' class='fnname'>create_shared</a>(&amp;self, width: u32, height: u32, title: &amp;str, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;(f64, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)&gt;)&gt;</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwCreateWindow</code>.</p>
 </div><h4 id='method.close' class='method'><code>fn <a href='#method.close' class='fnname'>close</a>(self)</code></h4>
 <div class='docblock'><p>Calling this method forces the destructor to be called, closing the
@@ -91,7 +91,7 @@ for concurrent rendering.</p>
 <div class='docblock'><p>Wrapper for <code>glfwGetWindowAttrib</code> called with <code>ICONIFIED</code>.</p>
 </div><h4 id='method.get_client_api' class='method'><code>fn <a href='#method.get_client_api' class='fnname'>get_client_api</a>(&amp;self) -&gt; c_int</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetWindowAttrib</code> called with <code>CLIENT_API</code>.</p>
-</div><h4 id='method.get_context_version' class='method'><code>fn <a href='#method.get_context_version' class='fnname'>get_context_version</a>(&amp;self) -&gt; <a class='struct' href='http://static.rust-lang.org/doc/master/semver/struct.Version.html' title='semver::Version'>Version</a></code></h4>
+</div><h4 id='method.get_context_version' class='method'><code>fn <a href='#method.get_context_version' class='fnname'>get_context_version</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/semver/struct.Version.html' title='semver::Version'>Version</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetWindowAttrib</code> called with
 <code>CONTEXT_VERSION_MAJOR</code>, <code>CONTEXT_VERSION_MINOR</code> and <code>CONTEXT_REVISION</code>.</p>
 
@@ -161,13 +161,13 @@ for concurrent rendering.</p>
 <div class='docblock'><p>Wrapper for <code>glfwSetScrollCallback</code>.</p>
 </div><h4 id='method.set_clipboard_string' class='method'><code>fn <a href='#method.set_clipboard_string' class='fnname'>set_clipboard_string</a>(&amp;self, string: &amp;str)</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetClipboardString</code>.</p>
-</div><h4 id='method.get_clipboard_string' class='method'><code>fn <a href='#method.get_clipboard_string' class='fnname'>get_clipboard_string</a>(&amp;self) -&gt; ~str</code></h4>
+</div><h4 id='method.get_clipboard_string' class='method'><code>fn <a href='#method.get_clipboard_string' class='fnname'>get_clipboard_string</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/std/strbuf/struct.StrBuf.html' title='std::strbuf::StrBuf'>StrBuf</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetClipboardString</code>.</p>
 </div><h4 id='method.get_cocoa_window' class='method'><code>fn <a href='#method.get_cocoa_window' class='fnname'>get_cocoa_window</a>(&amp;self) -&gt; *c_void</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetCocoaWindow</code></p>
 </div><h4 id='method.get_nsgl_context' class='method'><code>fn <a href='#method.get_nsgl_context' class='fnname'>get_nsgl_context</a>(&amp;self) -&gt; *c_void</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetNSGLContext</code></p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
 <div class='docblock'><p>Closes the window and performs the necessary cleanups. This will block
 until all associated <code>RenderContext</code>s were also dropped.</p>
 

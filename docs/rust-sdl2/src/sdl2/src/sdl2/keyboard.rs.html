@@ -322,7 +322,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_scancode_name</span>(<span class='ident'>scancode</span>: <span class='ident'>ScanCode</span>) <span class='op'>-&gt;</span> <span class='kw-2'>~</span><span class='ident'>str</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_scancode_name</span>(<span class='ident'>scancode</span>: <span class='ident'>ScanCode</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
     <span class='kw'>unsafe</span> {
         <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>ll</span>::<span class='ident'>SDL_GetScancodeName</span>(<span class='ident'>scancode</span>.<span class='ident'>code</span>() <span class='kw'>as</span> <span class='ident'>u32</span>))
     }
@@ -336,7 +336,7 @@
     }
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_key_name</span>(<span class='ident'>key</span>: <span class='ident'>KeyCode</span>) <span class='op'>-&gt;</span> <span class='kw-2'>~</span><span class='ident'>str</span> {
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_key_name</span>(<span class='ident'>key</span>: <span class='ident'>KeyCode</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
     <span class='kw'>unsafe</span> {
         <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>ll</span>::<span class='ident'>SDL_GetKeyName</span>(<span class='ident'>key</span>.<span class='ident'>code</span>()))
     }
