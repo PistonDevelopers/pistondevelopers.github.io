@@ -52,8 +52,8 @@
     WindowEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, <a class='type' href='../../sdl2/event/type.WindowEventId.html' title='sdl2::event::WindowEventId'>WindowEventId</a>, int, int),
     KeyDownEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, <a class='type' href='../../sdl2/keycode/type.KeyCode.html' title='sdl2::keycode::KeyCode'>KeyCode</a>, <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>, <a class='struct' href='../../sdl2/keyboard/struct.Mod.html' title='sdl2::keyboard::Mod'>Mod</a>),
     KeyUpEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, <a class='type' href='../../sdl2/keycode/type.KeyCode.html' title='sdl2::keycode::KeyCode'>KeyCode</a>, <a class='type' href='../../sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>, <a class='struct' href='../../sdl2/keyboard/struct.Mod.html' title='sdl2::keyboard::Mod'>Mod</a>),
-    TextEditingEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, ~str, int, int),
-    TextInputEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, ~str),
+    TextEditingEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/strbuf/struct.StrBuf.html' title='std::strbuf::StrBuf'>StrBuf</a>, int, int),
+    TextInputEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/strbuf/struct.StrBuf.html' title='std::strbuf::StrBuf'>StrBuf</a>),
     MouseMotionEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, uint, <a class='struct' href='../../sdl2/mouse/struct.MouseState.html' title='sdl2::mouse::MouseState'>MouseState</a>, int, int, int, int),
     MouseButtonDownEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, uint, <a class='type' href='../../sdl2/mouse/type.Mouse.html' title='sdl2::mouse::Mouse'>Mouse</a>, int, int),
     MouseButtonUpEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, uint, <a class='type' href='../../sdl2/mouse/type.Mouse.html' title='sdl2::mouse::Mouse'>Mouse</a>, int, int),
@@ -78,7 +78,7 @@
     DollarRecordEvent(uint, i64, i64, uint, f64, f64, f64),
     MultiGestureEvent(uint, i64, f64, f64, f64, f64, uint),
     ClipboardUpdateEvent(uint),
-    DropFileEvent(uint, ~str),
+    DropFileEvent(uint, <a class='struct' href='http://doc.rust-lang.org/std/strbuf/struct.StrBuf.html' title='std::strbuf::StrBuf'>StrBuf</a>),
     UserEvent(uint, <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, uint, int),
 }</pre><div class='docblock'><p>Different event types.</p>
 </div><h2 class='variants'>Variants</h2>
@@ -104,7 +104,7 @@
 </div></td></tr><tr><td id='variant.ClipboardUpdateEvent'><code>ClipboardUpdateEvent</code></td><td><div class='docblock'><p>(timestamp)</p>
 </div></td></tr><tr><td id='variant.DropFileEvent'><code>DropFileEvent</code></td><td><div class='docblock'><p>(timestamp, filename)</p>
 </div></td></tr><tr><td id='variant.UserEvent'><code>UserEvent</code></td><td><div class='docblock'><p>(timestamp, Window, type, code)</p>
-</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../../sdl2/event/type.Event.html' title='sdl2::event::Event'>Event</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, out: &amp;mut <a class='struct' href='http://static.rust-lang.org/doc/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../../sdl2/event/type.Event.html' title='sdl2::event::Event'>Event</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, out: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 

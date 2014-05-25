@@ -48,14 +48,14 @@ only be initialized on the main platform thread. Whilst this might make
 performing some operations harder, this is to ensure thread safety is enforced
 statically. The context can be safely cloned or implicitly copied if need be
 for convenience.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a></code></h3><div class='methods'><h4 id='method.set_error_callback' class='method'><code>fn <a href='#method.set_error_callback' class='fnname'>set_error_callback</a>&lt;UserData: ::&gt;(&amp;self, callback: <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.ErrorCallback.html' title='glfw::ErrorCallback'>ErrorCallback</a>&lt;UserData&gt;&gt;)</code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a></code></h3><div class='methods'><h4 id='method.set_error_callback' class='method'><code>fn <a href='#method.set_error_callback' class='fnname'>set_error_callback</a>&lt;UserData: ::&gt;(&amp;self, callback: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.ErrorCallback.html' title='glfw::ErrorCallback'>ErrorCallback</a>&lt;UserData&gt;&gt;)</code></h4>
 <div class='docblock'><p>Sets the error callback, overwriting the previous one stored.</p>
 
 <h1 id="example" class='section-header'><a
                            href="#example">Example</a></h1><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>cell</span>::<span class='ident'>Cell</span>;
 
-<span class='kw'>fn</span> <span class='ident'>error_callback</span>(_: <span class='ident'>glfw</span>::<span class='ident'>Error</span>, <span class='ident'>description</span>: <span class='kw-2'>~</span><span class='ident'>str</span>, <span class='ident'>error_count</span>: <span class='kw-2'>&amp;</span><span class='ident'>Cell</span><span class='op'>&lt;</span><span class='ident'>uint</span><span class='op'>&gt;</span>) {
+<span class='kw'>fn</span> <span class='ident'>error_callback</span>(_: <span class='ident'>glfw</span>::<span class='ident'>Error</span>, <span class='ident'>description</span>: <span class='ident'>StrBuf</span>, <span class='ident'>error_count</span>: <span class='kw-2'>&amp;</span><span class='ident'>Cell</span><span class='op'>&lt;</span><span class='ident'>uint</span><span class='op'>&gt;</span>) {
     <span class='macro'>error</span><span class='macro'>!</span>(<span class='string'>&quot;GLFW error {}: {}&quot;</span>, <span class='ident'>error_count</span>.<span class='ident'>get</span>(), <span class='ident'>description</span>);
     <span class='ident'>error_count</span>.<span class='ident'>set</span>(<span class='ident'>error_count</span>.<span class='ident'>get</span>() <span class='op'>+</span> <span class='number'>1</span>);
 }<span class='comment'>
@@ -78,9 +78,9 @@ convenience. For example:</p>
 <span class='comment'>// triggers a task failure when a GLFW error is encountered.
 </span><span class='ident'>glfw</span>.<span class='ident'>set_error_callback</span>(<span class='ident'>glfw</span>::<span class='ident'>FAIL_ON_ERRORS</span>);
 </pre>
-</div><h4 id='method.set_monitor_callback' class='method'><code>fn <a href='#method.set_monitor_callback' class='fnname'>set_monitor_callback</a>&lt;UserData: ::&gt;(&amp;self, callback: <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.MonitorCallback.html' title='glfw::MonitorCallback'>MonitorCallback</a>&lt;UserData&gt;&gt;)</code></h4>
+</div><h4 id='method.set_monitor_callback' class='method'><code>fn <a href='#method.set_monitor_callback' class='fnname'>set_monitor_callback</a>&lt;UserData: ::&gt;(&amp;self, callback: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.MonitorCallback.html' title='glfw::MonitorCallback'>MonitorCallback</a>&lt;UserData&gt;&gt;)</code></h4>
 <div class='docblock'><p>Sets the monitor callback, overwriting the previous one stored.</p>
-</div><h4 id='method.with_primary_monitor' class='method'><code>fn <a href='#method.with_primary_monitor' class='fnname'>with_primary_monitor</a>&lt;T&gt;(&amp;self, f: |<a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a>&gt;| -&gt; T) -&gt; T</code></h4>
+</div><h4 id='method.with_primary_monitor' class='method'><code>fn <a href='#method.with_primary_monitor' class='fnname'>with_primary_monitor</a>&lt;T&gt;(&amp;self, f: |<a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a>&gt;| -&gt; T) -&gt; T</code></h4>
 <div class='docblock'><p>Supplies the primary monitor to the closure provided, if it exists.
 This is usually the monitor where elements like the Windows task bar or
 the OS X menu bar is located.</p>
@@ -129,11 +129,11 @@ follows:</p>
 their default values.</p>
 
 <p>Wrapper for <code>glfwDefaultWindowHints</code>.</p>
-</div><h4 id='method.create_window' class='method'><code>fn <a href='#method.create_window' class='fnname'>create_window</a>(&amp;self, width: u32, height: u32, title: &amp;str, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://static.rust-lang.org/doc/master/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;(f64, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)&gt;)&gt;</code></h4>
+</div><h4 id='method.create_window' class='method'><code>fn <a href='#method.create_window' class='fnname'>create_window</a>(&amp;self, width: u32, height: u32, title: &amp;str, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;(f64, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)&gt;)&gt;</code></h4>
 <div class='docblock'><p>Creates a new window.</p>
 
 <p>Wrapper for <code>glfwCreateWindow</code>.</p>
-</div><h4 id='method.make_context_current' class='method'><code>fn <a href='#method.make_context_current' class='fnname'>make_context_current</a>(&amp;self, context: <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>&gt;)</code></h4>
+</div><h4 id='method.make_context_current' class='method'><code>fn <a href='#method.make_context_current' class='fnname'>make_context_current</a>(&amp;self, context: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>&gt;)</code></h4>
 <div class='docblock'><p>Makes the context of the specified window current. If no window is given
 then the current context is detached.</p>
 
@@ -167,14 +167,15 @@ the current context and returning from <code>Window::swap_buffers</code>.</p>
 is supported by the current context.</p>
 
 <p>Wrapper for <code>glfwExtensionSupported</code>.</p>
-</div><h4 id='method.get_proc_address' class='method'><code>fn <a href='#method.get_proc_address' class='fnname'>get_proc_address</a>(&amp;self, procname: &amp;str) -&gt; <a class='type' href='http://static.rust-lang.org/doc/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.GLProc.html' title='glfw::GLProc'>GLProc</a>&gt;</code></h4>
+</div><h4 id='method.get_proc_address' class='method'><code>fn <a href='#method.get_proc_address' class='fnname'>get_proc_address</a>(&amp;self, procname: &amp;str) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.GLProc.html' title='glfw::GLProc'>GLProc</a>&gt;</code></h4>
 <div class='docblock'><p>Returns the address of the specified client API or extension function
 if it is supported by the current context.</p>
 
 <p>Wrapper for <code>glfwGetProcAddress</code>.</p>
 </div><h4 id='method.get_joystick' class='method'><code>fn <a href='#method.get_joystick' class='fnname'>get_joystick</a>(&amp;self, id: <a class='type' href='../glfw/type.JoystickId.html' title='glfw::JoystickId'>JoystickId</a>) -&gt; <a class='struct' href='../glfw/struct.Joystick.html' title='glfw::Joystick'>Joystick</a></code></h4>
 <div class='docblock'><p>Constructs a <code>Joystick</code> handle corresponding to the supplied <code>JoystickId</code>.</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a></code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, &amp;Self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 

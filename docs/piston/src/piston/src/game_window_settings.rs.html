@@ -91,7 +91,7 @@
 <span class='doccomment'>/// Settings for window behavior.
 </span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameWindowSettings</span> {
     <span class='doccomment'>/// Title of the window.
-</span>    <span class='kw'>pub</span> <span class='ident'>title</span>: <span class='kw-2'>~</span><span class='ident'>str</span>,
+</span>    <span class='kw'>pub</span> <span class='ident'>title</span>: <span class='ident'>StrBuf</span>,
     <span class='doccomment'>/// The size of the window
 </span>    <span class='kw'>pub</span> <span class='ident'>size</span>: [<span class='ident'>u32</span>, ..<span class='number'>2</span>],
     <span class='doccomment'>/// If true, the window is fullscreen.
@@ -119,7 +119,7 @@
 
     <span class='doccomment'>/// Creates a new Settings.
 </span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(
-        <span class='ident'>title</span>: <span class='kw-2'>~</span><span class='ident'>str</span>,
+        <span class='ident'>title</span>: <span class='ident'>StrBuf</span>,
         <span class='ident'>size</span>: [<span class='ident'>u32</span>, ..<span class='number'>2</span>],
         <span class='ident'>fullscreen</span>: <span class='ident'>bool</span>,
         <span class='ident'>exit_on_esc</span>: <span class='ident'>bool</span>,

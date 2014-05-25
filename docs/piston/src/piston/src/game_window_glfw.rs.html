@@ -382,7 +382,7 @@
         <span class='kw'>let</span> (<span class='ident'>window</span>, <span class='ident'>events</span>) <span class='op'>=</span> <span class='ident'>glfw</span>.<span class='ident'>create_window</span>(
             <span class='ident'>settings</span>.<span class='ident'>size</span>[<span class='number'>0</span>],
             <span class='ident'>settings</span>.<span class='ident'>size</span>[<span class='number'>1</span>],
-            <span class='ident'>settings</span>.<span class='ident'>title</span>, <span class='ident'>glfw</span>::<span class='ident'>Windowed</span>
+            <span class='ident'>settings</span>.<span class='ident'>title</span>.<span class='ident'>as_slice</span>(), <span class='ident'>glfw</span>::<span class='ident'>Windowed</span>
         ).<span class='ident'>expect</span>(<span class='string'>&quot;Failed to create GLFW window.&quot;</span>);
         <span class='ident'>window</span>.<span class='ident'>set_key_polling</span>(<span class='boolval'>true</span>);
         <span class='ident'>window</span>.<span class='ident'>set_mouse_button_polling</span>(<span class='boolval'>true</span>);
