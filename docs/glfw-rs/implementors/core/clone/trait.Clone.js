@@ -1,10 +1,10 @@
 (function() {var implementors = {};
-implementors['glfw'] = {JoystickId:"glfw/type.JoystickId.html",WindowEvent:"glfw/type.WindowEvent.html",Modifiers:"glfw/struct.Modifiers.html",OpenGlProfile:"glfw/type.OpenGlProfile.html",ContextRobustness:"glfw/type.ContextRobustness.html",ClientApi:"glfw/type.ClientApi.html",Glfw:"glfw/struct.Glfw.html",CursorMode:"glfw/type.CursorMode.html",Error:"glfw/type.Error.html",MouseButton:"glfw/type.MouseButton.html",Key:"glfw/type.Key.html",Action:"glfw/type.Action.html",};
+implementors['glfw'] = ["impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.Action.html' title='glfw::Action'>Action</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.Key.html' title='glfw::Key'>Key</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.MouseButton.html' title='glfw::MouseButton'>MouseButton</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.Error.html' title='glfw::Error'>Error</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.CursorMode.html' title='glfw::CursorMode'>CursorMode</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.ClientApi.html' title='glfw::ClientApi'>ClientApi</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.ContextRobustness.html' title='glfw::ContextRobustness'>ContextRobustness</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.OpenGlProfile.html' title='glfw::OpenGlProfile'>OpenGlProfile</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='glfw/struct.Modifiers.html' title='glfw::Modifiers'>Modifiers</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='glfw/type.JoystickId.html' title='glfw::JoystickId'>JoystickId</a>",];
 
-                if (window.register_implementors) {
-                    window.register_implementors(implementors);
-                } else {
-                    window.pending_implementors = implementors;
-                }
-            
+            if (window.register_implementors) {
+                window.register_implementors(implementors);
+            } else {
+                window.pending_implementors = implementors;
+            }
+        
 })()

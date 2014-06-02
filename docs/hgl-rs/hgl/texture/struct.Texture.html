@@ -39,13 +39,13 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='../index.html'>hgl</a>::<a href='index.html'>texture</a>::<a class='struct' href=''>Texture</a><a class='source' href='../../src/hgl/src/texture.rs.html#233-236'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='../index.html'>hgl</a>::<a href='index.html'>texture</a>::<a class='struct' href=''>Texture</a><a class='source' id='src-2006' href='../../src/hgl/src/texture.rs.html#234-237'>[src]</a></h1>
 <pre class='rust struct'>pub struct Texture {
     pub name: GLuint,
     pub target: GLenum,
 }</pre><div class='docblock'><p>A texture object.</p>
 </div><h2 class='fields'>Fields</h2>
-<table><tr><td id='structfield.name'><code>name</code></td><td></td></tr><tr><td id='structfield.target'><code>target</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../hgl/texture/struct.Texture.html' title='hgl::texture::Texture'>Texture</a></code></h3><div class='methods'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(target: <a class='type' href='../../hgl/texture/type.TextureTarget.html' title='hgl::texture::TextureTarget'>TextureTarget</a>, info: <a class='struct' href='../../hgl/texture/struct.ImageInfo.html' title='hgl::texture::ImageInfo'>ImageInfo</a>, data: *u8) -&gt; <a class='struct' href='../../hgl/texture/struct.Texture.html' title='hgl::texture::Texture'>Texture</a></code></h4>
+<table><tr><td id='structfield.name'><code>name</code></td><td></td></tr><tr><td id='structfield.target'><code>target</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../hgl/texture/struct.Texture.html' title='hgl::texture::Texture'>Texture</a></code></h3><div class='methods'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(target: <a class='type' href='../../hgl/texture/type.TextureTarget.html' title='hgl::texture::TextureTarget'>TextureTarget</a>, info: <a class='struct' href='../../hgl/texture/struct.ImageInfo.html' title='hgl::texture::ImageInfo'>ImageInfo</a>, data: *<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>) -&gt; <a class='struct' href='../../hgl/texture/struct.Texture.html' title='hgl::texture::Texture'>Texture</a></code></h4>
 <div class='docblock'><p>Create a new texture and load an image into it.  Note that even if
 your data isn&#39;t GL_BYTE, you can pass a *u8 anyway since the GL
 doesn&#39;t care about the type.</p>
@@ -56,20 +56,20 @@ doesn&#39;t care about the type.</p>
 <h4 id='method.wrap_s' class='method'><code>fn <a href='#method.wrap_s' class='fnname'>wrap_s</a>(&amp;self, w: <a class='type' href='../../hgl/texture/type.WrapMode.html' title='hgl::texture::WrapMode'>WrapMode</a>)</code></h4>
 <h4 id='method.wrap_t' class='method'><code>fn <a href='#method.wrap_t' class='fnname'>wrap_t</a>(&amp;self, w: <a class='type' href='../../hgl/texture/type.WrapMode.html' title='hgl::texture::WrapMode'>WrapMode</a>)</code></h4>
 <h4 id='method.wrap_r' class='method'><code>fn <a href='#method.wrap_r' class='fnname'>wrap_r</a>(&amp;self, w: <a class='type' href='../../hgl/texture/type.WrapMode.html' title='hgl::texture::WrapMode'>WrapMode</a>)</code></h4>
-<h4 id='method.border_color' class='method'><code>fn <a href='#method.border_color' class='fnname'>border_color</a>(&amp;self, color: &amp;[GLfloat])</code></h4>
+<h4 id='method.border_color' class='method'><code>fn <a href='#method.border_color' class='fnname'>border_color</a>(&amp;self, color: &amp;<a href='http://doc.rust-lang.org/std/primitive.slice.html'>[GLfloat]</a>)</code></h4>
 <h4 id='method.filter' class='method'><code>fn <a href='#method.filter' class='fnname'>filter</a>(&amp;self, fm: <a class='type' href='../../hgl/texture/type.FilterMethod.html' title='hgl::texture::FilterMethod'>FilterMethod</a>)</code></h4>
 <h4 id='method.min_filter' class='method'><code>fn <a href='#method.min_filter' class='fnname'>min_filter</a>(&amp;self, fm: <a class='type' href='../../hgl/texture/type.FilterMethod.html' title='hgl::texture::FilterMethod'>FilterMethod</a>)</code></h4>
 <h4 id='method.mag_filter' class='method'><code>fn <a href='#method.mag_filter' class='fnname'>mag_filter</a>(&amp;self, fm: <a class='type' href='../../hgl/texture/type.FilterMethod.html' title='hgl::texture::FilterMethod'>FilterMethod</a>)</code></h4>
 <h4 id='method.gen_mipmaps' class='method'><code>fn <a href='#method.gen_mipmaps' class='fnname'>gen_mipmaps</a>(&amp;self)</code></h4>
 <div class='docblock'><p>SAFETY NOTE: You <em>must</em> call <code>load_data</code> before calling this method.
 Bad Things will happen otherwise.</p>
-</div><h4 id='method.load_image' class='method'><code>fn <a href='#method.load_image' class='fnname'>load_image</a>(&amp;self, info: <a class='struct' href='../../hgl/texture/struct.ImageInfo.html' title='hgl::texture::ImageInfo'>ImageInfo</a>, data: *u8)</code></h4>
+</div><h4 id='method.load_image' class='method'><code>fn <a href='#method.load_image' class='fnname'>load_image</a>(&amp;self, info: <a class='struct' href='../../hgl/texture/struct.ImageInfo.html' title='hgl::texture::ImageInfo'>ImageInfo</a>, data: *<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>)</code></h4>
 <div class='docblock'><p>Load an image into this texture.</p>
-</div><h4 id='method.load_subimage' class='method'><code>fn <a href='#method.load_subimage' class='fnname'>load_subimage</a>(&amp;self, info: <a class='struct' href='../../hgl/texture/struct.SubImageInfo.html' title='hgl::texture::SubImageInfo'>SubImageInfo</a>, data: *u8)</code></h4>
+</div><h4 id='method.load_subimage' class='method'><code>fn <a href='#method.load_subimage' class='fnname'>load_subimage</a>(&amp;self, info: <a class='struct' href='../../hgl/texture/struct.SubImageInfo.html' title='hgl::texture::SubImageInfo'>SubImageInfo</a>, data: *<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>)</code></h4>
 <div class='docblock'><p>Load an image into part of this texture.</p>
 </div><h4 id='method.activate' class='method'><code>fn <a href='#method.activate' class='fnname'>activate</a>(&amp;self, num: GLuint)</code></h4>
 <div class='docblock'><p>Bind this texture to texture unit <code>num</code> (GL_TEXTURE0 + num)</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../hgl/texture/struct.Texture.html' title='hgl::texture::Texture'>Texture</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../hgl/texture/struct.Texture.html' title='hgl::texture::Texture'>Texture</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 

@@ -120,7 +120,13 @@
 <span id='80'>80</span>
 <span id='81'>81</span>
 <span id='82'>82</span>
+<span id='83'>83</span>
+<span id='84'>84</span>
+<span id='85'>85</span>
 </pre><pre class='rust '>
+<span class='kw'>use</span> {
+    <span class='ident'>Image</span>,
+};
 
 <span class='doccomment'>/// Implemented by all graphics back-ends.
 </span><span class='doccomment'>/// This trait uses default methods to simplify implementation.
@@ -132,7 +138,7 @@
 </span><span class='doccomment'>/// Alpha blending is assumed to be expensive and turned off when not needed.
 </span><span class='doccomment'>/// For cases when alpha blending is explicitly not wanted there will be own methods,
 </span><span class='doccomment'>/// in case the back-end needs to restore to its own default afterwards.
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>BackEnd</span> {
+</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns true if feature is supported.
 </span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>supports_clear_rgba</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>false</span> }
@@ -151,7 +157,7 @@
     <span class='kw'>fn</span> <span class='ident'>supports_single_texture</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>false</span> }
 
     <span class='doccomment'>/// Sets the current single-texture.
-</span>    <span class='kw'>fn</span> <span class='ident'>enable_single_texture</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_texture_id</span>: <span class='ident'>uint</span>) {}
+</span>    <span class='kw'>fn</span> <span class='ident'>enable_single_texture</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_texture</span>: <span class='kw-2'>&amp;</span><span class='ident'>I</span>) {}
 
     <span class='doccomment'>/// Disables single-texture.
 </span>    <span class='kw'>fn</span> <span class='ident'>disable_single_texture</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {}
@@ -163,7 +169,7 @@
 </span>    <span class='doccomment'>/// Ignore if alpha blending is not supported.
 </span>    <span class='doccomment'>/// Ignore if alpha channel is not used.
 </span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>has_texture_alpha</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>_texture_id</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>false</span> }
+    <span class='kw'>fn</span> <span class='ident'>has_texture_alpha</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>_texture</span>: <span class='kw-2'>&amp;</span><span class='ident'>I</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>false</span> }
 
     <span class='doccomment'>/// Returns true if feature is supported.
 </span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>

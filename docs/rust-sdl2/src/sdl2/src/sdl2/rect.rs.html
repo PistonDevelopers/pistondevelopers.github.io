@@ -225,14 +225,14 @@ Rectangle Functions
 <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
 
 <span class='doccomment'>/// A structure that defines a two dimensional point.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Point</span> {
     <span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>i32</span>,
     <span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>i32</span>
 }
 
 <span class='doccomment'>/// A structure that defines a rectangle, with the origin at the upper left.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Rect</span> {
     <span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>i32</span>,
     <span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>i32</span>,

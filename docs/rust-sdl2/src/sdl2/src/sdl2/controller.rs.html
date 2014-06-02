@@ -350,7 +350,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ControllerAxis</span> {
     <span class='ident'>InvalidAxis</span>      <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_AXIS_INVALID</span>,
     <span class='ident'>LeftXAxis</span>        <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_AXIS_LEFTX</span>,
@@ -373,7 +373,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ControllerButton</span> {
     <span class='ident'>InvalidButton</span>       <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_BUTTON_INVALID</span>,
     <span class='ident'>AButton</span>             <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_BUTTON_A</span>,

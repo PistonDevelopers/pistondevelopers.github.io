@@ -64,6 +64,7 @@
 <span id='24'>24</span>
 <span id='25'>25</span>
 <span id='26'>26</span>
+<span id='27'>27</span>
 </pre><pre class='rust '>
 
 <span class='doccomment'>//! Event data.
@@ -72,7 +73,8 @@
 <span class='kw'>use</span> <span class='ident'>mouse</span>;
 
 <span class='doccomment'>/// Contains the information associated with an event.
-</span><span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Event</span> {
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>PartialOrd</span>, <span class='ident'>Show</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Event</span> {
     <span class='doccomment'>/// No event occured.
 </span>    <span class='ident'>NoEvent</span>,
     <span class='doccomment'>/// A key was released.

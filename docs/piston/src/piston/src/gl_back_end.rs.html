@@ -352,27 +352,6 @@
 <span id='312'>312</span>
 <span id='313'>313</span>
 <span id='314'>314</span>
-<span id='315'>315</span>
-<span id='316'>316</span>
-<span id='317'>317</span>
-<span id='318'>318</span>
-<span id='319'>319</span>
-<span id='320'>320</span>
-<span id='321'>321</span>
-<span id='322'>322</span>
-<span id='323'>323</span>
-<span id='324'>324</span>
-<span id='325'>325</span>
-<span id='326'>326</span>
-<span id='327'>327</span>
-<span id='328'>328</span>
-<span id='329'>329</span>
-<span id='330'>330</span>
-<span id='331'>331</span>
-<span id='332'>332</span>
-<span id='333'>333</span>
-<span id='334'>334</span>
-<span id='335'>335</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! OpenGL back-end for Rust-Graphics.
 </span><span class='comment'>
@@ -386,10 +365,10 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>shader_utils</span>::{<span class='ident'>compile_shader</span>};
-<span class='kw'>use</span> <span class='ident'>BackEnd</span> <span class='op'>=</span> <span class='ident'>graphics</span>::<span class='ident'>BackEnd</span>;<span class='comment'>
+<span class='kw'>use</span> <span class='ident'>graphics</span>::<span class='ident'>BackEnd</span>;<span class='comment'>
 
 // Local crate.
-</span><span class='kw'>use</span> <span class='ident'>AssetStore</span> <span class='op'>=</span> <span class='ident'>asset_store</span>::<span class='ident'>AssetStore</span>;
+</span><span class='kw'>use</span> <span class='ident'>Texture</span>;
 
 <span class='kw'>static</span> <span class='ident'>VERTEX_SHADER_TRI_LIST_XY_RGBA</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;
 attribute vec4 a_v4Position;
@@ -442,25 +421,6 @@ void main()
         gl_FragColor = texture2D(s_texture, v_v2TexCoord) * v_v4FillColor;
 }
 &quot;</span>;
-
-<span class='doccomment'>/// OpenGL back-end for Rust-Graphics.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Gl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='ident'>gl_data</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>GlData</span>,
-    <span class='ident'>asset_store</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>AssetStore</span>,
-}
-
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>Gl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Creates a new OpenGl back-end.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(
-        <span class='ident'>gl_data</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>GlData</span>,
-        <span class='ident'>asset_store</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>AssetStore</span>
-    ) <span class='op'>-&gt;</span> <span class='ident'>Gl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-        <span class='ident'>Gl</span> {
-            <span class='ident'>gl_data</span>: <span class='ident'>gl_data</span>,
-            <span class='ident'>asset_store</span>: <span class='ident'>asset_store</span>,
-        }
-    }
-}
 
 <span class='kw'>struct</span> <span class='ident'>TriListXYRGBA</span> {
     <span class='ident'>vertex_shader</span>: <span class='ident'>GLuint</span>,
@@ -547,7 +507,7 @@ void main()
 }
 
 <span class='doccomment'>/// Contains OpenGL data.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GlData</span> {
+</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Gl</span> {
     <span class='ident'>tri_list_xy_rgba</span>: <span class='ident'>TriListXYRGBA</span>,
     <span class='ident'>tri_list_xy_rgba_uv</span>: <span class='ident'>TriListXYRGBAUV</span>,<span class='comment'>
     // id of buffer for xy positions.
@@ -561,9 +521,9 @@ void main()
 }
 
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>GlData</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>Gl</span> {
     <span class='doccomment'>/// Creates a new OpenGl back-end.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>GlData</span> {<span class='comment'>
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>Gl</span> {<span class='comment'>
         // Load the vertices, color and texture coord buffers.
         </span><span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>vbo</span> : [<span class='ident'>GLuint</span>, ..<span class='number'>3</span>] <span class='op'>=</span> [<span class='number'>0</span>, ..<span class='number'>3</span>];
@@ -572,7 +532,7 @@ void main()
             <span class='kw'>let</span> <span class='ident'>fill_color_id</span> <span class='op'>=</span> <span class='ident'>vbo</span>[<span class='number'>1</span>];
             <span class='kw'>let</span> <span class='ident'>tex_coord_id</span> <span class='op'>=</span> <span class='ident'>vbo</span>[<span class='number'>2</span>];
 
-            <span class='ident'>GlData</span> {
+            <span class='ident'>Gl</span> {
                 <span class='ident'>tri_list_xy_rgba</span>: <span class='ident'>TriListXYRGBA</span>::<span class='ident'>new</span>(),
                 <span class='ident'>tri_list_xy_rgba_uv</span>: <span class='ident'>TriListXYRGBAUV</span>::<span class='ident'>new</span>(),
                 <span class='ident'>position_id</span>: <span class='ident'>position_id</span>,
@@ -597,7 +557,7 @@ void main()
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>BackEnd</span> <span class='kw'>for</span> <span class='ident'>Gl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span> <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>Texture</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>Gl</span> {
     <span class='kw'>fn</span> <span class='ident'>supports_clear_rgba</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
 
     <span class='kw'>fn</span> <span class='ident'>clear_rgba</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>r</span>: <span class='ident'>f32</span>, <span class='ident'>g</span>: <span class='ident'>f32</span>, <span class='ident'>b</span>: <span class='ident'>f32</span>, <span class='ident'>a</span>: <span class='ident'>f32</span>) {
@@ -616,15 +576,15 @@ void main()
 
     <span class='kw'>fn</span> <span class='ident'>supports_single_texture</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
 
-    <span class='kw'>fn</span> <span class='ident'>enable_single_texture</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>texture_id</span>: <span class='ident'>uint</span>) {
-        <span class='kw'>let</span> <span class='ident'>texture</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>asset_store</span>.<span class='ident'>get_texture</span>(<span class='ident'>texture_id</span>);
+    <span class='kw'>fn</span> <span class='ident'>enable_single_texture</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>texture</span>: <span class='kw-2'>&amp;</span><span class='ident'>Texture</span>) {
+        <span class='kw'>let</span> <span class='ident'>texture</span> <span class='op'>=</span> <span class='ident'>texture</span>.<span class='ident'>get_id</span>();
         <span class='ident'>gl</span>::<span class='ident'>BindTexture</span>(<span class='ident'>gl</span>::<span class='ident'>TEXTURE_2D</span>, <span class='ident'>texture</span>);
     }
 
     <span class='kw'>fn</span> <span class='ident'>disable_single_texture</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {}<span class='comment'>
 
     // Assume all textures has alpha channel for now.
-    </span><span class='kw'>fn</span> <span class='ident'>has_texture_alpha</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>_texture_id</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
+    </span><span class='kw'>fn</span> <span class='ident'>has_texture_alpha</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>_texture</span>: <span class='kw-2'>&amp;</span><span class='ident'>Texture</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
 
     <span class='kw'>fn</span> <span class='ident'>supports_tri_list_xy_f32_rgba_f32</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='boolval'>true</span> }
 
@@ -635,22 +595,21 @@ void main()
     ) {
         {<span class='comment'>
             // Set shader program.
-            </span><span class='kw'>let</span> <span class='ident'>shader_program</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>gl_data</span>.<span class='ident'>tri_list_xy_rgba</span>.<span class='ident'>program</span>;
-            <span class='self'>self</span>.<span class='ident'>gl_data</span>.<span class='ident'>use_program</span>(<span class='ident'>shader_program</span>);
+            </span><span class='kw'>let</span> <span class='ident'>shader_program</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>tri_list_xy_rgba</span>.<span class='ident'>program</span>;
+            <span class='self'>self</span>.<span class='ident'>use_program</span>(<span class='ident'>shader_program</span>);
         }
-        <span class='kw'>let</span> <span class='ident'>data</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>gl_data</span>;
-        <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='ident'>data</span>.<span class='ident'>tri_list_xy_rgba</span>;
+        <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>tri_list_xy_rgba</span>;
         <span class='kw'>let</span> <span class='ident'>size_vertices</span>: <span class='ident'>i32</span> <span class='op'>=</span> <span class='number'>2</span>;
         <span class='kw'>unsafe</span> {
             <span class='ident'>gl</span>::<span class='ident'>BindBuffer</span>(
-                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='ident'>data</span>.<span class='ident'>position_id</span>);
+                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='self'>self</span>.<span class='ident'>position_id</span>);
             <span class='ident'>gl</span>::<span class='ident'>BufferData</span>(
                 <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, (<span class='ident'>vertices</span>.<span class='ident'>len</span>() <span class='op'>*</span> <span class='ident'>mem</span>::<span class='ident'>size_of</span>::<span class='op'>&lt;</span><span class='ident'>GLfloat</span><span class='op'>&gt;</span>()) <span class='kw'>as</span> <span class='ident'>GLsizeiptr</span>, <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='kw-2'>&amp;</span><span class='ident'>vertices</span>[<span class='number'>0</span>]), <span class='ident'>gl</span>::<span class='ident'>DYNAMIC_DRAW</span>);
             <span class='ident'>gl</span>::<span class='ident'>VertexAttribPointer</span>(
                 <span class='ident'>shader</span>.<span class='ident'>a_v4Position</span> <span class='kw'>as</span> <span class='ident'>GLuint</span>, <span class='ident'>size_vertices</span>, <span class='ident'>gl</span>::<span class='ident'>FLOAT</span>, <span class='ident'>gl</span>::<span class='ident'>TRUE</span>, <span class='number'>0</span>, <span class='ident'>ptr</span>::<span class='ident'>null</span>());
 
             <span class='ident'>gl</span>::<span class='ident'>BindBuffer</span>(
-                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='ident'>data</span>.<span class='ident'>fill_color_id</span>);
+                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='self'>self</span>.<span class='ident'>fill_color_id</span>);
             <span class='ident'>gl</span>::<span class='ident'>BufferData</span>(
                 <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, (<span class='ident'>colors</span>.<span class='ident'>len</span>() <span class='op'>*</span> <span class='ident'>mem</span>::<span class='ident'>size_of</span>::<span class='op'>&lt;</span><span class='ident'>GLfloat</span><span class='op'>&gt;</span>()) <span class='kw'>as</span> <span class='ident'>GLsizeiptr</span>, <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='kw-2'>&amp;</span><span class='ident'>colors</span>[<span class='number'>0</span>]), <span class='ident'>gl</span>::<span class='ident'>DYNAMIC_DRAW</span>);
             <span class='ident'>gl</span>::<span class='ident'>VertexAttribPointer</span>(
@@ -673,29 +632,28 @@ void main()
     ) {
         {<span class='comment'>
             // Set shader program.
-            </span><span class='kw'>let</span> <span class='ident'>shader_program</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>gl_data</span>.<span class='ident'>tri_list_xy_rgba_uv</span>.<span class='ident'>program</span>;
-            <span class='self'>self</span>.<span class='ident'>gl_data</span>.<span class='ident'>use_program</span>(<span class='ident'>shader_program</span>);
+            </span><span class='kw'>let</span> <span class='ident'>shader_program</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>tri_list_xy_rgba_uv</span>.<span class='ident'>program</span>;
+            <span class='self'>self</span>.<span class='ident'>use_program</span>(<span class='ident'>shader_program</span>);
         }
-        <span class='kw'>let</span> <span class='ident'>data</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>gl_data</span>;
-        <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='ident'>data</span>.<span class='ident'>tri_list_xy_rgba_uv</span>;
+        <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>tri_list_xy_rgba_uv</span>;
         <span class='kw'>let</span> <span class='ident'>size_vertices</span>: <span class='ident'>i32</span> <span class='op'>=</span> <span class='number'>2</span>;
         <span class='kw'>unsafe</span> {
             <span class='ident'>gl</span>::<span class='ident'>BindBuffer</span>(
-                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='ident'>data</span>.<span class='ident'>position_id</span>);
+                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='self'>self</span>.<span class='ident'>position_id</span>);
             <span class='ident'>gl</span>::<span class='ident'>BufferData</span>(
                 <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, (<span class='ident'>vertices</span>.<span class='ident'>len</span>() <span class='op'>*</span> <span class='ident'>mem</span>::<span class='ident'>size_of</span>::<span class='op'>&lt;</span><span class='ident'>GLfloat</span><span class='op'>&gt;</span>()) <span class='kw'>as</span> <span class='ident'>GLsizeiptr</span>, <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='kw-2'>&amp;</span><span class='ident'>vertices</span>[<span class='number'>0</span>]), <span class='ident'>gl</span>::<span class='ident'>DYNAMIC_DRAW</span>);
             <span class='ident'>gl</span>::<span class='ident'>VertexAttribPointer</span>(
                 <span class='ident'>shader</span>.<span class='ident'>a_v4Position</span> <span class='kw'>as</span> <span class='ident'>GLuint</span>, <span class='ident'>size_vertices</span>, <span class='ident'>gl</span>::<span class='ident'>FLOAT</span>, <span class='ident'>gl</span>::<span class='ident'>TRUE</span>, <span class='number'>0</span>, <span class='ident'>ptr</span>::<span class='ident'>null</span>());
 
             <span class='ident'>gl</span>::<span class='ident'>BindBuffer</span>(
-                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='ident'>data</span>.<span class='ident'>fill_color_id</span>);
+                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='self'>self</span>.<span class='ident'>fill_color_id</span>);
             <span class='ident'>gl</span>::<span class='ident'>BufferData</span>(
                 <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, (<span class='ident'>colors</span>.<span class='ident'>len</span>() <span class='op'>*</span> <span class='ident'>mem</span>::<span class='ident'>size_of</span>::<span class='op'>&lt;</span><span class='ident'>GLfloat</span><span class='op'>&gt;</span>()) <span class='kw'>as</span> <span class='ident'>GLsizeiptr</span>, <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='kw-2'>&amp;</span><span class='ident'>colors</span>[<span class='number'>0</span>]), <span class='ident'>gl</span>::<span class='ident'>DYNAMIC_DRAW</span>);
             <span class='ident'>gl</span>::<span class='ident'>VertexAttribPointer</span>(
                 <span class='ident'>shader</span>.<span class='ident'>a_v4FillColor</span> <span class='kw'>as</span> <span class='ident'>GLuint</span>, <span class='number'>4</span>, <span class='ident'>gl</span>::<span class='ident'>FLOAT</span>, <span class='ident'>gl</span>::<span class='ident'>FALSE</span>, <span class='number'>0</span>, <span class='ident'>ptr</span>::<span class='ident'>null</span>());
 
             <span class='ident'>gl</span>::<span class='ident'>BindBuffer</span>(
-                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='ident'>data</span>.<span class='ident'>tex_coord_id</span>);
+                <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, <span class='self'>self</span>.<span class='ident'>tex_coord_id</span>);
             <span class='ident'>gl</span>::<span class='ident'>BufferData</span>(
                 <span class='ident'>gl</span>::<span class='ident'>ARRAY_BUFFER</span>, (<span class='ident'>texture_coords</span>.<span class='ident'>len</span>() <span class='op'>*</span> <span class='ident'>mem</span>::<span class='ident'>size_of</span>::<span class='op'>&lt;</span><span class='ident'>GLfloat</span><span class='op'>&gt;</span>()) <span class='kw'>as</span> <span class='ident'>GLsizeiptr</span>, <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='kw-2'>&amp;</span><span class='ident'>texture_coords</span>[<span class='number'>0</span>]), <span class='ident'>gl</span>::<span class='ident'>DYNAMIC_DRAW</span>);
             <span class='ident'>gl</span>::<span class='ident'>VertexAttribPointer</span>(

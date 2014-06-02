@@ -52,9 +52,9 @@
 <span class='kw'>use</span> {<span class='ident'>Image</span>};
 
 <span class='doccomment'>/// Implemented by contexts that can add image.
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>AddImage</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span><span class='op'>&gt;</span> {
+</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>AddImage</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>T</span>, <span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Add image to context.
-</span>    <span class='kw'>fn</span> <span class='ident'>image</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>image</span>: <span class='ident'>Image</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+</span>    <span class='kw'>fn</span> <span class='ident'>image</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>image</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;b</span> <span class='ident'>I</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 </pre>

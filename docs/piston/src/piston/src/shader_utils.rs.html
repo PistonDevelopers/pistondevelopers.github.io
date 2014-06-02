@@ -186,7 +186,7 @@
 </span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>compile_shader</span>(
     <span class='ident'>shader_type</span>: <span class='ident'>GLenum</span>,
     <span class='ident'>source</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>
-) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GLuint</span>, <span class='ident'>StrBuf</span><span class='op'>&gt;</span> {
+) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GLuint</span>, <span class='ident'>String</span><span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='ident'>gl</span>::<span class='ident'>CreateShader</span>(<span class='ident'>shader_type</span>);
     <span class='kw'>unsafe</span> {
         <span class='ident'>source</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ptr</span><span class='op'>|</span> <span class='ident'>gl</span>::<span class='ident'>ShaderSource</span>(<span class='ident'>shader</span>, <span class='number'>1</span>, <span class='kw-2'>&amp;</span><span class='ident'>ptr</span>, <span class='ident'>ptr</span>::<span class='ident'>null</span>()));
@@ -203,7 +203,7 @@
 
             <span class='ident'>gl</span>::<span class='ident'>DeleteShader</span>(<span class='ident'>shader</span>);
 
-            <span class='prelude-val'>Err</span>(<span class='ident'>StrBuf</span>::<span class='ident'>from_utf8</span>(<span class='ident'>buf</span>).<span class='ident'>ok</span>().<span class='ident'>expect</span>(<span class='string'>&quot;ShaderInfoLog not valid utf8&quot;</span>))
+            <span class='prelude-val'>Err</span>(<span class='ident'>String</span>::<span class='ident'>from_utf8</span>(<span class='ident'>buf</span>).<span class='ident'>ok</span>().<span class='ident'>expect</span>(<span class='string'>&quot;ShaderInfoLog not valid utf8&quot;</span>))
         }
     }
 }
