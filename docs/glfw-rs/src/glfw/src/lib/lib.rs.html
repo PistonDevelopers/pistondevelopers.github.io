@@ -1680,28 +1680,28 @@
 </span><span class='doccomment'>//! extern crate glfw;
 </span><span class='doccomment'>//!
 </span><span class='doccomment'>//! use glfw::Context;
-</span><span class='doccomment'>//! 
+</span><span class='doccomment'>//!
 </span><span class='doccomment'>//! #[start]
 </span><span class='doccomment'>//! fn start(argc: int, argv: **u8) -&gt; int {
 </span><span class='doccomment'>//!     // Run GLFW on the main thread
 </span><span class='doccomment'>//!     native::start(argc, argv, main)
 </span><span class='doccomment'>//! }
-</span><span class='doccomment'>//! 
+</span><span class='doccomment'>//!
 </span><span class='doccomment'>//! fn main() {
 </span><span class='doccomment'>//!    let glfw = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
-</span><span class='doccomment'>//! 
+</span><span class='doccomment'>//!
 </span><span class='doccomment'>//!     // Create a windowed mode window and its OpenGL context
 </span><span class='doccomment'>//!     let window = glfw.create_window(300, 300, &quot;Hello this is window&quot;, glfw::Windowed)
 </span><span class='doccomment'>//!         .expect(&quot;Failed to create GLFW window.&quot;);
-</span><span class='doccomment'>//! 
+</span><span class='doccomment'>//!
 </span><span class='doccomment'>//!     // Make the window&#39;s context current
 </span><span class='doccomment'>//!     window.make_current();
-</span><span class='doccomment'>//! 
+</span><span class='doccomment'>//!
 </span><span class='doccomment'>//!     // Loop until the user closes the window
 </span><span class='doccomment'>//!     while !window.should_close() {
 </span><span class='doccomment'>//!         // Swap front and back buffers
 </span><span class='doccomment'>//!         window.swap_buffers();
-</span><span class='doccomment'>//! 
+</span><span class='doccomment'>//!
 </span><span class='doccomment'>//!         // Poll for and process events
 </span><span class='doccomment'>//!         glfw.poll_events();
 </span><span class='doccomment'>//!         for (_, event) in glfw::flush_messages(&amp;events) {
@@ -1752,7 +1752,7 @@
 
 <span class='doccomment'>/// Input actions.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>TotalEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Action</span> {
     <span class='ident'>Release</span>                      <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>RELEASE</span>,
     <span class='ident'>Press</span>                        <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>PRESS</span>,
@@ -1761,7 +1761,7 @@
 
 <span class='doccomment'>/// Input keys.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>TotalEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Key</span> {
     <span class='ident'>KeySpace</span>                    <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>KEY_SPACE</span>,
     <span class='ident'>KeyApostrophe</span>               <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>KEY_APOSTROPHE</span>,
@@ -1889,7 +1889,7 @@
 <span class='doccomment'>/// Mouse buttons. The `MouseButtonLeft`, `MouseButtonRight`, and
 </span><span class='doccomment'>/// `MouseButtonMiddle` aliases are supplied for convenience.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>TotalEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MouseButton</span> {
     <span class='doccomment'>/// The left mouse button. A `MouseButtonLeft` alias is provided to improve clarity.
 </span>    <span class='ident'>MouseButton1</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MOUSE_BUTTON_1</span>,
@@ -1933,7 +1933,7 @@
 
 <span class='doccomment'>/// Tokens corresponding to various error types.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Error</span> {
     <span class='ident'>NotInitialized</span>              <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NOT_INITIALIZED</span>,
     <span class='ident'>NoCurrentContext</span>            <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_CURRENT_CONTEXT</span>,
@@ -1948,10 +1948,10 @@
 
 <span class='doccomment'>/// An error callback. This can be supplied with some user data to be passed to
 </span><span class='doccomment'>/// the callback function when it is triggered.
-</span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>ErrorCallback</span><span class='op'>&lt;</span><span class='ident'>UserData</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Callback</span><span class='op'>&lt;</span><span class='kw'>fn</span>(<span class='ident'>Error</span>, <span class='ident'>StrBuf</span>, <span class='kw-2'>&amp;</span><span class='ident'>UserData</span>), <span class='ident'>UserData</span><span class='op'>&gt;</span>;
+</span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>ErrorCallback</span><span class='op'>&lt;</span><span class='ident'>UserData</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Callback</span><span class='op'>&lt;</span><span class='kw'>fn</span>(<span class='ident'>Error</span>, <span class='ident'>String</span>, <span class='kw-2'>&amp;</span><span class='ident'>UserData</span>), <span class='ident'>UserData</span><span class='op'>&gt;</span>;
 
 <span class='doccomment'>/// The function to be used with the `FAIL_ON_ERRORS` callback.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fail_on_errors</span>(_: <span class='ident'>Error</span>, <span class='ident'>description</span>: <span class='ident'>StrBuf</span>, _: <span class='kw-2'>&amp;</span>()) {
+</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fail_on_errors</span>(_: <span class='ident'>Error</span>, <span class='ident'>description</span>: <span class='ident'>String</span>, _: <span class='kw-2'>&amp;</span>()) {
     <span class='macro'>fail</span><span class='macro'>!</span>(<span class='string'>&quot;GLFW Error: {}&quot;</span>, <span class='ident'>description</span>);
 }
 
@@ -1960,7 +1960,7 @@
     <span class='prelude-val'>Some</span>(<span class='ident'>Callback</span> { <span class='ident'>f</span>: <span class='ident'>fail_on_errors</span>, <span class='ident'>data</span>: () });
 
 <span class='doccomment'>/// The function to be used with the `LOG_ERRORS` callback.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>log_errors</span>(_: <span class='ident'>Error</span>, <span class='ident'>description</span>: <span class='ident'>StrBuf</span>, _: <span class='kw-2'>&amp;</span>()) {
+</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>log_errors</span>(_: <span class='ident'>Error</span>, <span class='ident'>description</span>: <span class='ident'>String</span>, _: <span class='kw-2'>&amp;</span>()) {
     <span class='macro'>error</span><span class='macro'>!</span>(<span class='string'>&quot;GLFW Error: {}&quot;</span>, <span class='ident'>description</span>);
 }
 
@@ -1971,7 +1971,7 @@
 
 <span class='doccomment'>/// Cursor modes.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>CursorMode</span> {
     <span class='ident'>CursorNormal</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CURSOR_NORMAL</span>,
     <span class='ident'>CursorHidden</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CURSOR_HIDDEN</span>,
@@ -1997,7 +1997,7 @@
 
 <span class='doccomment'>/// An OpenGL process address.
 </span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>GLProc</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>GLFWglproc</span>;
- 
+
 <span class='doccomment'>/// A token from which to call various GLFW functions. It can be obtained by
 </span><span class='doccomment'>/// calling the `init` function. This cannot be sent to other tasks, and should
 </span><span class='doccomment'>/// only be initialized on the main platform thread. Whilst this might make
@@ -2011,7 +2011,7 @@
 }
 
 <span class='doccomment'>/// An error that might be returned when `glfw::init` is called.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>InitError</span> {
     <span class='doccomment'>/// The library was already initialized.
 </span>    <span class='ident'>AlreadyInitialized</span>,
@@ -2035,13 +2035,13 @@
 </span><span class='doccomment'>/// ~~~rust
 </span><span class='doccomment'>/// extern crate native;
 </span><span class='doccomment'>/// extern crate glfw;
-</span><span class='doccomment'>/// 
+</span><span class='doccomment'>///
 </span><span class='doccomment'>/// #[start]
 </span><span class='doccomment'>/// fn start(argc: int, argv: **u8) -&gt; int {
 </span><span class='doccomment'>///     // Run GLFW on the main thread
 </span><span class='doccomment'>///     native::start(argc, argv, main)
 </span><span class='doccomment'>/// }
-</span><span class='doccomment'>/// 
+</span><span class='doccomment'>///
 </span><span class='doccomment'>/// fn main() {
 </span><span class='doccomment'>///    let glfw = glfw::init(glfw::FAIL_ON_ERRORS).unwrap();
 </span><span class='doccomment'>/// }
@@ -2091,7 +2091,7 @@
 </span>    <span class='doccomment'>/// ~~~rust
 </span>    <span class='doccomment'>/// use std::cell::Cell;
 </span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// fn error_callback(_: glfw::Error, description: StrBuf, error_count: &amp;Cell&lt;uint&gt;) {
+</span>    <span class='doccomment'>/// fn error_callback(_: glfw::Error, description: String, error_count: &amp;Cell&lt;uint&gt;) {
 </span>    <span class='doccomment'>///     error!(&quot;GLFW error {}: {}&quot;, error_count.get(), description);
 </span>    <span class='doccomment'>///     error_count.set(error_count.get() + 1);
 </span>    <span class='doccomment'>/// }
@@ -2378,7 +2378,7 @@
 }
 
 <span class='doccomment'>/// Wrapper for `glfwGetVersionString`.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_version_string</span>() <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
+</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_version_string</span>() <span class='op'>-&gt;</span> <span class='ident'>String</span> {
     <span class='kw'>unsafe</span> { <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>ffi</span>::<span class='ident'>glfwGetVersionString</span>()) }
 }
 
@@ -2416,7 +2416,7 @@
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetMonitorName`.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_name</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_name</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>ffi</span>::<span class='ident'>glfwGetMonitorName</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)) }
     }
 
@@ -2606,7 +2606,7 @@
 
 <span class='doccomment'>/// Client API tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ClientApi</span> {
     <span class='ident'>OpenGlApi</span>                   <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_API</span>,
     <span class='ident'>OpenGlEsApi</span>                 <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_ES_API</span>,
@@ -2614,7 +2614,7 @@
 
 <span class='doccomment'>/// Context robustness tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ContextRobustness</span> {
     <span class='ident'>NoRobustness</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_ROBUSTNESS</span>,
     <span class='ident'>NoResetNotification</span>         <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_RESET_NOTIFICATION</span>,
@@ -2623,7 +2623,7 @@
 
 <span class='doccomment'>/// OpenGL profile tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>OpenGlProfile</span> {
     <span class='ident'>OpenGlAnyProfile</span>            <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_ANY_PROFILE</span>,
     <span class='ident'>OpenGlCoreProfile</span>           <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_CORE_PROFILE</span>,
@@ -2726,7 +2726,7 @@
 }
 
 <span class='doccomment'>/// A message for notifying a `Window` that a `RenderContext` has been dropped.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>)]</span>
 <span class='kw'>struct</span> <span class='ident'>ContextDropped</span>;
 
 <span class='doccomment'>/// A struct that wraps a `*GLFWwindow` handle.
@@ -3080,7 +3080,7 @@
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetClipboardString`.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_clipboard_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_clipboard_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>ffi</span>::<span class='ident'>glfwGetClipboardString</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>)) }
     }
 
@@ -3198,7 +3198,7 @@
 
 <span class='doccomment'>/// Joystick identifier tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>JoystickId</span> {
     <span class='ident'>Joystick1</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>JOYSTICK_1</span>,
     <span class='ident'>Joystick2</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>JOYSTICK_2</span>,
@@ -3249,7 +3249,7 @@
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetJoystickName`.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_name</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_name</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>str</span>::<span class='ident'>raw</span>::<span class='ident'>from_c_str</span>(<span class='ident'>ffi</span>::<span class='ident'>glfwGetJoystickName</span>(<span class='self'>self</span>.<span class='ident'>id</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)) }
     }
 }

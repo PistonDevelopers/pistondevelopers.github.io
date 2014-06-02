@@ -39,7 +39,7 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Crate <a class='mod' href=''>glfw</a><a class='source' href='../src/glfw/src/lib/lib.rs.html#16-1607'>[src]</a></h1>
+<h1 class='fqn'>Crate <a class='mod' href=''>glfw</a><a class='source' id='src-0' href='../src/glfw/src/lib/lib.rs.html#16-1607'>[src]</a></h1>
 <div class='docblock'><p>An ideomatic wrapper for the GLFW library.</p>
 
 <h1 id="example" class='section-header'><a
@@ -48,28 +48,28 @@
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>glfw</span>;
 
 <span class='kw'>use</span> <span class='ident'>glfw</span>::<span class='ident'>Context</span>;
- 
+
 <span class='attribute'>#[<span class='ident'>start</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>start</span>(<span class='ident'>argc</span>: <span class='ident'>int</span>, <span class='ident'>argv</span>: <span class='op'>*</span><span class='op'>*</span><span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {<span class='comment'>
     // Run GLFW on the main thread
     </span><span class='ident'>native</span>::<span class='ident'>start</span>(<span class='ident'>argc</span>, <span class='ident'>argv</span>, <span class='ident'>main</span>)
 }
- 
+
 <span class='kw'>fn</span> <span class='ident'>main</span>() {
    <span class='kw'>let</span> <span class='ident'>glfw</span> <span class='op'>=</span> <span class='ident'>glfw</span>::<span class='ident'>init</span>(<span class='ident'>glfw</span>::<span class='ident'>FAIL_ON_ERRORS</span>).<span class='ident'>unwrap</span>();<span class='comment'>
- 
+
     // Create a windowed mode window and its OpenGL context
     </span><span class='kw'>let</span> <span class='ident'>window</span> <span class='op'>=</span> <span class='ident'>glfw</span>.<span class='ident'>create_window</span>(<span class='number'>300</span>, <span class='number'>300</span>, <span class='string'>&quot;Hello this is window&quot;</span>, <span class='ident'>glfw</span>::<span class='ident'>Windowed</span>)
         .<span class='ident'>expect</span>(<span class='string'>&quot;Failed to create GLFW window.&quot;</span>);<span class='comment'>
- 
+
     // Make the window&#39;s context current
     </span><span class='ident'>window</span>.<span class='ident'>make_current</span>();<span class='comment'>
- 
+
     // Loop until the user closes the window
     </span><span class='kw'>while</span> <span class='op'>!</span><span class='ident'>window</span>.<span class='ident'>should_close</span>() {<span class='comment'>
         // Swap front and back buffers
         </span><span class='ident'>window</span>.<span class='ident'>swap_buffers</span>();<span class='comment'>
- 
+
         // Poll for and process events
         </span><span class='ident'>glfw</span>.<span class='ident'>poll_events</span>();
         <span class='kw'>for</span> (_, <span class='ident'>event</span>) <span class='kw'>in</span> <span class='ident'>glfw</span>::<span class='ident'>flush_messages</span>(<span class='kw-2'>&amp;</span><span class='ident'>events</span>) {

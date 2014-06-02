@@ -39,25 +39,25 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='../index.html'>hgl</a>::<a href='index.html'>vao</a>::<a class='struct' href=''>Vao</a><a class='source' href='../../src/hgl/src/vao.rs.html#9-11'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='../index.html'>hgl</a>::<a href='index.html'>vao</a>::<a class='struct' href=''>Vao</a><a class='source' id='src-1047' href='../../src/hgl/src/vao.rs.html#9-11'>[src]</a></h1>
 <pre class='rust struct'>pub struct Vao {
     pub name: GLuint,
 }</pre><div class='docblock'><p>A vertex array object</p>
 </div><h2 class='fields'>Fields</h2>
 <table><tr><td id='structfield.name'><code>name</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../hgl/vao/struct.Vao.html' title='hgl::vao::Vao'>Vao</a></code></h3><div class='methods'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../../hgl/vao/struct.Vao.html' title='hgl::vao::Vao'>Vao</a></code></h4>
 <h4 id='method.bind' class='method'><code>fn <a href='#method.bind' class='fnname'>bind</a>(&amp;self)</code></h4>
-<h4 id='method.enable_attrib' class='method'><code>fn <a href='#method.enable_attrib' class='fnname'>enable_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;str, type_: GLenum, elts: GLint, stride: GLint, offset: uint)</code></h4>
+<h4 id='method.enable_attrib' class='method'><code>fn <a href='#method.enable_attrib' class='fnname'>enable_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>, type_: GLenum, elts: GLint, stride: GLint, offset: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</code></h4>
 <div class='docblock'><p>Define and enable an array of generic vertex attribute data for <code>name</code>
 in <code>program</code>, in this VAO, using the bound VBO.  TODO: Normalize
 hardcoded to GL_FALSE.</p>
 
 <p>NOTE: Memory unsafety caused when no bound VBO, or bound VBO does not
 have enough data.</p>
-</div><h4 id='method.enable_int_attrib' class='method'><code>fn <a href='#method.enable_int_attrib' class='fnname'>enable_int_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;str, type_: GLenum, elts: GLint, stride: GLint, offset: uint)</code></h4>
+</div><h4 id='method.enable_int_attrib' class='method'><code>fn <a href='#method.enable_int_attrib' class='fnname'>enable_int_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>, type_: GLenum, elts: GLint, stride: GLint, offset: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</code></h4>
 <div class='docblock'><p>As enable_attrib, but using glVertexAttribIPointer</p>
-</div><h4 id='method.enable_double_attrib' class='method'><code>fn <a href='#method.enable_double_attrib' class='fnname'>enable_double_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;str, elts: GLint, stride: GLint, offset: uint)</code></h4>
+</div><h4 id='method.enable_double_attrib' class='method'><code>fn <a href='#method.enable_double_attrib' class='fnname'>enable_double_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>, elts: GLint, stride: GLint, offset: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</code></h4>
 <div class='docblock'><p>As enable_attrib, but using glVertexAttribLPointer</p>
-</div><h4 id='method.disable_attrib' class='method'><code>fn <a href='#method.disable_attrib' class='fnname'>disable_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;str)</code></h4>
+</div><h4 id='method.disable_attrib' class='method'><code>fn <a href='#method.disable_attrib' class='fnname'>disable_attrib</a>(&amp;self, program: &amp;<a class='struct' href='../../hgl/program/struct.Program.html' title='hgl::program::Program'>Program</a>, name: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>)</code></h4>
 <h4 id='method.draw_array' class='method'><code>fn <a href='#method.draw_array' class='fnname'>draw_array</a>(&amp;self, primitive: <a class='type' href='../../hgl/type.Primitive.html' title='hgl::Primitive'>Primitive</a>, first: GLint, count: GLsizei)</code></h4>
 <div class='docblock'><p>Draw the given primitive, using <code>count</code> vertices starting at offset
 <code>first</code> in the currently bound VBO.</p>
@@ -66,7 +66,7 @@ have enough data.</p>
 <code>first</code> in the currently bound EBO.</p>
 
 <p>TODO: Hardcoded to GL_UNSIGNED_INT</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://static.rust-lang.org/doc/master/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../hgl/vao/struct.Vao.html' title='hgl::vao::Vao'>Vao</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../hgl/vao/struct.Vao.html' title='hgl::vao::Vao'>Vao</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 

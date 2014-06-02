@@ -68,30 +68,12 @@
 <span id='28'>28</span>
 <span id='29'>29</span>
 <span id='30'>30</span>
-<span id='31'>31</span>
-<span id='32'>32</span>
-<span id='33'>33</span>
-<span id='34'>34</span>
-<span id='35'>35</span>
-<span id='36'>36</span>
-<span id='37'>37</span>
-<span id='38'>38</span>
-<span id='39'>39</span>
-<span id='40'>40</span>
-<span id='41'>41</span>
-<span id='42'>42</span>
-<span id='43'>43</span>
-<span id='44'>44</span>
-<span id='45'>45</span>
-<span id='46'>46</span>
-<span id='47'>47</span>
-<span id='48'>48</span>
 </pre><pre class='rust '>
 
 <span class='doccomment'>/// Settings for window behavior.
 </span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameWindowSettings</span> {
     <span class='doccomment'>/// Title of the window.
-</span>    <span class='kw'>pub</span> <span class='ident'>title</span>: <span class='ident'>StrBuf</span>,
+</span>    <span class='kw'>pub</span> <span class='ident'>title</span>: <span class='ident'>String</span>,
     <span class='doccomment'>/// The size of the window
 </span>    <span class='kw'>pub</span> <span class='ident'>size</span>: [<span class='ident'>u32</span>, ..<span class='number'>2</span>],
     <span class='doccomment'>/// If true, the window is fullscreen.
@@ -109,29 +91,11 @@
 </span>    <span class='doccomment'>/// The background color is set to black.
 </span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>default</span>() <span class='op'>-&gt;</span> <span class='ident'>GameWindowSettings</span> {
         <span class='ident'>GameWindowSettings</span> {
-            <span class='ident'>title</span>: <span class='string'>&quot;Piston&quot;</span>.<span class='ident'>to_owned</span>(),
+            <span class='ident'>title</span>: <span class='string'>&quot;Piston&quot;</span>.<span class='ident'>to_string</span>(),
             <span class='ident'>size</span>: [<span class='number'>640</span>, <span class='number'>480</span>],
             <span class='ident'>fullscreen</span>: <span class='boolval'>false</span>,
             <span class='ident'>exit_on_esc</span>: <span class='boolval'>true</span>,
             <span class='ident'>background_color</span>: [<span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>1.0</span>],
-        }
-    }
-
-    <span class='doccomment'>/// Creates a new Settings.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(
-        <span class='ident'>title</span>: <span class='ident'>StrBuf</span>,
-        <span class='ident'>size</span>: [<span class='ident'>u32</span>, ..<span class='number'>2</span>],
-        <span class='ident'>fullscreen</span>: <span class='ident'>bool</span>,
-        <span class='ident'>exit_on_esc</span>: <span class='ident'>bool</span>,
-        <span class='ident'>background_color</span>: [<span class='ident'>f32</span>, ..<span class='number'>4</span>]
-    ) <span class='op'>-&gt;</span> <span class='ident'>GameWindowSettings</span> {
-
-        <span class='ident'>GameWindowSettings</span> {
-            <span class='ident'>title</span>: <span class='ident'>title</span>,
-            <span class='ident'>size</span>: <span class='ident'>size</span>,
-            <span class='ident'>fullscreen</span>: <span class='ident'>fullscreen</span>,
-            <span class='ident'>exit_on_esc</span>: <span class='ident'>exit_on_esc</span>,
-            <span class='ident'>background_color</span>: <span class='ident'>background_color</span>,
         }
     }
 }

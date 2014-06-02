@@ -1,10 +1,10 @@
 (function() {var implementors = {};
-implementors['sdl2'] = {Version:"sdl2/version/struct.Version.html",AudioStatus:"sdl2/audio/type.AudioStatus.html",PixelFormatFlag:"sdl2/pixels/type.PixelFormatFlag.html",Rect:"sdl2/rect/struct.Rect.html",Point:"sdl2/rect/struct.Point.html",Event:"sdl2/event/type.Event.html",WindowEventId:"sdl2/event/type.WindowEventId.html",ScanCode:"sdl2/scancode/type.ScanCode.html",KeyCode:"sdl2/keycode/type.KeyCode.html",};
+implementors['sdl2'] = ["impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='sdl2/keycode/type.KeyCode.html' title='sdl2::keycode::KeyCode'>KeyCode</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='sdl2/scancode/type.ScanCode.html' title='sdl2::scancode::ScanCode'>ScanCode</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='sdl2/event/type.WindowEventId.html' title='sdl2::event::WindowEventId'>WindowEventId</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='sdl2/event/type.Event.html' title='sdl2::event::Event'>Event</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='sdl2/rect/struct.Point.html' title='sdl2::rect::Point'>Point</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='sdl2/pixels/type.PixelFormatFlag.html' title='sdl2::pixels::PixelFormatFlag'>PixelFormatFlag</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='sdl2/audio/type.AudioStatus.html' title='sdl2::audio::AudioStatus'>AudioStatus</a>","impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='sdl2/version/struct.Version.html' title='sdl2::version::Version'>Version</a>",];
 
-                if (window.register_implementors) {
-                    window.register_implementors(implementors);
-                } else {
-                    window.pending_implementors = implementors;
-                }
-            
+            if (window.register_implementors) {
+                window.register_implementors(implementors);
+            } else {
+                window.pending_implementors = implementors;
+            }
+        
 })()

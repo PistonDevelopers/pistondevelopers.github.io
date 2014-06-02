@@ -94,7 +94,7 @@
 
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>TouchDevice</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_TouchID</span>;
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Finger</span> {
     <span class='ident'>id</span>: <span class='ident'>TouchDevice</span>,
     <span class='ident'>x</span>: <span class='ident'>f32</span>,

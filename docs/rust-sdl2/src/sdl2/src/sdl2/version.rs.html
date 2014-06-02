@@ -136,7 +136,7 @@ Querying SDL Version
 }
 
 <span class='doccomment'>/// A structure that contains information about the version of SDL in use.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>Clone</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Version</span> {
     <span class='doccomment'>/// major version
 </span>    <span class='kw'>pub</span> <span class='ident'>major</span>: <span class='ident'>int</span>,
@@ -172,10 +172,10 @@ Querying SDL Version
 }
 
 <span class='doccomment'>/// Get the code revision of SDL that is linked against your program.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_revision</span>() <span class='op'>-&gt;</span> <span class='ident'>StrBuf</span> {
+</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_revision</span>() <span class='op'>-&gt;</span> <span class='ident'>String</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GetRevision</span>();
-        <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>ret</span>, <span class='boolval'>false</span>).<span class='ident'>as_str</span>().<span class='ident'>unwrap</span>().<span class='ident'>into_owned</span>()
+        <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>ret</span>, <span class='boolval'>false</span>).<span class='ident'>as_str</span>().<span class='ident'>unwrap</span>().<span class='ident'>into_string</span>()
     }
 }
 
