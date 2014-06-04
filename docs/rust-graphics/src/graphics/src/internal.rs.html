@@ -156,6 +156,18 @@
 <span id='116'>116</span>
 <span id='117'>117</span>
 <span id='118'>118</span>
+<span id='119'>119</span>
+<span id='120'>120</span>
+<span id='121'>121</span>
+<span id='122'>122</span>
+<span id='123'>123</span>
+<span id='124'>124</span>
+<span id='125'>125</span>
+<span id='126'>126</span>
+<span id='127'>127</span>
+<span id='128'>128</span>
+<span id='129'>129</span>
+<span id='130'>130</span>
 </pre><pre class='rust '>
 
 <span class='doccomment'>//! Contains internal type aliases and traits.
@@ -188,7 +200,7 @@
 </span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Matrix2d</span> <span class='op'>=</span> [<span class='ident'>Scalar</span>, ..<span class='number'>6</span>];
 
 <span class='doccomment'>/// [x, y, w, h]
-</span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PixelRectangle</span> <span class='op'>=</span> [<span class='ident'>u32</span>, ..<span class='number'>4</span>];
+</span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SourceRectangle</span> <span class='op'>=</span> [<span class='ident'>u32</span>, ..<span class='number'>4</span>];
 
 <span class='doccomment'>/// [x0, y0, x1, y1, ...]
 </span><span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Polygon</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> [<span class='ident'>Scalar</span>];
@@ -227,8 +239,14 @@
 
 <span class='doccomment'>/// Implemented by contexts that can set rectangle information.
 </span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Create new context with recangle information.
+    <span class='doccomment'>/// Create new context with rectangle information.
 </span>    <span class='kw'>fn</span> <span class='ident'>rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+}
+
+<span class='doccomment'>/// Implemented by contexts that can set source rectangle information.
+</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Create new context with source rectangle information.
+</span>    <span class='kw'>fn</span> <span class='ident'>source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that can transform.
@@ -257,6 +275,12 @@
 </span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns the current rectangle.
 </span>    <span class='kw'>fn</span> <span class='ident'>get_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
+}
+
+<span class='doccomment'>/// Implemented by contexts that uses type `U` as current source rectangle.
+</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Returns the current source rectangle.
+</span>    <span class='kw'>fn</span> <span class='ident'>get_source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that uses type `U` as current transform.

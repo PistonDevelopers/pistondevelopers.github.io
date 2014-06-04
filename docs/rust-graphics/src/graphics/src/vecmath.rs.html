@@ -334,6 +334,15 @@
 <span id='294'>294</span>
 <span id='295'>295</span>
 <span id='296'>296</span>
+<span id='297'>297</span>
+<span id='298'>298</span>
+<span id='299'>299</span>
+<span id='300'>300</span>
+<span id='301'>301</span>
+<span id='302'>302</span>
+<span id='303'>303</span>
+<span id='304'>304</span>
+<span id='305'>305</span>
 </pre><pre class='rust '>
 
 <span class='doccomment'>//! Various methods for computing with vectors.
@@ -346,6 +355,7 @@
     <span class='ident'>Polygon</span>,
     <span class='ident'>Ray</span>,
     <span class='ident'>Rectangle</span>,
+    <span class='ident'>SourceRectangle</span>,
     <span class='ident'>Vec2d</span>,
     <span class='ident'>Triangle</span>,
 };
@@ -479,6 +489,14 @@
 </span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>relative_rectangle</span>(<span class='ident'>rect</span>: <span class='ident'>Rectangle</span>, <span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Rectangle</span> {
     [<span class='ident'>rect</span>[<span class='number'>0</span>] <span class='op'>+</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='ident'>rect</span>[<span class='number'>2</span>], <span class='ident'>rect</span>[<span class='number'>1</span>] <span class='op'>+</span> <span class='ident'>y</span> <span class='op'>*</span> <span class='ident'>rect</span>[<span class='number'>3</span>], <span class='ident'>rect</span>[<span class='number'>2</span>], <span class='ident'>rect</span>[<span class='number'>3</span>]]
+}
+
+<span class='doccomment'>/// Computes a relative source rectangle using the source rectangle as a tile.
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>relative_source_rectangle</span>(<span class='ident'>rect</span>: <span class='ident'>SourceRectangle</span>, <span class='ident'>x</span>: <span class='ident'>i64</span>, <span class='ident'>y</span>: <span class='ident'>i64</span>) <span class='op'>-&gt;</span> <span class='ident'>SourceRectangle</span> {
+    <span class='kw'>let</span> (<span class='ident'>rx</span>, <span class='ident'>ry</span>, <span class='ident'>rw</span>, <span class='ident'>rh</span>) <span class='op'>=</span> (<span class='ident'>rect</span>[<span class='number'>0</span>] <span class='kw'>as</span> <span class='ident'>i64</span>, <span class='ident'>rect</span>[<span class='number'>1</span>] <span class='kw'>as</span> <span class='ident'>i64</span>, <span class='ident'>rect</span>[<span class='number'>2</span>] <span class='kw'>as</span> <span class='ident'>i64</span>, <span class='ident'>rect</span>[<span class='number'>3</span>] <span class='kw'>as</span> <span class='ident'>i64</span>);
+    <span class='kw'>let</span> (<span class='ident'>x</span>, <span class='ident'>y</span>) <span class='op'>=</span> (<span class='ident'>rx</span> <span class='op'>+</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='ident'>rw</span>, <span class='ident'>ry</span> <span class='op'>+</span> <span class='ident'>y</span> <span class='op'>*</span> <span class='ident'>rh</span>);
+    [<span class='ident'>x</span> <span class='kw'>as</span> <span class='ident'>u32</span>, <span class='ident'>y</span> <span class='kw'>as</span> <span class='ident'>u32</span>, <span class='ident'>rw</span> <span class='kw'>as</span> <span class='ident'>u32</span>, <span class='ident'>rh</span> <span class='kw'>as</span> <span class='ident'>u32</span>]
 }
 
 <span class='doccomment'>/// Computes modular offset safely for numbers.

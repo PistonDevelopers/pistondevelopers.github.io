@@ -86,7 +86,7 @@ This is usually the monitor where elements like the Windows task bar or
 the OS X menu bar is located.</p>
 
 <p>Wrapper for <code>glfwGetPrimaryMonitor</code>.</p>
-</div><h4 id='method.with_connected_monitors' class='method'><code>fn <a href='#method.with_connected_monitors' class='fnname'>with_connected_monitors</a>&lt;T&gt;(&amp;self, f: |&amp;<a href='http://doc.rust-lang.org/core/primitive.slice.html'>[<a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a>]</a>| -&gt; T) -&gt; T</code></h4>
+</div><h4 id='method.with_connected_monitors' class='method'><code>fn <a href='#method.with_connected_monitors' class='fnname'>with_connected_monitors</a>&lt;T&gt;(&amp;self, f: |&amp;<a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a>]</a>| -&gt; T) -&gt; T</code></h4>
 <div class='docblock'><p>Supplies a vector of the currently connected monitors to the closure
 provided.</p>
 
@@ -129,7 +129,7 @@ follows:</p>
 their default values.</p>
 
 <p>Wrapper for <code>glfwDefaultWindowHints</code>.</p>
-</div><h4 id='method.create_window' class='method'><code>fn <a href='#method.create_window' class='fnname'>create_window</a>(&amp;self, width: <a href='http://doc.rust-lang.org/core/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/core/primitive.u32.html'>u32</a>, title: &amp;<a href='http://doc.rust-lang.org/core/primitive.str.html'>str</a>, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/core/primitive.tuple.html'>(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;<a href='http://doc.rust-lang.org/core/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/core/primitive.f64.html'>f64</a>, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)</a>&gt;)</a>&gt;</code></h4>
+</div><h4 id='method.create_window' class='method'><code>fn <a href='#method.create_window' class='fnname'>create_window</a>(&amp;self, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, title: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)</a>&gt;)</a>&gt;</code></h4>
 <div class='docblock'><p>Creates a new window.</p>
 
 <p>Wrapper for <code>glfwCreateWindow</code>.</p>
@@ -147,27 +147,27 @@ then the current context is detached.</p>
 equivalent of <code>Glfw::poll_events</code>.</p>
 
 <p>Wrapper for <code>glfwWaitEvents</code>.</p>
-</div><h4 id='method.get_time' class='method'><code>fn <a href='#method.get_time' class='fnname'>get_time</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/core/primitive.f64.html'>f64</a></code></h4>
+</div><h4 id='method.get_time' class='method'><code>fn <a href='#method.get_time' class='fnname'>get_time</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a></code></h4>
 <div class='docblock'><p>Returns the current value of the GLFW timer. Unless the timer has been
 set using <code>glfw::set_time</code>, the timer measures time elapsed since GLFW
 was initialized.</p>
 
 <p>Wrapper for <code>glfwGetTime</code>.</p>
-</div><h4 id='method.set_time' class='method'><code>fn <a href='#method.set_time' class='fnname'>set_time</a>(&amp;self, time: <a href='http://doc.rust-lang.org/core/primitive.f64.html'>f64</a>)</code></h4>
+</div><h4 id='method.set_time' class='method'><code>fn <a href='#method.set_time' class='fnname'>set_time</a>(&amp;self, time: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>)</code></h4>
 <div class='docblock'><p>Sets the value of the GLFW timer.</p>
 
 <p>Wrapper for <code>glfwSetTime</code>.</p>
-</div><h4 id='method.set_swap_interval' class='method'><code>fn <a href='#method.set_swap_interval' class='fnname'>set_swap_interval</a>(&amp;self, interval: <a href='http://doc.rust-lang.org/core/primitive.u32.html'>u32</a>)</code></h4>
+</div><h4 id='method.set_swap_interval' class='method'><code>fn <a href='#method.set_swap_interval' class='fnname'>set_swap_interval</a>(&amp;self, interval: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>)</code></h4>
 <div class='docblock'><p>Sets the number of screen updates to wait before swapping the buffers of
 the current context and returning from <code>Window::swap_buffers</code>.</p>
 
 <p>Wrapper for <code>glfwSwapInterval</code>.</p>
-</div><h4 id='method.extension_supported' class='method'><code>fn <a href='#method.extension_supported' class='fnname'>extension_supported</a>(&amp;self, extension: &amp;<a href='http://doc.rust-lang.org/core/primitive.str.html'>str</a>) -&gt; <a href='http://doc.rust-lang.org/core/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.extension_supported' class='method'><code>fn <a href='#method.extension_supported' class='fnname'>extension_supported</a>(&amp;self, extension: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Returns <code>true</code> if the specified OpenGL or context creation API extension
 is supported by the current context.</p>
 
 <p>Wrapper for <code>glfwExtensionSupported</code>.</p>
-</div><h4 id='method.get_proc_address' class='method'><code>fn <a href='#method.get_proc_address' class='fnname'>get_proc_address</a>(&amp;self, procname: &amp;<a href='http://doc.rust-lang.org/core/primitive.str.html'>str</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.GLProc.html' title='glfw::GLProc'>GLProc</a>&gt;</code></h4>
+</div><h4 id='method.get_proc_address' class='method'><code>fn <a href='#method.get_proc_address' class='fnname'>get_proc_address</a>(&amp;self, procname: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.GLProc.html' title='glfw::GLProc'>GLProc</a>&gt;</code></h4>
 <div class='docblock'><p>Returns the address of the specified client API or extension function
 if it is supported by the current context.</p>
 
