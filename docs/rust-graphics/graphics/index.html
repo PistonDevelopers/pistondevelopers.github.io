@@ -39,7 +39,7 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Crate <a class='mod' href=''>graphics</a><a class='source' id='src-0' href='../src/graphics/src/lib.rs.html#1-179'>[src]</a></h1>
+<h1 class='fqn'>Crate <a class='mod' href=''>graphics</a><a class='source' id='src-0' href='../src/graphics/src/lib.rs.html#1-181'>[src]</a></h1>
 <div class='docblock'><p>A library for 2D graphics that works with multiple back-ends.</p>
 
 <p>To implement your own back-end, use the BackEnd trait.</p>
@@ -47,13 +47,12 @@
 <h2 id="usage" class='section-header'><a
                            href="#usage">Usage</a></h2>
 <p>If you are using <a href="https://github.com/bvssvni/rust-empty">Rust-Empty</a> or Cargo, put the compiled library in the &quot;target/cpu-vendor-platform/lib/&quot; directory, then add the following to your source:</p>
-<pre class='rust '>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>globs</span>)]</span><span class='comment'> // Allow global imports
 
-</span><span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>graphics</span>;<span class='comment'> // Link to &#39;graphics&#39; library
+<pre><code class="language-Rust">#![feature(globs)] // Allow global imports
 
-</span><span class='kw'>use</span> <span class='ident'>graphics</span>::<span class='op'>*</span>;<span class='comment'> // Use the graphics types in the module
-</span></pre>
+extern crate graphics; // Link to &#39;graphics&#39; library
+
+use graphics::*; // Use the graphics types in the module</code></pre>
 
 <p>To draw to the back-end, you need a context.
 The context contains the information necessary to perform the drawing.
@@ -451,6 +450,13 @@ This trait uses default methods to simplify implementation.</p>
                         <td><a class='trait' href='trait.RelativeRectangle.html'
                                title='graphics::RelativeRectangle'>RelativeRectangle</a></td>
                         <td class='docblock short'><p>Should be implemented by contexts that have rectangle information.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='trait' href='trait.RelativeSourceRectangle.html'
+                               title='graphics::RelativeSourceRectangle'>RelativeSourceRectangle</a></td>
+                        <td class='docblock short'><p>Should be implemented by contexts that have source rectangle information.</p>
 </td>
                     </tr>
                 
