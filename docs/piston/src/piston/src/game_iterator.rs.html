@@ -372,6 +372,12 @@
 <span id='332'>332</span>
 <span id='333'>333</span>
 <span id='334'>334</span>
+<span id='335'>335</span>
+<span id='336'>336</span>
+<span id='337'>337</span>
+<span id='338'>338</span>
+<span id='339'>339</span>
+<span id='340'>340</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>time</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>timer</span>::<span class='ident'>sleep</span>;
@@ -381,6 +387,7 @@
 <span class='kw'>use</span> {
     <span class='ident'>Gl</span>,
     <span class='ident'>GameWindow</span>,
+    <span class='ident'>AudioSDL2</span>,
 };
 <span class='kw'>use</span> <span class='ident'>keyboard</span>;
 <span class='kw'>use</span> <span class='ident'>mouse</span>;
@@ -399,9 +406,11 @@
 }
 
 <span class='doccomment'>/// Update argument.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>UpdateArgs</span> {
+</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>UpdateArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Delta time in seconds.
 </span>    <span class='kw'>pub</span> <span class='ident'>dt</span>: <span class='ident'>f64</span>,
+    <span class='doccomment'>/// SDL2 audio back-end
+</span>    <span class='kw'>pub</span> <span class='ident'>audio</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>AudioSDL2</span>,
 }
 
 <span class='doccomment'>/// Key press arguments.
@@ -449,7 +458,7 @@
     <span class='doccomment'>/// Render graphics.
 </span>    <span class='ident'>Render</span>(<span class='ident'>RenderArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>),
     <span class='doccomment'>/// Update physical state of the game.
-</span>    <span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span>),
+</span>    <span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>),
     <span class='doccomment'>/// Pressed a keyboard key.
 </span>    <span class='ident'>KeyPress</span>(<span class='ident'>KeyPressArgs</span>),
     <span class='doccomment'>/// Released a keyboard key.
@@ -487,6 +496,7 @@
     <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>,
     <span class='ident'>state</span>: <span class='ident'>GameIteratorState</span>,
     <span class='ident'>gl</span>: <span class='ident'>Gl</span>,
+    <span class='ident'>audio</span>: <span class='ident'>AudioSDL2</span>,
     <span class='ident'>bg_color</span>: [<span class='ident'>f32</span>, ..<span class='number'>4</span>],
     <span class='ident'>last_update</span>: <span class='ident'>u64</span>,
     <span class='ident'>update_time_in_ns</span>: <span class='ident'>u64</span>,
@@ -512,6 +522,7 @@
             <span class='ident'>game_window</span>: <span class='ident'>game_window</span>,
             <span class='ident'>state</span>: <span class='ident'>RenderState</span>,
             <span class='ident'>gl</span>: <span class='ident'>Gl</span>::<span class='ident'>new</span>(),
+            <span class='ident'>audio</span>: <span class='ident'>AudioSDL2</span>::<span class='ident'>new</span>(),
             <span class='ident'>last_update</span>: <span class='ident'>start</span>,
             <span class='ident'>update_time_in_ns</span>: <span class='ident'>billion</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span>,
             <span class='ident'>dt</span>: <span class='number'>1.0</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span> <span class='kw'>as</span> <span class='ident'>f64</span>,<span class='comment'>
@@ -547,7 +558,7 @@
                     <span class='kw'>return</span> <span class='prelude-val'>Some</span>(<span class='ident'>Render</span>(<span class='ident'>RenderArgs</span> {<span class='comment'>
                             // Extrapolate time forward to allow smooth motion.
                             // &#39;start_render&#39; is always bigger than &#39;last_update&#39;.
-                            </span><span class='ident'>ext_dt</span>: (<span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>-</span> <span class='self'>self</span>.<span class='ident'>last_update</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> <span class='ident'>billion</span> <span class='kw'>as</span> <span class='ident'>f64</span>, 
+                            </span><span class='ident'>ext_dt</span>: (<span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>-</span> <span class='self'>self</span>.<span class='ident'>last_update</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> <span class='ident'>billion</span> <span class='kw'>as</span> <span class='ident'>f64</span>,
                             <span class='ident'>gl</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>gl</span>,
                             <span class='ident'>width</span>: <span class='ident'>w</span>,
                             <span class='ident'>height</span>: <span class='ident'>h</span>,
@@ -578,7 +589,7 @@
                     <span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>HandleEventsState</span>;
                     <span class='kw'>return</span> <span class='self'>self</span>.<span class='ident'>next</span>();
                 }<span class='comment'>
-            
+
                 // Wait if possible.
                 // Convert to ms because that is what the sleep function takes.
                 </span><span class='kw'>let</span> <span class='ident'>t</span> <span class='op'>=</span> (<span class='self'>self</span>.<span class='ident'>next_render</span> <span class='op'>-</span> <span class='ident'>time</span>::<span class='ident'>precise_time_ns</span>() ) <span class='op'>/</span> <span class='number'>1_000_000</span>;
@@ -643,6 +654,7 @@
                 <span class='self'>self</span>.<span class='ident'>last_update</span> <span class='op'>+=</span> <span class='self'>self</span>.<span class='ident'>update_time_in_ns</span>;
                 <span class='kw'>return</span> <span class='prelude-val'>Some</span>(<span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span>{
                     <span class='ident'>dt</span>: <span class='self'>self</span>.<span class='ident'>dt</span>,
+                    <span class='ident'>audio</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>audio</span>,
                 }));
             },
         };<span class='comment'>
@@ -664,11 +676,11 @@
                 // &#39;now&#39; is always bigger than &#39;last_update&#39;.
                 let ext_dt = (start_render - last_update) as f64 / billion as f64;
                 self.render(
-                    ext_dt, 
+                    ext_dt,
                     &amp;context
                         .trans(-1.0, 1.0)
                         .scale(2.0 / w as f64, -2.0 / h as f64)
-                        .store_view(), 
+                        .store_view(),
                     &amp;mut gl
                         );
                 self.swap_buffers(game_window);
@@ -680,10 +692,10 @@
             let mut updated = 0;
 
             while // If we haven&#39;t reached the required number of updates yet
-                  ( updated &lt; min_updates_per_frame ||         
+                  ( updated &lt; min_updates_per_frame ||
                     // Or we have the time to update further
-                    time::precise_time_ns() &lt; next_render ) &amp;&amp; 
-                  //And we haven&#39;t already progressed time to far  
+                    time::precise_time_ns() &lt; next_render ) &amp;&amp;
+                  //And we haven&#39;t already progressed time to far
                   last_update + update_time_in_ns &lt; next_render {
 
                 self.handle_events(game_window, asset_store);
@@ -697,7 +709,7 @@
 
             let t = (next_render - time::precise_time_ns() ) / 1_000_000;
             if t &gt; 1 &amp;&amp; t &lt; 1000000 { // The second half just checks if it overflowed,
-                                      // which tells us that t should have been negative 
+                                      // which tells us that t should have been negative
                                       // and we are running slow and shouldn&#39;t sleep.
                 sleep( t );
             }
