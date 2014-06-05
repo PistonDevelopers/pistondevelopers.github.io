@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The image library documentation.">
+
+    <title>image - Rust</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+</head>
+<body>
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <section class="sidebar">
+        
+
+        <p class='location'></p>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Search documentation..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'>Crate <a class='mod' href=''>image</a><a class='source' id='src-0' href='../src/image/src/lib.rs.html#1-37'>[src]</a></h1>
+<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>ColorType</a>;</code></td></tr><tr><td><code>pub use ppm::<a class='struct' href='../image/ppm/struct.PPMEncoder.html' title='image::ppm::PPMEncoder'>PPMEncoder</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                    <tr>
+                        <td><a class='mod' href='colortype/index.html'
+                               title='image::colortype'>colortype</a></td>
+                        <td class='docblock short'><p>Types and methods for representing and manipulating colors</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='mod' href='gif/index.html'
+                               title='image::gif'>gif</a></td>
+                        <td class='docblock short'><p>Decoding of GIF Images</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='mod' href='jpeg/index.html'
+                               title='image::jpeg'>jpeg</a></td>
+                        <td class='docblock short'><p>Decoding and Encoding of JPEG Images</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='mod' href='png/index.html'
+                               title='image::png'>png</a></td>
+                        <td class='docblock short'><p>Decoding and Encoding of PNG Images</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='mod' href='ppm/index.html'
+                               title='image::ppm'>ppm</a></td>
+                        <td class='docblock short'><p>Encoding of PPM Images</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='mod' href='vp8/index.html'
+                               title='image::vp8'>vp8</a></td>
+                        <td class='docblock short'><p>An implementation of the VP8 Video Codec</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='mod' href='webp/index.html'
+                               title='image::webp'>webp</a></td>
+                        <td class='docblock short'><p>Decoding of Webp Images</p>
+</td>
+                    </tr>
+                </table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                    <tr>
+                        <td><a class='struct' href='struct.GIFDecoder.html'
+                               title='image::GIFDecoder'>GIFDecoder</a></td>
+                        <td class='docblock short'><p>The Representation of a GIF decoder</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.JPEGDecoder.html'
+                               title='image::JPEGDecoder'>JPEGDecoder</a></td>
+                        <td class='docblock short'><p>The representation of a JPEG decoder</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.JPEGEncoder.html'
+                               title='image::JPEGEncoder'>JPEGEncoder</a></td>
+                        <td class='docblock short'><p>The representation of a JPEG encoder</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.PNGDecoder.html'
+                               title='image::PNGDecoder'>PNGDecoder</a></td>
+                        <td class='docblock short'><p>The representation of a PNG decoder</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.PNGEncoder.html'
+                               title='image::PNGEncoder'>PNGEncoder</a></td>
+                        <td class='docblock short'><p>The representation of a PNG encoder</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.WebpDecoder.html'
+                               title='image::WebpDecoder'>WebpDecoder</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                    <tr>
+                        <td><a class='type' href='type.ImageError.html'
+                               title='image::ImageError'>ImageError</a></td>
+                        <td class='docblock short'><p>An enumeration of Image Errors</p>
+</td>
+                    </tr>
+                </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                    <tr>
+                        <td><a class='trait' href='trait.ImageDecoder.html'
+                               title='image::ImageDecoder'>ImageDecoder</a></td>
+                        <td class='docblock short'><p>The trait that all decoders implement</p>
+</td>
+                    </tr>
+                </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                    <tr>
+                        <td><a class='type' href='type.ImageResult.html'
+                               title='image::ImageResult'>ImageResult</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&uarr;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&darr;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var rootPath = "../";
+        var currentCrate = "image";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script async src="../search-index.js"></script>
+</body>
+</html>
