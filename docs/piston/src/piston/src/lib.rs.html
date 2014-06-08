@@ -116,7 +116,6 @@
 <span id='76'>76</span>
 <span id='77'>77</span>
 <span id='78'>78</span>
-<span id='79'>79</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;piston&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
@@ -135,7 +134,7 @@
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>glfw</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sdl2</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sdl2_mixer</span>;
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>png</span>;
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>image</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>debug</span>;
 
@@ -196,7 +195,6 @@
 <span class='kw'>mod</span> <span class='ident'>sound</span>;
 <span class='kw'>mod</span> <span class='ident'>audio_back_end</span>;
 <span class='kw'>mod</span> <span class='ident'>sdl2_audio_back_end</span>;
-
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -235,11 +233,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../";
-        var currentCrate = "piston";
+        window.rootPath = "../../../";
+        window.currentCrate = "piston";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
+    
     <script async src="../../../search-index.js"></script>
 </body>
 </html>

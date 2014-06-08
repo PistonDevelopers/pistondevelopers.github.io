@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors['graphics'] = ["impl&lt;'a&gt; <a class='trait' href='graphics/trait.AddRound.html' title='graphics::AddRound'>AddRound</a>&lt;'a, <a class='struct' href='graphics/struct.RoundRectangleColorContext.html' title='graphics::RoundRectangleColorContext'>RoundRectangleColorContext</a>&lt;'a&gt;&gt; for <a class='struct' href='graphics/struct.RectangleColorContext.html' title='graphics::RectangleColorContext'>RectangleColorContext</a>&lt;'a&gt;","impl&lt;'a&gt; <a class='trait' href='graphics/trait.AddRound.html' title='graphics::AddRound'>AddRound</a>&lt;'a, <a class='struct' href='graphics/struct.RoundRectangleContext.html' title='graphics::RoundRectangleContext'>RoundRectangleContext</a>&lt;'a&gt;&gt; for <a class='struct' href='graphics/struct.RectangleContext.html' title='graphics::RectangleContext'>RectangleContext</a>&lt;'a&gt;",];
+implementors['graphics'] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);

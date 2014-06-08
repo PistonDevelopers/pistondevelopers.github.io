@@ -58,22 +58,28 @@
 <span id='18'>18</span>
 <span id='19'>19</span>
 <span id='20'>20</span>
+<span id='21'>21</span>
+<span id='22'>22</span>
+<span id='23'>23</span>
 </pre><pre class='rust '>
-
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>missing_doc</span>)]</span>
 
 <span class='kw'>use</span> {
     <span class='ident'>Music</span>,
     <span class='ident'>Sound</span>,
 };
 
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>AudioBackEnd</span><span class='op'>&lt;</span><span class='ident'>M</span>: <span class='ident'>Music</span>, <span class='ident'>S</span>: <span class='ident'>Sound</span><span class='op'>&gt;</span> {
-    <span class='kw'>fn</span> <span class='ident'>play_sound</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>sound</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>);<span class='comment'>
+<span class='doccomment'>/// Implemented by all audio back-ends.
+</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>AudioBackEnd</span><span class='op'>&lt;</span><span class='ident'>M</span>: <span class='ident'>Music</span>, <span class='ident'>S</span>: <span class='ident'>Sound</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Play sound.
+</span>    <span class='kw'>fn</span> <span class='ident'>play_sound</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>sound</span>: <span class='kw-2'>&amp;</span><span class='ident'>S</span>);<span class='comment'>
     /*
     fn set_sound_volumn(&amp;mut self, sound: &amp;S, volumn: f64);
     fn get_sound_volumn(&amp;mut self, sound: &amp;S) -&gt; f64;
+    */
 
-    fn play_music(&amp;self, music: &amp;M);
+    </span><span class='doccomment'>/// Play music.
+</span>    <span class='kw'>fn</span> <span class='ident'>play_music</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>music</span>: <span class='kw-2'>&amp;</span><span class='ident'>M</span>);<span class='comment'>
+    /*
     fn set_music_volumn(&amp;mut self, music: &amp;M, volumn: f64);
     fn get_music_volumn(&amp;mut self, music: &amp;M) -&gt; f64;
     */
@@ -117,11 +123,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../";
-        var currentCrate = "piston";
+        window.rootPath = "../../../";
+        window.currentCrate = "piston";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
+    
     <script async src="../../../search-index.js"></script>
 </body>
 </html>

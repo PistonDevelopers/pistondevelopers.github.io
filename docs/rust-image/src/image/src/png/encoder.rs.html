@@ -347,7 +347,7 @@
 	<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>method</span> <span class='op'>=</span> <span class='number'>0</span>;
 
 	<span class='kw'>for</span> (<span class='ident'>i</span>, <span class='ident'>current</span>) <span class='kw'>in</span> <span class='ident'>current_s</span>.<span class='ident'>mut_chunks</span>(<span class='ident'>rowlength</span>).<span class='ident'>enumerate</span>() {
-		<span class='ident'>filter</span>(<span class='ident'>i</span> <span class='kw'>as</span> <span class='ident'>u8</span> <span class='op'>+</span> <span class='number'>1</span>, <span class='ident'>bpp</span>, <span class='ident'>previous</span>, <span class='ident'>current</span>);
+		<span class='ident'>filter</span>(<span class='ident'>FromPrimitive</span>::<span class='ident'>from_u8</span>(<span class='ident'>i</span> <span class='kw'>as</span> <span class='ident'>u8</span> <span class='op'>+</span> <span class='number'>1</span>).<span class='ident'>unwrap</span>(), <span class='ident'>bpp</span>, <span class='ident'>previous</span>, <span class='ident'>current</span>);
 
 		<span class='kw'>let</span> <span class='ident'>this_sum</span> <span class='op'>=</span> <span class='ident'>sum_abs_difference</span>(<span class='ident'>current</span>);
 		<span class='kw'>if</span> <span class='ident'>this_sum</span> <span class='op'>&lt;</span> <span class='ident'>sum</span> {
@@ -427,11 +427,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../../";
-        var currentCrate = "image";
+        window.rootPath = "../../../../";
+        window.currentCrate = "image";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../../jquery.js"></script>
     <script src="../../../../main.js"></script>
+    
     <script async src="../../../../search-index.js"></script>
 </body>
 </html>

@@ -467,6 +467,9 @@
 <span id='427'>427</span>
 <span id='428'>428</span>
 <span id='429'>429</span>
+<span id='430'>430</span>
+<span id='431'>431</span>
+<span id='432'>432</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>cmp</span>;
@@ -694,14 +697,14 @@
 					}
 
 					<span class='kw'>let</span> <span class='ident'>d</span> <span class='op'>=</span> <span class='macro'>io_try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>z</span>.<span class='ident'>inner</span>().<span class='ident'>r</span>.<span class='ident'>read_exact</span>(<span class='ident'>length</span> <span class='kw'>as</span> <span class='ident'>uint</span>));
-					<span class='kw'>let</span> _ <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>parse_ihdr</span>(<span class='ident'>d</span>);
+					<span class='macro'>try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>parse_ihdr</span>(<span class='ident'>d</span>));
 
 					<span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>HaveIHDR</span>;
 				}
 
 				(<span class='string'>&quot;PLTE&quot;</span>, <span class='ident'>HaveIHDR</span>) <span class='op'>=&gt;</span> {
 					<span class='kw'>let</span> <span class='ident'>d</span> <span class='op'>=</span> <span class='macro'>io_try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>z</span>.<span class='ident'>inner</span>().<span class='ident'>r</span>.<span class='ident'>read_exact</span>(<span class='ident'>length</span> <span class='kw'>as</span> <span class='ident'>uint</span>));
-					<span class='kw'>let</span> _ <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>parse_plte</span>(<span class='ident'>d</span>);
+					<span class='macro'>try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>parse_plte</span>(<span class='ident'>d</span>));
 					<span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>HavePLTE</span>;
 				}
 
@@ -777,7 +780,10 @@
 			<span class='kw'>let</span> _ <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>read_metadata</span>());
 		}
 
-		<span class='kw'>let</span> <span class='ident'>filter</span>  <span class='op'>=</span> <span class='macro'>io_try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>z</span>.<span class='ident'>read_byte</span>());
+		<span class='kw'>let</span> <span class='ident'>filter_type</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>FromPrimitive</span>::<span class='ident'>from_u8</span>(<span class='macro'>io_try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>z</span>.<span class='ident'>read_byte</span>())) {
+			<span class='prelude-val'>Some</span>(<span class='ident'>v</span>) <span class='op'>=&gt;</span> <span class='ident'>v</span>,
+			_ <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='ident'>image</span>::<span class='ident'>FormatError</span>)
+		};
 
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>read</span> <span class='op'>=</span> <span class='number'>0</span>;
 		<span class='kw'>while</span> <span class='ident'>read</span> <span class='op'>&lt;</span> <span class='self'>self</span>.<span class='ident'>rlength</span> {
@@ -785,7 +791,7 @@
 			<span class='ident'>read</span> <span class='op'>+=</span> <span class='ident'>r</span>;
 		}
 
-		<span class='ident'>unfilter</span>(<span class='ident'>filter</span>, <span class='self'>self</span>.<span class='ident'>bpp</span>, <span class='self'>self</span>.<span class='ident'>previous</span>.<span class='ident'>as_slice</span>(), <span class='ident'>buf</span>.<span class='ident'>mut_slice_to</span>(<span class='self'>self</span>.<span class='ident'>rlength</span>));
+		<span class='ident'>unfilter</span>(<span class='ident'>filter_type</span>, <span class='self'>self</span>.<span class='ident'>bpp</span>, <span class='self'>self</span>.<span class='ident'>previous</span>.<span class='ident'>as_slice</span>(), <span class='ident'>buf</span>.<span class='ident'>mut_slice_to</span>(<span class='self'>self</span>.<span class='ident'>rlength</span>));
 		<span class='ident'>slice</span>::<span class='ident'>bytes</span>::<span class='ident'>copy_memory</span>(<span class='self'>self</span>.<span class='ident'>previous</span>.<span class='ident'>as_mut_slice</span>(), <span class='ident'>buf</span>.<span class='ident'>slice_to</span>(<span class='self'>self</span>.<span class='ident'>rlength</span>));
 
 		<span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>palette</span>.<span class='ident'>is_some</span>() {
@@ -935,11 +941,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../../";
-        var currentCrate = "image";
+        window.rootPath = "../../../../";
+        window.currentCrate = "image";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../../jquery.js"></script>
     <script src="../../../../main.js"></script>
+    
     <script async src="../../../../search-index.js"></script>
 </body>
 </html>

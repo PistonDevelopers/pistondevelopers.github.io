@@ -46,11 +46,11 @@
 
 <p>The idea is to have one object which the app can use
 to load assets for the game with a simple interface.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a></code></h3><div class='methods'><h4 id='method.from_folder' class='method'><code>fn <a href='#method.from_folder' class='fnname'>from_folder</a>(assets_folder: &amp;<a href='http://doc.rust-lang.org/core/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a></code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a></code></h3><div class='methods'><h4 id='method.from_folder' class='method'><code>fn <a href='#method.from_folder' class='fnname'>from_folder</a>(assets_folder: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a></code></h4>
 <div class='docblock'><p>Creates a new <code>AssetStore</code> from an assets folder.</p>
 </div><h4 id='method.empty' class='method'><code>fn <a href='#method.empty' class='fnname'>empty</a>() -&gt; <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a></code></h4>
 <div class='docblock'><p>Creates an empty <code>AssetStore</code> with no assets.</p>
-</div><h4 id='method.path' class='method'><code>fn <a href='#method.path' class='fnname'>path</a>(&amp;self, file: &amp;<a href='http://doc.rust-lang.org/core/primitive.str.html'>str</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>, <a class='struct' href='http://doc.rust-lang.org/std/string/struct.String.html' title='std::string::String'>String</a>&gt;</code></h4>
+</div><h4 id='method.path' class='method'><code>fn <a href='#method.path' class='fnname'>path</a>(&amp;self, file: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>, <a class='struct' href='http://doc.rust-lang.org/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</code></h4>
 <div class='docblock'><p>Returns the path of an asset file.</p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -89,11 +89,13 @@ to load assets for the game with a simple interface.</p>
     </div>
 
     <script>
-        var rootPath = "../";
-        var currentCrate = "piston";
+        window.rootPath = "../";
+        window.currentCrate = "piston";
+        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
+    
     <script async src="../search-index.js"></script>
 </body>
 </html>

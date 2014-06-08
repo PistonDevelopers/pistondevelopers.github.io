@@ -50,7 +50,7 @@
 </div></td></tr><tr><td id='structfield.transform'><code>transform</code></td><td><div class='docblock'><p>Current transform.</p>
 </div></td></tr><tr><td id='structfield.tween_factor'><code>tween_factor</code></td><td><div class='docblock'><p>Animation inbetweening factor.</p>
 </div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../graphics/struct.LerpTweenContext.html' title='graphics::LerpTweenContext'>LerpTweenContext</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../graphics/struct.LerpTweenContext.html' title='graphics::LerpTweenContext'>LerpTweenContext</a>&lt;'static&gt;</code></h4>
-<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, &amp;Self)</code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddColor.html' title='graphics::AddColor'>AddColor</a>&lt;'a, <a class='struct' href='../graphics/struct.LerpTweenColorContext.html' title='graphics::LerpTweenColorContext'>LerpTweenColorContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.LerpTweenContext.html' title='graphics::LerpTweenContext'>LerpTweenContext</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.rgba' class='method'><code>fn <a href='#method.rgba' class='fnname'>rgba</a>(&amp;'a self, r: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, g: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, b: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, a: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; <a class='struct' href='../graphics/struct.LerpTweenColorContext.html' title='graphics::LerpTweenColorContext'>LerpTweenColorContext</a>&lt;'a&gt;</code></h4>
 <h4 id='method.rgb' class='method'><code>fn <a href='#method.rgb' class='fnname'>rgb</a>(&amp;'a self, r: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>, g: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>, b: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>) -&gt; T</code></h4>
 <h4 id='method.color' class='method'><code>fn <a href='#method.color' class='fnname'>color</a>(&amp;'a self, color: <a class='type' href='../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>) -&gt; T</code></h4>
@@ -98,11 +98,13 @@
     </div>
 
     <script>
-        var rootPath = "../";
-        var currentCrate = "graphics";
+        window.rootPath = "../";
+        window.currentCrate = "graphics";
+        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
+    
     <script async src="../search-index.js"></script>
 </body>
 </html>
