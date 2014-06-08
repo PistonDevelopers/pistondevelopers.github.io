@@ -1752,7 +1752,7 @@
 
 <span class='doccomment'>/// Input actions.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Action</span> {
     <span class='ident'>Release</span>                      <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>RELEASE</span>,
     <span class='ident'>Press</span>                        <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>PRESS</span>,
@@ -1761,7 +1761,7 @@
 
 <span class='doccomment'>/// Input keys.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Key</span> {
     <span class='ident'>KeySpace</span>                    <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>KEY_SPACE</span>,
     <span class='ident'>KeyApostrophe</span>               <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>KEY_APOSTROPHE</span>,
@@ -1889,7 +1889,7 @@
 <span class='doccomment'>/// Mouse buttons. The `MouseButtonLeft`, `MouseButtonRight`, and
 </span><span class='doccomment'>/// `MouseButtonMiddle` aliases are supplied for convenience.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MouseButton</span> {
     <span class='doccomment'>/// The left mouse button. A `MouseButtonLeft` alias is provided to improve clarity.
 </span>    <span class='ident'>MouseButton1</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MOUSE_BUTTON_1</span>,
@@ -1933,7 +1933,7 @@
 
 <span class='doccomment'>/// Tokens corresponding to various error types.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Error</span> {
     <span class='ident'>NotInitialized</span>              <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NOT_INITIALIZED</span>,
     <span class='ident'>NoCurrentContext</span>            <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_CURRENT_CONTEXT</span>,
@@ -1971,7 +1971,7 @@
 
 <span class='doccomment'>/// Cursor modes.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>CursorMode</span> {
     <span class='ident'>CursorNormal</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CURSOR_NORMAL</span>,
     <span class='ident'>CursorHidden</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CURSOR_HIDDEN</span>,
@@ -2011,7 +2011,7 @@
 }
 
 <span class='doccomment'>/// An error that might be returned when `glfw::init` is called.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>InitError</span> {
     <span class='doccomment'>/// The library was already initialized.
 </span>    <span class='ident'>AlreadyInitialized</span>,
@@ -2606,7 +2606,7 @@
 
 <span class='doccomment'>/// Client API tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ClientApi</span> {
     <span class='ident'>OpenGlApi</span>                   <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_API</span>,
     <span class='ident'>OpenGlEsApi</span>                 <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_ES_API</span>,
@@ -2614,7 +2614,7 @@
 
 <span class='doccomment'>/// Context robustness tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ContextRobustness</span> {
     <span class='ident'>NoRobustness</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_ROBUSTNESS</span>,
     <span class='ident'>NoResetNotification</span>         <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_RESET_NOTIFICATION</span>,
@@ -2623,7 +2623,7 @@
 
 <span class='doccomment'>/// OpenGL profile tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>OpenGlProfile</span> {
     <span class='ident'>OpenGlAnyProfile</span>            <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_ANY_PROFILE</span>,
     <span class='ident'>OpenGlCoreProfile</span>           <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_CORE_PROFILE</span>,
@@ -2726,7 +2726,7 @@
 }
 
 <span class='doccomment'>/// A message for notifying a `Window` that a `RenderContext` has been dropped.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>struct</span> <span class='ident'>ContextDropped</span>;
 
 <span class='doccomment'>/// A struct that wraps a `*GLFWwindow` handle.
@@ -3198,7 +3198,7 @@
 
 <span class='doccomment'>/// Joystick identifier tokens.
 </span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>JoystickId</span> {
     <span class='ident'>Joystick1</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>JOYSTICK_1</span>,
     <span class='ident'>Joystick2</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>JOYSTICK_2</span>,
@@ -3291,11 +3291,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../../";
-        var currentCrate = "glfw";
+        window.rootPath = "../../../../";
+        window.currentCrate = "glfw";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../../jquery.js"></script>
     <script src="../../../../main.js"></script>
+    
     <script async src="../../../../search-index.js"></script>
 </body>
 </html>

@@ -84,7 +84,7 @@
 <span class='doccomment'>//! Types and methods for representing and manipulating colors
 </span>
 <span class='doccomment'>///An enumeration over supported color types and their bit depths
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ColorType</span> {
 	<span class='doccomment'>///Pixel is greyscale
 </span>	<span class='ident'>Grey</span>(<span class='ident'>u8</span>),
@@ -161,11 +161,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../";
-        var currentCrate = "image";
+        window.rootPath = "../../../";
+        window.currentCrate = "image";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
+    
     <script async src="../../../search-index.js"></script>
 </body>
 </html>

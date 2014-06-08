@@ -313,6 +313,14 @@
 <span id='273'>273</span>
 <span id='274'>274</span>
 <span id='275'>275</span>
+<span id='276'>276</span>
+<span id='277'>277</span>
+<span id='278'>278</span>
+<span id='279'>279</span>
+<span id='280'>280</span>
+<span id='281'>281</span>
+<span id='282'>282</span>
+<span id='283'>283</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>rect</span>::<span class='ident'>Rect</span>;
@@ -570,7 +578,16 @@
         } <span class='kw'>else</span> {
             <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
         }
+    }
+
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>blit</span>( <span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>src</span>: <span class='kw-2'>&amp;</span><span class='ident'>Surface</span>, <span class='ident'>dstrect</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Rect</span><span class='op'>&gt;</span>, <span class='ident'>srcrect</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Rect</span><span class='op'>&gt;</span> ) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+        <span class='kw'>unsafe</span> {
+            <span class='kw'>let</span> <span class='ident'>dstrect_ptr</span> <span class='op'>=</span> <span class='ident'>mem</span>::<span class='ident'>transmute</span>( <span class='ident'>dstrect</span>.<span class='ident'>as_ref</span>() );
+            <span class='kw'>let</span> <span class='ident'>srcrect_ptr</span> <span class='op'>=</span> <span class='ident'>mem</span>::<span class='ident'>transmute</span>( <span class='ident'>srcrect</span>.<span class='ident'>as_ref</span>() );
+            <span class='ident'>ll</span>::<span class='ident'>SDL_UpperBlit</span>( <span class='ident'>src</span>.<span class='ident'>raw</span>, <span class='ident'>srcrect_ptr</span>, <span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>dstrect_ptr</span> ) <span class='op'>==</span> <span class='number'>0</span>
+        }
     }<span class='comment'>
+
     /*
     pub fn SDL_SetSurfaceAlphaMod(surface: *SDL_Surface, alpha: uint8_t) -&gt; c_int;
     pub fn SDL_GetSurfaceAlphaMod(surface: *SDL_Surface, alpha: *uint8_t ) -&gt; c_int;
@@ -583,7 +600,6 @@
     pub fn SDL_ConvertPixels(width: c_int, height: c_int, src_format: uint32_t, src: *c_void, src_pitch: c_int, dst_format: uint32_t, dst: *c_void, dst_pitch: c_int) -&gt; c_int;
     pub fn SDL_FillRect(dst: *SDL_Surface, rect: *SDL_Rect, color: uint32_t) -&gt; c_int;
     pub fn SDL_FillRects(dst: *SDL_Surface, rects: *SDL_Rect, count: c_int, color: uint32_t) -&gt; c_int;
-    pub fn SDL_UpperBlit(src: *SDL_Surface, srcrect: *SDL_Rect, dst: *SDL_Surface, dstrect: *SDL_Rect) -&gt; c_int;
     pub fn SDL_LowerBlit(src: *SDL_Surface, srcrect: *SDL_Rect, dst: *SDL_Surface, dstrect: *SDL_Rect) -&gt; c_int;
     pub fn SDL_SoftStretch(src: *SDL_Surface, srcrect: *SDL_Rect, dst: *SDL_Surface, dstrect: *SDL_Rect) -&gt; c_int;
     pub fn SDL_UpperBlitScaled(src: *SDL_Surface, srcrect: *SDL_Rect, dst: *SDL_Surface, dstrect: *SDL_Rect) -&gt; c_int;
@@ -627,11 +643,13 @@
     </div>
 
     <script>
-        var rootPath = "../../../../";
-        var currentCrate = "sdl2";
+        window.rootPath = "../../../../";
+        window.currentCrate = "sdl2";
+        window.playgroundUrl = "";
     </script>
     <script src="../../../../jquery.js"></script>
     <script src="../../../../main.js"></script>
+    
     <script async src="../../../../search-index.js"></script>
 </body>
 </html>

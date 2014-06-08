@@ -52,7 +52,7 @@
 </div></td></tr><tr><td id='structfield.rect'><code>rect</code></td><td><div class='docblock'><p>Current rectangle.</p>
 </div></td></tr><tr><td id='structfield.color'><code>color</code></td><td><div class='docblock'><p>Current color.</p>
 </div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'static&gt;</code></h4>
-<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, &amp;Self)</code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='../graphics/internal/trait.HasTransform.html' title='graphics::internal::HasTransform'>HasTransform</a>&lt;'a, <a class='type' href='../graphics/internal/type.Matrix2d.html' title='graphics::internal::Matrix2d'>Matrix2d</a>&gt; for <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.get_transform' class='method'><code>fn <a href='#method.get_transform' class='fnname'>get_transform</a>(&amp;'a self) -&gt; &amp;'a <a class='type' href='../graphics/internal/type.Matrix2d.html' title='graphics::internal::Matrix2d'>Matrix2d</a></code></h4>
 </div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='../graphics/internal/trait.CanTransform.html' title='graphics::internal::CanTransform'>CanTransform</a>&lt;'a, <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;, <a class='type' href='../graphics/internal/type.Matrix2d.html' title='graphics::internal::Matrix2d'>Matrix2d</a>&gt; for <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.transform' class='method'><code>fn <a href='#method.transform' class='fnname'>transform</a>(&amp;'a self, value: <a class='type' href='../graphics/internal/type.Matrix2d.html' title='graphics::internal::Matrix2d'>Matrix2d</a>) -&gt; <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;</code></h4>
 </div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='../graphics/internal/trait.HasViewTransform.html' title='graphics::internal::HasViewTransform'>HasViewTransform</a>&lt;'a, <a class='type' href='../graphics/internal/type.Matrix2d.html' title='graphics::internal::Matrix2d'>Matrix2d</a>&gt; for <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.get_view_transform' class='method'><code>fn <a href='#method.get_view_transform' class='fnname'>get_view_transform</a>(&amp;'a self) -&gt; &amp;'a <a class='type' href='../graphics/internal/type.Matrix2d.html' title='graphics::internal::Matrix2d'>Matrix2d</a></code></h4>
@@ -100,11 +100,13 @@
     </div>
 
     <script>
-        var rootPath = "../";
-        var currentCrate = "graphics";
+        window.rootPath = "../";
+        window.currentCrate = "graphics";
+        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
+    
     <script async src="../search-index.js"></script>
 </body>
 </html>

@@ -161,7 +161,7 @@ for concurrent rendering.</p>
 <div class='docblock'><p>Wrapper for <code>glfwSetScrollCallback</code>.</p>
 </div><h4 id='method.set_clipboard_string' class='method'><code>fn <a href='#method.set_clipboard_string' class='fnname'>set_clipboard_string</a>(&amp;self, string: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>)</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetClipboardString</code>.</p>
-</div><h4 id='method.get_clipboard_string' class='method'><code>fn <a href='#method.get_clipboard_string' class='fnname'>get_clipboard_string</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/std/string/struct.String.html' title='std::string::String'>String</a></code></h4>
+</div><h4 id='method.get_clipboard_string' class='method'><code>fn <a href='#method.get_clipboard_string' class='fnname'>get_clipboard_string</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetClipboardString</code>.</p>
 </div><h4 id='method.get_cocoa_window' class='method'><code>fn <a href='#method.get_cocoa_window' class='fnname'>get_cocoa_window</a>(&amp;self) -&gt; *c_void</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetCocoaWindow</code></p>
@@ -213,11 +213,13 @@ until all associated <code>RenderContext</code>s were also dropped.</p>
     </div>
 
     <script>
-        var rootPath = "../";
-        var currentCrate = "glfw";
+        window.rootPath = "../";
+        window.currentCrate = "glfw";
+        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
+    
     <script async src="../search-index.js"></script>
 </body>
 </html>

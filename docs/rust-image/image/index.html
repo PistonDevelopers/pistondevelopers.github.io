@@ -39,9 +39,9 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Crate <a class='mod' href=''>image</a><a class='source' id='src-0' href='../src/image/src/lib.rs.html#1-37'>[src]</a></h1>
+<h1 class='fqn'>Crate <a class='mod' href=''>image</a><a class='source' id='src-0' href='../src/image/src/lib.rs.html#1-46'>[src]</a></h1>
 <h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
-<table><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>ColorType</a>;</code></td></tr><tr><td><code>pub use ppm::<a class='struct' href='../image/ppm/struct.PPMEncoder.html' title='image::ppm::PPMEncoder'>PPMEncoder</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>ColorType</a>;</code></td></tr><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>Grey</a>;</code></td></tr><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>RGB</a>;</code></td></tr><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>Palette</a>;</code></td></tr><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>GreyA</a>;</code></td></tr><tr><td><code>pub use colortype::<a class='type' href='../image/colortype/type.ColorType.html' title='image::colortype::ColorType'>RGBA</a>;</code></td></tr><tr><td><code>pub use image::{<a class='type' href='../image/type.ImageFormat.html' title='image::ImageFormat'>PNG</a>, <a class='type' href='../image/type.ImageFormat.html' title='image::ImageFormat'>JPEG</a>, <a class='type' href='../image/type.ImageFormat.html' title='image::ImageFormat'>GIF</a>, <a class='type' href='../image/type.ImageFormat.html' title='image::ImageFormat'>WEBP</a>, <a class='type' href='../image/type.ImageFormat.html' title='image::ImageFormat'>PPM</a>};</code></td></tr><tr><td><code>pub use ppm::<a class='struct' href='../image/ppm/struct.PPMEncoder.html' title='image::ppm::PPMEncoder'>PPMEncoder</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                     <tr>
                         <td><a class='mod' href='colortype/index.html'
@@ -101,6 +101,13 @@
                     </tr>
                 
                     <tr>
+                        <td><a class='struct' href='struct.Image.html'
+                               title='image::Image'>Image</a></td>
+                        <td class='docblock short'><p>A Generic representation of an image</p>
+</td>
+                    </tr>
+                
+                    <tr>
                         <td><a class='struct' href='struct.JPEGDecoder.html'
                                title='image::JPEGDecoder'>JPEGDecoder</a></td>
                         <td class='docblock short'><p>The representation of a JPEG decoder</p>
@@ -139,6 +146,14 @@
                         <td><a class='type' href='type.ImageError.html'
                                title='image::ImageError'>ImageError</a></td>
                         <td class='docblock short'><p>An enumeration of Image Errors</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='type' href='type.ImageFormat.html'
+                               title='image::ImageFormat'>ImageFormat</a></td>
+                        <td class='docblock short'><p>An enumeration of supported image formats.
+Not all formats support both encoding and decoding.</p>
 </td>
                     </tr>
                 </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
@@ -193,11 +208,13 @@
     </div>
 
     <script>
-        var rootPath = "../";
-        var currentCrate = "image";
+        window.rootPath = "../";
+        window.currentCrate = "image";
+        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
+    
     <script async src="../search-index.js"></script>
 </body>
 </html>
