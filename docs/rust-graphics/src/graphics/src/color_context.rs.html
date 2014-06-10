@@ -242,9 +242,6 @@
 <span id='202'>202</span>
 <span id='203'>203</span>
 <span id='204'>204</span>
-<span id='205'>205</span>
-<span id='206'>206</span>
-<span id='207'>207</span>
 </pre><pre class='rust '>
 
 <span class='kw'>use</span> {
@@ -260,7 +257,7 @@
     <span class='ident'>EllipseColorContext</span>,
     <span class='ident'>Field</span>,
     <span class='ident'>Image</span>,
-    <span class='ident'>ImageRectangleColorContext</span>,
+    <span class='ident'>ImageColorContext</span>,
     <span class='ident'>LineColorContext</span>,
     <span class='ident'>PolygonColorContext</span>,
     <span class='ident'>RectangleColorContext</span>,
@@ -424,16 +421,13 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span> <span class='ident'>AddImage</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span> <span class='ident'>AddImage</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>ImageColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>image</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>image</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;b</span> <span class='ident'>I</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>image</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>image</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;b</span> <span class='ident'>I</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> (<span class='ident'>w</span>, <span class='ident'>h</span>) <span class='op'>=</span> <span class='ident'>image</span>.<span class='ident'>get_size</span>();
-        <span class='ident'>ImageRectangleColorContext</span> {
+        <span class='ident'>ImageColorContext</span> {
             <span class='ident'>view</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>view</span>.<span class='ident'>get</span>()),
             <span class='ident'>transform</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()),
-            <span class='ident'>rect</span>: <span class='ident'>Value</span>(
-                [<span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='ident'>w</span> <span class='kw'>as</span> <span class='ident'>f64</span>, <span class='ident'>h</span> <span class='kw'>as</span> <span class='ident'>f64</span>]
-            ),
             <span class='ident'>image</span>: <span class='ident'>Value</span>(<span class='ident'>image</span>),
             <span class='ident'>source_rect</span>: <span class='ident'>Value</span>([<span class='number'>0</span>, <span class='number'>0</span>, <span class='ident'>w</span>, <span class='ident'>h</span>]),
             <span class='ident'>color</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>()),
