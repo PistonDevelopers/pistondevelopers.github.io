@@ -166,6 +166,9 @@
 <span id='126'>126</span>
 <span id='127'>127</span>
 <span id='128'>128</span>
+<span id='129'>129</span>
+<span id='130'>130</span>
+<span id='131'>131</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! A window implemented by SDL2 back-end.
 </span><span class='comment'>
@@ -184,7 +187,10 @@
 
 <span class='doccomment'>/// A widow implemented by SDL2 back-end.
 </span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameWindowSDL2</span> {
-    <span class='ident'>window</span>: <span class='ident'>sdl2</span>::<span class='ident'>video</span>::<span class='ident'>Window</span>,
+    <span class='ident'>window</span>: <span class='ident'>sdl2</span>::<span class='ident'>video</span>::<span class='ident'>Window</span>,<span class='comment'>
+    // Allow dead code because this keeps track of the OpenGL context.
+    // Will be released on drop.
+    </span><span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='ident'>context</span>: <span class='ident'>sdl2</span>::<span class='ident'>video</span>::<span class='ident'>GLContext</span>,
     <span class='ident'>settings</span>: <span class='ident'>GameWindowSettings</span>,
     <span class='ident'>should_close</span>: <span class='ident'>bool</span>,
