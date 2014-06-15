@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -224,9 +223,27 @@
 <span id='184'>184</span>
 <span id='185'>185</span>
 <span id='186'>186</span>
+<span id='187'>187</span>
+<span id='188'>188</span>
+<span id='189'>189</span>
+<span id='190'>190</span>
+<span id='191'>191</span>
+<span id='192'>192</span>
+<span id='193'>193</span>
+<span id='194'>194</span>
+<span id='195'>195</span>
+<span id='196'>196</span>
+<span id='197'>197</span>
+<span id='198'>198</span>
+<span id='199'>199</span>
+<span id='200'>200</span>
+<span id='201'>201</span>
+<span id='202'>202</span>
+<span id='203'>203</span>
+<span id='204'>204</span>
 </pre><pre class='rust '>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;graphics&quot;</span>]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;graphics&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
 
 <span class='doccomment'>//! A library for 2D graphics that works with multiple back-ends.
 </span><span class='doccomment'>//!
@@ -280,6 +297,7 @@
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddBevel</span> <span class='op'>=</span> <span class='ident'>add_bevel</span>::<span class='ident'>AddBevel</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddBevelBorder</span> <span class='op'>=</span> <span class='ident'>add_bevel_border</span>::<span class='ident'>AddBevelBorder</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddBorder</span> <span class='op'>=</span> <span class='ident'>add_border</span>::<span class='ident'>AddBorder</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddColor</span> <span class='op'>=</span> <span class='ident'>add_color</span>::<span class='ident'>AddColor</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddEllipse</span> <span class='op'>=</span> <span class='ident'>add_ellipse</span>::<span class='ident'>AddEllipse</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddImage</span> <span class='op'>=</span> <span class='ident'>add_image</span>::<span class='ident'>AddImage</span>;
@@ -294,6 +312,8 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BackEnd</span> <span class='op'>=</span> <span class='ident'>back_end</span>::<span class='ident'>BackEnd</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelBorderLineColorContext</span> <span class='op'>=</span> <span class='ident'>bevel_border_line_color_context</span>::<span class='ident'>BevelBorderLineColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelBorderLineContext</span> <span class='op'>=</span> <span class='ident'>bevel_border_line_context</span>::<span class='ident'>BevelBorderLineContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelRectangleBorderColorContext</span> <span class='op'>=</span> <span class='ident'>bevel_rectangle_border_color_context</span>::<span class='ident'>BevelRectangleBorderColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelRectangleBorderContext</span> <span class='op'>=</span> <span class='ident'>bevel_rectangle_border_context</span>::<span class='ident'>BevelRectangleBorderContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelRectangleColorContext</span> <span class='op'>=</span> <span class='ident'>bevel_rectangle_color_context</span>::<span class='ident'>BevelRectangleColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelRectangleContext</span> <span class='op'>=</span> <span class='ident'>bevel_rectangle_context</span>::<span class='ident'>BevelRectangleContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Clear</span> <span class='op'>=</span> <span class='ident'>clear</span>::<span class='ident'>Clear</span>;
@@ -301,7 +321,9 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Context</span> <span class='op'>=</span> <span class='ident'>context</span>::<span class='ident'>Context</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Draw</span> <span class='op'>=</span> <span class='ident'>draw</span>::<span class='ident'>Draw</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>EllipseContext</span> <span class='op'>=</span> <span class='ident'>ellipse_context</span>::<span class='ident'>EllipseContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>EllipseBorderContext</span> <span class='op'>=</span> <span class='ident'>ellipse_border_context</span>::<span class='ident'>EllipseBorderContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>EllipseColorContext</span> <span class='op'>=</span> <span class='ident'>ellipse_color_context</span>::<span class='ident'>EllipseColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>EllipseBorderColorContext</span> <span class='op'>=</span> <span class='ident'>ellipse_border_color_context</span>::<span class='ident'>EllipseBorderColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Fill</span> <span class='op'>=</span> <span class='ident'>fill</span>::<span class='ident'>Fill</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Image</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>Image</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageContext</span> <span class='op'>=</span> <span class='ident'>image_context</span>::<span class='ident'>ImageContext</span>;
@@ -316,6 +338,8 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>LineColorContext</span> <span class='op'>=</span> <span class='ident'>line_color_context</span>::<span class='ident'>LineColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>PolygonContext</span> <span class='op'>=</span> <span class='ident'>polygon_context</span>::<span class='ident'>PolygonContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>PolygonColorContext</span> <span class='op'>=</span> <span class='ident'>polygon_color_context</span>::<span class='ident'>PolygonColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RectangleBorderContext</span> <span class='op'>=</span> <span class='ident'>rectangle_border_context</span>::<span class='ident'>RectangleBorderContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RectangleBorderColorContext</span> <span class='op'>=</span> <span class='ident'>rectangle_border_color_context</span>::<span class='ident'>RectangleBorderColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RectangleContext</span> <span class='op'>=</span> <span class='ident'>rectangle_context</span>::<span class='ident'>RectangleContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RectangleColorContext</span> <span class='op'>=</span> <span class='ident'>rectangle_color_context</span>::<span class='ident'>RectangleColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RelativeColor</span> <span class='op'>=</span> <span class='ident'>relative_color</span>::<span class='ident'>RelativeColor</span>;
@@ -324,8 +348,10 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RelativeTransform2d</span> <span class='op'>=</span> <span class='ident'>relative_transform2d</span>::<span class='ident'>RelativeTransform2d</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundBorderLineContext</span> <span class='op'>=</span> <span class='ident'>round_border_line_context</span>::<span class='ident'>RoundBorderLineContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundBorderLineColorContext</span> <span class='op'>=</span> <span class='ident'>round_border_line_color_context</span>::<span class='ident'>RoundBorderLineColorContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundRectangleContext</span> <span class='op'>=</span> <span class='ident'>round_rectangle_context</span>::<span class='ident'>RoundRectangleContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundRectangleBorderColorContext</span> <span class='op'>=</span> <span class='ident'>round_rectangle_border_color_context</span>::<span class='ident'>RoundRectangleBorderColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundRectangleBorderContext</span> <span class='op'>=</span> <span class='ident'>round_rectangle_border_context</span>::<span class='ident'>RoundRectangleBorderContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundRectangleColorContext</span> <span class='op'>=</span> <span class='ident'>round_rectangle_color_context</span>::<span class='ident'>RoundRectangleColorContext</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundRectangleContext</span> <span class='op'>=</span> <span class='ident'>round_rectangle_context</span>::<span class='ident'>RoundRectangleContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Stroke</span> <span class='op'>=</span> <span class='ident'>stroke</span>::<span class='ident'>Stroke</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SquareBorderLineColorContext</span> <span class='op'>=</span> <span class='ident'>square_border_line_color_context</span>::<span class='ident'>SquareBorderLineColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SquareBorderLineContext</span> <span class='op'>=</span> <span class='ident'>square_border_line_context</span>::<span class='ident'>SquareBorderLineContext</span>;
@@ -333,6 +359,7 @@
 
 <span class='kw'>mod</span> <span class='ident'>add_bevel</span>;
 <span class='kw'>mod</span> <span class='ident'>add_bevel_border</span>;
+<span class='kw'>mod</span> <span class='ident'>add_border</span>;
 <span class='kw'>mod</span> <span class='ident'>add_color</span>;
 <span class='kw'>mod</span> <span class='ident'>add_ellipse</span>;
 <span class='kw'>mod</span> <span class='ident'>add_image</span>;
@@ -347,12 +374,16 @@
 <span class='kw'>mod</span> <span class='ident'>back_end</span>;
 <span class='kw'>mod</span> <span class='ident'>bevel_border_line_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>bevel_border_line_context</span>;
+<span class='kw'>mod</span> <span class='ident'>bevel_rectangle_border_color_context</span>;
+<span class='kw'>mod</span> <span class='ident'>bevel_rectangle_border_context</span>;
 <span class='kw'>mod</span> <span class='ident'>bevel_rectangle_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>bevel_rectangle_context</span>;
 <span class='kw'>mod</span> <span class='ident'>clear</span>;
 <span class='kw'>mod</span> <span class='ident'>color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>context</span>;
 <span class='kw'>mod</span> <span class='ident'>draw</span>;
+<span class='kw'>mod</span> <span class='ident'>ellipse_border_context</span>;
+<span class='kw'>mod</span> <span class='ident'>ellipse_border_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>ellipse_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>ellipse_context</span>;
 <span class='kw'>mod</span> <span class='ident'>fill</span>;
@@ -365,6 +396,8 @@
 <span class='kw'>mod</span> <span class='ident'>line_context</span>;
 <span class='kw'>mod</span> <span class='ident'>polygon_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>polygon_context</span>;
+<span class='kw'>mod</span> <span class='ident'>rectangle_border_context</span>;
+<span class='kw'>mod</span> <span class='ident'>rectangle_border_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>rectangle_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>rectangle_context</span>;
 <span class='kw'>mod</span> <span class='ident'>relative_color</span>;
@@ -373,6 +406,8 @@
 <span class='kw'>mod</span> <span class='ident'>relative_transform2d</span>;
 <span class='kw'>mod</span> <span class='ident'>round_border_line_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>round_border_line_context</span>;
+<span class='kw'>mod</span> <span class='ident'>round_rectangle_border_color_context</span>;
+<span class='kw'>mod</span> <span class='ident'>round_rectangle_border_context</span>;
 <span class='kw'>mod</span> <span class='ident'>round_rectangle_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>round_rectangle_context</span>;
 <span class='kw'>mod</span> <span class='ident'>square_border_line_color_context</span>;
@@ -402,7 +437,7 @@
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span><span class='op'>&gt;</span> <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Gets a read only value.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>T</span> {
         <span class='kw'>match</span> <span class='op'>*</span><span class='self'>self</span> {
             <span class='ident'>Value</span>(<span class='kw-2'>ref</span> <span class='ident'>val</span>) <span class='op'>=&gt;</span> <span class='ident'>val</span>,
@@ -429,7 +464,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

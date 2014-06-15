@@ -23,8 +23,7 @@
 
     <section class="sidebar">
         
-
-        <p class='location'><a href='../index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='../colortype/index.html'>colortype</a><br/><a class='mod ' href='../gif/index.html'>gif</a><br/><a class='mod ' href='../jpeg/index.html'>jpeg</a><br/><a class='mod current' href='../pixels/index.html'>pixels</a><br/><a class='mod ' href='../png/index.html'>png</a><br/><a class='mod ' href='../ppm/index.html'>ppm</a><br/><a class='mod ' href='../vp8/index.html'>vp8</a><br/><a class='mod ' href='../webp/index.html'>webp</a><br/></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='../struct.GIFDecoder.html'>GIFDecoder</a><br/><a class='struct ' href='../struct.Image.html'>Image</a><br/><a class='struct ' href='../struct.JPEGDecoder.html'>JPEGDecoder</a><br/><a class='struct ' href='../struct.JPEGEncoder.html'>JPEGEncoder</a><br/><a class='struct ' href='../struct.PNGDecoder.html'>PNGDecoder</a><br/><a class='struct ' href='../struct.PNGEncoder.html'>PNGEncoder</a><br/><a class='struct ' href='../struct.WebpDecoder.html'>WebpDecoder</a><br/></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='../trait.ImageDecoder.html'>ImageDecoder</a><br/></div>
+        <p class='location'><a href='../index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='../colortype/index.html'>colortype</a><a class='mod ' href='../gif/index.html'>gif</a><a class='mod ' href='../jpeg/index.html'>jpeg</a><a class='mod current' href='../pixels/index.html'>pixels</a><a class='mod ' href='../png/index.html'>png</a><a class='mod ' href='../ppm/index.html'>ppm</a><a class='mod ' href='../vp8/index.html'>vp8</a><a class='mod ' href='../webp/index.html'>webp</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='../struct.GIFDecoder.html'>GIFDecoder</a><a class='struct ' href='../struct.Image.html'>Image</a><a class='struct ' href='../struct.JPEGDecoder.html'>JPEGDecoder</a><a class='struct ' href='../struct.JPEGEncoder.html'>JPEGEncoder</a><a class='struct ' href='../struct.PNGDecoder.html'>PNGDecoder</a><a class='struct ' href='../struct.PNGEncoder.html'>PNGEncoder</a><a class='struct ' href='../struct.WebpDecoder.html'>WebpDecoder</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='../trait.ImageDecoder.html'>ImageDecoder</a></div>
     </section>
 
     <nav class="sub">
@@ -39,7 +38,7 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Module <a href='../index.html'>image</a>::<a class='mod' href=''>pixels</a><a class='source' id='src-14435' href='../../src/image/src/pixels.rs.html#1-546'>[src]</a></h1>
+<h1 class='fqn'>Module <a href='../index.html'>image</a>::<a class='mod' href=''>pixels</a><a class='source' id='src-14429' href='../../src/image/src/pixels.rs.html#1-726'>[src]</a></h1>
 <div class='docblock'><p>Types and functions for dealing with pixels.</p>
 </div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
@@ -89,6 +88,15 @@
                 </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
                     <tr>
+                        <td><a class='fn' href='fn.blur.html'
+                               title='image::pixels::blur'>blur</a></td>
+                        <td class='docblock short'><p>Perfomrs a Gausian blur on this <code>Pixelbuf</code>.
+<code>width</code> and <code>height</code> are the dimensions of the buffer.
+<code>sigma</code> is a meausure of how much to blur by.</p>
+</td>
+                    </tr>
+                
+                    <tr>
                         <td><a class='fn' href='fn.grayscale.html'
                                title='image::pixels::grayscale'>grayscale</a></td>
                         <td class='docblock short'><p>Convert the <code>PixelBuf</code> pixels to graysacle</p>
@@ -110,6 +118,16 @@
 <code>nwidth</code> and <code>nheight</code> are the new dimensions.</p>
 </td>
                     </tr>
+                
+                    <tr>
+                        <td><a class='fn' href='fn.unsharpen.html'
+                               title='image::pixels::unsharpen'>unsharpen</a></td>
+                        <td class='docblock short'><p>Performs an unsharpen mask on <code>pixels</code>
+<code>sigma</code> is the amount to blur the image by.
+<code>threshold</code> is a control of how much to sharpen.
+see <a href="https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking">https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking</a></p>
+</td>
+                    </tr>
                 </table></section>
     <section id='search' class="content hidden"></section>
 
@@ -127,7 +145,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -1661,15 +1660,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-</span><span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;rlib&quot;</span>]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;dylib&quot;</span>]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;github.com/bjz/glfw-rs#glfw:0.1&quot;</span>]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;Bindings and wrapper functions for glfw3.&quot;</span>]</span>
+</span><span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;rlib&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;dylib&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;github.com/bjz/glfw-rs#glfw:0.1&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;Bindings and wrapper functions for glfw3.&quot;</span>]</span>
 
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>globs</span>)]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>phase</span>)]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>globs</span>)]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>phase</span>)]</span>
 
 <span class='doccomment'>//! An ideomatic wrapper for the GLFW library.
 </span><span class='doccomment'>//!
@@ -1722,7 +1721,7 @@
 </span><span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>semver</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sync</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
-<span class='attribute'>#[<span class='ident'>phase</span>(<span class='ident'>plugin</span>, <span class='ident'>link</span>)]</span> <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>log</span>;
+<span class='attribute'>\#[<span class='ident'>phase</span>(<span class='ident'>plugin</span>, <span class='ident'>link</span>)]</span> <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>log</span>;
 
 <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_double</span>, <span class='ident'>c_float</span>, <span class='ident'>c_int</span>};
 <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_uint</span>, <span class='ident'>c_ushort</span>, <span class='ident'>c_void</span>};
@@ -1751,8 +1750,8 @@
 </span><span class='kw'>mod</span> <span class='ident'>link</span>;
 
 <span class='doccomment'>/// Input actions.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Action</span> {
     <span class='ident'>Release</span>                      <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>RELEASE</span>,
     <span class='ident'>Press</span>                        <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>PRESS</span>,
@@ -1760,8 +1759,8 @@
 }
 
 <span class='doccomment'>/// Input keys.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Key</span> {
     <span class='ident'>KeySpace</span>                    <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>KEY_SPACE</span>,
     <span class='ident'>KeyApostrophe</span>               <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>KEY_APOSTROPHE</span>,
@@ -1888,8 +1887,8 @@
 
 <span class='doccomment'>/// Mouse buttons. The `MouseButtonLeft`, `MouseButtonRight`, and
 </span><span class='doccomment'>/// `MouseButtonMiddle` aliases are supplied for convenience.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MouseButton</span> {
     <span class='doccomment'>/// The left mouse button. A `MouseButtonLeft` alias is provided to improve clarity.
 </span>    <span class='ident'>MouseButton1</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MOUSE_BUTTON_1</span>,
@@ -1932,8 +1931,8 @@
 }
 
 <span class='doccomment'>/// Tokens corresponding to various error types.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Error</span> {
     <span class='ident'>NotInitialized</span>              <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NOT_INITIALIZED</span>,
     <span class='ident'>NoCurrentContext</span>            <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_CURRENT_CONTEXT</span>,
@@ -1970,8 +1969,8 @@
     <span class='prelude-val'>Some</span>(<span class='ident'>Callback</span> { <span class='ident'>f</span>: <span class='ident'>log_errors</span>, <span class='ident'>data</span>: () });
 
 <span class='doccomment'>/// Cursor modes.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>CursorMode</span> {
     <span class='ident'>CursorNormal</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CURSOR_NORMAL</span>,
     <span class='ident'>CursorHidden</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CURSOR_HIDDEN</span>,
@@ -2004,14 +2003,14 @@
 </span><span class='doccomment'>/// performing some operations harder, this is to ensure thread safety is enforced
 </span><span class='doccomment'>/// statically. The context can be safely cloned or implicitly copied if need be
 </span><span class='doccomment'>/// for convenience.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Glfw</span> {
     <span class='ident'>no_send</span>: <span class='ident'>marker</span>::<span class='ident'>NoSend</span>,
     <span class='ident'>no_share</span>: <span class='ident'>marker</span>::<span class='ident'>NoShare</span>,
 }
 
 <span class='doccomment'>/// An error that might be returned when `glfw::init` is called.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>InitError</span> {
     <span class='doccomment'>/// The library was already initialized.
 </span>    <span class='ident'>AlreadyInitialized</span>,
@@ -2286,7 +2285,7 @@
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetX11Display`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_x11_display</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetX11Display</span>() }
     }
@@ -2470,7 +2469,7 @@
 }
 
 <span class='doccomment'>/// Monitor events.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MonitorEvent</span> {
     <span class='ident'>Connected</span>                   <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>CONNECTED</span>,
     <span class='ident'>Disconnected</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>DISCONNECTED</span>,
@@ -2605,16 +2604,16 @@
 }
 
 <span class='doccomment'>/// Client API tokens.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ClientApi</span> {
     <span class='ident'>OpenGlApi</span>                   <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_API</span>,
     <span class='ident'>OpenGlEsApi</span>                 <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_ES_API</span>,
 }
 
 <span class='doccomment'>/// Context robustness tokens.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ContextRobustness</span> {
     <span class='ident'>NoRobustness</span>                <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_ROBUSTNESS</span>,
     <span class='ident'>NoResetNotification</span>         <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>NO_RESET_NOTIFICATION</span>,
@@ -2622,8 +2621,8 @@
 }
 
 <span class='doccomment'>/// OpenGL profile tokens.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>OpenGlProfile</span> {
     <span class='ident'>OpenGlAnyProfile</span>            <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_ANY_PROFILE</span>,
     <span class='ident'>OpenGlCoreProfile</span>           <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>OPENGL_CORE_PROFILE</span>,
@@ -2652,8 +2651,8 @@
 }
 
 <span class='macro'>bitflags</span><span class='macro'>!</span> {
-    <span class='attribute'>#[<span class='ident'>doc</span> <span class='op'>=</span> <span class='string'>&quot;Key modifiers&quot;</span>]</span>
-    <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Hash</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>doc</span> <span class='op'>=</span> <span class='string'>&quot;Key modifiers&quot;</span>]</span>
+    <span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Hash</span>)]</span>
     <span class='ident'>flags</span> <span class='ident'>Modifiers</span>: <span class='ident'>c_int</span> {
         <span class='kw'>static</span> <span class='ident'>Shift</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MOD_SHIFT</span>,
         <span class='kw'>static</span> <span class='ident'>Control</span>     <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MOD_CONTROL</span>,
@@ -2679,7 +2678,7 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Scancode</span> <span class='op'>=</span> <span class='ident'>c_int</span>;
 
 <span class='doccomment'>/// Window event messages.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>WindowEvent</span> {
     <span class='ident'>PosEvent</span>(<span class='ident'>i32</span>, <span class='ident'>i32</span>),
     <span class='ident'>SizeEvent</span>(<span class='ident'>i32</span>, <span class='ident'>i32</span>),
@@ -2726,7 +2725,7 @@
 }
 
 <span class='doccomment'>/// A message for notifying a `Window` that a `RenderContext` has been dropped.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>struct</span> <span class='ident'>ContextDropped</span>;
 
 <span class='doccomment'>/// A struct that wraps a `*GLFWwindow` handle.
@@ -3085,43 +3084,43 @@
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetWin32Window`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_win32_window</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetWin32Window</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>) }
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetWGLContext`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_wgl_context</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetWGLContext</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>) }
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetCocoaWindow`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_cocoa_window</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetCocoaWindow</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>) }
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetNSGLContext`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_nsgl_context</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetNSGLContext</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>) }
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetX11Window`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_x11_window</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetX11Window</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>) }
     }
 
     <span class='doccomment'>/// Wrapper for `glfwGetGLXContext`
-</span>    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_glx_context</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>c_void</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>glfwGetGLXContext</span>(<span class='self'>self</span>.<span class='ident'>ptr</span>) }
     }
 }
 
-<span class='attribute'>#[<span class='ident'>unsafe_destructor</span>]</span>
+<span class='attribute'>\#[<span class='ident'>unsafe_destructor</span>]</span>
 <span class='kw'>impl</span> <span class='ident'>Drop</span> <span class='kw'>for</span> <span class='ident'>Window</span> {
     <span class='doccomment'>/// Closes the window and performs the necessary cleanups. This will block
 </span>    <span class='doccomment'>/// until all associated `RenderContext`s were also dropped.
@@ -3197,8 +3196,8 @@
 }
 
 <span class='doccomment'>/// Joystick identifier tokens.
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>JoystickId</span> {
     <span class='ident'>Joystick1</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>JOYSTICK_1</span>,
     <span class='ident'>Joystick2</span>       <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>JOYSTICK_2</span>,
@@ -3271,7 +3270,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

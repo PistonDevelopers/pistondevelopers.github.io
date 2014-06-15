@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -119,8 +118,8 @@ Querying SDL Version
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fmt</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>c_str</span>::<span class='ident'>CString</span>;
 
-<span class='attribute'>#[<span class='ident'>doc</span>(<span class='ident'>hidden</span>)]</span>
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>doc</span>(<span class='ident'>hidden</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>uint8_t</span>, <span class='ident'>c_char</span>, <span class='ident'>c_int</span>};
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_version</span> {
@@ -136,7 +135,7 @@ Querying SDL Version
 }
 
 <span class='doccomment'>/// A structure that contains information about the version of SDL in use.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Version</span> {
     <span class='doccomment'>/// major version
 </span>    <span class='kw'>pub</span> <span class='ident'>major</span>: <span class='ident'>int</span>,
@@ -203,7 +202,7 @@ Querying SDL Version
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

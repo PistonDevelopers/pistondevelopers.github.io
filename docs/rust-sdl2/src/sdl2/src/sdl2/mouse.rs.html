@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -277,7 +276,7 @@
 <span class='kw'>use</span> <span class='ident'>surface</span>;
 <span class='kw'>use</span> <span class='ident'>video</span>;
 
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>c_uint</span>, <span class='ident'>c_void</span>, <span class='ident'>uint8_t</span>, <span class='ident'>uint32_t</span>};
     <span class='kw'>use</span> <span class='ident'>surface</span>::<span class='ident'>ll</span>::<span class='ident'>SDL_Surface</span>;
@@ -327,7 +326,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>SystemCursor</span> {
     <span class='ident'>ArrowCursor</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_SYSTEM_CURSOR_ARROW</span>,
     <span class='ident'>IBeamCursor</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_SYSTEM_CURSOR_IBEAM</span>,
@@ -343,7 +342,7 @@
     <span class='ident'>HandCursor</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_SYSTEM_CURSOR_HAND</span>,
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Cursor</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Cursor</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -406,7 +405,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Mouse</span> {
     <span class='ident'>LeftMouse</span>,
     <span class='ident'>MiddleMouse</span>,
@@ -519,7 +518,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

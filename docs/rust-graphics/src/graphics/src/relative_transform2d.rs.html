@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -157,7 +156,7 @@
 </span>    <span class='kw'>fn</span> <span class='ident'>trans</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>Scalar</span>, <span class='ident'>y</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span>;
     
     <span class='doccomment'>/// Rotates degrees in local coordinates.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>rot_deg</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>angle</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='kw'>let</span> <span class='ident'>pi</span>: <span class='ident'>Scalar</span> <span class='op'>=</span> <span class='ident'>Float</span>::<span class='ident'>pi</span>();
         <span class='self'>self</span>.<span class='ident'>rot_rad</span>(<span class='ident'>angle</span> <span class='op'>*</span> <span class='ident'>pi</span> <span class='op'>/</span> <span class='number'>180.0</span>)
@@ -175,19 +174,19 @@
 </span>    <span class='kw'>fn</span> <span class='ident'>scale</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>sx</span>: <span class='ident'>Scalar</span>, <span class='ident'>sy</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span>;
 
     <span class='doccomment'>/// Scales in both directions in local coordinates.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>zoom</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='self'>self</span>.<span class='ident'>scale</span>(<span class='ident'>s</span>, <span class='ident'>s</span>)
     }
 
     <span class='doccomment'>/// Flips vertically in local coordinates.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>flip_v</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='self'>self</span>.<span class='ident'>scale</span>(<span class='number'>1.0</span>, <span class='op'>-</span><span class='number'>1.0</span>)
     }
 
     <span class='doccomment'>/// Flips horizontally in local coordinates.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>flip_h</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='self'>self</span>.<span class='ident'>scale</span>(<span class='op'>-</span><span class='number'>1.0</span>, <span class='number'>0.0</span>)
     }
@@ -200,31 +199,31 @@
     <span class='lifetime'>&#39;a</span>,
     <span class='ident'>T</span>: <span class='ident'>HasTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> <span class='op'>+</span> <span class='ident'>CanTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>
 <span class='op'>&gt;</span> <span class='ident'>RelativeTransform2d</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>T</span> {
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>trans</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>Scalar</span>, <span class='ident'>y</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='kw'>let</span> <span class='ident'>trans</span> <span class='op'>=</span> <span class='ident'>translate</span>(<span class='ident'>x</span>, <span class='ident'>y</span>);
         <span class='self'>self</span>.<span class='ident'>transform</span>(<span class='ident'>multiply</span>(<span class='op'>*</span><span class='self'>self</span>.<span class='ident'>get_transform</span>(), <span class='ident'>trans</span>))
     }
 
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>rot_rad</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>angle</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='kw'>let</span> <span class='ident'>rot</span> <span class='op'>=</span> <span class='ident'>rotate_radians</span>(<span class='ident'>angle</span>);
         <span class='self'>self</span>.<span class='ident'>transform</span>(<span class='ident'>multiply</span>(<span class='op'>*</span><span class='self'>self</span>.<span class='ident'>get_transform</span>(), <span class='ident'>rot</span>))
     }
 
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>orient</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>Scalar</span>, <span class='ident'>y</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='kw'>let</span> <span class='ident'>orient</span> <span class='op'>=</span> <span class='ident'>orient</span>(<span class='ident'>x</span>, <span class='ident'>y</span>);
         <span class='self'>self</span>.<span class='ident'>transform</span>(<span class='ident'>multiply</span>(<span class='op'>*</span><span class='self'>self</span>.<span class='ident'>get_transform</span>(), <span class='ident'>orient</span>))
     }
 
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>scale</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>sx</span>: <span class='ident'>Scalar</span>, <span class='ident'>sy</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='kw'>let</span> <span class='ident'>scale</span> <span class='op'>=</span> <span class='ident'>scale</span>(<span class='ident'>sx</span>, <span class='ident'>sy</span>);
         <span class='self'>self</span>.<span class='ident'>transform</span>(<span class='ident'>multiply</span>(<span class='op'>*</span><span class='self'>self</span>.<span class='ident'>get_transform</span>(), <span class='ident'>scale</span>))
     }
 
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>shear</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>sx</span>: <span class='ident'>Scalar</span>, <span class='ident'>sy</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='kw'>let</span> <span class='ident'>shear</span> <span class='op'>=</span> <span class='ident'>shear</span>(<span class='ident'>sx</span>, <span class='ident'>sy</span>);
         <span class='self'>self</span>.<span class='ident'>transform</span>(<span class='ident'>multiply</span>(<span class='op'>*</span><span class='self'>self</span>.<span class='ident'>get_transform</span>(), <span class='ident'>shear</span>))
@@ -249,7 +248,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

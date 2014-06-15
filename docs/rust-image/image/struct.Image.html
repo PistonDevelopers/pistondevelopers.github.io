@@ -23,8 +23,7 @@
 
     <section class="sidebar">
         
-
-        <p class='location'><a href='index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='colortype/index.html'>colortype</a><br/><a class='mod ' href='gif/index.html'>gif</a><br/><a class='mod ' href='jpeg/index.html'>jpeg</a><br/><a class='mod ' href='pixels/index.html'>pixels</a><br/><a class='mod ' href='png/index.html'>png</a><br/><a class='mod ' href='ppm/index.html'>ppm</a><br/><a class='mod ' href='vp8/index.html'>vp8</a><br/><a class='mod ' href='webp/index.html'>webp</a><br/></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.GIFDecoder.html'>GIFDecoder</a><br/><a class='struct current' href='struct.Image.html'>Image</a><br/><a class='struct ' href='struct.JPEGDecoder.html'>JPEGDecoder</a><br/><a class='struct ' href='struct.JPEGEncoder.html'>JPEGEncoder</a><br/><a class='struct ' href='struct.PNGDecoder.html'>PNGDecoder</a><br/><a class='struct ' href='struct.PNGEncoder.html'>PNGEncoder</a><br/><a class='struct ' href='struct.WebpDecoder.html'>WebpDecoder</a><br/></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.ImageDecoder.html'>ImageDecoder</a><br/></div>
+        <p class='location'><a href='index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='colortype/index.html'>colortype</a><a class='mod ' href='gif/index.html'>gif</a><a class='mod ' href='jpeg/index.html'>jpeg</a><a class='mod ' href='pixels/index.html'>pixels</a><a class='mod ' href='png/index.html'>png</a><a class='mod ' href='ppm/index.html'>ppm</a><a class='mod ' href='vp8/index.html'>vp8</a><a class='mod ' href='webp/index.html'>webp</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.GIFDecoder.html'>GIFDecoder</a><a class='struct current' href='struct.Image.html'>Image</a><a class='struct ' href='struct.JPEGDecoder.html'>JPEGDecoder</a><a class='struct ' href='struct.JPEGEncoder.html'>JPEGEncoder</a><a class='struct ' href='struct.PNGDecoder.html'>PNGDecoder</a><a class='struct ' href='struct.PNGEncoder.html'>PNGEncoder</a><a class='struct ' href='struct.WebpDecoder.html'>WebpDecoder</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.ImageDecoder.html'>ImageDecoder</a></div>
     </section>
 
     <nav class="sub">
@@ -39,7 +38,7 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>image</a>::<a class='struct' href=''>Image</a><a class='source' id='src-35837' href='../src/image/src/image.rs.html#114-119'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>image</a>::<a class='struct' href=''>Image</a><a class='source' id='src-36560' href='../src/image/src/image.rs.html#115-120'>[src]</a></h1>
 <pre class='rust struct'>pub struct Image {
     // some fields omitted
 }</pre><div class='docblock'><p>A Generic representation of an image</p>
@@ -61,10 +60,22 @@ Its interpretation is dependent on the image&#39;s <code>ColorType</code>.</p>
 </div><h4 id='method.invert' class='method'><code>fn <a href='#method.invert' class='fnname'>invert</a>(&amp;mut self)</code></h4>
 <div class='docblock'><p>Invert the colors of this image.
 This method operates inplace.</p>
-</div><h4 id='method.resize' class='method'><code>fn <a href='#method.resize' class='fnname'>resize</a>(&amp;self, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
-<div class='docblock'><p>Resize this image using nearest neighnour algorithm.
+</div><h4 id='method.resize' class='method'><code>fn <a href='#method.resize' class='fnname'>resize</a>(&amp;self, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, filter: <a class='type' href='../image/type.FilterType.html' title='image::FilterType'>FilterType</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Resize this image using the specified filter algorithm.
+ Returns a new image. The image&#39;s aspect ratio is preserved.
+<code>width</code> and <code>height</code> are the new image&#39;s dimensions</p>
+</div><h4 id='method.resize_exact' class='method'><code>fn <a href='#method.resize_exact' class='fnname'>resize_exact</a>(&amp;self, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, filter: <a class='type' href='../image/type.FilterType.html' title='image::FilterType'>FilterType</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Resize this image using the specified filter algorithm.
  Returns a new image. Does not preserve aspect ratio.
 <code>width</code> and <code>height</code> are the new image&#39;s dimensions</p>
+</div><h4 id='method.blur' class='method'><code>fn <a href='#method.blur' class='fnname'>blur</a>(&amp;self, sigma: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Perfomrs a Gausian blur on this image.
+<code>sigma</code> is a meausure of how much to blur by.</p>
+</div><h4 id='method.unsharpen' class='method'><code>fn <a href='#method.unsharpen' class='fnname'>unsharpen</a>(&amp;self, sigma: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>, threshold: <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Performs an unsharpen mask on <code>pixels</code>
+<code>sigma</code> is the amount to blur the image by.
+<code>threshold</code> is a control of how much to sharpen.
+see <a href="https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking">https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking</a></p>
 </div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
 <h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div></section>
@@ -84,7 +95,7 @@ This method operates inplace.</p>
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -194,8 +193,6 @@
 <span id='154'>154</span>
 <span id='155'>155</span>
 <span id='156'>156</span>
-<span id='157'>157</span>
-<span id='158'>158</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Dealing with Programs and Shaders
 </span>
@@ -277,8 +274,7 @@
 </span>    <span class='doccomment'>///
 </span>    <span class='doccomment'>/// Takes the shader contents as a string. On success the Shader is returned.
 </span>    <span class='doccomment'>/// On failure, the complete log from glGetShaderInfoLog is returned.
-</span>    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>deprecated_owned_vector</span>)]</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>compile</span>(<span class='ident'>source</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>type_</span>: <span class='ident'>ShaderType</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Shader</span>, <span class='ident'>String</span><span class='op'>&gt;</span> {
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>compile</span>(<span class='ident'>source</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>type_</span>: <span class='ident'>ShaderType</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Shader</span>, <span class='ident'>String</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>gltype</span> <span class='op'>=</span> <span class='ident'>type_</span>.<span class='ident'>to_glenum</span>();
         <span class='kw'>let</span> <span class='ident'>shader</span> <span class='op'>=</span> <span class='ident'>gl</span>::<span class='ident'>CreateShader</span>(<span class='ident'>gltype</span>);
 
@@ -315,8 +311,7 @@
 
 <span class='kw'>impl</span> <span class='ident'>Program</span> {
     <span class='doccomment'>/// Link shaders into a program
-</span>    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>deprecated_owned_vector</span>)]</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>link</span>(<span class='ident'>shaders</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>Shader</span>]) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Program</span>, <span class='ident'>String</span><span class='op'>&gt;</span> {
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>link</span>(<span class='ident'>shaders</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>Shader</span>]) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Program</span>, <span class='ident'>String</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>program</span> <span class='op'>=</span> <span class='ident'>gl</span>::<span class='ident'>CreateProgram</span>();
         <span class='kw'>for</span> <span class='ident'>shader</span> <span class='kw'>in</span> <span class='ident'>shaders</span>.<span class='ident'>iter</span>() {<span class='comment'>
             // there are no relevant errors to handle here.
@@ -373,7 +368,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

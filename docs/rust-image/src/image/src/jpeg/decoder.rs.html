@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -831,6 +830,7 @@
 <span id='791'>791</span>
 <span id='792'>792</span>
 <span id='793'>793</span>
+<span id='794'>794</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>cmp</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>;
@@ -889,7 +889,7 @@
 //Reserved
 </span><span class='kw'>static</span> <span class='ident'>TEM</span>: <span class='ident'>u8</span> <span class='op'>=</span> <span class='number'>0x01</span>;
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>Clone</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>struct</span> <span class='ident'>HuffTable</span> {
 	<span class='ident'>lut</span>:     <span class='ident'>Vec</span><span class='op'>&lt;</span>(<span class='ident'>u8</span>, <span class='ident'>u8</span>)<span class='op'>&gt;</span>,
 	<span class='ident'>valptr</span>:  <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>int</span><span class='op'>&gt;</span>,
@@ -898,7 +898,7 @@
 	<span class='ident'>mincode</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>int</span><span class='op'>&gt;</span>,
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>enum</span> <span class='ident'>JPEGState</span> {
 	<span class='ident'>Start</span>,
 	<span class='ident'>HaveSOI</span>,
@@ -1138,7 +1138,8 @@
 
 		<span class='self'>self</span>.<span class='ident'>padded_width</span> <span class='op'>=</span> <span class='number'>8</span> <span class='op'>*</span> ((<span class='self'>self</span>.<span class='ident'>width</span> <span class='kw'>as</span> <span class='ident'>uint</span> <span class='op'>+</span> <span class='number'>7</span>) <span class='op'>/</span> <span class='number'>8</span>);
 
-		<span class='self'>self</span>.<span class='ident'>read_frame_components</span>(<span class='self'>self</span>.<span class='ident'>num_components</span>)
+        <span class='kw'>let</span> <span class='ident'>num_components</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>num_components</span>;
+		<span class='self'>self</span>.<span class='ident'>read_frame_components</span>(<span class='ident'>num_components</span>)
 	}
 
 	<span class='kw'>fn</span> <span class='ident'>read_frame_components</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>n</span>: <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
@@ -1643,7 +1644,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

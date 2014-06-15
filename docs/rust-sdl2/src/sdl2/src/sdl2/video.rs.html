@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -857,7 +856,7 @@
 
 <span class='kw'>use</span> <span class='ident'>get_error</span>;
 
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>rect</span>::<span class='ident'>Rect</span>;
     <span class='kw'>use</span> <span class='ident'>surface</span>::<span class='ident'>ll</span>::<span class='ident'>SDL_Surface</span>;
@@ -918,8 +917,8 @@
 
     <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SDL_GLContext</span> <span class='op'>=</span> <span class='op'>*</span><span class='ident'>c_void</span>;
 
-    <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>FromPrimitive</span>)]</span>
-    <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>FromPrimitive</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>SDL_GLattr</span> {
         <span class='ident'>SDL_GL_RED_SIZE</span> <span class='op'>=</span> <span class='number'>0</span>,
         <span class='ident'>SDL_GL_GREEN_SIZE</span> <span class='op'>=</span> <span class='number'>1</span>,
@@ -1027,7 +1026,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>GLAttr</span> {
     <span class='ident'>GLRedSize</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GL_RED_SIZE</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>GLGreenSize</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GL_GREEN_SIZE</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1064,7 +1063,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>DisplayMode</span> {
     <span class='kw'>pub</span> <span class='ident'>format</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>w</span>: <span class='ident'>int</span>,
@@ -1119,14 +1118,14 @@
     <span class='kw'>static</span> <span class='ident'>Foreign</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_WINDOW_FOREIGN</span> <span class='kw'>as</span> <span class='ident'>u32</span>
 })
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>FullscreenType</span> {
     <span class='ident'>FTOff</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>FTTrue</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_WINDOW_FULLSCREEN</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>FTDesktop</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_WINDOW_FULLSCREEN_DESKTOP</span> <span class='kw'>as</span> <span class='ident'>int</span>
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>WindowPos</span> {
     <span class='ident'>PosUndefined</span>,
     <span class='ident'>PosCentered</span>,
@@ -1141,7 +1140,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GLContext</span> {
     <span class='ident'>raw</span>: <span class='ident'>ll</span>::<span class='ident'>SDL_GLContext</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1157,8 +1156,8 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Window</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Window</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1665,7 +1664,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

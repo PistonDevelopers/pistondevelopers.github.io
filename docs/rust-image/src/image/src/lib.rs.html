@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -85,12 +84,16 @@
 <span id='45'>45</span>
 <span id='46'>46</span>
 <span id='47'>47</span>
+<span id='48'>48</span>
+<span id='49'>49</span>
+<span id='50'>50</span>
+<span id='51'>51</span>
 </pre><pre class='rust '>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;image&quot;</span>]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;rlib&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;image&quot;</span>]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;rlib&quot;</span>]</span>
 
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>missing_doc</span>)]</span>
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>missing_doc</span>)]</span>
+<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>flate</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>collections</span>;
@@ -106,6 +109,9 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageError</span>   <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageError</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageResult</span>  <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageResult</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageFormat</span>  <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageFormat</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>FilterType</span>   <span class='op'>=</span> <span class='ident'>sample</span>::<span class='ident'>FilterType</span>;
+
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>sample</span>::{<span class='ident'>Triangle</span>, <span class='ident'>Nearest</span>, <span class='ident'>CatmullRom</span>, <span class='ident'>Gaussian</span>, <span class='ident'>Lanczos3</span>};
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>image</span>::{<span class='ident'>PNG</span>, <span class='ident'>JPEG</span>, <span class='ident'>GIF</span>, <span class='ident'>WEBP</span>, <span class='ident'>PPM</span>};
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Image</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>Image</span>;
@@ -133,6 +139,7 @@
 <span class='kw'>mod</span> <span class='ident'>deflate</span>;
 <span class='kw'>mod</span> <span class='ident'>zlib</span>;
 <span class='kw'>mod</span> <span class='ident'>lzw</span>;
+<span class='kw'>mod</span> <span class='ident'>sample</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -151,7 +158,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

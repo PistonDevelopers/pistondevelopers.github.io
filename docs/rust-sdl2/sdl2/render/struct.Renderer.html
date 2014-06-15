@@ -23,8 +23,7 @@
 
     <section class="sidebar">
         
-
-        <p class='location'><a href='../index.html'>sdl2</a>&#8203;::<a href='index.html'>render</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='ll/index.html'>ll</a><br/></div><div class='block struct'><h2>Structs</h2><a class='struct current' href='struct.Renderer.html'>Renderer</a><br/><a class='struct ' href='struct.RendererFlags.html'>RendererFlags</a><br/><a class='struct ' href='struct.RendererInfo.html'>RendererInfo</a><br/><a class='struct ' href='struct.Texture.html'>Texture</a><br/><a class='struct ' href='struct.TextureQuery.html'>TextureQuery</a><br/></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.get_num_render_drivers.html'>get_num_render_drivers</a><br/><a class='fn ' href='fn.get_render_driver_info.html'>get_render_driver_info</a><br/></div>
+        <p class='location'><a href='../index.html'>sdl2</a>&#8203;::<a href='index.html'>render</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='ll/index.html'>ll</a></div><div class='block struct'><h2>Structs</h2><a class='struct current' href='struct.Renderer.html'>Renderer</a><a class='struct ' href='struct.RendererFlags.html'>RendererFlags</a><a class='struct ' href='struct.RendererInfo.html'>RendererInfo</a><a class='struct ' href='struct.Texture.html'>Texture</a><a class='struct ' href='struct.TextureQuery.html'>TextureQuery</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.get_num_render_drivers.html'>get_num_render_drivers</a><a class='fn ' href='fn.get_render_driver_info.html'>get_render_driver_info</a></div>
     </section>
 
     <nav class="sub">
@@ -39,13 +38,13 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='../index.html'>sdl2</a>::<a href='index.html'>render</a>::<a class='struct' href=''>Renderer</a><a class='source' id='src-61074' href='../../src/sdl2/src/sdl2/render.rs.html#205-209'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='../index.html'>sdl2</a>::<a href='index.html'>render</a>::<a class='struct' href=''>Renderer</a><a class='source' id='src-61065' href='../../src/sdl2/src/sdl2/render.rs.html#205-209'>[src]</a></h1>
 <pre class='rust struct'>pub struct Renderer&lt;S&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;<a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>&gt;</code></h3><div class='methods'><h4 id='method.from_window' class='method'><code>fn <a href='#method.from_window' class='fnname'>from_window</a>(window: <a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>, index: <a class='type' href='../../sdl2/render/type.RenderDriverIndex.html' title='sdl2::render::RenderDriverIndex'>RenderDriverIndex</a>, renderer_flags: <a class='struct' href='../../sdl2/render/struct.RendererFlags.html' title='sdl2::render::RendererFlags'>RendererFlags</a>) -&gt; <a class='type' href='../../sdl2/sdl/type.SdlResult.html' title='sdl2::sdl::SdlResult'>SdlResult</a>&lt;<a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;<a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>&gt;&gt;</code></h4>
 <h4 id='method.new_with_window' class='method'><code>fn <a href='#method.new_with_window' class='fnname'>new_with_window</a>(width: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, height: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, window_flags: <a class='struct' href='../../sdl2/video/struct.WindowFlags.html' title='sdl2::video::WindowFlags'>WindowFlags</a>) -&gt; <a class='type' href='../../sdl2/sdl/type.SdlResult.html' title='sdl2::sdl::SdlResult'>SdlResult</a>&lt;<a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;<a class='struct' href='../../sdl2/video/struct.Window.html' title='sdl2::video::Window'>Window</a>&gt;&gt;</code></h4>
 </div><h3 class='impl'><code>impl <a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;<a class='struct' href='../../sdl2/surface/struct.Surface.html' title='sdl2::surface::Surface'>Surface</a>&gt;</code></h3><div class='methods'><h4 id='method.from_surface' class='method'><code>fn <a href='#method.from_surface' class='fnname'>from_surface</a>(surface: <a class='struct' href='../../sdl2/surface/struct.Surface.html' title='sdl2::surface::Surface'>Surface</a>) -&gt; <a class='type' href='../../sdl2/sdl/type.SdlResult.html' title='sdl2::sdl::SdlResult'>SdlResult</a>&lt;<a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;<a class='struct' href='../../sdl2/surface/struct.Surface.html' title='sdl2::surface::Surface'>Surface</a>&gt;&gt;</code></h4>
-</div><h3 class='impl'><code>impl&lt;S&gt; <a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.get_parent' class='method'><code>fn <a href='#method.get_parent' class='fnname'>get_parent</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a S</code></h4>
+</div><h3 class='impl'><code>impl&lt;S&gt; <a class='struct' href='../../sdl2/render/struct.Renderer.html' title='sdl2::render::Renderer'>Renderer</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.get_parent' class='method'><code>fn <a href='#method.get_parent' class='fnname'>get_parent</a>&lt;''a&gt;(&amp;''a self) -&gt; &amp;''a S</code></h4>
 <h4 id='method.unwrap_parent' class='method'><code>fn <a href='#method.unwrap_parent' class='fnname'>unwrap_parent</a>(self) -&gt; S</code></h4>
 <h4 id='method.raw' class='method'><code>fn <a href='#method.raw' class='fnname'>raw</a>(&amp;self) -&gt; *<a class='struct' href='../../sdl2/render/ll/struct.SDL_Renderer.html' title='sdl2::render::ll::SDL_Renderer'>SDL_Renderer</a></code></h4>
 <h4 id='method.owned' class='method'><code>fn <a href='#method.owned' class='fnname'>owned</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
@@ -98,7 +97,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

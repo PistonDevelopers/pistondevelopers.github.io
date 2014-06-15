@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -331,7 +330,7 @@
 <span class='kw'>use</span> <span class='ident'>pixels</span>;
 <span class='kw'>use</span> <span class='ident'>rwops</span>;
 
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>pixels</span>::<span class='ident'>ll</span>::<span class='ident'>SDL_PixelFormat</span>;
     <span class='kw'>use</span> <span class='ident'>pixels</span>::<span class='ident'>ll</span>::<span class='ident'>SDL_Palette</span>;
@@ -407,8 +406,8 @@
     <span class='kw'>static</span> <span class='ident'>DontFree</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_DONTFREE</span> <span class='kw'>as</span> <span class='ident'>u32</span>
 })
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Surface</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Surface</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -514,14 +513,14 @@
         }
     }
 
-    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_snake_case_functions</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_snake_case_functions</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>enable_RLE</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>ll</span>::<span class='ident'>SDL_SetSurfaceRLE</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='number'>1</span>) <span class='op'>==</span> <span class='number'>0</span>
         }
     }
 
-    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_snake_case_functions</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_snake_case_functions</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>disable_RLE</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>ll</span>::<span class='ident'>SDL_SetSurfaceRLE</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='number'>0</span>) <span class='op'>==</span> <span class='number'>0</span>
@@ -623,7 +622,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

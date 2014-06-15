@@ -23,8 +23,7 @@
 
     <section class="sidebar">
         
-
-        <p class='location'><a href='../index.html'>image</a>&#8203;::<a href='index.html'>pixels</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Luma.html'>Luma</a><br/><a class='struct ' href='struct.LumaA.html'>LumaA</a><br/><a class='struct ' href='struct.Rgb.html'>Rgb</a><br/><a class='struct ' href='struct.Rgba.html'>Rgba</a><br/></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Pixel.html'>Pixel</a><br/></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.grayscale.html'>grayscale</a><br/><a class='fn ' href='fn.invert.html'>invert</a><br/><a class='fn current' href='fn.resize.html'>resize</a><br/></div>
+        <p class='location'><a href='../index.html'>image</a>&#8203;::<a href='index.html'>pixels</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Luma.html'>Luma</a><a class='struct ' href='struct.LumaA.html'>LumaA</a><a class='struct ' href='struct.Rgb.html'>Rgb</a><a class='struct ' href='struct.Rgba.html'>Rgba</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Pixel.html'>Pixel</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.blur.html'>blur</a><a class='fn ' href='fn.grayscale.html'>grayscale</a><a class='fn ' href='fn.invert.html'>invert</a><a class='fn current' href='fn.resize.html'>resize</a><a class='fn ' href='fn.unsharpen.html'>unsharpen</a></div>
     </section>
 
     <nav class="sub">
@@ -39,8 +38,8 @@
     </nav>
 
     <section id='main' class="content fn">
-<h1 class='fqn'>Function <a href='../index.html'>image</a>::<a href='index.html'>pixels</a>::<a class='fn' href=''>resize</a><a class='source' id='src-18723' href='../../src/image/src/pixels.rs.html#534-546'>[src]</a></h1>
-<pre class='rust fn'>pub fn resize(pixels: &amp;<a class='type' href='../../image/pixels/type.PixelBuf.html' title='image::pixels::PixelBuf'>PixelBuf</a>, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, nwidth: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, nheight: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>) -&gt; <a class='type' href='../../image/pixels/type.PixelBuf.html' title='image::pixels::PixelBuf'>PixelBuf</a></pre><div class='docblock'><p>Resize this <code>PixelBuf</code> pixels.
+<h1 class='fqn'>Function <a href='../index.html'>image</a>::<a href='index.html'>pixels</a>::<a class='fn' href=''>resize</a><a class='source' id='src-18787' href='../../src/image/src/pixels.rs.html#555-621'>[src]</a></h1>
+<pre class='rust fn'>pub fn resize(pixels: &amp;<a class='type' href='../../image/pixels/type.PixelBuf.html' title='image::pixels::PixelBuf'>PixelBuf</a>, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, nwidth: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, nheight: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, filter: <a class='type' href='../../image/type.FilterType.html' title='image::FilterType'>FilterType</a>) -&gt; <a class='type' href='../../image/pixels/type.PixelBuf.html' title='image::pixels::PixelBuf'>PixelBuf</a></pre><div class='docblock'><p>Resize this <code>PixelBuf</code> pixels.
 <code>width</code> and <code>height</code> are the original dimensions.
 <code>nwidth</code> and <code>nheight</code> are the new dimensions.</p>
 </div></section>
@@ -60,7 +59,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

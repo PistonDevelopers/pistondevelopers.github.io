@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -430,7 +429,7 @@
 <span class='kw'>use</span> <span class='ident'>SdlResult</span>;
 
 
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>c_uint</span>, <span class='ident'>c_void</span>, <span class='ident'>uint8_t</span>, <span class='ident'>uint32_t</span>};
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>uint16_t</span>, <span class='ident'>c_double</span>, <span class='ident'>c_char</span>};
@@ -559,8 +558,8 @@
 <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>AudioS32SYS</span> : <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_S32SYS</span>;
 <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>AudioF32SYS</span> : <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_F32SYS</span>;
 
-<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>AudioStatus</span> {
     <span class='ident'>Stopped</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_AUDIO_STOPPED</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>Playing</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_AUDIO_PLAYING</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -732,7 +731,7 @@
     }
 }
 
-<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AudioCVT</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ll</span>::<span class='ident'>SDL_AudioCVT</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>,
@@ -811,7 +810,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

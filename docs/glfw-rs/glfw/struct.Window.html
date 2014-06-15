@@ -23,8 +23,7 @@
 
     <section class="sidebar">
         
-
-        <p class='location'><a href='index.html'>glfw</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='ffi/index.html'>ffi</a><br/></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Callback.html'>Callback</a><br/><a class='struct ' href='struct.FlushedMessages.html'>FlushedMessages</a><br/><a class='struct ' href='struct.GammaRamp.html'>GammaRamp</a><br/><a class='struct ' href='struct.Glfw.html'>Glfw</a><br/><a class='struct ' href='struct.Joystick.html'>Joystick</a><br/><a class='struct ' href='struct.Modifiers.html'>Modifiers</a><br/><a class='struct ' href='struct.Monitor.html'>Monitor</a><br/><a class='struct ' href='struct.RenderContext.html'>RenderContext</a><br/><a class='struct ' href='struct.ShowAliases.html'>ShowAliases</a><br/><a class='struct ' href='struct.VidMode.html'>VidMode</a><br/><a class='struct current' href='struct.Window.html'>Window</a><br/></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Context.html'>Context</a><br/></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.fail_on_errors.html'>fail_on_errors</a><br/><a class='fn ' href='fn.flush_messages.html'>flush_messages</a><br/><a class='fn ' href='fn.get_version.html'>get_version</a><br/><a class='fn ' href='fn.get_version_string.html'>get_version_string</a><br/><a class='fn ' href='fn.init.html'>init</a><br/><a class='fn ' href='fn.log_errors.html'>log_errors</a><br/><a class='fn ' href='fn.make_context_current.html'>make_context_current</a><br/></div>
+        <p class='location'><a href='index.html'>glfw</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='ffi/index.html'>ffi</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Callback.html'>Callback</a><a class='struct ' href='struct.FlushedMessages.html'>FlushedMessages</a><a class='struct ' href='struct.GammaRamp.html'>GammaRamp</a><a class='struct ' href='struct.Glfw.html'>Glfw</a><a class='struct ' href='struct.Joystick.html'>Joystick</a><a class='struct ' href='struct.Modifiers.html'>Modifiers</a><a class='struct ' href='struct.Monitor.html'>Monitor</a><a class='struct ' href='struct.RenderContext.html'>RenderContext</a><a class='struct ' href='struct.ShowAliases.html'>ShowAliases</a><a class='struct ' href='struct.VidMode.html'>VidMode</a><a class='struct current' href='struct.Window.html'>Window</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Context.html'>Context</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.fail_on_errors.html'>fail_on_errors</a><a class='fn ' href='fn.flush_messages.html'>flush_messages</a><a class='fn ' href='fn.get_version.html'>get_version</a><a class='fn ' href='fn.get_version_string.html'>get_version_string</a><a class='fn ' href='fn.init.html'>init</a><a class='fn ' href='fn.log_errors.html'>log_errors</a><a class='fn ' href='fn.make_context_current.html'>make_context_current</a></div>
     </section>
 
     <nav class="sub">
@@ -39,7 +38,7 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Window</a><a class='source' id='src-18138' href='../src/glfw/src/lib/lib.rs.html#1085-1091'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Window</a><a class='source' id='src-18108' href='../src/glfw/src/lib/lib.rs.html#1085-1091'>[src]</a></h1>
 <pre class='rust struct'>pub struct Window {
     pub ptr: *<a class='type' href='../glfw/ffi/type.GLFWwindow.html' title='glfw::ffi::GLFWwindow'>GLFWwindow</a>,
     pub glfw: <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a>,
@@ -47,7 +46,7 @@
     // some fields omitted
 }</pre><div class='docblock'><p>A struct that wraps a <code>*GLFWwindow</code> handle.</p>
 </div><h2 class='fields'>Fields</h2>
-<table><tr><td id='structfield.ptr'><code>ptr</code></td><td></td></tr><tr><td id='structfield.glfw'><code>glfw</code></td><td></td></tr><tr><td id='structfield.is_shared'><code>is_shared</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.create_shared' class='method'><code>fn <a href='#method.create_shared' class='fnname'>create_shared</a>(&amp;self, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, title: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/std/comm/struct.Receiver.html' title='std::comm::Receiver'>Receiver</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)</a>&gt;)</a>&gt;</code></h4>
+<table><tr><td id='structfield.ptr'><code>ptr</code></td><td></td></tr><tr><td id='structfield.glfw'><code>glfw</code></td><td></td></tr><tr><td id='structfield.is_shared'><code>is_shared</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.create_shared' class='method'><code>fn <a href='#method.create_shared' class='fnname'>create_shared</a>(&amp;self, width: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, title: &amp;<a href='http://doc.rust-lang.org/std/primitive.str.html'>str</a>, mode: <a class='type' href='../glfw/type.WindowMode.html' title='glfw::WindowMode'>WindowMode</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a>, <a class='struct' href='http://doc.rust-lang.org/sync/comm/struct.Receiver.html' title='sync::comm::Receiver'>Receiver</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a>)</a>&gt;)</a>&gt;</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwCreateWindow</code>.</p>
 </div><h4 id='method.close' class='method'><code>fn <a href='#method.close' class='fnname'>close</a>(self)</code></h4>
 <div class='docblock'><p>Calling this method forces the destructor to be called, closing the
@@ -96,7 +95,7 @@ for concurrent rendering.</p>
 <code>CONTEXT_VERSION_MAJOR</code>, <code>CONTEXT_VERSION_MINOR</code> and <code>CONTEXT_REVISION</code>.</p>
 
 <h1 id="returns" class='section-header'><a
-                           href="#returns">Returns</a></h1>
+                           href="\#returns">Returns</a></h1>
 <p>The client API version of the window&#39;s context in a version struct.</p>
 </div><h4 id='method.get_context_robustness' class='method'><code>fn <a href='#method.get_context_robustness' class='fnname'>get_context_robustness</a>(&amp;self) -&gt; c_int</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetWindowAttrib</code> called with <code>CONTEXT_ROBUSTNESS</code>.</p>
@@ -193,7 +192,7 @@ until all associated <code>RenderContext</code>s were also dropped.</p>
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>
