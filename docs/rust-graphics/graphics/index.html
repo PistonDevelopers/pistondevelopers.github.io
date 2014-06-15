@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         <p class='location'></p>
     </section>
 
@@ -39,13 +38,13 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Crate <a class='mod' href=''>graphics</a><a class='source' id='src-0' href='../src/graphics/src/lib.rs.html#1-185'>[src]</a></h1>
+<h1 class='fqn'>Crate <a class='mod' href=''>graphics</a><a class='source' id='src-0' href='../src/graphics/src/lib.rs.html#1-203'>[src]</a></h1>
 <div class='docblock'><p>A library for 2D graphics that works with multiple back-ends.</p>
 
 <p>To implement your own back-end, use the BackEnd trait.</p>
 
 <h2 id="usage" class='section-header'><a
-                           href="#usage">Usage</a></h2>
+                           href="\#usage">Usage</a></h2>
 <p>If you are using <a href="https://github.com/bvssvni/rust-empty">Rust-Empty</a> or Cargo, put the compiled library in the &quot;target/cpu-vendor-platform/lib/&quot; directory, then add the following to your source:</p>
 
 <pre><code class="language-Rust">#![feature(globs)] // Allow global imports
@@ -65,7 +64,7 @@ You do not have to specify which back-end to use before doing the actual drawing
 </pre>
 
 <h2 id="important!" class='section-header'><a
-                           href="#important!">Important!</a></h2>
+                           href="\#important!">Important!</a></h2>
 <p>Because the context is built using borrowed pointers,
 it is not possible to do two or more steps at a time and assign it to a variable:</p>
 <pre class='rust '>
@@ -134,6 +133,20 @@ To solve this problem, break the statement into two parts, one for each step:</p
                     </tr>
                 
                     <tr>
+                        <td><a class='struct' href='struct.BevelRectangleBorderColorContext.html'
+                               title='graphics::BevelRectangleBorderColorContext'>BevelRectangleBorderColorContext</a></td>
+                        <td class='docblock short'><p>A bevel rectangle border color context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.BevelRectangleBorderContext.html'
+                               title='graphics::BevelRectangleBorderContext'>BevelRectangleBorderContext</a></td>
+                        <td class='docblock short'><p>A bevel rectangle border context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
                         <td><a class='struct' href='struct.BevelRectangleColorContext.html'
                                title='graphics::BevelRectangleColorContext'>BevelRectangleColorContext</a></td>
                         <td class='docblock short'><p>A rectangle color context.</p>
@@ -158,6 +171,20 @@ To solve this problem, break the statement into two parts, one for each step:</p
                         <td><a class='struct' href='struct.Context.html'
                                title='graphics::Context'>Context</a></td>
                         <td class='docblock short'><p>Drawing 2d context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.EllipseBorderColorContext.html'
+                               title='graphics::EllipseBorderColorContext'>EllipseBorderColorContext</a></td>
+                        <td class='docblock short'><p>An ellipse border color context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.EllipseBorderContext.html'
+                               title='graphics::EllipseBorderContext'>EllipseBorderContext</a></td>
+                        <td class='docblock short'><p>An ellipse border context.</p>
 </td>
                     </tr>
                 
@@ -260,6 +287,20 @@ To solve this problem, break the statement into two parts, one for each step:</p
                     </tr>
                 
                     <tr>
+                        <td><a class='struct' href='struct.RectangleBorderColorContext.html'
+                               title='graphics::RectangleBorderColorContext'>RectangleBorderColorContext</a></td>
+                        <td class='docblock short'><p>A rectangle color context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.RectangleBorderContext.html'
+                               title='graphics::RectangleBorderContext'>RectangleBorderContext</a></td>
+                        <td class='docblock short'><p>A rectangle context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
                         <td><a class='struct' href='struct.RectangleColorContext.html'
                                title='graphics::RectangleColorContext'>RectangleColorContext</a></td>
                         <td class='docblock short'><p>A rectangle color context.</p>
@@ -288,9 +329,23 @@ To solve this problem, break the statement into two parts, one for each step:</p
                     </tr>
                 
                     <tr>
+                        <td><a class='struct' href='struct.RoundRectangleBorderColorContext.html'
+                               title='graphics::RoundRectangleBorderColorContext'>RoundRectangleBorderColorContext</a></td>
+                        <td class='docblock short'><p>A round rectangle border color context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='struct' href='struct.RoundRectangleBorderContext.html'
+                               title='graphics::RoundRectangleBorderContext'>RoundRectangleBorderContext</a></td>
+                        <td class='docblock short'><p>A round rectangle border context.</p>
+</td>
+                    </tr>
+                
+                    <tr>
                         <td><a class='struct' href='struct.RoundRectangleColorContext.html'
                                title='graphics::RoundRectangleColorContext'>RoundRectangleColorContext</a></td>
-                        <td class='docblock short'><p>A rectangle color context.</p>
+                        <td class='docblock short'><p>A round rectangle color context.</p>
 </td>
                     </tr>
                 
@@ -337,6 +392,13 @@ that is partially based on an existing structure.</p>
                         <td><a class='trait' href='trait.AddBevelBorder.html'
                                title='graphics::AddBevelBorder'>AddBevelBorder</a></td>
                         <td class='docblock short'><p>Implemented by contexts that can add round border.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='trait' href='trait.AddBorder.html'
+                               title='graphics::AddBorder'>AddBorder</a></td>
+                        <td class='docblock short'><p>Implemented by contexts that can add border.</p>
 </td>
                     </tr>
                 
@@ -511,7 +573,7 @@ This trait uses default methods to simplify implementation.</p>
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

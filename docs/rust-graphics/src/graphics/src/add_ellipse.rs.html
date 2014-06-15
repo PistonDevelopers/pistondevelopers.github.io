@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -73,7 +72,7 @@
 </span>    <span class='kw'>fn</span> <span class='ident'>ellipse</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>, <span class='ident'>w</span>: <span class='ident'>f64</span>, <span class='ident'>h</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 
     <span class='doccomment'>/// Adds an ellipse with coordinates in the center.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>ellipse_centered</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>center_x</span>: <span class='ident'>f64</span>, <span class='ident'>center_y</span>: <span class='ident'>f64</span>, <span class='ident'>radius_width</span>: <span class='ident'>f64</span>, <span class='ident'>radius_height</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='self'>self</span>.<span class='ident'>ellipse</span>(
             <span class='ident'>center_x</span> <span class='op'>-</span> <span class='ident'>radius_width</span>,
@@ -84,7 +83,7 @@
     }
 
     <span class='doccomment'>/// Adds a circle.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>circle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>center_x</span>: <span class='ident'>f64</span>, <span class='ident'>center_y</span>: <span class='ident'>f64</span>, <span class='ident'>radius</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span> {
         <span class='self'>self</span>.<span class='ident'>ellipse</span>(<span class='ident'>center_x</span> <span class='op'>-</span> <span class='ident'>radius</span>,
                   <span class='ident'>center_y</span> <span class='op'>-</span> <span class='ident'>radius</span>,
@@ -111,7 +110,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

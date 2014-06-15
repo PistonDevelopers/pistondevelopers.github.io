@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -146,7 +145,7 @@
 
 <span class='kw'>impl</span> <span class='ident'>Texture</span> {
     <span class='doccomment'>/// Creates a new texture.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>id</span>: <span class='ident'>GLuint</span>, <span class='ident'>width</span>: <span class='ident'>u32</span>, <span class='ident'>height</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='ident'>Texture</span> {
         <span class='ident'>Texture</span> {
             <span class='ident'>id</span>: <span class='ident'>id</span>,
@@ -156,7 +155,7 @@
     }
 
     <span class='doccomment'>/// Gets the OpenGL id of the texture.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span>    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_id</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>GLuint</span> {
         <span class='self'>self</span>.<span class='ident'>id</span>
     }
@@ -231,7 +230,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

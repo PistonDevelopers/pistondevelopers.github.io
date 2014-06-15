@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -77,24 +76,24 @@
 <span class='doccomment'>//! Helper functions for computing modular index safely.
 </span>
 <span class='doccomment'>/// Computes modular offset safely for indices.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>offset</span>(<span class='ident'>n</span>: <span class='ident'>uint</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>, <span class='ident'>off</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
     (<span class='ident'>i</span> <span class='op'>+</span> (<span class='ident'>off</span> <span class='op'>%</span> <span class='ident'>n</span> <span class='kw'>as</span> <span class='ident'>int</span> <span class='op'>+</span> <span class='ident'>n</span> <span class='kw'>as</span> <span class='ident'>int</span>) <span class='kw'>as</span> <span class='ident'>uint</span>) <span class='op'>%</span> <span class='ident'>n</span>
 }
 
 <span class='doccomment'>/// Computes previous modular index safely.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>previous</span>(<span class='ident'>n</span>: <span class='ident'>uint</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
     <span class='ident'>offset</span>(<span class='ident'>n</span>, <span class='ident'>i</span>, <span class='op'>-</span><span class='number'>1</span>)
 }
 
 <span class='doccomment'>/// Computes next modular index safely.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>next</span>(<span class='ident'>n</span>: <span class='ident'>uint</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
     <span class='ident'>offset</span>(<span class='ident'>n</span>, <span class='ident'>i</span>, <span class='number'>1</span>)
 }
 
-<span class='attribute'>#[<span class='ident'>test</span>]</span>
+<span class='attribute'>\#[<span class='ident'>test</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>test_offset</span>() {
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>offset</span>(<span class='number'>3</span>, <span class='number'>0</span>, <span class='op'>-</span><span class='number'>1</span>), <span class='number'>2</span>);
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>offset</span>(<span class='number'>3</span>, <span class='number'>1</span>, <span class='op'>-</span><span class='number'>1</span>), <span class='number'>0</span>);
@@ -125,7 +124,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

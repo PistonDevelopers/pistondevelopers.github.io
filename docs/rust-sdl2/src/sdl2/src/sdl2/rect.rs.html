@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -225,14 +224,14 @@ Rectangle Functions
 <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
 
 <span class='doccomment'>/// A structure that defines a two dimensional point.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Point</span> {
     <span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>i32</span>,
     <span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>i32</span>
 }
 
 <span class='doccomment'>/// A structure that defines a rectangle, with the origin at the upper left.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Rect</span> {
     <span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>i32</span>,
     <span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>i32</span>,
@@ -240,8 +239,8 @@ Rectangle Functions
     <span class='kw'>pub</span> <span class='ident'>h</span>: <span class='ident'>i32</span>
 }
 
-<span class='attribute'>#[<span class='ident'>doc</span>(<span class='ident'>hidden</span>)]</span>
-<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>doc</span>(<span class='ident'>hidden</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
 
     <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
@@ -355,11 +354,11 @@ Rectangle Functions
     }
 }
 
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>test</span>)]</span>
+<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>test</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>test</span> {
     <span class='kw'>use</span> <span class='ident'>super</span>::<span class='op'>*</span>;
 
-    <span class='attribute'>#[<span class='ident'>test</span>]</span>
+    <span class='attribute'>\#[<span class='ident'>test</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>test_from_enclose_points</span>() {
         <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Rect</span>::<span class='ident'>from_enclose_points</span>(<span class='kw-2'>&amp;</span>[<span class='ident'>Point</span>::<span class='ident'>new</span>(<span class='number'>2</span>, <span class='number'>4</span>), <span class='ident'>Point</span>::<span class='ident'>new</span>(<span class='number'>5</span>,<span class='number'>9</span>)], <span class='prelude-val'>None</span>),
                    <span class='prelude-val'>Some</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>2</span>, <span class='number'>4</span>, <span class='number'>4</span>, <span class='number'>6</span>)));
@@ -367,7 +366,7 @@ Rectangle Functions
                                           <span class='prelude-val'>Some</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>3</span>, <span class='number'>3</span>, <span class='number'>1</span>, <span class='number'>1</span>))).<span class='ident'>is_none</span>());
     }
 
-    <span class='attribute'>#[<span class='ident'>test</span>]</span>
+    <span class='attribute'>\#[<span class='ident'>test</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>test_has_intersection</span>() {
         <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>10</span>, <span class='number'>10</span>).<span class='ident'>has_intersection</span>(<span class='kw-2'>&amp;</span><span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>9</span>, <span class='number'>9</span>, <span class='number'>10</span>, <span class='number'>10</span>)));<span class='comment'>
         // edge
@@ -376,20 +375,20 @@ Rectangle Functions
         </span><span class='macro'>assert</span><span class='macro'>!</span>(<span class='op'>!</span> <span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>10</span>, <span class='number'>10</span>).<span class='ident'>has_intersection</span>(<span class='kw-2'>&amp;</span><span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>11</span>, <span class='number'>11</span>, <span class='number'>10</span>, <span class='number'>10</span>)));
     }
 
-    <span class='attribute'>#[<span class='ident'>test</span>]</span>
+    <span class='attribute'>\#[<span class='ident'>test</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>test_intersection</span>() {
         <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>10</span>, <span class='number'>10</span>).<span class='ident'>intersection</span>(<span class='kw-2'>&amp;</span><span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>9</span>, <span class='number'>9</span>, <span class='number'>10</span>, <span class='number'>10</span>)),
                    <span class='prelude-val'>Some</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>9</span>, <span class='number'>9</span>, <span class='number'>1</span>, <span class='number'>1</span>)));
         <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>10</span>, <span class='number'>10</span>).<span class='ident'>intersection</span>(<span class='kw-2'>&amp;</span><span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>11</span>, <span class='number'>11</span>, <span class='number'>10</span>, <span class='number'>10</span>)).<span class='ident'>is_none</span>());
     }
 
-    <span class='attribute'>#[<span class='ident'>test</span>]</span>
+    <span class='attribute'>\#[<span class='ident'>test</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>test_union</span>() {
         <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>1</span>, <span class='number'>1</span>).<span class='ident'>union</span>(<span class='kw-2'>&amp;</span><span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>9</span>, <span class='number'>9</span>, <span class='number'>1</span>, <span class='number'>1</span>)),
                    <span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='number'>10</span>, <span class='number'>10</span>));
     }
 
-    <span class='attribute'>#[<span class='ident'>test</span>]</span>
+    <span class='attribute'>\#[<span class='ident'>test</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>test_intersect_line</span>() {
         <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Rect</span>::<span class='ident'>new</span>(<span class='number'>1</span>, <span class='number'>1</span>, <span class='number'>5</span>, <span class='number'>5</span>).<span class='ident'>intersect_line</span>(<span class='kw-2'>&amp;</span><span class='ident'>Point</span>::<span class='ident'>new</span>(<span class='number'>0</span>, <span class='number'>0</span>), <span class='kw-2'>&amp;</span><span class='ident'>Point</span>::<span class='ident'>new</span>(<span class='number'>10</span>, <span class='number'>10</span>)),
                    <span class='prelude-val'>Some</span>((<span class='ident'>Point</span>::<span class='ident'>new</span>(<span class='number'>1</span>, <span class='number'>1</span>), <span class='ident'>Point</span>::<span class='ident'>new</span>(<span class='number'>5</span>, <span class='number'>5</span>))));
@@ -413,7 +412,7 @@ Rectangle Functions
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

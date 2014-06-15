@@ -23,8 +23,7 @@
 
     <section class="sidebar">
         
-
-        <p class='location'><a href='index.html'>glfw</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='ffi/index.html'>ffi</a><br/></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Callback.html'>Callback</a><br/><a class='struct ' href='struct.FlushedMessages.html'>FlushedMessages</a><br/><a class='struct ' href='struct.GammaRamp.html'>GammaRamp</a><br/><a class='struct ' href='struct.Glfw.html'>Glfw</a><br/><a class='struct ' href='struct.Joystick.html'>Joystick</a><br/><a class='struct ' href='struct.Modifiers.html'>Modifiers</a><br/><a class='struct ' href='struct.Monitor.html'>Monitor</a><br/><a class='struct ' href='struct.RenderContext.html'>RenderContext</a><br/><a class='struct ' href='struct.ShowAliases.html'>ShowAliases</a><br/><a class='struct ' href='struct.VidMode.html'>VidMode</a><br/><a class='struct ' href='struct.Window.html'>Window</a><br/></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Context.html'>Context</a><br/></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.fail_on_errors.html'>fail_on_errors</a><br/><a class='fn ' href='fn.flush_messages.html'>flush_messages</a><br/><a class='fn ' href='fn.get_version.html'>get_version</a><br/><a class='fn ' href='fn.get_version_string.html'>get_version_string</a><br/><a class='fn current' href='fn.init.html'>init</a><br/><a class='fn ' href='fn.log_errors.html'>log_errors</a><br/><a class='fn ' href='fn.make_context_current.html'>make_context_current</a><br/></div>
+        <p class='location'><a href='index.html'>glfw</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='ffi/index.html'>ffi</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Callback.html'>Callback</a><a class='struct ' href='struct.FlushedMessages.html'>FlushedMessages</a><a class='struct ' href='struct.GammaRamp.html'>GammaRamp</a><a class='struct ' href='struct.Glfw.html'>Glfw</a><a class='struct ' href='struct.Joystick.html'>Joystick</a><a class='struct ' href='struct.Modifiers.html'>Modifiers</a><a class='struct ' href='struct.Monitor.html'>Monitor</a><a class='struct ' href='struct.RenderContext.html'>RenderContext</a><a class='struct ' href='struct.ShowAliases.html'>ShowAliases</a><a class='struct ' href='struct.VidMode.html'>VidMode</a><a class='struct ' href='struct.Window.html'>Window</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Context.html'>Context</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.fail_on_errors.html'>fail_on_errors</a><a class='fn ' href='fn.flush_messages.html'>flush_messages</a><a class='fn ' href='fn.get_version.html'>get_version</a><a class='fn ' href='fn.get_version_string.html'>get_version_string</a><a class='fn current' href='fn.init.html'>init</a><a class='fn ' href='fn.log_errors.html'>log_errors</a><a class='fn ' href='fn.make_context_current.html'>make_context_current</a></div>
     </section>
 
     <nav class="sub">
@@ -39,24 +38,24 @@
     </nav>
 
     <section id='main' class="content fn">
-<h1 class='fqn'>Function <a href='index.html'>glfw</a>::<a class='fn' href=''>init</a><a class='source' id='src-13563' href='../src/glfw/src/lib/lib.rs.html#409-436'>[src]</a></h1>
+<h1 class='fqn'>Function <a href='index.html'>glfw</a>::<a class='fn' href=''>init</a><a class='source' id='src-13561' href='../src/glfw/src/lib/lib.rs.html#409-436'>[src]</a></h1>
 <pre class='rust fn'>pub fn init&lt;UserData: 'static&gt;(callback: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.ErrorCallback.html' title='glfw::ErrorCallback'>ErrorCallback</a>&lt;UserData&gt;&gt;) -&gt; <a class='type' href='http://doc.rust-lang.org/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a>, <a class='type' href='../glfw/type.InitError.html' title='glfw::InitError'>InitError</a>&gt;</pre><div class='docblock'><p>Initializes the GLFW library. This must be called on the main platform
 thread.</p>
 
 <p>Wrapper for <code>glfwInit</code>.</p>
 
 <h1 id="error-callback" class='section-header'><a
-                           href="#error-callback">Error callback</a></h1>
+                           href="\#error-callback">Error callback</a></h1>
 <p>An error callback can be set if desired. This allows for the handling of any
 errors that occur during initialization. This can subsequently be changed
 using the <code>Glfw::set_error_callback</code> function.</p>
 
 <h1 id="example" class='section-header'><a
-                           href="#example">Example</a></h1><pre class='rust '>
+                           href="\#example">Example</a></h1><pre class='rust '>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>native</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>glfw</span>;
 
-<span class='attribute'>#[<span class='ident'>start</span>]</span>
+<span class='attribute'>\#[<span class='ident'>start</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>start</span>(<span class='ident'>argc</span>: <span class='ident'>int</span>, <span class='ident'>argv</span>: <span class='op'>*</span><span class='op'>*</span><span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {<span class='comment'>
     // Run GLFW on the main thread
     </span><span class='ident'>native</span>::<span class='ident'>start</span>(<span class='ident'>argc</span>, <span class='ident'>argv</span>, <span class='ident'>main</span>)
@@ -68,7 +67,7 @@ using the <code>Glfw::set_error_callback</code> function.</p>
 </pre>
 
 <h1 id="returns" class='section-header'><a
-                           href="#returns">Returns</a></h1>
+                           href="\#returns">Returns</a></h1>
 <ul>
 <li>If initialization was successful a <code>Glfw</code> token will be returned along
 with a <code>Receiver</code> from which errors can be intercepted.</li>
@@ -93,7 +92,7 @@ with a <code>Receiver</code> from which errors can be intercepted.</li>
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

@@ -23,7 +23,6 @@
 
     <section class="sidebar">
         
-
         
     </section>
 
@@ -96,12 +95,12 @@
     <span class='ident'>T</span>: <span class='ident'>HasSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span> <span class='op'>+</span> <span class='ident'>CanSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span>,
     <span class='ident'>U</span>
 <span class='op'>&gt;</span> <span class='ident'>RelativeSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>T</span> {
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>src_rel</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>i64</span>, <span class='ident'>y</span>: <span class='ident'>i64</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span> {
         <span class='self'>self</span>.<span class='ident'>source_rectangle</span>(<span class='ident'>relative_source_rectangle</span>(<span class='op'>*</span><span class='self'>self</span>.<span class='ident'>get_source_rectangle</span>(), <span class='ident'>x</span>, <span class='ident'>y</span>))
     }
 
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+    <span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>src_rect</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>u32</span>, <span class='ident'>y</span>: <span class='ident'>u32</span>, <span class='ident'>w</span>: <span class='ident'>u32</span>, <span class='ident'>h</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span> {
         <span class='self'>self</span>.<span class='ident'>source_rectangle</span>([<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>w</span>, <span class='ident'>h</span>])
     }
@@ -125,7 +124,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
+                <dt>&\#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>
