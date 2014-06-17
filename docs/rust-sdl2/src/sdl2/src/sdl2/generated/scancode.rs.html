@@ -1330,7 +1330,7 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::<span class='ident'>FromPrimitive</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::<span class='ident'>ToPrimitive</span>;
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ScanCode</span> {
     <span class='ident'>UnknownScanCode</span>            <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>AScanCode</span>                  <span class='op'>=</span> <span class='number'>4</span>,
@@ -1578,7 +1578,7 @@
 }
 
 <span class='kw'>impl</span> <span class='ident'>Hash</span> <span class='kw'>for</span> <span class='ident'>ScanCode</span> {
-	<span class='attribute'>\#[<span class='ident'>inline</span>]</span>
+	<span class='attribute'>#[<span class='ident'>inline</span>]</span>
 	<span class='kw'>fn</span> <span class='ident'>hash</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>state</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>SipState</span>) {
 		<span class='self'>self</span>.<span class='ident'>code</span>().<span class='ident'>hash</span>(<span class='ident'>state</span>);
 	}
@@ -2624,7 +2624,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

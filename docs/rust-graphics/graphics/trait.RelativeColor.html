@@ -38,34 +38,34 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='index.html'>graphics</a>::<a class='trait' href=''>RelativeColor</a><a class='source' id='src-13228' href='../src/graphics/src/relative_color.rs.html#13-49'>[src]</a></h1>
-<pre class='rust trait'>pub trait RelativeColor&lt;''a, T&gt; {
-    fn <a href='#tymethod.mul_rgba' class='fnname'>mul_rgba</a>(&amp;''a self, r: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, g: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, b: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, a: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T;
-    fn <a href='#tymethod.hue_rad' class='fnname'>hue_rad</a>(&amp;''a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T;
+<h1 class='fqn'>Trait <a href='index.html'>graphics</a>::<a class='trait' href=''>RelativeColor</a><a class='source' id='src-13541' href='../src/graphics/src/relative_color.rs.html#13-49'>[src]</a></h1>
+<pre class='rust trait'>pub trait RelativeColor&lt;'a, T&gt; {
+    fn <a href='#tymethod.mul_rgba' class='fnname'>mul_rgba</a>(&amp;'a self, r: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, g: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, b: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, a: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T;
+    fn <a href='#tymethod.hue_rad' class='fnname'>hue_rad</a>(&amp;'a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T;
 
-    fn <a href='#method.tint' class='fnname'>tint</a>(&amp;''a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T { ... }
-    fn <a href='#method.shade' class='fnname'>shade</a>(&amp;''a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T { ... }
-    fn <a href='#method.hue_deg' class='fnname'>hue_deg</a>(&amp;''a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T { ... }
+    fn <a href='#method.tint' class='fnname'>tint</a>(&amp;'a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T { ... }
+    fn <a href='#method.shade' class='fnname'>shade</a>(&amp;'a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T { ... }
+    fn <a href='#method.hue_deg' class='fnname'>hue_deg</a>(&amp;'a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T { ... }
 }</pre><div class='docblock'><p>Implemented by contexts that contains color.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.mul_rgba' class='method'><code>fn <a href='#tymethod.mul_rgba' class='fnname'>mul_rgba</a>(&amp;''a self, r: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, g: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, b: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, a: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Multiplies with red, green, blue and alpha values.</p>
-</div><h3 id='tymethod.hue_rad' class='method'><code>fn <a href='#tymethod.hue_rad' class='fnname'>hue_rad</a>(&amp;''a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Rotates hue by radians.</p>
+        <h3 id='tymethod.mul_rgba' class='method'><code>fn <a href='#tymethod.mul_rgba' class='fnname'>mul_rgba</a>(&amp;'a self, r: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, g: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, b: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>, a: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Multiplies with red, green, blue and alpha values.</p>
+</div><h3 id='tymethod.hue_rad' class='method'><code>fn <a href='#tymethod.hue_rad' class='fnname'>hue_rad</a>(&amp;'a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Rotates hue by radians.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.tint' class='method'><code>fn <a href='#method.tint' class='fnname'>tint</a>(&amp;''a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Mixes the current color with white.</p>
+        <h3 id='method.tint' class='method'><code>fn <a href='#method.tint' class='fnname'>tint</a>(&amp;'a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Mixes the current color with white.</p>
 
 <p>0 is black and 1 is white.</p>
-</div><h3 id='method.shade' class='method'><code>fn <a href='#method.shade' class='fnname'>shade</a>(&amp;''a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Mixes the current color with black.</p>
+</div><h3 id='method.shade' class='method'><code>fn <a href='#method.shade' class='fnname'>shade</a>(&amp;'a self, f: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Mixes the current color with black.</p>
 
 <p>0 is white and 1 is black.</p>
-</div><h3 id='method.hue_deg' class='method'><code>fn <a href='#method.hue_deg' class='fnname'>hue_deg</a>(&amp;''a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Rotates hue by degrees.</p>
+</div><h3 id='method.hue_deg' class='method'><code>fn <a href='#method.hue_deg' class='fnname'>hue_deg</a>(&amp;'a self, angle: <a class='type' href='../graphics/internal/type.ColorComponent.html' title='graphics::internal::ColorComponent'>ColorComponent</a>) -&gt; T</code></h3><div class='docblock'><p>Rotates hue by degrees.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;''a, T: <a class='trait' href='../graphics/internal/trait.HasColor.html' title='graphics::internal::HasColor'>HasColor</a>&lt;''a, <a class='type' href='../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; + <a class='trait' href='../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;''a, U, <a class='type' href='../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt;, U&gt; <a class='trait' href='../graphics/trait.RelativeColor.html' title='graphics::RelativeColor'>RelativeColor</a>&lt;''a, U&gt; for T</code></li>
+    <li><code>impl&lt;'a, T: <a class='trait' href='../graphics/internal/trait.HasColor.html' title='graphics::internal::HasColor'>HasColor</a>&lt;'a, <a class='type' href='../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; + <a class='trait' href='../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, U, <a class='type' href='../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt;, U&gt; <a class='trait' href='../graphics/trait.RelativeColor.html' title='graphics::RelativeColor'>RelativeColor</a>&lt;'a, U&gt; for T</code></li>
 </ul><script type="text/javascript" async
                               src="../implementors/graphics/trait.RelativeColor.js">
                       </script></section>
@@ -85,7 +85,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

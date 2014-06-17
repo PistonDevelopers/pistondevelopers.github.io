@@ -224,10 +224,13 @@
 <span id='185'>185</span>
 <span id='186'>186</span>
 <span id='187'>187</span>
+<span id='188'>188</span>
+<span id='189'>189</span>
+<span id='190'>190</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>c_char</span>, <span class='ident'>c_uchar</span>, <span class='ident'>c_uint</span>, <span class='ident'>c_void</span>, <span class='ident'>int16_t</span>, <span class='ident'>uint8_t</span>};
@@ -243,15 +246,18 @@
     <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>SDL_CONTROLLER_BINDTYPE_AXIS</span>: <span class='ident'>SDL_GameControllerBindType</span> <span class='op'>=</span> <span class='number'>2</span>;
     <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>SDL_CONTROLLER_BINDTYPE_HAT</span>: <span class='ident'>SDL_GameControllerBindType</span> <span class='op'>=</span> <span class='number'>3</span>;
 
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_GameControllerButtonBind</span> {
         <span class='ident'>bindType</span>: <span class='ident'>SDL_GameControllerBindType</span>,
         <span class='ident'>value</span>: <span class='ident'>SDL_GameControllerButtonBindData</span>,
     }
 
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_GameControllerButtonBindData</span> {
         <span class='ident'>data</span>: [<span class='ident'>c_uchar</span>, ..<span class='number'>8u</span>],
     }
 
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_GameControllerButtonBindDataHat</span> {
         <span class='ident'>hat</span>: <span class='ident'>c_int</span>,
         <span class='ident'>hat_mask</span>: <span class='ident'>c_int</span>,
@@ -349,7 +355,7 @@
     }
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ControllerAxis</span> {
     <span class='ident'>InvalidAxis</span>      <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_AXIS_INVALID</span>,
     <span class='ident'>LeftXAxis</span>        <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_AXIS_LEFTX</span>,
@@ -372,7 +378,7 @@
     }
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ControllerButton</span> {
     <span class='ident'>InvalidButton</span>       <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_BUTTON_INVALID</span>,
     <span class='ident'>AButton</span>             <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_CONTROLLER_BUTTON_A</span>,
@@ -430,7 +436,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

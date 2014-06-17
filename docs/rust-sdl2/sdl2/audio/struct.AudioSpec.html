@@ -38,8 +38,8 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='../index.html'>sdl2</a>::<a href='index.html'>audio</a>::<a class='struct' href=''>AudioSpec</a><a class='source' id='src-66661' href='../../src/sdl2/src/sdl2/audio.rs.html#196-206'>[src]</a></h1>
-<pre class='rust struct'>pub struct AudioSpec&lt;''a&gt; {
+<h1 class='fqn'>Struct <a href='../index.html'>sdl2</a>::<a href='index.html'>audio</a>::<a class='struct' href=''>AudioSpec</a><a class='source' id='src-66661' href='../../src/sdl2/src/sdl2/audio.rs.html#197-207'>[src]</a></h1>
+<pre class='rust struct'>pub struct AudioSpec&lt;'a&gt; {
     pub freq: c_int,
     pub format: <a class='type' href='../../sdl2/audio/type.AudioFormat.html' title='sdl2::audio::AudioFormat'>AudioFormat</a>,
     pub channels: uint8_t,
@@ -47,10 +47,10 @@
     pub samples: uint16_t,
     pub padding: uint16_t,
     pub size: uint32_t,
-    pub callback: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;&amp;''a |&amp;mut <a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>]</a>|: ''a&gt;,
+    pub callback: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a |&amp;mut <a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>]</a>|: 'a&gt;,
     // some fields omitted
 }</pre><h2 class='fields'>Fields</h2>
-<table><tr><td id='structfield.freq'><code>freq</code></td><td></td></tr><tr><td id='structfield.format'><code>format</code></td><td></td></tr><tr><td id='structfield.channels'><code>channels</code></td><td></td></tr><tr><td id='structfield.silence'><code>silence</code></td><td></td></tr><tr><td id='structfield.samples'><code>samples</code></td><td></td></tr><tr><td id='structfield.padding'><code>padding</code></td><td></td></tr><tr><td id='structfield.size'><code>size</code></td><td></td></tr><tr><td id='structfield.callback'><code>callback</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;''a&gt; <a class='struct' href='../../sdl2/audio/struct.AudioSpec.html' title='sdl2::audio::AudioSpec'>AudioSpec</a>&lt;''a&gt;</code></h3><div class='methods'><h4 id='method.load_wav' class='method'><code>fn <a href='#method.load_wav' class='fnname'>load_wav</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='type' href='../../sdl2/sdl/type.SdlResult.html' title='sdl2::sdl::SdlResult'>SdlResult</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../sdl2/audio/struct.AudioSpec.html' title='sdl2::audio::AudioSpec'>AudioSpec</a>, <a class='struct' href='http://doc.rust-lang.org/std/c_vec/struct.CVec.html' title='std::c_vec::CVec'>CVec</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;)</a>&gt;</code></h4>
+<table><tr><td id='structfield.freq'><code>freq</code></td><td></td></tr><tr><td id='structfield.format'><code>format</code></td><td></td></tr><tr><td id='structfield.channels'><code>channels</code></td><td></td></tr><tr><td id='structfield.silence'><code>silence</code></td><td></td></tr><tr><td id='structfield.samples'><code>samples</code></td><td></td></tr><tr><td id='structfield.padding'><code>padding</code></td><td></td></tr><tr><td id='structfield.size'><code>size</code></td><td></td></tr><tr><td id='structfield.callback'><code>callback</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../sdl2/audio/struct.AudioSpec.html' title='sdl2::audio::AudioSpec'>AudioSpec</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.load_wav' class='method'><code>fn <a href='#method.load_wav' class='fnname'>load_wav</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='type' href='../../sdl2/sdl/type.SdlResult.html' title='sdl2::sdl::SdlResult'>SdlResult</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../sdl2/audio/struct.AudioSpec.html' title='sdl2::audio::AudioSpec'>AudioSpec</a>, <a class='struct' href='http://doc.rust-lang.org/std/c_vec/struct.CVec.html' title='std::c_vec::CVec'>CVec</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;)</a>&gt;</code></h4>
 <h4 id='method.load_wav_rw' class='method'><code>fn <a href='#method.load_wav_rw' class='fnname'>load_wav_rw</a>(src: &amp;<a class='struct' href='../../sdl2/rwops/struct.RWops.html' title='sdl2::rwops::RWops'>RWops</a>) -&gt; <a class='type' href='../../sdl2/sdl/type.SdlResult.html' title='sdl2::sdl::SdlResult'>SdlResult</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../sdl2/audio/struct.AudioSpec.html' title='sdl2::audio::AudioSpec'>AudioSpec</a>, <a class='struct' href='http://doc.rust-lang.org/std/c_vec/struct.CVec.html' title='std::c_vec::CVec'>CVec</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;)</a>&gt;</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
@@ -69,7 +69,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

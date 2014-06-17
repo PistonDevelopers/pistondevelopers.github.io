@@ -39,20 +39,20 @@
 
     <section id='main' class="content trait">
 <h1 class='fqn'>Trait <a href='index.html'>graphics</a>::<a class='trait' href=''>AddBevel</a><a class='source' id='src-70' href='../src/graphics/src/add_bevel.rs.html#6-9'>[src]</a></h1>
-<pre class='rust trait'>pub trait AddBevel&lt;''a, T&gt; {
-    fn <a href='#tymethod.bevel' class='fnname'>bevel</a>(&amp;''a self, radius: <a class='type' href='../graphics/internal/type.Radius.html' title='graphics::internal::Radius'>Radius</a>) -&gt; T;
+<pre class='rust trait'>pub trait AddBevel&lt;'a, T&gt; {
+    fn <a href='#tymethod.bevel' class='fnname'>bevel</a>(&amp;'a self, radius: <a class='type' href='../graphics/internal/type.Radius.html' title='graphics::internal::Radius'>Radius</a>) -&gt; T;
 }</pre><div class='docblock'><p>Implemented by contexts that can make a shape bevel.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.bevel' class='method'><code>fn <a href='#tymethod.bevel' class='fnname'>bevel</a>(&amp;''a self, radius: <a class='type' href='../graphics/internal/type.Radius.html' title='graphics::internal::Radius'>Radius</a>) -&gt; T</code></h3><div class='docblock'><p>Bevels the shape of the current context.</p>
+        <h3 id='tymethod.bevel' class='method'><code>fn <a href='#tymethod.bevel' class='fnname'>bevel</a>(&amp;'a self, radius: <a class='type' href='../graphics/internal/type.Radius.html' title='graphics::internal::Radius'>Radius</a>) -&gt; T</code></h3><div class='docblock'><p>Bevels the shape of the current context.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;''a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;''a, <a class='struct' href='../graphics/struct.BevelRectangleBorderContext.html' title='graphics::BevelRectangleBorderContext'>BevelRectangleBorderContext</a>&lt;''a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleBorderContext.html' title='graphics::RectangleBorderContext'>RectangleBorderContext</a>&lt;''a&gt;</code></li>
-<li><code>impl&lt;''a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;''a, <a class='struct' href='../graphics/struct.BevelRectangleBorderColorContext.html' title='graphics::BevelRectangleBorderColorContext'>BevelRectangleBorderColorContext</a>&lt;''a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleBorderColorContext.html' title='graphics::RectangleBorderColorContext'>RectangleBorderColorContext</a>&lt;''a&gt;</code></li>
-<li><code>impl&lt;''a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;''a, <a class='struct' href='../graphics/struct.BevelRectangleColorContext.html' title='graphics::BevelRectangleColorContext'>BevelRectangleColorContext</a>&lt;''a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleColorContext.html' title='graphics::RectangleColorContext'>RectangleColorContext</a>&lt;''a&gt;</code></li>
-<li><code>impl&lt;''a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;''a, <a class='struct' href='../graphics/struct.BevelRectangleContext.html' title='graphics::BevelRectangleContext'>BevelRectangleContext</a>&lt;''a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleContext.html' title='graphics::RectangleContext'>RectangleContext</a>&lt;''a&gt;</code></li>
+    <li><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;'a, <a class='struct' href='../graphics/struct.BevelRectangleBorderContext.html' title='graphics::BevelRectangleBorderContext'>BevelRectangleBorderContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleBorderContext.html' title='graphics::RectangleBorderContext'>RectangleBorderContext</a>&lt;'a&gt;</code></li>
+<li><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;'a, <a class='struct' href='../graphics/struct.BevelRectangleBorderColorContext.html' title='graphics::BevelRectangleBorderColorContext'>BevelRectangleBorderColorContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleBorderColorContext.html' title='graphics::RectangleBorderColorContext'>RectangleBorderColorContext</a>&lt;'a&gt;</code></li>
+<li><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;'a, <a class='struct' href='../graphics/struct.BevelRectangleColorContext.html' title='graphics::BevelRectangleColorContext'>BevelRectangleColorContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleColorContext.html' title='graphics::RectangleColorContext'>RectangleColorContext</a>&lt;'a&gt;</code></li>
+<li><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddBevel.html' title='graphics::AddBevel'>AddBevel</a>&lt;'a, <a class='struct' href='../graphics/struct.BevelRectangleContext.html' title='graphics::BevelRectangleContext'>BevelRectangleContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.RectangleContext.html' title='graphics::RectangleContext'>RectangleContext</a>&lt;'a&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../implementors/graphics/trait.AddBevel.js">
                       </script></section>
@@ -72,7 +72,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

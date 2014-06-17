@@ -38,7 +38,7 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Window</a><a class='source' id='src-18108' href='../src/glfw/src/lib/lib.rs.html#1085-1091'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Window</a><a class='source' id='src-18041' href='../src/glfw/src/lib/lib.rs.html#1081-1091'>[src]</a></h1>
 <pre class='rust struct'>pub struct Window {
     pub ptr: *<a class='type' href='../glfw/ffi/type.GLFWwindow.html' title='glfw::ffi::GLFWwindow'>GLFWwindow</a>,
     pub glfw: <a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a>,
@@ -95,7 +95,7 @@ for concurrent rendering.</p>
 <code>CONTEXT_VERSION_MAJOR</code>, <code>CONTEXT_VERSION_MINOR</code> and <code>CONTEXT_REVISION</code>.</p>
 
 <h1 id="returns" class='section-header'><a
-                           href="\#returns">Returns</a></h1>
+                           href="#returns">Returns</a></h1>
 <p>The client API version of the window&#39;s context in a version struct.</p>
 </div><h4 id='method.get_context_robustness' class='method'><code>fn <a href='#method.get_context_robustness' class='fnname'>get_context_robustness</a>(&amp;self) -&gt; c_int</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetWindowAttrib</code> called with <code>CONTEXT_ROBUSTNESS</code>.</p>
@@ -168,7 +168,8 @@ for concurrent rendering.</p>
 <div class='docblock'><p>Wrapper for <code>glfwGetNSGLContext</code></p>
 </div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.drop' class='method'><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
 <div class='docblock'><p>Closes the window and performs the necessary cleanups. This will block
-until all associated <code>RenderContext</code>s were also dropped.</p>
+until all associated <code>RenderContext</code>s were also dropped, and emit a
+<code>debug!</code> message to that effect.</p>
 
 <p>Wrapper for <code>glfwDestroyWindow</code>.</p>
 </div></div><h3 class='impl'><code>impl <a class='trait' href='../glfw/trait.Context.html' title='glfw::Context'>Context</a> for <a class='struct' href='../glfw/struct.Window.html' title='glfw::Window'>Window</a></code></h3><div class='methods'><h4 id='method.window_ptr' class='method'><code>fn <a href='#method.window_ptr' class='fnname'>window_ptr</a>(&amp;self) -&gt; *<a class='type' href='../glfw/ffi/type.GLFWwindow.html' title='glfw::ffi::GLFWwindow'>GLFWwindow</a></code></h4>
@@ -192,7 +193,7 @@ until all associated <code>RenderContext</code>s were also dropped.</p>
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

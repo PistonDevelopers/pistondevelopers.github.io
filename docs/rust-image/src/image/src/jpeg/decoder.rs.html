@@ -889,7 +889,7 @@
 //Reserved
 </span><span class='kw'>static</span> <span class='ident'>TEM</span>: <span class='ident'>u8</span> <span class='op'>=</span> <span class='number'>0x01</span>;
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>Clone</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>struct</span> <span class='ident'>HuffTable</span> {
 	<span class='ident'>lut</span>:     <span class='ident'>Vec</span><span class='op'>&lt;</span>(<span class='ident'>u8</span>, <span class='ident'>u8</span>)<span class='op'>&gt;</span>,
 	<span class='ident'>valptr</span>:  <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>int</span><span class='op'>&gt;</span>,
@@ -898,7 +898,7 @@
 	<span class='ident'>mincode</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>int</span><span class='op'>&gt;</span>,
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>enum</span> <span class='ident'>JPEGState</span> {
 	<span class='ident'>Start</span>,
 	<span class='ident'>HaveSOI</span>,
@@ -1644,7 +1644,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

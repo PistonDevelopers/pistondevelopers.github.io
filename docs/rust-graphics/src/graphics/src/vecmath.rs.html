@@ -361,21 +361,21 @@
 <span class='kw'>use</span> <span class='ident'>modular_index</span>::{<span class='ident'>previous</span>};
 
 <span class='doccomment'>/// Multiplies two matrices.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>multiply</span>(<span class='ident'>m</span>: <span class='ident'>Matrix2d</span>, <span class='ident'>b</span>: <span class='ident'>Matrix2d</span>) <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     [<span class='ident'>m</span>[<span class='number'>0</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>0</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>1</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>3</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>2</span>]<span class='op'>*</span><span class='number'>0.0</span>,  <span class='ident'>m</span>[<span class='number'>0</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>1</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>1</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>4</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>2</span>]<span class='op'>*</span><span class='number'>0.0</span>,  <span class='ident'>m</span>[<span class='number'>0</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>2</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>1</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>5</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>2</span>]<span class='op'>*</span><span class='number'>1.0</span>,
      <span class='ident'>m</span>[<span class='number'>3</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>0</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>4</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>3</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>5</span>]<span class='op'>*</span><span class='number'>0.0</span>,  <span class='ident'>m</span>[<span class='number'>3</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>1</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>4</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>4</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>5</span>]<span class='op'>*</span><span class='number'>0.0</span>,  <span class='ident'>m</span>[<span class='number'>3</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>2</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>4</span>]<span class='op'>*</span><span class='ident'>b</span>[<span class='number'>5</span>]<span class='op'>+</span><span class='ident'>m</span>[<span class='number'>5</span>]<span class='op'>*</span><span class='number'>1.0</span>]
 }
 
 <span class='doccomment'>/// Creates a translation matrix.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>translate</span>(<span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     [<span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='ident'>x</span>,
      <span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='ident'>y</span>]
 }
 
 <span class='doccomment'>/// Creates a rotation matrix.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rotate_radians</span>(<span class='ident'>angle</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     <span class='kw'>let</span> <span class='ident'>c</span> <span class='op'>=</span> <span class='ident'>angle</span>.<span class='ident'>cos</span>();
     <span class='kw'>let</span> <span class='ident'>s</span> <span class='op'>=</span> <span class='ident'>angle</span>.<span class='ident'>sin</span>();
@@ -386,7 +386,7 @@
 <span class='doccomment'>/// Orients x axis to look at point.
 </span><span class='doccomment'>///
 </span><span class='doccomment'>/// Leaves x axis unchanged if the point to look at is the origin.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>orient</span>(<span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     <span class='kw'>let</span> <span class='ident'>len</span> <span class='op'>=</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>y</span> <span class='op'>*</span> <span class='ident'>y</span>;
     <span class='kw'>if</span> <span class='ident'>len</span> <span class='op'>==</span> <span class='number'>0.0</span> {
@@ -402,35 +402,35 @@
 }
 
 <span class='doccomment'>/// Create a scale matrix.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>scale</span>(<span class='ident'>sx</span>: <span class='ident'>f64</span>, <span class='ident'>sy</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     [<span class='ident'>sx</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>,
      <span class='number'>0.0</span>, <span class='ident'>sy</span>, <span class='number'>0.0</span>]
 }
 
 <span class='doccomment'>/// Create a shear matrix.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>shear</span>(<span class='ident'>sx</span>: <span class='ident'>f64</span>, <span class='ident'>sy</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     [<span class='number'>1.0</span>, <span class='ident'>sx</span>, <span class='number'>0.0</span>,
      <span class='ident'>sy</span>, <span class='number'>1.0</span>, <span class='number'>0.0</span>]
 }
 
 <span class='doccomment'>/// Create an identity matrix.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>identity</span>() <span class='op'>-&gt;</span> <span class='ident'>Matrix2d</span> {
     [<span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>,
      <span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>0.0</span>]
 }
 
 <span class='doccomment'>/// Extract scale information from amtrix.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_scale</span>(<span class='ident'>m</span>: <span class='ident'>Matrix2d</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec2d</span> {
     [(<span class='ident'>m</span>[<span class='number'>0</span>] <span class='op'>*</span> <span class='ident'>m</span>[<span class='number'>0</span>] <span class='op'>+</span> <span class='ident'>m</span>[<span class='number'>3</span>] <span class='op'>*</span> <span class='ident'>m</span>[<span class='number'>3</span>]).<span class='ident'>sqrt</span>(), (<span class='ident'>m</span>[<span class='number'>1</span>] <span class='op'>*</span> <span class='ident'>m</span>[<span class='number'>1</span>] <span class='op'>+</span> <span class='ident'>m</span>[<span class='number'>4</span>] <span class='op'>*</span> <span class='ident'>m</span>[<span class='number'>4</span>]).<span class='ident'>sqrt</span>()]
 }
 
 <span class='doccomment'>/// Compute the shortest vector from point to ray.
 </span><span class='doccomment'>/// A ray stores starting point and directional vector.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>separation</span>(<span class='ident'>ray</span>: <span class='ident'>Ray</span>, <span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> [<span class='ident'>f64</span>, ..<span class='number'>2</span>] {<span class='comment'>
     // Get the directional vector.
     </span><span class='kw'>let</span> (<span class='ident'>dir_x</span>, <span class='ident'>dir_y</span>) <span class='op'>=</span> (<span class='ident'>ray</span>[<span class='number'>2</span>], <span class='ident'>ray</span>[<span class='number'>3</span>]);<span class='comment'>
@@ -447,7 +447,7 @@
 <span class='doccomment'>/// Returns the least separation out of four.
 </span><span class='doccomment'>/// Each seperation can be computed using `separation` function.
 </span><span class='doccomment'>/// The separation returned can be used to solve collision of rectangles.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>least_separation_4</span>(
     <span class='ident'>sep1</span>: <span class='ident'>Vec2d</span>,
     <span class='ident'>sep2</span>: <span class='ident'>Vec2d</span>,
@@ -475,7 +475,7 @@
 }
 
 <span class='doccomment'>/// Shrinks a rectangle by a factor on all sides.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>margin_rectangle</span>(<span class='ident'>rect</span>: <span class='ident'>Rectangle</span>, <span class='ident'>m</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Rectangle</span> {
     <span class='kw'>let</span> <span class='ident'>w</span> <span class='op'>=</span> <span class='ident'>rect</span>[<span class='number'>2</span>] <span class='op'>-</span> <span class='number'>2.0</span> <span class='op'>*</span> <span class='ident'>m</span>;
     <span class='kw'>let</span> <span class='ident'>h</span> <span class='op'>=</span> <span class='ident'>rect</span>[<span class='number'>3</span>] <span class='op'>-</span> <span class='number'>2.0</span> <span class='op'>*</span> <span class='ident'>m</span>;
@@ -485,21 +485,21 @@
 }
 
 <span class='doccomment'>/// Computes a relative rectangle using the rectangle as a tile.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>relative_rectangle</span>(<span class='ident'>rect</span>: <span class='ident'>Rectangle</span>, <span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>Rectangle</span> {
     [<span class='ident'>rect</span>[<span class='number'>0</span>] <span class='op'>+</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='ident'>rect</span>[<span class='number'>2</span>], <span class='ident'>rect</span>[<span class='number'>1</span>] <span class='op'>+</span> <span class='ident'>y</span> <span class='op'>*</span> <span class='ident'>rect</span>[<span class='number'>3</span>], <span class='ident'>rect</span>[<span class='number'>2</span>], <span class='ident'>rect</span>[<span class='number'>3</span>]]
 }
 
 <span class='doccomment'>/// Computes a relative source rectangle using the source rectangle as a tile.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>relative_source_rectangle</span>(<span class='ident'>rect</span>: <span class='ident'>SourceRectangle</span>, <span class='ident'>x</span>: <span class='ident'>i64</span>, <span class='ident'>y</span>: <span class='ident'>i64</span>) <span class='op'>-&gt;</span> <span class='ident'>SourceRectangle</span> {
-    <span class='kw'>let</span> (<span class='ident'>rx</span>, <span class='ident'>ry</span>, <span class='ident'>rw</span>, <span class='ident'>rh</span>) <span class='op'>=</span> (<span class='ident'>rect</span>[<span class='number'>0</span>] <span class='kw'>as</span> <span class='ident'>i64</span>, <span class='ident'>rect</span>[<span class='number'>1</span>] <span class='kw'>as</span> <span class='ident'>i64</span>, <span class='ident'>rect</span>[<span class='number'>2</span>] <span class='kw'>as</span> <span class='ident'>i64</span>, <span class='ident'>rect</span>[<span class='number'>3</span>] <span class='kw'>as</span> <span class='ident'>i64</span>);
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>relative_source_rectangle</span>(<span class='ident'>rect</span>: <span class='ident'>SourceRectangle</span>, <span class='ident'>x</span>: <span class='ident'>i32</span>, <span class='ident'>y</span>: <span class='ident'>i32</span>) <span class='op'>-&gt;</span> <span class='ident'>SourceRectangle</span> {
+    <span class='kw'>let</span> (<span class='ident'>rx</span>, <span class='ident'>ry</span>, <span class='ident'>rw</span>, <span class='ident'>rh</span>) <span class='op'>=</span> (<span class='ident'>rect</span>[<span class='number'>0</span>], <span class='ident'>rect</span>[<span class='number'>1</span>], <span class='ident'>rect</span>[<span class='number'>2</span>], <span class='ident'>rect</span>[<span class='number'>3</span>]);
     <span class='kw'>let</span> (<span class='ident'>x</span>, <span class='ident'>y</span>) <span class='op'>=</span> (<span class='ident'>rx</span> <span class='op'>+</span> <span class='ident'>x</span> <span class='op'>*</span> <span class='ident'>rw</span>, <span class='ident'>ry</span> <span class='op'>+</span> <span class='ident'>y</span> <span class='op'>*</span> <span class='ident'>rh</span>);
-    [<span class='ident'>x</span> <span class='kw'>as</span> <span class='ident'>u32</span>, <span class='ident'>y</span> <span class='kw'>as</span> <span class='ident'>u32</span>, <span class='ident'>rw</span> <span class='kw'>as</span> <span class='ident'>u32</span>, <span class='ident'>rh</span> <span class='kw'>as</span> <span class='ident'>u32</span>]
+    [<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>rw</span>, <span class='ident'>rh</span>]
 }
 
 <span class='doccomment'>/// Computes modular offset safely for numbers.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>modular_offset</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Add</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>T</span><span class='op'>&gt;</span> <span class='op'>+</span> <span class='ident'>Rem</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>T</span><span class='op'>&gt;&gt;</span>(
     <span class='ident'>n</span>: <span class='kw-2'>&amp;</span><span class='ident'>T</span>, 
     <span class='ident'>i</span>: <span class='kw-2'>&amp;</span><span class='ident'>T</span>, 
@@ -508,7 +508,7 @@
     (<span class='op'>*</span><span class='ident'>i</span> <span class='op'>+</span> (<span class='op'>*</span><span class='ident'>off</span> <span class='op'>%</span> <span class='op'>*</span><span class='ident'>n</span> <span class='op'>+</span> <span class='op'>*</span><span class='ident'>n</span>)) <span class='op'>%</span> <span class='op'>*</span><span class='ident'>n</span>
 }
 
-<span class='attribute'>\#[<span class='ident'>test</span>]</span>
+<span class='attribute'>#[<span class='ident'>test</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>test_modular_offset</span>() {
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>modular_offset</span>(<span class='kw-2'>&amp;</span><span class='number'>3.0_f64</span>, <span class='kw-2'>&amp;</span><span class='number'>0.0_f64</span>, <span class='kw-2'>&amp;</span><span class='op'>-</span><span class='number'>1.0_f64</span>), <span class='number'>2.0_f64</span>);
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>modular_offset</span>(<span class='kw-2'>&amp;</span><span class='number'>3.0_f64</span>, <span class='kw-2'>&amp;</span><span class='number'>1.0_f64</span>, <span class='kw-2'>&amp;</span><span class='op'>-</span><span class='number'>1.0_f64</span>), <span class='number'>0.0_f64</span>);
@@ -548,7 +548,7 @@
 <span class='doccomment'>/// Computes area of a simple polygon.
 </span><span class='doccomment'>///
 </span><span class='doccomment'>/// A simple polygon is one that does not intersect itself.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>area</span>(<span class='ident'>polygon</span>: <span class='ident'>Polygon</span>) <span class='op'>-&gt;</span> <span class='ident'>f64</span> {
     <span class='kw'>let</span> (<span class='ident'>res</span>, _) <span class='op'>=</span> <span class='ident'>area_centroid</span>(<span class='ident'>polygon</span>);
     <span class='ident'>res</span>
@@ -557,7 +557,7 @@
 <span class='doccomment'>/// Computes centroid of a simple polygon.
 </span><span class='doccomment'>///
 </span><span class='doccomment'>/// A simple polygon is one that does not intersect itself.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>centroid</span>(<span class='ident'>polygon</span>: <span class='ident'>Polygon</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec2d</span> {
     <span class='kw'>let</span> (_, <span class='ident'>res</span>) <span class='op'>=</span> <span class='ident'>area_centroid</span>(<span class='ident'>polygon</span>);
     <span class='ident'>res</span>
@@ -568,7 +568,7 @@
 </span><span class='doccomment'>/// Computes the cross product of the vector that gives the line
 </span><span class='doccomment'>/// with the vector between point and starting point of line.
 </span><span class='doccomment'>/// One side of the line has opposite sign of the other.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>line_side</span>(<span class='ident'>line</span>: <span class='ident'>Line</span>, <span class='ident'>x</span>: <span class='ident'>f64</span>, <span class='ident'>y</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>f64</span> {
     <span class='kw'>let</span> (<span class='ident'>ax</span>, <span class='ident'>ay</span>) <span class='op'>=</span> (<span class='ident'>line</span>[<span class='number'>0</span>], <span class='ident'>line</span>[<span class='number'>1</span>]);
     <span class='kw'>let</span> (<span class='ident'>bx</span>, <span class='ident'>by</span>) <span class='op'>=</span> (<span class='ident'>line</span>[<span class='number'>2</span>], <span class='ident'>line</span>[<span class='number'>3</span>]);
@@ -601,7 +601,7 @@
 </span><span class='doccomment'>///
 </span><span class='doccomment'>/// This is done by computing which side the third vertex is relative to
 </span><span class='doccomment'>/// the line starting from the first vertex to second vertex.
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>triangle_face</span>(
     <span class='ident'>triangle</span>: <span class='ident'>Triangle</span>
 ) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
@@ -614,7 +614,7 @@
     <span class='ident'>ab_side</span>.<span class='ident'>is_negative</span>()
 }
 
-<span class='attribute'>\#[<span class='ident'>test</span>]</span>
+<span class='attribute'>#[<span class='ident'>test</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>test_triangle</span>() {<span class='comment'>
     // Triangle counter clock-wise.
     </span><span class='kw'>let</span> <span class='ident'>tri_1</span> <span class='op'>=</span> [<span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>1.0</span>];<span class='comment'>
@@ -630,7 +630,7 @@
 <span class='doccomment'>/// Transform color with hue saturation and value.
 </span><span class='doccomment'>///
 </span><span class='doccomment'>/// Source: http://beesbuzz.biz/code/hsv_color_transforms.php
-</span><span class='attribute'>\#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>hsv</span>(<span class='ident'>color</span>: <span class='ident'>Color</span>, <span class='ident'>h_rad</span>: <span class='ident'>f32</span>, <span class='ident'>s</span>: <span class='ident'>f32</span>, <span class='ident'>v</span>: <span class='ident'>f32</span>) <span class='op'>-&gt;</span> <span class='ident'>Color</span> {
     <span class='kw'>let</span> <span class='ident'>vsu</span> <span class='op'>=</span> <span class='ident'>v</span> <span class='op'>*</span> <span class='ident'>s</span> <span class='op'>*</span> <span class='ident'>h_rad</span>.<span class='ident'>cos</span>();
     <span class='kw'>let</span> <span class='ident'>vsw</span> <span class='op'>=</span> <span class='ident'>v</span> <span class='op'>*</span> <span class='ident'>s</span> <span class='op'>*</span> <span class='ident'>h_rad</span>.<span class='ident'>sin</span>();
@@ -666,7 +666,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

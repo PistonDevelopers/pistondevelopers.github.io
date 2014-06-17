@@ -276,7 +276,7 @@
 </pre><pre class='rust '>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rand</span>;
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>uint8_t</span>, <span class='ident'>uint32_t</span>};<span class='comment'>
 
@@ -295,7 +295,7 @@
         <span class='kw'>pub</span> <span class='ident'>refcount</span>: <span class='ident'>c_int</span>
     }
 
-    <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>uppercase_variables</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>uppercase_variables</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_PixelFormat</span> {
         <span class='kw'>pub</span> <span class='ident'>format</span>: <span class='ident'>SDL_PixelFormatFlag</span>,
         <span class='kw'>pub</span> <span class='ident'>palette</span>: <span class='op'>*</span><span class='ident'>SDL_Palette</span>,
@@ -363,14 +363,14 @@
         <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>SDL_MapRGBA</span>(<span class='ident'>format</span>: <span class='op'>*</span><span class='ident'>SDL_PixelFormat</span>, <span class='ident'>r</span>: <span class='ident'>uint8_t</span>, <span class='ident'>g</span>: <span class='ident'>uint8_t</span>, <span class='ident'>b</span>: <span class='ident'>uint8_t</span>, <span class='ident'>a</span>: <span class='ident'>uint8_t</span>) <span class='op'>-&gt;</span> <span class='ident'>uint32_t</span>;
     }
 }
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Palette</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Palette</span>
 }
 
 <span class='macro'>impl_raw_accessors</span><span class='macro'>!</span>(<span class='ident'>Palette</span>, <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Palette</span>)
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Color</span> {
     <span class='ident'>RGB</span>(<span class='ident'>u8</span>, <span class='ident'>u8</span>, <span class='ident'>u8</span>),
     <span class='ident'>RGBA</span>(<span class='ident'>u8</span>, <span class='ident'>u8</span>, <span class='ident'>u8</span>, <span class='ident'>u8</span>)
@@ -408,7 +408,7 @@
     }
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>PixelFormat</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_PixelFormat</span>
 }
@@ -416,7 +416,7 @@
 <span class='macro'>impl_raw_accessors</span><span class='macro'>!</span>(<span class='ident'>PixelFormat</span>, <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_PixelFormat</span>)
 <span class='macro'>impl_raw_constructor</span><span class='macro'>!</span>(<span class='ident'>PixelFormat</span> <span class='op'>-&gt;</span> <span class='ident'>PixelFormat</span> (<span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_PixelFormat</span>))
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>PixelFormatFlag</span> {
     <span class='ident'>Unknown</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_PIXELFORMAT_UNKNOWN</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>Index1LSB</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_PIXELFORMAT_INDEX1LSB</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -528,7 +528,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

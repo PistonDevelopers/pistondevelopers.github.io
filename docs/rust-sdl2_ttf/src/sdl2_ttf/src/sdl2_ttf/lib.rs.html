@@ -547,13 +547,13 @@
 A binding for SDL2_ttf.
  */
 </span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
 
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_id</span><span class='op'>=</span><span class='string'>&quot;sdl2_ttf#sdl2_ttf:0.1&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>desc</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_ttf bindings and wrappers&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_ttf bindings and wrappers&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>license</span> <span class='op'>=</span> <span class='string'>&quot;MIT&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span><span class='op'>=</span><span class='string'>&quot;sdl2_ttf#sdl2_ttf:0.1&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>desc</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_ttf bindings and wrappers&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_ttf bindings and wrappers&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>license</span> <span class='op'>=</span> <span class='string'>&quot;MIT&quot;</span>]</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sdl2</span>;
@@ -571,29 +571,29 @@ A binding for SDL2_ttf.
 <span class='kw'>use</span> <span class='ident'>sdl2</span>::<span class='ident'>SdlResult</span>;<span class='comment'>
 
 // Setup linking for all targets.
-</span><span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>mac</span> {
-    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>mac_framework</span>)]</span>
-    <span class='attribute'>\#[<span class='ident'>link</span>(<span class='ident'>kind</span><span class='op'>=</span><span class='string'>&quot;framework&quot;</span>, <span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_ttf&quot;</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>mac_framework</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>kind</span><span class='op'>=</span><span class='string'>&quot;framework&quot;</span>, <span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_ttf&quot;</span>)]</span>
     <span class='kw'>extern</span> {}
 
-    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>not</span>(<span class='ident'>mac_framework</span>))]</span>
-    <span class='attribute'>\#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_ttf&quot;</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>not</span>(<span class='ident'>mac_framework</span>))]</span>
+    <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_ttf&quot;</span>)]</span>
     <span class='kw'>extern</span> {}
 }
 
-<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;freebsd&quot;</span>)]</span>
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;freebsd&quot;</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>others</span> {
-    <span class='attribute'>\#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_ttf&quot;</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_ttf&quot;</span>)]</span>
     <span class='kw'>extern</span> {}
 }
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>, <span class='ident'>dead_code</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>, <span class='ident'>dead_code</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>ffi</span>;
 
-<span class='attribute'>\#[<span class='ident'>inline</span>]</span>
+<span class='attribute'>#[<span class='ident'>inline</span>]</span>
 <span class='kw'>fn</span> <span class='ident'>color_to_c_color</span>(<span class='ident'>color</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SDL_Color</span> {
     <span class='kw'>match</span> <span class='ident'>color</span> {
         <span class='ident'>pixels</span>::<span class='ident'>RGB</span>(<span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>)     <span class='op'>=&gt;</span> <span class='ident'>SDL_Color</span> { <span class='ident'>r</span>: <span class='ident'>r</span>, <span class='ident'>g</span>: <span class='ident'>g</span>, <span class='ident'>b</span>: <span class='ident'>b</span>, <span class='ident'>a</span>: <span class='number'>255</span> },
@@ -610,7 +610,7 @@ A binding for SDL2_ttf.
     <span class='kw'>static</span> <span class='ident'>StyleStrikeThrough</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_STYLE_STRIKETHROUGH</span>
 })
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Show</span>, <span class='ident'>PartialEq</span>, <span class='ident'>FromPrimitive</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Show</span>, <span class='ident'>PartialEq</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Hinting</span> {
     <span class='ident'>HintingNormal</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_HINTING_NORMAL</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>HintingLight</span>  <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_HINTING_LIGHT</span>  <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -619,7 +619,7 @@ A binding for SDL2_ttf.
 }
 
 <span class='doccomment'>/// Glyph Metrics
-</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GlyphMetrics</span> {
     <span class='kw'>pub</span> <span class='ident'>minx</span>: <span class='ident'>int</span>,
     <span class='kw'>pub</span> <span class='ident'>maxx</span>: <span class='ident'>int</span>,
@@ -659,8 +659,8 @@ A binding for SDL2_ttf.
 }
 
 <span class='doccomment'>/// The opaque holder of a loaded font.
-</span><span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Font</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ffi</span>::<span class='ident'>TTF_Font</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1066,7 +1066,7 @@ A binding for SDL2_ttf.
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

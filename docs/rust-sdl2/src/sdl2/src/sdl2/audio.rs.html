@@ -414,6 +414,7 @@
 <span id='375'>375</span>
 <span id='376'>376</span>
 <span id='377'>377</span>
+<span id='378'>378</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
@@ -429,7 +430,7 @@
 <span class='kw'>use</span> <span class='ident'>SdlResult</span>;
 
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>c_uint</span>, <span class='ident'>c_void</span>, <span class='ident'>uint8_t</span>, <span class='ident'>uint32_t</span>};
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>uint16_t</span>, <span class='ident'>c_double</span>, <span class='ident'>c_char</span>};
@@ -475,6 +476,7 @@
         ::<span class='ident'>std</span>::<span class='ident'>option</span>::<span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>extern</span> <span class='string'>&quot;C&quot;</span> <span class='kw'>fn</span>
                                   (<span class='ident'>arg1</span>: <span class='op'>*</span><span class='ident'>SDL_AudioCVT</span>,
                                    <span class='ident'>arg2</span>: <span class='ident'>SDL_AudioFormat</span>)<span class='op'>&gt;</span>;
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_AudioCVT</span> {
         <span class='kw'>pub</span> <span class='ident'>needed</span>: <span class='ident'>c_int</span>,
         <span class='kw'>pub</span> <span class='ident'>src_format</span>: <span class='ident'>SDL_AudioFormat</span>,
@@ -558,8 +560,8 @@
 <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>AudioS32SYS</span> : <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_S32SYS</span>;
 <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>AudioF32SYS</span> : <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_F32SYS</span>;
 
-<span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>AudioStatus</span> {
     <span class='ident'>Stopped</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_AUDIO_STOPPED</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>Playing</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_AUDIO_PLAYING</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -731,7 +733,7 @@
     }
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AudioCVT</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ll</span>::<span class='ident'>SDL_AudioCVT</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>,
@@ -810,7 +812,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

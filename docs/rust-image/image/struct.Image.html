@@ -38,7 +38,7 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>image</a>::<a class='struct' href=''>Image</a><a class='source' id='src-36560' href='../src/image/src/image.rs.html#115-120'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>image</a>::<a class='struct' href=''>Image</a><a class='source' id='src-36956' href='../src/image/src/image.rs.html#115-120'>[src]</a></h1>
 <pre class='rust struct'>pub struct Image {
     // some fields omitted
 }</pre><div class='docblock'><p>A Generic representation of an image</p>
@@ -76,7 +76,14 @@ This method operates inplace.</p>
 <code>sigma</code> is the amount to blur the image by.
 <code>threshold</code> is a control of how much to sharpen.
 see <a href="https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking">https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking</a></p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+</div><h4 id='method.filter3x3' class='method'><code>fn <a href='#method.filter3x3' class='fnname'>filter3x3</a>(&amp;self, kernel: &amp;<a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>]</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Filters this image with the specified 3x3 kernel.</p>
+</div><h4 id='method.adjust_contrast' class='method'><code>fn <a href='#method.adjust_contrast' class='fnname'>adjust_contrast</a>(&amp;self, contrast: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Adjust this image&#39;s contrast</p>
+</div><h4 id='method.brighten' class='method'><code>fn <a href='#method.brighten' class='fnname'>brighten</a>(&amp;self, value: <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Brighten this image.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../image/struct.Image.html' title='image::Image'>Image</a></code></h4>
 <h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
@@ -95,7 +102,7 @@ see <a href="https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_maski
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

@@ -39,26 +39,26 @@
 
     <section id='main' class="content trait">
 <h1 class='fqn'>Trait <a href='index.html'>graphics</a>::<a class='trait' href=''>AddEllipse</a><a class='source' id='src-273' href='../src/graphics/src/add_ellipse.rs.html#3-26'>[src]</a></h1>
-<pre class='rust trait'>pub trait AddEllipse&lt;''a, T&gt; {
-    fn <a href='#tymethod.ellipse' class='fnname'>ellipse</a>(&amp;''a self, x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, w: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, h: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T;
+<pre class='rust trait'>pub trait AddEllipse&lt;'a, T&gt; {
+    fn <a href='#tymethod.ellipse' class='fnname'>ellipse</a>(&amp;'a self, x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, w: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, h: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T;
 
-    fn <a href='#method.ellipse_centered' class='fnname'>ellipse_centered</a>(&amp;''a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_width: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_height: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T { ... }
-    fn <a href='#method.circle' class='fnname'>circle</a>(&amp;''a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T { ... }
+    fn <a href='#method.ellipse_centered' class='fnname'>ellipse_centered</a>(&amp;'a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_width: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_height: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T { ... }
+    fn <a href='#method.circle' class='fnname'>circle</a>(&amp;'a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T { ... }
 }</pre><div class='docblock'><p>Implemented by all contexts that can add ellipse.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.ellipse' class='method'><code>fn <a href='#tymethod.ellipse' class='fnname'>ellipse</a>(&amp;''a self, x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, w: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, h: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T</code></h3><div class='docblock'><p>Adds an ellipse.</p>
+        <h3 id='tymethod.ellipse' class='method'><code>fn <a href='#tymethod.ellipse' class='fnname'>ellipse</a>(&amp;'a self, x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, w: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, h: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T</code></h3><div class='docblock'><p>Adds an ellipse.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.ellipse_centered' class='method'><code>fn <a href='#method.ellipse_centered' class='fnname'>ellipse_centered</a>(&amp;''a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_width: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_height: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T</code></h3><div class='docblock'><p>Adds an ellipse with coordinates in the center.</p>
-</div><h3 id='method.circle' class='method'><code>fn <a href='#method.circle' class='fnname'>circle</a>(&amp;''a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T</code></h3><div class='docblock'><p>Adds a circle.</p>
+        <h3 id='method.ellipse_centered' class='method'><code>fn <a href='#method.ellipse_centered' class='fnname'>ellipse_centered</a>(&amp;'a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_width: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius_height: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T</code></h3><div class='docblock'><p>Adds an ellipse with coordinates in the center.</p>
+</div><h3 id='method.circle' class='method'><code>fn <a href='#method.circle' class='fnname'>circle</a>(&amp;'a self, center_x: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, center_y: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, radius: <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>) -&gt; T</code></h3><div class='docblock'><p>Adds a circle.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;''a&gt; <a class='trait' href='../graphics/trait.AddEllipse.html' title='graphics::AddEllipse'>AddEllipse</a>&lt;''a, <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;''a&gt;&gt; for <a class='struct' href='../graphics/struct.ColorContext.html' title='graphics::ColorContext'>ColorContext</a>&lt;''a&gt;</code></li>
-<li><code>impl&lt;''a&gt; <a class='trait' href='../graphics/trait.AddEllipse.html' title='graphics::AddEllipse'>AddEllipse</a>&lt;''a, <a class='struct' href='../graphics/struct.EllipseContext.html' title='graphics::EllipseContext'>EllipseContext</a>&lt;''a&gt;&gt; for <a class='struct' href='../graphics/struct.Context.html' title='graphics::Context'>Context</a>&lt;''a&gt;</code></li>
+    <li><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddEllipse.html' title='graphics::AddEllipse'>AddEllipse</a>&lt;'a, <a class='struct' href='../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.ColorContext.html' title='graphics::ColorContext'>ColorContext</a>&lt;'a&gt;</code></li>
+<li><code>impl&lt;'a&gt; <a class='trait' href='../graphics/trait.AddEllipse.html' title='graphics::AddEllipse'>AddEllipse</a>&lt;'a, <a class='struct' href='../graphics/struct.EllipseContext.html' title='graphics::EllipseContext'>EllipseContext</a>&lt;'a&gt;&gt; for <a class='struct' href='../graphics/struct.Context.html' title='graphics::Context'>Context</a>&lt;'a&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../implementors/graphics/trait.AddEllipse.js">
                       </script></section>
@@ -78,7 +78,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

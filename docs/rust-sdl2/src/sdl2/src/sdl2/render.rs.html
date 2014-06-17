@@ -842,7 +842,7 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>vec</span>::<span class='ident'>Vec</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>c_vec</span>::<span class='ident'>CVec</span>;
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
 
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>c_char</span>, <span class='ident'>c_void</span>, <span class='ident'>c_float</span>, <span class='ident'>c_double</span>};
@@ -887,8 +887,8 @@
         <span class='ident'>SDL_TEXTUREMODULATE_ALPHA</span> <span class='op'>=</span> <span class='number'>0x00000002</span>
     }
 
-    <span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>FromPrimitive</span>)]</span>
-    <span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>FromPrimitive</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>SDL_RendererFlip</span> {
         <span class='ident'>SDL_FLIP_NONE</span> <span class='op'>=</span> <span class='number'>0x00000000</span>,
         <span class='ident'>SDL_FLIP_HORIZONTAL</span> <span class='op'>=</span> <span class='number'>0x00000001</span>,
@@ -899,8 +899,8 @@
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_Texture</span>;<span class='comment'>
 
     //SDL_blendmode.h
-    </span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>FromPrimitive</span>)]</span>
-    <span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+    </span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>FromPrimitive</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>SDL_BlendMode</span> {
         <span class='ident'>SDL_BLENDMODE_NONE</span> <span class='op'>=</span> <span class='number'>0x00000000</span>,
         <span class='ident'>SDL_BLENDMODE_BLEND</span> <span class='op'>=</span> <span class='number'>0x00000001</span>,
@@ -969,7 +969,7 @@
     <span class='ident'>DriverIndex</span>(<span class='ident'>int</span>)
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>FromPrimitive</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>TextureAccess</span> {
     <span class='ident'>AccessStatic</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_TEXTUREACCESS_STATIC</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>AccessStreaming</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_TEXTUREACCESS_STREAMING</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -983,7 +983,7 @@
     <span class='kw'>static</span> <span class='ident'>TargetTexture</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_RENDERER_TARGETTEXTURE</span> <span class='kw'>as</span> <span class='ident'>u32</span>
 })
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RendererInfo</span> {
     <span class='kw'>pub</span> <span class='ident'>name</span>: <span class='ident'>String</span>,
     <span class='kw'>pub</span> <span class='ident'>flags</span>: <span class='ident'>RendererFlags</span>,
@@ -992,7 +992,7 @@
     <span class='kw'>pub</span> <span class='ident'>max_texture_height</span>: <span class='ident'>int</span>
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>FromPrimitive</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>BlendMode</span> {
     <span class='ident'>BlendNone</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_BLENDMODE_NONE</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>BlendBlend</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_BLENDMODE_BLEND</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1000,7 +1000,7 @@
     <span class='ident'>BlendMod</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_BLENDMODE_MOD</span> <span class='kw'>as</span> <span class='ident'>int</span>
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>RendererFlip</span> {
     <span class='ident'>FlipNone</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_FLIP_NONE</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>FlipHorizontal</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_FLIP_HORIZONTAL</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1027,14 +1027,14 @@
     }
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Renderer</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Renderer</span>,
     <span class='ident'>parent</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>,
     <span class='ident'>owned</span>: <span class='ident'>bool</span>
 }
 
-<span class='attribute'>\#[<span class='ident'>unsafe_destructor</span>]</span>
+<span class='attribute'>#[<span class='ident'>unsafe_destructor</span>]</span>
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> <span class='ident'>Drop</span> <span class='kw'>for</span> <span class='ident'>Renderer</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
     <span class='kw'>fn</span> <span class='ident'>drop</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {
         <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>owned</span> {
@@ -1096,19 +1096,19 @@
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> <span class='ident'>Renderer</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
-    <span class='attribute'>\#[<span class='ident'>inline</span>]</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_parent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>S</span> { <span class='self'>self</span>.<span class='ident'>parent</span>.<span class='ident'>get_ref</span>() }
 
-    <span class='attribute'>\#[<span class='ident'>inline</span>]</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>unwrap_parent</span>(<span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>S</span> {
         <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
         <span class='ident'>mem</span>::<span class='ident'>replace</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>parent</span>, <span class='prelude-val'>None</span>).<span class='ident'>unwrap</span>()
     }
 
-    <span class='attribute'>\#[<span class='ident'>inline</span>]</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>raw</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Renderer</span> { <span class='self'>self</span>.<span class='ident'>raw</span> }
 
-    <span class='attribute'>\#[<span class='ident'>inline</span>]</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>owned</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> { <span class='self'>self</span>.<span class='ident'>owned</span> }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_draw_color</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>color</span>: <span class='ident'>pixels</span>::<span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
@@ -1418,7 +1418,7 @@
     <span class='kw'>pub</span> <span class='ident'>height</span>: <span class='ident'>int</span>
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Texture</span> {
     <span class='kw'>pub</span> <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_Texture</span>,
     <span class='kw'>pub</span> <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1628,7 +1628,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

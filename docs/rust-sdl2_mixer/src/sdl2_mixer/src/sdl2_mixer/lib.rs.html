@@ -820,13 +820,13 @@
 A binding for SDL2_mixer.
  */
 </span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_id</span><span class='op'>=</span><span class='string'>&quot;sdl2_mixer#sdl2_mixer:0.1&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>desc</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_mixer bindings and wrappers&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_mixer bindings and wrappers&quot;</span>]</span>
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>license</span> <span class='op'>=</span> <span class='string'>&quot;MIT&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span><span class='op'>=</span><span class='string'>&quot;sdl2_mixer#sdl2_mixer:0.1&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>desc</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_mixer bindings and wrappers&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_mixer bindings and wrappers&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>license</span> <span class='op'>=</span> <span class='string'>&quot;MIT&quot;</span>]</span>
 
-<span class='attribute'>\#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>globs</span>, <span class='ident'>macro_rules</span>)]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>globs</span>, <span class='ident'>macro_rules</span>)]</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sdl2</span>;
@@ -843,30 +843,30 @@ A binding for SDL2_mixer.
 <span class='kw'>use</span> <span class='ident'>sdl2</span>::<span class='ident'>SdlResult</span>;<span class='comment'>
 
 // Setup linking for all targets.
-</span><span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>mac</span> {
-    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>mac_framework</span>)]</span>
-    <span class='attribute'>\#[<span class='ident'>link</span>(<span class='ident'>kind</span><span class='op'>=</span><span class='string'>&quot;framework&quot;</span>, <span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_mixer&quot;</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>mac_framework</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>kind</span><span class='op'>=</span><span class='string'>&quot;framework&quot;</span>, <span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_mixer&quot;</span>)]</span>
     <span class='kw'>extern</span> {}
 
-    <span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>not</span>(<span class='ident'>mac_framework</span>))]</span>
-    <span class='attribute'>\#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_mixer&quot;</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>not</span>(<span class='ident'>mac_framework</span>))]</span>
+    <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_mixer&quot;</span>)]</span>
     <span class='kw'>extern</span> {}
 }
 
-<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;freebsd&quot;</span>)]</span>
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;win32&quot;</span>)]</span>
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;linux&quot;</span>)]</span>
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;freebsd&quot;</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>others</span> {
-    <span class='attribute'>\#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_mixer&quot;</span>)]</span>
+    <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>name</span><span class='op'>=</span><span class='string'>&quot;SDL2_mixer&quot;</span>)]</span>
     <span class='kw'>extern</span> {}
 }
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>, <span class='ident'>dead_code</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>, <span class='ident'>dead_code</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>ffi</span>;<span class='comment'>
 
 // This comes from SDL_audio.h
-</span><span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>uint16_t</span>;
 
@@ -992,7 +992,7 @@ A binding for SDL2_mixer.
 }
 
 <span class='doccomment'>/// The internal format for an audio chunk.
-</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Chunk</span> {
     <span class='kw'>pub</span> <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ffi</span>::<span class='ident'>Mix_Chunk</span>,
     <span class='kw'>pub</span> <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1058,8 +1058,8 @@ A binding for SDL2_mixer.
 // 4.3 Channels
 
 </span><span class='doccomment'>/// Fader effect type enumerations
-</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Fading</span> {
     <span class='ident'>NoFading</span>  <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MIX_NO_FADING</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>FadingOut</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MIX_FADING_OUT</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1067,7 +1067,7 @@ A binding for SDL2_mixer.
 }
 
 <span class='doccomment'>/// Sound effect channel.
-</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Channel</span>(<span class='ident'>int</span>);
 
 <span class='doccomment'>/// Set the number of channels being mixed.
@@ -1389,8 +1389,8 @@ A binding for SDL2_mixer.
 }
 
 <span class='doccomment'>/// Music type enumerations
-</span><span class='attribute'>\#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MusicType</span> {
     <span class='ident'>MusicNone</span>    <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MUS_NONE</span> <span class='kw'>as</span> <span class='ident'>int</span>,
     <span class='ident'>MusicCmd</span>     <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MUS_CMD</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1418,7 +1418,7 @@ A binding for SDL2_mixer.
 }
 
 <span class='doccomment'>/// This is an opaque data type used for Music data.
-</span><span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
+</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Music</span> {
     <span class='kw'>pub</span> <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ffi</span>::<span class='ident'>Mix_Music</span>,
     <span class='kw'>pub</span> <span class='ident'>owned</span>: <span class='ident'>bool</span>,
@@ -1612,7 +1612,7 @@ A binding for SDL2_mixer.
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>

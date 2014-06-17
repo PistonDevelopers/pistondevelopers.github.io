@@ -191,6 +191,8 @@
 <span id='152'>152</span>
 <span id='153'>153</span>
 <span id='154'>154</span>
+<span id='155'>155</span>
+<span id='156'>156</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>IoResult</span>;
@@ -198,11 +200,12 @@
 <span class='kw'>use</span> <span class='ident'>get_error</span>;
 <span class='kw'>use</span> <span class='ident'>SdlResult</span>;
 
-<span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_camel_case_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ll</span> {
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_uchar</span>, <span class='ident'>uint32_t</span>, <span class='ident'>c_char</span>, <span class='ident'>FILE</span>, <span class='ident'>c_void</span>};
     <span class='kw'>use</span> <span class='ident'>libc</span>::{<span class='ident'>c_int</span>, <span class='ident'>int64_t</span>, <span class='ident'>size_t</span>};
 
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='kw'>struct</span> <span class='ident'>SDL_RWops_Anon</span> {
         <span class='ident'>data</span>: [<span class='ident'>c_uchar</span>, ..<span class='number'>24</span>],
     }
@@ -213,6 +216,7 @@
     <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>RW_SEEK_CUR</span>: <span class='ident'>c_int</span> <span class='op'>=</span> <span class='number'>1</span>;
     <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>RW_SEEK_END</span>: <span class='ident'>c_int</span> <span class='op'>=</span> <span class='number'>2</span>;
 
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>dead_code</span>)]</span>
     <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SDL_RWops</span> {
         <span class='kw'>pub</span> <span class='ident'>size</span>:  <span class='kw'>extern</span> <span class='string'>&quot;C&quot;</span> <span class='kw'>fn</span>(<span class='ident'>context</span>: <span class='op'>*</span><span class='ident'>SDL_RWops</span>) <span class='op'>-&gt;</span> <span class='ident'>int64_t</span>,
         <span class='kw'>pub</span> <span class='ident'>seek</span>:  <span class='kw'>extern</span> <span class='string'>&quot;C&quot;</span> <span class='kw'>fn</span>(<span class='ident'>context</span>: <span class='op'>*</span><span class='ident'>SDL_RWops</span>, <span class='ident'>offset</span>: <span class='ident'>int64_t</span>, <span class='ident'>whence</span>: <span class='ident'>c_int</span>) <span class='op'>-&gt;</span> <span class='ident'>int64_t</span>,
@@ -236,7 +240,7 @@
     }
 }
 
-<span class='attribute'>\#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>\#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RWops</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_RWops</span>,
     <span class='ident'>close_on_drop</span>: <span class='ident'>bool</span>
@@ -364,7 +368,7 @@
                 <dd>Move up in search results</dd>
                 <dt>&darr;</dt>
                 <dd>Move down in search results</dd>
-                <dt>&\#9166;</dt>
+                <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
             </dl>
         </div>
