@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The cgmath library documentation.">
+
+    <title>cgmath::angle::Rad - Rust</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+</head>
+<body>
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>cgmath</a>&#8203;::<a href='index.html'>angle</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Deg.html'>Deg</a><a class='struct current' href='struct.Rad.html'>Rad</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Angle.html'>Angle</a><a class='trait ' href='trait.ScalarConv.html'>ScalarConv</a><a class='trait ' href='trait.ToDeg.html'>ToDeg</a><a class='trait ' href='trait.ToRad.html'>ToRad</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.acos.html'>acos</a><a class='fn ' href='fn.asin.html'>asin</a><a class='fn ' href='fn.atan.html'>atan</a><a class='fn ' href='fn.atan2.html'>atan2</a><a class='fn ' href='fn.bisect.html'>bisect</a><a class='fn ' href='fn.cos.html'>cos</a><a class='fn ' href='fn.cot.html'>cot</a><a class='fn ' href='fn.csc.html'>csc</a><a class='fn ' href='fn.deg.html'>deg</a><a class='fn ' href='fn.rad.html'>rad</a><a class='fn ' href='fn.sec.html'>sec</a><a class='fn ' href='fn.sin.html'>sin</a><a class='fn ' href='fn.sin_cos.html'>sin_cos</a><a class='fn ' href='fn.tan.html'>tan</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Search documentation..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'>Struct <a href='../index.html'>cgmath</a>::<a href='index.html'>angle</a>::<a class='struct' href=''>Rad</a><a class='source' id='src-16289' href='../../src/cgmath/src/cgmath/angle.rs.html#25'>[src]</a></h1>
+<pre class='rust struct'>pub struct Rad&lt;S&gt; {
+    pub s: S,
+}</pre><div class='docblock'><p>An angle, in radians</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr><td id='structfield.s'><code>s</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.zero' class='method'><code>fn <a href='#method.zero' class='fnname'>zero</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.full_turn' class='method'><code>fn <a href='#method.full_turn' class='fnname'>full_turn</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.turn_div_2' class='method'><code>fn <a href='#method.turn_div_2' class='fnname'>turn_div_2</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.turn_div_3' class='method'><code>fn <a href='#method.turn_div_3' class='fnname'>turn_div_3</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.turn_div_4' class='method'><code>fn <a href='#method.turn_div_4' class='fnname'>turn_div_4</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.turn_div_6' class='method'><code>fn <a href='#method.turn_div_6' class='fnname'>turn_div_6</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/angle/trait.ToRad.html' title='cgmath::angle::ToRad'>ToRad</a>&lt;S&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.to_rad' class='method'><code>fn <a href='#method.to_rad' class='fnname'>to_rad</a>(&amp;self) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/angle/trait.ToDeg.html' title='cgmath::angle::ToDeg'>ToDeg</a>&lt;S&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.to_deg' class='method'><code>fn <a href='#method.to_deg' class='fnname'>to_deg</a>(&amp;self) -&gt; <a class='struct' href='../../cgmath/angle/struct.Deg.html' title='cgmath::angle::Deg'>Deg</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/angle/trait.ScalarConv.html' title='cgmath::angle::ScalarConv'>ScalarConv</a>&lt;S&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.from' class='method'><code>fn <a href='#method.from' class='fnname'>from</a>(s: S) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.s' class='method'><code>fn <a href='#method.s' class='fnname'>s</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a S</code></h4>
+<h4 id='method.mut_s' class='method'><code>fn <a href='#method.mut_s' class='fnname'>mut_s</a>&lt;'a&gt;(&amp;'a mut self) -&gt; &amp;'a mut S</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Add.html' title='core::ops::Add'>Add</a>&lt;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.add' class='method'><code>fn <a href='#method.add' class='fnname'>add</a>(&amp;self, other: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Sub.html' title='core::ops::Sub'>Sub</a>&lt;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.sub' class='method'><code>fn <a href='#method.sub' class='fnname'>sub</a>(&amp;self, other: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Neg.html' title='core::ops::Neg'>Neg</a>&lt;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.neg' class='method'><code>fn <a href='#method.neg' class='fnname'>neg</a>(&amp;self) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/num/trait.Zero.html' title='core::num::Zero'>Zero</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.zero' class='method'><code>fn <a href='#method.zero' class='fnname'>zero</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.is_zero' class='method'><code>fn <a href='#method.is_zero' class='fnname'>is_zero</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a>&lt;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.mul' class='method'><code>fn <a href='#method.mul' class='fnname'>mul</a>(&amp;self, other: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/num/trait.One.html' title='core::num::One'>One</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.one' class='method'><code>fn <a href='#method.one' class='fnname'>one</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.Equiv.html' title='core::cmp::Equiv'>Equiv</a>&lt;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.equiv' class='method'><code>fn <a href='#method.equiv' class='fnname'>equiv</a>(&amp;self, other: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/angle/trait.Angle.html' title='cgmath::angle::Angle'>Angle</a>&lt;S&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.from' class='method'><code>fn <a href='#method.from' class='fnname'>from</a>&lt;A: <a class='trait' href='../../cgmath/angle/trait.Angle.html' title='cgmath::angle::Angle'>Angle</a>&lt;S&gt;&gt;(theta: A) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.full_turn' class='method'><code>fn <a href='#method.full_turn' class='fnname'>full_turn</a>() -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.neg_self' class='method'><code>fn <a href='#method.neg_self' class='fnname'>neg_self</a>(&amp;mut self)</code></h4>
+<h4 id='method.add_a' class='method'><code>fn <a href='#method.add_a' class='fnname'>add_a</a>(&amp;self, other: Self) -&gt; Self</code></h4>
+<h4 id='method.sub_a' class='method'><code>fn <a href='#method.sub_a' class='fnname'>sub_a</a>(&amp;self, other: Self) -&gt; Self</code></h4>
+<h4 id='method.div_a' class='method'><code>fn <a href='#method.div_a' class='fnname'>div_a</a>(&amp;self, other: Self) -&gt; S</code></h4>
+<h4 id='method.rem_a' class='method'><code>fn <a href='#method.rem_a' class='fnname'>rem_a</a>(&amp;self, other: Self) -&gt; S</code></h4>
+<h4 id='method.mul_s' class='method'><code>fn <a href='#method.mul_s' class='fnname'>mul_s</a>(&amp;self, s: S) -&gt; Self</code></h4>
+<h4 id='method.div_s' class='method'><code>fn <a href='#method.div_s' class='fnname'>div_s</a>(&amp;self, s: S) -&gt; Self</code></h4>
+<h4 id='method.rem_s' class='method'><code>fn <a href='#method.rem_s' class='fnname'>rem_s</a>(&amp;self, s: S) -&gt; Self</code></h4>
+<h4 id='method.add_self_a' class='method'><code>fn <a href='#method.add_self_a' class='fnname'>add_self_a</a>(&amp;mut self, other: Self)</code></h4>
+<h4 id='method.sub_self_a' class='method'><code>fn <a href='#method.sub_self_a' class='fnname'>sub_self_a</a>(&amp;mut self, other: Self)</code></h4>
+<h4 id='method.mul_self_s' class='method'><code>fn <a href='#method.mul_self_s' class='fnname'>mul_self_s</a>(&amp;mut self, s: S)</code></h4>
+<h4 id='method.div_self_s' class='method'><code>fn <a href='#method.div_self_s' class='fnname'>div_self_s</a>(&amp;mut self, s: S)</code></h4>
+<h4 id='method.rem_self_s' class='method'><code>fn <a href='#method.rem_self_s' class='fnname'>rem_self_s</a>(&amp;mut self, s: S)</code></h4>
+<h4 id='method.normalize' class='method'><code>fn <a href='#method.normalize' class='fnname'>normalize</a>(&amp;self) -&gt; Self</code></h4>
+<h4 id='method.normalize_self' class='method'><code>fn <a href='#method.normalize_self' class='fnname'>normalize_self</a>(&amp;mut self)</code></h4>
+<h4 id='method.opposite' class='method'><code>fn <a href='#method.opposite' class='fnname'>opposite</a>(&amp;self) -&gt; Self</code></h4>
+<h4 id='method.bisect' class='method'><code>fn <a href='#method.bisect' class='fnname'>bisect</a>(&amp;self, other: Self) -&gt; Self</code></h4>
+<h4 id='method.turn_div_2' class='method'><code>fn <a href='#method.turn_div_2' class='fnname'>turn_div_2</a>() -&gt; Self</code></h4>
+<h4 id='method.turn_div_3' class='method'><code>fn <a href='#method.turn_div_3' class='fnname'>turn_div_3</a>() -&gt; Self</code></h4>
+<h4 id='method.turn_div_4' class='method'><code>fn <a href='#method.turn_div_4' class='fnname'>turn_div_4</a>() -&gt; Self</code></h4>
+<h4 id='method.turn_div_6' class='method'><code>fn <a href='#method.turn_div_6' class='fnname'>turn_div_6</a>() -&gt; Self</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a> + <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/approx/trait.ApproxEq.html' title='cgmath::approx::ApproxEq'>ApproxEq</a>&lt;S&gt; for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.approx_eq_eps' class='method'><code>fn <a href='#method.approx_eq_eps' class='fnname'>approx_eq_eps</a>(&amp;self, other: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, epsilon: &amp;S) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.approx_epsilon' class='method'><code>fn <a href='#method.approx_epsilon' class='fnname'>approx_epsilon</a>(_hack: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;Self&gt;) -&gt; T</code></h4>
+<h4 id='method.approx_eq' class='method'><code>fn <a href='#method.approx_eq' class='fnname'>approx_eq</a>(&amp;self, other: &amp;Self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/collections/hash/trait.Hash.html' title='collections::hash::Hash'>Hash</a>&gt; <a class='trait' href='http://doc.rust-lang.org/collections/hash/trait.Hash.html' title='collections::hash::Hash'>Hash</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.hash' class='method'><code>fn <a href='#method.hash' class='fnname'>hash</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/collections/hash/sip/struct.SipState.html' title='collections::hash::sip::SipState'>SipState</a>)</code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.lt' class='method'><code>fn <a href='#method.lt' class='fnname'>lt</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.le' class='method'><code>fn <a href='#method.le' class='fnname'>le</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.gt' class='method'><code>fn <a href='#method.gt' class='fnname'>gt</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ge' class='method'><code>fn <a href='#method.ge' class='fnname'>ge</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;</code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&uarr;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&darr;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "cgmath";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
