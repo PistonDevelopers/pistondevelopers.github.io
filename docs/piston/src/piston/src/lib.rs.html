@@ -115,6 +115,16 @@
 <span id='76'>76</span>
 <span id='77'>77</span>
 <span id='78'>78</span>
+<span id='79'>79</span>
+<span id='80'>80</span>
+<span id='81'>81</span>
+<span id='82'>82</span>
+<span id='83'>83</span>
+<span id='84'>84</span>
+<span id='85'>85</span>
+<span id='86'>86</span>
+<span id='87'>87</span>
+<span id='88'>88</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;piston&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
@@ -136,8 +146,14 @@
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>image</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>debug</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>port_audio</span>)]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>portaudio</span>;
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Game</span> <span class='op'>=</span> <span class='ident'>game</span>::<span class='ident'>Game</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>port_audio</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SoundStream</span> <span class='op'>=</span> <span class='ident'>sound_stream</span>::<span class='ident'>SoundStream</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>port_audio</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SoundStreamSettings</span> <span class='op'>=</span> <span class='ident'>sound_stream</span>::<span class='ident'>SoundStreamSettings</span>;
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Render</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>Render</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Update</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>Update</span>;
@@ -182,6 +198,8 @@
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>mouse</span>;
 
 <span class='kw'>mod</span> <span class='ident'>game</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>port_audio</span>)]</span>
+<span class='kw'>mod</span> <span class='ident'>sound_stream</span>;
 <span class='kw'>mod</span> <span class='ident'>game_iterator</span>;
 <span class='kw'>mod</span> <span class='ident'>game_window_sdl2</span>;
 <span class='kw'>mod</span> <span class='ident'>game_window_glfw</span>;
@@ -194,6 +212,8 @@
 <span class='kw'>mod</span> <span class='ident'>sound</span>;
 <span class='kw'>mod</span> <span class='ident'>audio_back_end</span>;
 <span class='kw'>mod</span> <span class='ident'>sdl2_audio_back_end</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>port_audio</span>)]</span>
+<span class='kw'>mod</span> <span class='ident'>port_audio_back_end</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>

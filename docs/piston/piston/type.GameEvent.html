@@ -38,10 +38,10 @@
     </nav>
 
     <section id='main' class="content type">
-<h1 class='fqn'>Enum <a href='index.html'>piston</a>::<a class='type' href=''>GameEvent</a><a class='source' id='src-19842' href='../src/piston/src/game_iterator.rs.html#76-93'>[src]</a></h1>
+<h1 class='fqn'>Enum <a href='index.html'>piston</a>::<a class='type' href=''>GameEvent</a><a class='source' id='src-19946' href='../src/piston/src/game_iterator.rs.html#73-90'>[src]</a></h1>
 <pre class='rust enum'>pub enum GameEvent&lt;'a&gt; {
     Render(<a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>&lt;'a&gt;),
-    Update(<a class='struct' href='../piston/struct.UpdateArgs.html' title='piston::UpdateArgs'>UpdateArgs</a>&lt;'a&gt;),
+    Update(<a class='struct' href='../piston/struct.UpdateArgs.html' title='piston::UpdateArgs'>UpdateArgs</a>),
     KeyPress(<a class='struct' href='../piston/struct.KeyPressArgs.html' title='piston::KeyPressArgs'>KeyPressArgs</a>),
     KeyRelease(<a class='struct' href='../piston/struct.KeyReleaseArgs.html' title='piston::KeyReleaseArgs'>KeyReleaseArgs</a>),
     MousePress(<a class='struct' href='../piston/struct.MousePressArgs.html' title='piston::MousePressArgs'>MousePressArgs</a>),
@@ -58,7 +58,11 @@
 </div></td></tr><tr><td id='variant.MouseRelease'><code>MouseRelease</code></td><td><div class='docblock'><p>Released a mouse button.</p>
 </div></td></tr><tr><td id='variant.MouseMove'><code>MouseMove</code></td><td><div class='docblock'><p>Moved mouse cursor.</p>
 </div></td></tr><tr><td id='variant.MouseRelativeMove'><code>MouseRelativeMove</code></td><td><div class='docblock'><p>Moved mouse relative, not bounded by cursor.</p>
-</div></td></tr></table></section>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.to_sendable' class='method'><code>fn <a href='#method.to_sendable' class='fnname'>to_sendable</a>(&amp;'a self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>&lt;'static&gt;&gt;</code></h4>
+<div class='docblock'><p>Maps event to something that can be sent between tasks if possible.</p>
+
+<p>Render events are not sendable between tasks. </p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
