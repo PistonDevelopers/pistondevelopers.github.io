@@ -147,6 +147,9 @@
 <span id='108'>108</span>
 <span id='109'>109</span>
 <span id='110'>110</span>
+<span id='111'>111</span>
+<span id='112'>112</span>
+<span id='113'>113</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Game loop.
 </span><span class='comment'>
@@ -240,6 +243,7 @@
         <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>,
         <span class='ident'>asset_store</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>AssetStore</span>
     ) {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Pre-GameIterator::new&quot;</span>);
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>game_iter</span> <span class='op'>=</span> <span class='ident'>GameIterator</span>::<span class='ident'>new</span>(
             <span class='ident'>game_window</span>,
             <span class='kw-2'>&amp;</span><span class='ident'>GameIteratorSettings</span> {
@@ -247,7 +251,9 @@
                 <span class='ident'>max_frames_per_second</span>: <span class='number'>60</span>
             });
 
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Pre-load&quot;</span>);
         <span class='self'>self</span>.<span class='ident'>load</span>(<span class='ident'>asset_store</span>);
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Post-load&quot;</span>);
 
         <span class='kw'>loop</span> {
             <span class='kw'>match</span> <span class='ident'>game_iter</span>.<span class='ident'>next</span>() {

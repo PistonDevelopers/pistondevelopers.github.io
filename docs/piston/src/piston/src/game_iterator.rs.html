@@ -377,6 +377,19 @@
 <span id='338'>338</span>
 <span id='339'>339</span>
 <span id='340'>340</span>
+<span id='341'>341</span>
+<span id='342'>342</span>
+<span id='343'>343</span>
+<span id='344'>344</span>
+<span id='345'>345</span>
+<span id='346'>346</span>
+<span id='347'>347</span>
+<span id='348'>348</span>
+<span id='349'>349</span>
+<span id='350'>350</span>
+<span id='351'>351</span>
+<span id='352'>352</span>
+<span id='353'>353</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>time</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>timer</span>::<span class='ident'>sleep</span>;
@@ -386,7 +399,6 @@
 <span class='kw'>use</span> {
     <span class='ident'>Gl</span>,
     <span class='ident'>GameWindow</span>,
-    <span class='ident'>AudioSDL2</span>,
 };
 <span class='kw'>use</span> <span class='ident'>keyboard</span>;
 <span class='kw'>use</span> <span class='ident'>mouse</span>;
@@ -405,11 +417,9 @@
 }
 
 <span class='doccomment'>/// Update argument.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>UpdateArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>UpdateArgs</span> {
     <span class='doccomment'>/// Delta time in seconds.
 </span>    <span class='kw'>pub</span> <span class='ident'>dt</span>: <span class='ident'>f64</span>,
-    <span class='doccomment'>/// SDL2 audio back-end
-</span>    <span class='kw'>pub</span> <span class='ident'>audio</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>AudioSDL2</span>,
 }
 
 <span class='doccomment'>/// Key press arguments.
@@ -457,7 +467,7 @@
     <span class='doccomment'>/// Render graphics.
 </span>    <span class='ident'>Render</span>(<span class='ident'>RenderArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>),
     <span class='doccomment'>/// Update physical state of the game.
-</span>    <span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>),
+</span>    <span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span>),
     <span class='doccomment'>/// Pressed a keyboard key.
 </span>    <span class='ident'>KeyPress</span>(<span class='ident'>KeyPressArgs</span>),
     <span class='doccomment'>/// Released a keyboard key.
@@ -469,7 +479,25 @@
     <span class='doccomment'>/// Moved mouse cursor.
 </span>    <span class='ident'>MouseMove</span>(<span class='ident'>MouseMoveArgs</span>),
     <span class='doccomment'>/// Moved mouse relative, not bounded by cursor.
-</span>    <span class='ident'>MouseRelativeMove</span>(<span class='ident'>MouseRelativeMoveArgs</span>),
+</span>    <span class='ident'>MouseRelativeMove</span>(<span class='ident'>MouseRelativeMoveArgs</span>)
+}
+
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Maps event to something that can be sent between tasks if possible.
+</span>    <span class='doccomment'>///
+</span>    <span class='doccomment'>/// Render events are not sendable between tasks. 
+</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_sendable</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;static</span><span class='op'>&gt;&gt;</span> {
+        <span class='kw'>match</span> <span class='op'>*</span><span class='self'>self</span> {
+            <span class='ident'>Render</span>(_) <span class='op'>=&gt;</span> <span class='prelude-val'>None</span>,
+            <span class='ident'>Update</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>Update</span>(<span class='ident'>args</span>)),
+            <span class='ident'>KeyPress</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>KeyPress</span>(<span class='ident'>args</span>)),
+            <span class='ident'>KeyRelease</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>KeyRelease</span>(<span class='ident'>args</span>)),
+            <span class='ident'>MousePress</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>MousePress</span>(<span class='ident'>args</span>)),
+            <span class='ident'>MouseRelease</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>MouseRelease</span>(<span class='ident'>args</span>)),
+            <span class='ident'>MouseMove</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>MouseMove</span>(<span class='ident'>args</span>)),
+            <span class='ident'>MouseRelativeMove</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>MouseRelativeMove</span>(<span class='ident'>args</span>)),
+        }
+    }
 }
 
 <span class='kw'>enum</span> <span class='ident'>GameIteratorState</span> {
@@ -495,7 +523,6 @@
     <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>,
     <span class='ident'>state</span>: <span class='ident'>GameIteratorState</span>,
     <span class='ident'>gl</span>: <span class='ident'>Gl</span>,
-    <span class='ident'>audio</span>: <span class='ident'>AudioSDL2</span>,
     <span class='ident'>bg_color</span>: [<span class='ident'>f32</span>, ..<span class='number'>4</span>],
     <span class='ident'>last_update</span>: <span class='ident'>u64</span>,
     <span class='ident'>update_time_in_ns</span>: <span class='ident'>u64</span>,
@@ -521,7 +548,6 @@
             <span class='ident'>game_window</span>: <span class='ident'>game_window</span>,
             <span class='ident'>state</span>: <span class='ident'>RenderState</span>,
             <span class='ident'>gl</span>: <span class='ident'>Gl</span>::<span class='ident'>new</span>(),
-            <span class='ident'>audio</span>: <span class='ident'>AudioSDL2</span>::<span class='ident'>new</span>(),
             <span class='ident'>last_update</span>: <span class='ident'>start</span>,
             <span class='ident'>update_time_in_ns</span>: <span class='ident'>billion</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span>,
             <span class='ident'>dt</span>: <span class='number'>1.0</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span> <span class='kw'>as</span> <span class='ident'>f64</span>,<span class='comment'>
@@ -564,6 +590,7 @@
                         }
                     ));
                 }
+
 
                 <span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>PrepareUpdateLoopState</span>;
                 <span class='kw'>return</span> <span class='self'>self</span>.<span class='ident'>next</span>();
@@ -653,7 +680,6 @@
                 <span class='self'>self</span>.<span class='ident'>last_update</span> <span class='op'>+=</span> <span class='self'>self</span>.<span class='ident'>update_time_in_ns</span>;
                 <span class='kw'>return</span> <span class='prelude-val'>Some</span>(<span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span>{
                     <span class='ident'>dt</span>: <span class='self'>self</span>.<span class='ident'>dt</span>,
-                    <span class='ident'>audio</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>audio</span>,
                 }));
             },
         };<span class='comment'>
