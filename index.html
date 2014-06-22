@@ -39,12 +39,12 @@ categories : [piston]
 
         {% highlight Rust %}
 use graphics::*;
-use piston::{Game, Gl, RenderArgs};
+use piston::{Game, RenderArgs};
 
 pub struct App { ... } // your application data
 
 impl Game for App {
-    fn render(&self, c: &Context, args: &mut RenderArgs) {
+    fn render(&mut self, c: &Context, args: &mut RenderArgs) {
         c.rect(0.0, 0.0, 50.0, 50.0).rgb(1.0, 0.0, 0.0).fill(args.gl);
     }
 }
