@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -113,8 +113,8 @@
 </pre><pre class='rust '>
 <span class='doccomment'>/*!
 Querying SDL Version
- */
-</span>
+ */</span>
+
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fmt</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>c_str</span>::<span class='ident'>CString</span>;
 
@@ -134,20 +134,20 @@ Querying SDL Version
     }
 }
 
-<span class='doccomment'>/// A structure that contains information about the version of SDL in use.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>)]</span>
+<span class='doccomment'>/// A structure that contains information about the version of SDL in use.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Version</span> {
-    <span class='doccomment'>/// major version
-</span>    <span class='kw'>pub</span> <span class='ident'>major</span>: <span class='ident'>int</span>,
-    <span class='doccomment'>/// minor version
-</span>    <span class='kw'>pub</span> <span class='ident'>minor</span>: <span class='ident'>int</span>,
-    <span class='doccomment'>/// update version (patchlevel)
-</span>    <span class='kw'>pub</span> <span class='ident'>patch</span>: <span class='ident'>int</span>,
+    <span class='doccomment'>/// major version</span>
+    <span class='kw'>pub</span> <span class='ident'>major</span>: <span class='ident'>int</span>,
+    <span class='doccomment'>/// minor version</span>
+    <span class='kw'>pub</span> <span class='ident'>minor</span>: <span class='ident'>int</span>,
+    <span class='doccomment'>/// update version (patchlevel)</span>
+    <span class='kw'>pub</span> <span class='ident'>patch</span>: <span class='ident'>int</span>,
 }
 
 <span class='kw'>impl</span> <span class='ident'>Version</span> {
-    <span class='doccomment'>/// Convert a raw *SDL_version to Version.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_ll</span>(<span class='ident'>sv</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_version</span>) <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
+    <span class='doccomment'>/// Convert a raw *SDL_version to Version.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_ll</span>(<span class='ident'>sv</span>: <span class='op'>*</span><span class='ident'>ll</span>::<span class='ident'>SDL_version</span>) <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='op'>*</span><span class='ident'>sv</span>;
             <span class='ident'>Version</span>{ <span class='ident'>major</span>: <span class='ident'>v</span>.<span class='ident'>major</span> <span class='kw'>as</span> <span class='ident'>int</span>, <span class='ident'>minor</span>: <span class='ident'>v</span>.<span class='ident'>minor</span> <span class='kw'>as</span> <span class='ident'>int</span>, <span class='ident'>patch</span>: <span class='ident'>v</span>.<span class='ident'>patch</span> <span class='kw'>as</span> <span class='ident'>int</span> }
@@ -161,8 +161,8 @@ Querying SDL Version
     }
 }
 
-<span class='doccomment'>/// Get the version of SDL that is linked against your program.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_version</span>() <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
+<span class='doccomment'>/// Get the version of SDL that is linked against your program.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_version</span>() <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>cver</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_version</span> { <span class='ident'>major</span>: <span class='number'>0</span>, <span class='ident'>minor</span>: <span class='number'>0</span>, <span class='ident'>patch</span>: <span class='number'>0</span>};
         <span class='ident'>ll</span>::<span class='ident'>SDL_GetVersion</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>cver</span>);
@@ -170,16 +170,16 @@ Querying SDL Version
     }
 }
 
-<span class='doccomment'>/// Get the code revision of SDL that is linked against your program.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_revision</span>() <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+<span class='doccomment'>/// Get the code revision of SDL that is linked against your program.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_revision</span>() <span class='op'>-&gt;</span> <span class='ident'>String</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>SDL_GetRevision</span>();
         <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>ret</span>, <span class='boolval'>false</span>).<span class='ident'>as_str</span>().<span class='ident'>unwrap</span>().<span class='ident'>into_string</span>()
     }
 }
 
-<span class='doccomment'>/// Get the revision number of SDL that is linked against your program.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_revision_number</span>() <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+<span class='doccomment'>/// Get the revision number of SDL that is linked against your program.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_revision_number</span>() <span class='op'>-&gt;</span> <span class='ident'>int</span> {
     <span class='kw'>unsafe</span> {
         <span class='ident'>ll</span>::<span class='ident'>SDL_GetRevisionNumber</span>() <span class='kw'>as</span> <span class='ident'>int</span>
     }
@@ -198,9 +198,9 @@ Querying SDL Version
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

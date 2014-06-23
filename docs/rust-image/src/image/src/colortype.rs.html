@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -80,29 +80,29 @@
 <span id='41'>41</span>
 <span id='42'>42</span>
 </pre><pre class='rust '>
-<span class='doccomment'>//! Types and methods for representing and manipulating colors
-</span>
-<span class='doccomment'>///An enumeration over supported color types and their bit depths
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
+<span class='doccomment'>//! Types and methods for representing and manipulating colors</span>
+
+<span class='doccomment'>///An enumeration over supported color types and their bit depths</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>ColorType</span> {
-	<span class='doccomment'>///Pixel is greyscale
-</span>	<span class='ident'>Grey</span>(<span class='ident'>u8</span>),
+	<span class='doccomment'>///Pixel is greyscale</span>
+	<span class='ident'>Grey</span>(<span class='ident'>u8</span>),
 
-	<span class='doccomment'>///Pixel contains R, G and B channels
-</span>	<span class='ident'>RGB</span>(<span class='ident'>u8</span>),
+	<span class='doccomment'>///Pixel contains R, G and B channels</span>
+	<span class='ident'>RGB</span>(<span class='ident'>u8</span>),
 
-	<span class='doccomment'>///Pixel is an index into a color palette
-</span>	<span class='ident'>Palette</span>(<span class='ident'>u8</span>),
+	<span class='doccomment'>///Pixel is an index into a color palette</span>
+	<span class='ident'>Palette</span>(<span class='ident'>u8</span>),
 
-	<span class='doccomment'>///Pixel is greyscale with an alpha channel
-</span>	<span class='ident'>GreyA</span>(<span class='ident'>u8</span>),
+	<span class='doccomment'>///Pixel is greyscale with an alpha channel</span>
+	<span class='ident'>GreyA</span>(<span class='ident'>u8</span>),
 
-	<span class='doccomment'>///Pixel is RGB with an alpha channel
-</span>	<span class='ident'>RGBA</span>(<span class='ident'>u8</span>)
+	<span class='doccomment'>///Pixel is RGB with an alpha channel</span>
+	<span class='ident'>RGBA</span>(<span class='ident'>u8</span>)
 }
 
-<span class='doccomment'>///Returns the number of bits contained in a pixel of ColorType c
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>bits_per_pixel</span>(<span class='ident'>c</span>: <span class='ident'>ColorType</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
+<span class='doccomment'>///Returns the number of bits contained in a pixel of ColorType c</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>bits_per_pixel</span>(<span class='ident'>c</span>: <span class='ident'>ColorType</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
 	<span class='kw'>match</span> <span class='ident'>c</span> {
 		<span class='ident'>Grey</span>(<span class='ident'>n</span>)    <span class='op'>=&gt;</span> <span class='ident'>n</span> <span class='kw'>as</span> <span class='ident'>uint</span>,
 		<span class='ident'>RGB</span>(<span class='ident'>n</span>)     <span class='op'>=&gt;</span> <span class='number'>3</span> <span class='op'>*</span> <span class='ident'>n</span> <span class='kw'>as</span> <span class='ident'>uint</span>,
@@ -112,8 +112,8 @@
 	}
 }
 
-<span class='doccomment'>///Returns the number of color channels that make up this pixel
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_components</span>(<span class='ident'>c</span>: <span class='ident'>ColorType</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
+<span class='doccomment'>///Returns the number of color channels that make up this pixel</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>num_components</span>(<span class='ident'>c</span>: <span class='ident'>ColorType</span>) <span class='op'>-&gt;</span> <span class='ident'>uint</span> {
 	<span class='kw'>match</span> <span class='ident'>c</span> {
 		<span class='ident'>Grey</span>(_)    <span class='op'>=&gt;</span> <span class='number'>1</span>,
 		<span class='ident'>RGB</span>(_)     <span class='op'>=&gt;</span> <span class='number'>3</span>,
@@ -136,9 +136,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

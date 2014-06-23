@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -152,78 +152,78 @@
 </span><span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>;
 
-<span class='doccomment'>/// An array containing elements of type `Element`
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Array1</span><span class='op'>&lt;</span><span class='ident'>Element</span>: <span class='ident'>Copy</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Get the pointer to the first element of the array.
-</span>    <span class='kw'>fn</span> <span class='ident'>ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Element</span>;
+<span class='doccomment'>/// An array containing elements of type `Element`</span>
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Array1</span><span class='op'>&lt;</span><span class='ident'>Element</span>: <span class='ident'>Copy</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Get the pointer to the first element of the array.</span>
+    <span class='kw'>fn</span> <span class='ident'>ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Element</span>;
 
-    <span class='doccomment'>/// Get a mutable pointer to the first element of the array.
-</span>    <span class='kw'>fn</span> <span class='ident'>mut_ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span>;
+    <span class='doccomment'>/// Get a mutable pointer to the first element of the array.</span>
+    <span class='kw'>fn</span> <span class='ident'>mut_ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span>;
 
-    <span class='doccomment'>/// Get a shared reference to the `i`th value.
-</span>    <span class='kw'>fn</span> <span class='ident'>i</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>Element</span>;
+    <span class='doccomment'>/// Get a shared reference to the `i`th value.</span>
+    <span class='kw'>fn</span> <span class='ident'>i</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>Element</span>;
 
-    <span class='doccomment'>/// Get a mutable reference to the `i`th value.
-</span>    <span class='kw'>fn</span> <span class='ident'>mut_i</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span>;
+    <span class='doccomment'>/// Get a mutable reference to the `i`th value.</span>
+    <span class='kw'>fn</span> <span class='ident'>mut_i</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span>;
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='doccomment'>/// Swap the elements at indices `a` and `b` in-place.
-</span>    <span class='kw'>fn</span> <span class='ident'>swap_i</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>a</span>: <span class='ident'>uint</span>, <span class='ident'>b</span>: <span class='ident'>uint</span>) {<span class='comment'>
+    <span class='doccomment'>/// Swap the elements at indices `a` and `b` in-place.</span>
+    <span class='kw'>fn</span> <span class='ident'>swap_i</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>a</span>: <span class='ident'>uint</span>, <span class='ident'>b</span>: <span class='ident'>uint</span>) {<span class='comment'>
         // Yeah, ok borrow checker – I know what I&#39;m doing here
         </span><span class='kw'>unsafe</span> { <span class='ident'>ptr</span>::<span class='ident'>swap</span>(<span class='self'>self</span>.<span class='ident'>mut_i</span>(<span class='ident'>a</span>), <span class='self'>self</span>.<span class='ident'>mut_i</span>(<span class='ident'>b</span>)) };
     }
 
-    <span class='doccomment'>/// Replace an element in the array.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Replace an element in the array.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>replace_i</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>i</span>: <span class='ident'>uint</span>, <span class='ident'>src</span>: <span class='ident'>Element</span>) <span class='op'>-&gt;</span> <span class='ident'>Element</span> {
         <span class='ident'>mem</span>::<span class='ident'>replace</span>(<span class='self'>self</span>.<span class='ident'>mut_i</span>(<span class='ident'>i</span>), <span class='ident'>src</span>)
     }
 }
 
-<span class='doccomment'>/// A column-major array
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Array2</span><span class='op'>&lt;</span><span class='ident'>Column</span>: <span class='ident'>Array1</span><span class='op'>&lt;</span><span class='ident'>Element</span><span class='op'>&gt;</span>, <span class='ident'>Row</span>: <span class='ident'>Array1</span><span class='op'>&lt;</span><span class='ident'>Element</span><span class='op'>&gt;</span>, <span class='ident'>Element</span>: <span class='ident'>Copy</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Get the pointer to the first element of the array.
-</span>    <span class='kw'>fn</span> <span class='ident'>ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Element</span>;
+<span class='doccomment'>/// A column-major array</span>
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Array2</span><span class='op'>&lt;</span><span class='ident'>Column</span>: <span class='ident'>Array1</span><span class='op'>&lt;</span><span class='ident'>Element</span><span class='op'>&gt;</span>, <span class='ident'>Row</span>: <span class='ident'>Array1</span><span class='op'>&lt;</span><span class='ident'>Element</span><span class='op'>&gt;</span>, <span class='ident'>Element</span>: <span class='ident'>Copy</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Get the pointer to the first element of the array.</span>
+    <span class='kw'>fn</span> <span class='ident'>ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Element</span>;
 
-    <span class='doccomment'>/// Get a mutable pointer to the first element of the array.
-</span>    <span class='kw'>fn</span> <span class='ident'>mut_ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span>;
+    <span class='doccomment'>/// Get a mutable pointer to the first element of the array.</span>
+    <span class='kw'>fn</span> <span class='ident'>mut_ptr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span>;
 
-    <span class='doccomment'>/// Get a shared reference to a column of this array.
-</span>    <span class='kw'>fn</span> <span class='ident'>c</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Column</span>;
+    <span class='doccomment'>/// Get a shared reference to a column of this array.</span>
+    <span class='kw'>fn</span> <span class='ident'>c</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Column</span>;
 
-    <span class='doccomment'>/// Get a mutable reference to a column of this array.
-</span>    <span class='kw'>fn</span> <span class='ident'>mut_c</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Column</span>;
+    <span class='doccomment'>/// Get a mutable reference to a column of this array.</span>
+    <span class='kw'>fn</span> <span class='ident'>mut_c</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Column</span>;
 
-    <span class='doccomment'>/// Swap two columns of this array.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Swap two columns of this array.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>swap_c</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>a</span>: <span class='ident'>uint</span>, <span class='ident'>b</span>: <span class='ident'>uint</span>) {
         <span class='kw'>unsafe</span> { <span class='ident'>ptr</span>::<span class='ident'>swap</span>(<span class='self'>self</span>.<span class='ident'>mut_c</span>(<span class='ident'>a</span>), <span class='self'>self</span>.<span class='ident'>mut_c</span>(<span class='ident'>b</span>)) };
     }
 
-    <span class='doccomment'>/// Replace a column in the array.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Replace a column in the array.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>replace_c</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>, <span class='ident'>src</span>: <span class='ident'>Column</span>) <span class='op'>-&gt;</span> <span class='ident'>Column</span> {
         <span class='ident'>mem</span>::<span class='ident'>replace</span>(<span class='self'>self</span>.<span class='ident'>mut_c</span>(<span class='ident'>c</span>), <span class='ident'>src</span>)
     }
 
-    <span class='doccomment'>/// Get a row from this array by-value.
-</span>    <span class='kw'>fn</span> <span class='ident'>r</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>r</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>Row</span>;
+    <span class='doccomment'>/// Get a row from this array by-value.</span>
+    <span class='kw'>fn</span> <span class='ident'>r</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>r</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>Row</span>;
 
-    <span class='doccomment'>/// Swap two rows of this array.
-</span>    <span class='kw'>fn</span> <span class='ident'>swap_r</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>a</span>: <span class='ident'>uint</span>, <span class='ident'>b</span>: <span class='ident'>uint</span>);
+    <span class='doccomment'>/// Swap two rows of this array.</span>
+    <span class='kw'>fn</span> <span class='ident'>swap_r</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>a</span>: <span class='ident'>uint</span>, <span class='ident'>b</span>: <span class='ident'>uint</span>);
 
-    <span class='doccomment'>/// Return a shared reference to the element at column `c` and row `r`.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Return a shared reference to the element at column `c` and row `r`.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>cr</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>, <span class='ident'>r</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='ident'>Element</span> { <span class='self'>self</span>.<span class='ident'>c</span>(<span class='ident'>c</span>).<span class='ident'>i</span>(<span class='ident'>r</span>) }
 
-    <span class='doccomment'>/// Return a mutable reference to the element at column `c` and row `r`.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Return a mutable reference to the element at column `c` and row `r`.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>mut_cr</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>c</span>: <span class='ident'>uint</span>, <span class='ident'>r</span>: <span class='ident'>uint</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Element</span> {
         <span class='self'>self</span>.<span class='ident'>mut_c</span>(<span class='ident'>c</span>).<span class='ident'>mut_i</span>(<span class='ident'>r</span>)
     }
 
-    <span class='doccomment'>/// Swap the values at index `a` and `b`
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Swap the values at index `a` and `b`</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>swap_cr</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>a</span>: (<span class='ident'>uint</span>, <span class='ident'>uint</span>), <span class='ident'>b</span>: (<span class='ident'>uint</span>, <span class='ident'>uint</span>)) {
         <span class='kw'>let</span> (<span class='ident'>ac</span>, <span class='ident'>ar</span>) <span class='op'>=</span> <span class='ident'>a</span>;
         <span class='kw'>let</span> (<span class='ident'>bc</span>, <span class='ident'>br</span>) <span class='op'>=</span> <span class='ident'>b</span>;
@@ -244,9 +244,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

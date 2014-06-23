@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -818,8 +818,8 @@
 </pre><pre class='rust '>
 <span class='doccomment'>/*!
 A binding for SDL2_mixer.
- */
-</span>
+ */</span>
+
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span><span class='op'>=</span><span class='string'>&quot;sdl2_mixer#sdl2_mixer:0.1&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>desc</span> <span class='op'>=</span> <span class='string'>&quot;SDL2_mixer bindings and wrappers&quot;</span>]</span>
@@ -911,17 +911,17 @@ A binding for SDL2_mixer.
 <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>AudioS32SYS</span> : <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_S32SYS</span>;
 <span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>AudioF32SYS</span> : <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_F32SYS</span>;
 
-<span class='doccomment'>/// The suggested default is signed 16bit samples in host byte order.
-</span><span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>DEFAULT_FORMAT</span>: <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_S16SYS</span>;
-<span class='doccomment'>/// Defualt channels: Stereo.
-</span><span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>DEFAULT_CHANNELS</span> : <span class='ident'>int</span> <span class='op'>=</span> <span class='number'>2</span>;
-<span class='doccomment'>/// Good default sample rate in Hz (samples per second) for PC sound cards.
-</span><span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>DEFAULT_FREQUENCY</span> : <span class='ident'>int</span> <span class='op'>=</span> <span class='number'>22050</span>;
-<span class='doccomment'>/// Maximum value for any volume setting.
-</span><span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>MAX_VOLUME</span> : <span class='ident'>int</span> <span class='op'>=</span> <span class='number'>128</span>;
+<span class='doccomment'>/// The suggested default is signed 16bit samples in host byte order.</span>
+<span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>DEFAULT_FORMAT</span>: <span class='ident'>AudioFormat</span> <span class='op'>=</span> <span class='ident'>ll</span>::<span class='ident'>AUDIO_S16SYS</span>;
+<span class='doccomment'>/// Defualt channels: Stereo.</span>
+<span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>DEFAULT_CHANNELS</span> : <span class='ident'>int</span> <span class='op'>=</span> <span class='number'>2</span>;
+<span class='doccomment'>/// Good default sample rate in Hz (samples per second) for PC sound cards.</span>
+<span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>DEFAULT_FREQUENCY</span> : <span class='ident'>int</span> <span class='op'>=</span> <span class='number'>22050</span>;
+<span class='doccomment'>/// Maximum value for any volume setting.</span>
+<span class='kw'>pub</span> <span class='kw'>static</span> <span class='ident'>MAX_VOLUME</span> : <span class='ident'>int</span> <span class='op'>=</span> <span class='number'>128</span>;
 
-<span class='doccomment'>/// Returns the version of the dynamically linked SDL_mixer library
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_linked_version</span>() <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
+<span class='doccomment'>/// Returns the version of the dynamically linked SDL_mixer library</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_linked_version</span>() <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
 
     <span class='kw'>unsafe</span> {
         <span class='ident'>Version</span>::<span class='ident'>from_ll</span>(<span class='ident'>ffi</span>::<span class='ident'>Mix_Linked_Version</span>())
@@ -937,34 +937,34 @@ A binding for SDL2_mixer.
     <span class='kw'>static</span> <span class='ident'>InitFluidSynth</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MIX_INIT_FLUIDSYNTH</span> <span class='kw'>as</span> <span class='ident'>u32</span>
 })
 
-<span class='doccomment'>/// Loads dynamic libraries and prepares them for use.  Flags should be
-</span><span class='doccomment'>/// one or more flags from InitFlag.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>init</span>(<span class='ident'>flags</span>: <span class='ident'>InitFlag</span>) <span class='op'>-&gt;</span> <span class='ident'>InitFlag</span> {
+<span class='doccomment'>/// Loads dynamic libraries and prepares them for use.  Flags should be</span>
+<span class='doccomment'>/// one or more flags from InitFlag.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>init</span>(<span class='ident'>flags</span>: <span class='ident'>InitFlag</span>) <span class='op'>-&gt;</span> <span class='ident'>InitFlag</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>Mix_Init</span>(<span class='ident'>flags</span>.<span class='ident'>bits</span>() <span class='kw'>as</span> <span class='ident'>c_int</span>);
         <span class='ident'>InitFlag</span>::<span class='ident'>from_bits_truncate</span>(<span class='ident'>ret</span> <span class='kw'>as</span> <span class='ident'>u32</span>)
     }
 }
 
-<span class='doccomment'>/// Cleans up all dynamically loaded library handles, freeing memory.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>quit</span>() {
+<span class='doccomment'>/// Cleans up all dynamically loaded library handles, freeing memory.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>quit</span>() {
     <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_Quit</span>(); }
 }
 
-<span class='doccomment'>/// Open the mixer with a certain audio format.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>open_audio</span>(<span class='ident'>frequency</span>: <span class='ident'>int</span>, <span class='ident'>format</span>: <span class='ident'>AudioFormat</span>, <span class='ident'>channels</span>: <span class='ident'>int</span>, <span class='ident'>chunksize</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+<span class='doccomment'>/// Open the mixer with a certain audio format.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>open_audio</span>(<span class='ident'>frequency</span>: <span class='ident'>int</span>, <span class='ident'>format</span>: <span class='ident'>AudioFormat</span>, <span class='ident'>channels</span>: <span class='ident'>int</span>, <span class='ident'>chunksize</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_OpenAudio</span>(<span class='ident'>frequency</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>format</span>, <span class='ident'>channels</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>chunksize</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) };
     <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='number'>0</span> { <span class='prelude-val'>Ok</span>(()) }
     <span class='kw'>else</span> { <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>()) }
 }
 
-<span class='doccomment'>/// Shutdown and cleanup the mixer API.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>close_audio</span>() {
+<span class='doccomment'>/// Shutdown and cleanup the mixer API.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>close_audio</span>() {
     <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_CloseAudio</span>() }
 }
 
-<span class='doccomment'>/// Get the actual audio format in use by the opened audio device.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>query_spec</span>() <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>(<span class='ident'>int</span>, <span class='ident'>AudioFormat</span>, <span class='ident'>int</span>)<span class='op'>&gt;</span> {
+<span class='doccomment'>/// Get the actual audio format in use by the opened audio device.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>query_spec</span>() <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>(<span class='ident'>int</span>, <span class='ident'>AudioFormat</span>, <span class='ident'>int</span>)<span class='op'>&gt;</span> {
     <span class='kw'>let</span> <span class='ident'>frequency</span> : <span class='ident'>c_int</span> <span class='op'>=</span> <span class='number'>0</span>;
     <span class='kw'>let</span> <span class='ident'>format</span> : <span class='ident'>uint16_t</span> <span class='op'>=</span> <span class='number'>0</span>;
     <span class='kw'>let</span> <span class='ident'>channels</span> : <span class='ident'>c_int</span>  <span class='op'>=</span> <span class='number'>0</span>;
@@ -978,21 +978,21 @@ A binding for SDL2_mixer.
 
 // 4.2 Samples
 
-</span><span class='doccomment'>/// Get the number of sample chunk decoders available from the Mix_GetChunkDecoder function.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_chunk_decoders_number</span>() <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+</span><span class='doccomment'>/// Get the number of sample chunk decoders available from the Mix_GetChunkDecoder function.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_chunk_decoders_number</span>() <span class='op'>-&gt;</span> <span class='ident'>int</span> {
     <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GetNumChunkDecoders</span>() <span class='kw'>as</span> <span class='ident'>int</span> }
 }
 
-<span class='doccomment'>/// Get the name of the indexed sample chunk decoder.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_chunk_decoder</span>(<span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+<span class='doccomment'>/// Get the name of the indexed sample chunk decoder.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_chunk_decoder</span>(<span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
      <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>name</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>Mix_GetChunkDecoder</span>(<span class='ident'>index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>);
         <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>, <span class='boolval'>false</span>).<span class='ident'>as_str</span>().<span class='ident'>unwrap</span>().<span class='ident'>into_string</span>()
     }
 }
 
-<span class='doccomment'>/// The internal format for an audio chunk.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
+<span class='doccomment'>/// The internal format for an audio chunk.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Chunk</span> {
     <span class='kw'>pub</span> <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ffi</span>::<span class='ident'>Mix_Chunk</span>,
     <span class='kw'>pub</span> <span class='ident'>owned</span>: <span class='ident'>bool</span>
@@ -1007,8 +1007,8 @@ A binding for SDL2_mixer.
 }
 
 <span class='kw'>impl</span> <span class='ident'>Chunk</span> {
-    <span class='doccomment'>/// Load file for use as a sample.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_file</span>(<span class='ident'>path</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Load file for use as a sample.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_file</span>(<span class='ident'>path</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_LoadWAV_RW</span>(<span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>RWops</span>::<span class='ident'>from_file</span>(<span class='ident'>path</span>, <span class='string'>&quot;rb&quot;</span>)).<span class='ident'>raw</span>(), <span class='number'>0</span>)
         };
@@ -1019,30 +1019,30 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Set chunk-&gt;volume to volume.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_volume</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>volume</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Set chunk-&gt;volume to volume.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_volume</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>volume</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_VolumeChunk</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>volume</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
-    <span class='doccomment'>/// current volume for the chunk.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_volume</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// current volume for the chunk.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_volume</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_VolumeChunk</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='op'>-</span><span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 }
 
-<span class='doccomment'>/// Loader trait for RWops
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>LoaderRWops</span> {
-    <span class='doccomment'>/// Load src for use as a sample.
-</span>    <span class='kw'>fn</span> <span class='ident'>load_wav</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span>;
+<span class='doccomment'>/// Loader trait for RWops</span>
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>LoaderRWops</span> {
+    <span class='doccomment'>/// Load src for use as a sample.</span>
+    <span class='kw'>fn</span> <span class='ident'>load_wav</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span>;
 }
 
 <span class='kw'>impl</span> <span class='ident'>LoaderRWops</span> <span class='kw'>for</span> <span class='ident'>RWops</span> {
-    <span class='doccomment'>/// Load src for use as a sample.
-</span>    <span class='kw'>fn</span> <span class='ident'>load_wav</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Load src for use as a sample.</span>
+    <span class='kw'>fn</span> <span class='ident'>load_wav</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_LoadWAV_RW</span>(<span class='self'>self</span>.<span class='ident'>raw</span>(), <span class='number'>0</span>)
         };
@@ -1057,8 +1057,8 @@ A binding for SDL2_mixer.
 
 // 4.3 Channels
 
-</span><span class='doccomment'>/// Fader effect type enumerations
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+</span><span class='doccomment'>/// Fader effect type enumerations</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
 <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>Fading</span> {
     <span class='ident'>NoFading</span>  <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MIX_NO_FADING</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1066,12 +1066,12 @@ A binding for SDL2_mixer.
     <span class='ident'>FadingIn</span>  <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MIX_FADING_IN</span> <span class='kw'>as</span> <span class='ident'>int</span>
 }
 
-<span class='doccomment'>/// Sound effect channel.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
+<span class='doccomment'>/// Sound effect channel.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Channel</span>(<span class='ident'>int</span>);
 
-<span class='doccomment'>/// Set the number of channels being mixed.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>allocate_channels</span>(<span class='ident'>numchans</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+<span class='doccomment'>/// Set the number of channels being mixed.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>allocate_channels</span>(<span class='ident'>numchans</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
     <span class='kw'>unsafe</span> {
         <span class='ident'>ffi</span>::<span class='ident'>Mix_AllocateChannels</span>(<span class='ident'>numchans</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span>
     }
@@ -1091,8 +1091,8 @@ A binding for SDL2_mixer.
     }
 }
 
-<span class='doccomment'>/// When channel playback is halted, then the specified channel_finished function is called.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_channel_finished</span>(<span class='ident'>f</span>: <span class='op'>|</span><span class='ident'>Channel</span><span class='op'>|</span>:<span class='lifetime'>&#39;static</span>) {
+<span class='doccomment'>/// When channel playback is halted, then the specified channel_finished function is called.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_channel_finished</span>(<span class='ident'>f</span>: <span class='op'>|</span><span class='ident'>Channel</span><span class='op'>|</span>:<span class='lifetime'>&#39;static</span>) {
     <span class='kw'>unsafe</span> {
         <span class='ident'>channel_finished_callback</span> <span class='op'>=</span> <span class='prelude-val'>Some</span>(<span class='ident'>mem</span>::<span class='ident'>transmute</span>::<span class='op'>&lt;</span>_, <span class='ident'>raw</span>::<span class='ident'>Closure</span><span class='op'>&gt;</span>(<span class='ident'>f</span>));
         <span class='ident'>ffi</span>::<span class='ident'>Mix_ChannelFinished</span>(<span class='prelude-val'>Some</span>(<span class='ident'>c_channel_finished_callback</span>));
@@ -1107,18 +1107,18 @@ A binding for SDL2_mixer.
 }
 
 <span class='kw'>impl</span> <span class='ident'>Channel</span> {
-    <span class='doccomment'>/// Represent for all channels (-1)
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>all</span>() <span class='op'>-&gt;</span> <span class='ident'>Channel</span> {
+    <span class='doccomment'>/// Represent for all channels (-1)</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>all</span>() <span class='op'>-&gt;</span> <span class='ident'>Channel</span> {
         <span class='ident'>Channel</span>(<span class='op'>-</span><span class='number'>1</span>)
     }
 
-    <span class='doccomment'>/// This is the MIX_CHANNEL_POST (-2)
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>post</span>() <span class='op'>-&gt;</span> <span class='ident'>Channel</span> {
+    <span class='doccomment'>/// This is the MIX_CHANNEL_POST (-2)</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>post</span>() <span class='op'>-&gt;</span> <span class='ident'>Channel</span> {
         <span class='ident'>Channel</span>(<span class='op'>-</span><span class='number'>2</span>)
     }
 
-    <span class='doccomment'>/// Set the volume for any allocated channel.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_volume</span>(<span class='self'>self</span>, <span class='ident'>volume</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Set the volume for any allocated channel.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_volume</span>(<span class='self'>self</span>, <span class='ident'>volume</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_Volume</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>volume</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span>
@@ -1132,8 +1132,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Play chunk on channel, or if channel is -1, pick the first free unreserved channel.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>play</span>(<span class='self'>self</span>, <span class='ident'>chunk</span>: <span class='kw-2'>&amp;</span><span class='ident'>Chunk</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Play chunk on channel, or if channel is -1, pick the first free unreserved channel.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>play</span>(<span class='self'>self</span>, <span class='ident'>chunk</span>: <span class='kw-2'>&amp;</span><span class='ident'>Chunk</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
         <span class='self'>self</span>.<span class='ident'>play_timed</span>(<span class='ident'>chunk</span>, <span class='ident'>loops</span>, <span class='op'>-</span><span class='number'>1</span>)
     }
 
@@ -1149,8 +1149,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Play chunk on channel, or if channel is -1, pick the first free unreserved channel.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_in</span>(<span class='self'>self</span>, <span class='ident'>chunk</span>: <span class='kw-2'>&amp;</span><span class='ident'>Chunk</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Play chunk on channel, or if channel is -1, pick the first free unreserved channel.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_in</span>(<span class='self'>self</span>, <span class='ident'>chunk</span>: <span class='kw-2'>&amp;</span><span class='ident'>Chunk</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
         <span class='self'>self</span>.<span class='ident'>fade_in_timed</span>(<span class='ident'>chunk</span>, <span class='ident'>loops</span>, <span class='ident'>ms</span>, <span class='op'>-</span><span class='number'>1</span>)
     }
 
@@ -1166,57 +1166,57 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Pause channel, or all playing channels if -1 is passed in.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pause</span>(<span class='self'>self</span>) {
+    <span class='doccomment'>/// Pause channel, or all playing channels if -1 is passed in.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pause</span>(<span class='self'>self</span>) {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_Pause</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>); }
     }
 
-    <span class='doccomment'>/// Unpause channel, or all playing and paused channels if -1 is passed in.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>resume</span>(<span class='self'>self</span>) {
+    <span class='doccomment'>/// Unpause channel, or all playing and paused channels if -1 is passed in.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>resume</span>(<span class='self'>self</span>) {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_Resume</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>); }
     }
 
-    <span class='doccomment'>/// Halt channel playback
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>halt</span>(<span class='self'>self</span>) {
+    <span class='doccomment'>/// Halt channel playback</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>halt</span>(<span class='self'>self</span>) {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_HaltChannel</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>); }
     }
 
-    <span class='doccomment'>/// Halt channel playback, after ticks milliseconds.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>expire</span>(<span class='self'>self</span>, <span class='ident'>ticks</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Halt channel playback, after ticks milliseconds.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>expire</span>(<span class='self'>self</span>, <span class='ident'>ticks</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_ExpireChannel</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>ticks</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// Gradually fade out which channel over ms milliseconds starting from now.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_out</span>(<span class='self'>self</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Gradually fade out which channel over ms milliseconds starting from now.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_out</span>(<span class='self'>self</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_FadeOutChannel</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>ms</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// if channel is playing, or not.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_playing</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='doccomment'>/// if channel is playing, or not.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_playing</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_Playing</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='op'>!=</span> <span class='number'>0</span> }
     }
 
-    <span class='doccomment'>///  if channel is paused, or not.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_paused</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='doccomment'>///  if channel is paused, or not.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_paused</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_Paused</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='op'>!=</span> <span class='number'>0</span> }
     }
 
-    <span class='doccomment'>/// if channel is fading in, out, or not
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_fading</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Fading</span> {
+    <span class='doccomment'>/// if channel is fading in, out, or not</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_fading</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Fading</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_FadingChannel</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> };
         <span class='ident'>FromPrimitive</span>::<span class='ident'>from_int</span>(<span class='ident'>ret</span>).<span class='ident'>unwrap</span>()
     }
 
-    <span class='doccomment'>/// Get the most recent sample chunk pointer played on channel.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_chunk</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Get the most recent sample chunk pointer played on channel.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_chunk</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Chunk</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GetChunk</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) };
         <span class='kw'>if</span> <span class='ident'>raw</span>.<span class='ident'>is_null</span>() {
@@ -1226,8 +1226,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// This removes all effects registered to channel.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>unregister_all_effects</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// This removes all effects registered to channel.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>unregister_all_effects</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_UnregisterAllEffects</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='number'>0</span> {
@@ -1247,8 +1247,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// This effect simulates a simple attenuation of volume due to distance.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_distance</span>(<span class='self'>self</span>, <span class='ident'>distance</span>: <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// This effect simulates a simple attenuation of volume due to distance.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_distance</span>(<span class='self'>self</span>, <span class='ident'>distance</span>: <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_SetDistance</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>distance</span>) };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='number'>0</span> {
@@ -1258,8 +1258,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// This effect emulates a simple 3D audio effect.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_position</span>(<span class='self'>self</span>, <span class='ident'>angle</span>: <span class='ident'>i16</span>, <span class='ident'>distance</span>: <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// This effect emulates a simple 3D audio effect.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_position</span>(<span class='self'>self</span>, <span class='ident'>angle</span>: <span class='ident'>i16</span>, <span class='ident'>distance</span>: <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_SetPosition</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>angle</span>, <span class='ident'>distance</span>) };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='number'>0</span> {
@@ -1269,8 +1269,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Simple reverse stereo, swaps left and right channel sound.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_reverse_stereo</span>(<span class='self'>self</span>, <span class='ident'>flip</span>: <span class='ident'>bool</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Simple reverse stereo, swaps left and right channel sound.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_reverse_stereo</span>(<span class='self'>self</span>, <span class='ident'>flip</span>: <span class='ident'>bool</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Channel</span>(<span class='ident'>ch</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_SetReverseStereo</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>flip</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='number'>0</span> {
@@ -1291,14 +1291,14 @@ A binding for SDL2_mixer.
 
 // 4.4 Groups
 
-</span><span class='doccomment'>/// Reserve num channels from being used when playing samples when
-</span><span class='doccomment'>/// passing in -1 as a channel number to playback functions.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>reserve_channels</span>(<span class='ident'>num</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+</span><span class='doccomment'>/// Reserve num channels from being used when playing samples when</span>
+<span class='doccomment'>/// passing in -1 as a channel number to playback functions.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>reserve_channels</span>(<span class='ident'>num</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
     <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_ReserveChannels</span>(<span class='ident'>num</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
 }
 
-<span class='doccomment'>/// Sound effect channel grouping.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Group</span>(<span class='ident'>int</span>);
+<span class='doccomment'>/// Sound effect channel grouping.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Group</span>(<span class='ident'>int</span>);
 
 <span class='kw'>impl</span> <span class='ident'>default</span>::<span class='ident'>Default</span> <span class='kw'>for</span> <span class='ident'>Group</span> {
     <span class='kw'>fn</span> <span class='ident'>default</span>() <span class='op'>-&gt;</span> <span class='ident'>Group</span> {
@@ -1307,27 +1307,27 @@ A binding for SDL2_mixer.
 }
 
 <span class='kw'>impl</span> <span class='ident'>Group</span> {
-    <span class='doccomment'>/// Add channels starting at from up through to to group tag,
-</span>    <span class='doccomment'>/// or reset it&#39;s group to the default group tag (-1).
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_channels_range</span>(<span class='self'>self</span>, <span class='ident'>from</span>: <span class='ident'>int</span>, <span class='ident'>to</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Add channels starting at from up through to to group tag,</span>
+    <span class='doccomment'>/// or reset it&#39;s group to the default group tag (-1).</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_channels_range</span>(<span class='self'>self</span>, <span class='ident'>from</span>: <span class='ident'>int</span>, <span class='ident'>to</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GroupChannels</span>(<span class='ident'>from</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>to</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// Add which channel to group tag, or reset it&#39;s group to the default group tag
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_channel</span>(<span class='self'>self</span>, <span class='ident'>Channel</span>(<span class='ident'>ch</span>): <span class='ident'>Channel</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='doccomment'>/// Add which channel to group tag, or reset it&#39;s group to the default group tag</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_channel</span>(<span class='self'>self</span>, <span class='ident'>Channel</span>(<span class='ident'>ch</span>): <span class='ident'>Channel</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GroupChannel</span>(<span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='op'>==</span> <span class='number'>1</span> }
     }
 
-    <span class='doccomment'>/// Count the number of channels in group
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>count</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Count the number of channels in group</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>count</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GroupCount</span>(<span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// Find the first available (not playing) channel in group
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>find_available</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Find the first available (not playing) channel in group</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>find_available</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GroupAvailable</span>(<span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='op'>-</span><span class='number'>1</span> {
@@ -1337,8 +1337,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Find the oldest actively playing channel in group
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>find_oldest</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Find the oldest actively playing channel in group</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>find_oldest</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GroupOldest</span>(<span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='op'>-</span><span class='number'>1</span> {
@@ -1348,8 +1348,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Find the newest, most recently started, actively playing channel in group.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>find_newest</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Find the newest, most recently started, actively playing channel in group.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>find_newest</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Channel</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GroupNewer</span>(<span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> };
         <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='op'>-</span><span class='number'>1</span> {
@@ -1359,15 +1359,15 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Gradually fade out channels in group over some milliseconds starting from now.
-</span>    <span class='doccomment'>/// Returns the number of channels set to fade out.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_out</span>(<span class='self'>self</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Gradually fade out channels in group over some milliseconds starting from now.</span>
+    <span class='doccomment'>/// Returns the number of channels set to fade out.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_out</span>(<span class='self'>self</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_FadeOutGroup</span>(<span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>ms</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// Halt playback on all channels in group.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>halt</span>(<span class='self'>self</span>) {
+    <span class='doccomment'>/// Halt playback on all channels in group.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>halt</span>(<span class='self'>self</span>) {
         <span class='kw'>let</span> <span class='ident'>Group</span>(<span class='ident'>g</span>) <span class='op'>=</span> <span class='self'>self</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_HaltGroup</span>(<span class='ident'>g</span> <span class='kw'>as</span> <span class='ident'>c_int</span>); }
     }
@@ -1375,21 +1375,21 @@ A binding for SDL2_mixer.
 
 // 4.5 Music
 
-</span><span class='doccomment'>/// Get the number of music decoders available.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_music_decoders_number</span>() <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+</span><span class='doccomment'>/// Get the number of music decoders available.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_music_decoders_number</span>() <span class='op'>-&gt;</span> <span class='ident'>int</span> {
     <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GetNumMusicDecoders</span>() <span class='kw'>as</span> <span class='ident'>int</span> }
 }
 
-<span class='doccomment'>/// Get the name of the indexed music decoder.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_music_decoder</span>(<span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+<span class='doccomment'>/// Get the name of the indexed music decoder.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_music_decoder</span>(<span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
     <span class='kw'>unsafe</span> {
         <span class='kw'>let</span> <span class='ident'>name</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>Mix_GetMusicDecoder</span>(<span class='ident'>index</span> <span class='kw'>as</span> <span class='ident'>c_int</span>);
         <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>name</span>, <span class='boolval'>false</span>).<span class='ident'>as_str</span>().<span class='ident'>unwrap</span>().<span class='ident'>into_string</span>()
     }
 }
 
-<span class='doccomment'>/// Music type enumerations
-</span><span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='doccomment'>/// Music type enumerations</span>
+<span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
 <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Hash</span>, <span class='ident'>Show</span>, <span class='ident'>FromPrimitive</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MusicType</span> {
     <span class='ident'>MusicNone</span>    <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>MUS_NONE</span> <span class='kw'>as</span> <span class='ident'>int</span>,
@@ -1417,8 +1417,8 @@ A binding for SDL2_mixer.
     } }
 }
 
-<span class='doccomment'>/// This is an opaque data type used for Music data.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
+<span class='doccomment'>/// This is an opaque data type used for Music data.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span> <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>, <span class='ident'>visible_private_types</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Music</span> {
     <span class='kw'>pub</span> <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ffi</span>::<span class='ident'>Mix_Music</span>,
     <span class='kw'>pub</span> <span class='ident'>owned</span>: <span class='ident'>bool</span>,
@@ -1433,8 +1433,8 @@ A binding for SDL2_mixer.
 }
 
 <span class='kw'>impl</span> <span class='ident'>Music</span> {
-    <span class='doccomment'>/// Load music file to use.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_file</span>(<span class='ident'>path</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Music</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Load music file to use.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_file</span>(<span class='ident'>path</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Music</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_LoadMUS</span>(<span class='ident'>path</span>.<span class='ident'>to_c_str</span>().<span class='ident'>unwrap</span>())
         };
@@ -1445,14 +1445,14 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// The file format encoding of the music.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_type</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>MusicType</span> {
+    <span class='doccomment'>/// The file format encoding of the music.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_type</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>MusicType</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_GetMusicType</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span> };
         <span class='ident'>FromPrimitive</span>::<span class='ident'>from_int</span>(<span class='ident'>ret</span>).<span class='ident'>unwrap</span>()
     }
 
-    <span class='doccomment'>/// Play the loaded music loop times through from start to finish.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>play</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Play the loaded music loop times through from start to finish.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>play</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_PlayMusic</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>loops</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)
         };
@@ -1463,9 +1463,9 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Fade in over ms milliseconds of time, the loaded music,
-</span>    <span class='doccomment'>/// playing it loop times through from start to finish.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_in</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Fade in over ms milliseconds of time, the loaded music,</span>
+    <span class='doccomment'>/// playing it loop times through from start to finish.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_in</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_FadeInMusic</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>loops</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>ms</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)
         };
@@ -1476,8 +1476,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Fade in over ms milliseconds of time, from position.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_in_from_pos</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>, <span class='ident'>position</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Fade in over ms milliseconds of time, from position.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_in_from_pos</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>loops</span>: <span class='ident'>int</span>, <span class='ident'>ms</span>: <span class='ident'>int</span>, <span class='ident'>position</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_FadeInMusicPos</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>loops</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>ms</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>position</span> <span class='kw'>as</span> <span class='ident'>c_double</span>)
         };
@@ -1493,28 +1493,28 @@ A binding for SDL2_mixer.
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_VolumeMusic</span>(<span class='op'>-</span><span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// Set the volume.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_volume</span>(<span class='ident'>volume</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='doccomment'>/// Set the volume.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_volume</span>(<span class='ident'>volume</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_VolumeMusic</span>(<span class='ident'>volume</span> <span class='kw'>as</span> <span class='ident'>c_int</span>) <span class='kw'>as</span> <span class='ident'>int</span> }
     }
 
-    <span class='doccomment'>/// Pause the music playback.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pause</span>() {
+    <span class='doccomment'>/// Pause the music playback.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pause</span>() {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_PauseMusic</span>(); }
     }
 
-    <span class='doccomment'>/// Unpause the music.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>resume</span>() {
+    <span class='doccomment'>/// Unpause the music.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>resume</span>() {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_ResumeMusic</span>(); }
     }
 
-    <span class='doccomment'>/// Rewind the music to the start.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rewind</span>() {
+    <span class='doccomment'>/// Rewind the music to the start.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rewind</span>() {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_RewindMusic</span>(); }
     }
 
-    <span class='doccomment'>/// Set the position of the currently playing music.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_pos</span>(<span class='ident'>position</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Set the position of the currently playing music.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_pos</span>(<span class='ident'>position</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_SetMusicPosition</span>(<span class='ident'>position</span> <span class='kw'>as</span> <span class='ident'>c_double</span>)
         };
@@ -1525,8 +1525,8 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Setup a command line music player to use to play music.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_command</span>(<span class='ident'>command</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Setup a command line music player to use to play music.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_command</span>(<span class='ident'>command</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_SetMusicCMD</span>(<span class='ident'>command</span>.<span class='ident'>to_c_str</span>().<span class='ident'>unwrap</span>())
         };
@@ -1537,13 +1537,13 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// Halt playback of music.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>halt</span>() {
+    <span class='doccomment'>/// Halt playback of music.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>halt</span>() {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_HaltMusic</span>(); }
     }
 
-    <span class='doccomment'>/// Gradually fade out the music over ms milliseconds starting from now.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_out</span>(<span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Gradually fade out the music over ms milliseconds starting from now.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>fade_out</span>(<span class='ident'>ms</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>Mix_FadeOutMusic</span>(<span class='ident'>ms</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)
         };
@@ -1572,18 +1572,18 @@ A binding for SDL2_mixer.
         }
     }
 
-    <span class='doccomment'>/// If music is actively playing, or not.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_playing</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='doccomment'>/// If music is actively playing, or not.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_playing</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_PlayingMusic</span>() <span class='op'>==</span> <span class='number'>1</span> }
     }
 
-    <span class='doccomment'>/// If music is paused, or not.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_paused</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='doccomment'>/// If music is paused, or not.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>is_paused</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
         <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_PausedMusic</span>() <span class='op'>==</span> <span class='number'>1</span> }
     }
 
-    <span class='doccomment'>/// If music is fading, or not.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_fading</span>() <span class='op'>-&gt;</span> <span class='ident'>Fading</span> {
+    <span class='doccomment'>/// If music is fading, or not.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_fading</span>() <span class='op'>-&gt;</span> <span class='ident'>Fading</span> {
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>Mix_FadingMusic</span>() <span class='kw'>as</span> <span class='ident'>int</span> };
         <span class='ident'>FromPrimitive</span>::<span class='ident'>from_int</span>(<span class='ident'>ret</span>).<span class='ident'>unwrap</span>()
     }
@@ -1608,9 +1608,9 @@ A binding for SDL2_mixer.
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

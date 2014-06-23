@@ -23,7 +23,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a><a class='mod ' href='shader_utils/index.html'>shader_utils</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.AudioSDL2.html'>AudioSDL2</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowGLFW.html'>GameWindowGLFW</a><a class='struct ' href='struct.GameWindowSDL2.html'>GameWindowSDL2</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.Gl.html'>Gl</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.MusicSDL2.html'>MusicSDL2</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.SoundSDL2.html'>SoundSDL2</a><a class='struct ' href='struct.Texture.html'>Texture</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.AudioBackEnd.html'>AudioBackEnd</a><a class='trait current' href='trait.Game.html'>Game</a><a class='trait ' href='trait.Music.html'>Music</a><a class='trait ' href='trait.Sound.html'>Sound</a></div>
+        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait current' href='trait.Game.html'>Game</a></div>
     </section>
 
     <nav class="sub">
@@ -31,18 +31,18 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='index.html'>piston</a>::<a class='trait' href=''>Game</a><a class='source' id='src-19555' href='../src/piston/src/game.rs.html#30-112'>[src]</a></h1>
+<h1 class='fqn'>Trait <a href='index.html'>piston</a>::<a class='trait' href=''>Game</a><a class='source' id='src-19391' href='../src/piston/src/game.rs.html#26-97'>[src]</a></h1>
 <pre class='rust trait'>pub trait Game {
-    fn <a href='#method.render' class='fnname'>render</a>(&amp;self, _context: &amp;Context, _args: &amp;mut <a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>) { ... }
+    fn <a href='#method.render' class='fnname'>render</a>(&amp;mut self, _args: &amp;mut <a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>) { ... }
     fn <a href='#method.update' class='fnname'>update</a>(&amp;mut self, _args: &amp;mut <a class='struct' href='../piston/struct.UpdateArgs.html' title='piston::UpdateArgs'>UpdateArgs</a>) { ... }
-    fn <a href='#method.load' class='fnname'>load</a>(&amp;mut self, _asset_store: &amp;mut <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a>) { ... }
+    fn <a href='#method.load' class='fnname'>load</a>(&amp;mut self) { ... }
     fn <a href='#method.key_press' class='fnname'>key_press</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.KeyPressArgs.html' title='piston::KeyPressArgs'>KeyPressArgs</a>) { ... }
     fn <a href='#method.key_release' class='fnname'>key_release</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.KeyReleaseArgs.html' title='piston::KeyReleaseArgs'>KeyReleaseArgs</a>) { ... }
     fn <a href='#method.mouse_press' class='fnname'>mouse_press</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.MousePressArgs.html' title='piston::MousePressArgs'>MousePressArgs</a>) { ... }
@@ -50,19 +50,19 @@
     fn <a href='#method.mouse_move' class='fnname'>mouse_move</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.MouseMoveArgs.html' title='piston::MouseMoveArgs'>MouseMoveArgs</a>) { ... }
     fn <a href='#method.mouse_relative_move' class='fnname'>mouse_relative_move</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.MouseRelativeMoveArgs.html' title='piston::MouseRelativeMoveArgs'>MouseRelativeMoveArgs</a>) { ... }
     fn <a href='#method.event' class='fnname'>event</a>(&amp;mut self, event: &amp;mut <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>) { ... }
-    fn <a href='#method.run' class='fnname'>run</a>&lt;W: <a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>&gt;(&amp;mut self, game_window: &amp;mut W, asset_store: &amp;mut <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a>) { ... }
+    fn <a href='#method.run' class='fnname'>run</a>&lt;W: <a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>&gt;(&amp;mut self, game_window: &amp;mut W, game_iter_settings: &amp;<a class='struct' href='../piston/struct.GameIteratorSettings.html' title='piston::GameIteratorSettings'>GameIteratorSettings</a>) { ... }
 }</pre><div class='docblock'><p>Implemented by game applications.</p>
 </div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.render' class='method'><code>fn <a href='#method.render' class='fnname'>render</a>(&amp;self, _context: &amp;Context, _args: &amp;mut <a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>)</code></h3><div class='docblock'><p>Render graphics.</p>
+        <h3 id='method.render' class='method'><code>fn <a href='#method.render' class='fnname'>render</a>(&amp;mut self, _args: &amp;mut <a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>)</code></h3><div class='docblock'><p>Render graphics.</p>
 
 <p><code>context</code> is a Rust-Graphics context.
 <code>gl</code> is the Piston OpenGL back-end for Rust-Graphics.</p>
 </div><h3 id='method.update' class='method'><code>fn <a href='#method.update' class='fnname'>update</a>(&amp;mut self, _args: &amp;mut <a class='struct' href='../piston/struct.UpdateArgs.html' title='piston::UpdateArgs'>UpdateArgs</a>)</code></h3><div class='docblock'><p>Update the physical state of the game.</p>
 
 <p><code>dt</code> is the delta time from last update in seconds.</p>
-</div><h3 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>(&amp;mut self, _asset_store: &amp;mut <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a>)</code></h3><div class='docblock'><p>Perform tasks for loading before showing anything.</p>
+</div><h3 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>(&amp;mut self)</code></h3><div class='docblock'><p>Perform tasks for loading before showing anything.</p>
 </div><h3 id='method.key_press' class='method'><code>fn <a href='#method.key_press' class='fnname'>key_press</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.KeyPressArgs.html' title='piston::KeyPressArgs'>KeyPressArgs</a>)</code></h3><div class='docblock'><p>User pressed a key.</p>
 
 <p>This can be overridden to handle key pressed events.</p>
@@ -74,7 +74,7 @@
 </div><h3 id='method.mouse_move' class='method'><code>fn <a href='#method.mouse_move' class='fnname'>mouse_move</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.MouseMoveArgs.html' title='piston::MouseMoveArgs'>MouseMoveArgs</a>)</code></h3><div class='docblock'><p>Moved mouse cursor.</p>
 </div><h3 id='method.mouse_relative_move' class='method'><code>fn <a href='#method.mouse_relative_move' class='fnname'>mouse_relative_move</a>(&amp;mut self, _args: &amp;<a class='struct' href='../piston/struct.MouseRelativeMoveArgs.html' title='piston::MouseRelativeMoveArgs'>MouseRelativeMoveArgs</a>)</code></h3><div class='docblock'><p>Moved mouse relative, not bounded by cursor.</p>
 </div><h3 id='method.event' class='method'><code>fn <a href='#method.event' class='fnname'>event</a>(&amp;mut self, event: &amp;mut <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>)</code></h3><div class='docblock'><p>Handles a game event.</p>
-</div><h3 id='method.run' class='method'><code>fn <a href='#method.run' class='fnname'>run</a>&lt;W: <a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>&gt;(&amp;mut self, game_window: &amp;mut W, asset_store: &amp;mut <a class='struct' href='../piston/struct.AssetStore.html' title='piston::AssetStore'>AssetStore</a>)</code></h3><div class='docblock'><p>Executes a game loop.</p>
+</div><h3 id='method.run' class='method'><code>fn <a href='#method.run' class='fnname'>run</a>&lt;W: <a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>&gt;(&amp;mut self, game_window: &amp;mut W, game_iter_settings: &amp;<a class='struct' href='../piston/struct.GameIteratorSettings.html' title='piston::GameIteratorSettings'>GameIteratorSettings</a>)</code></h3><div class='docblock'><p>Executes a game loop.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
@@ -93,9 +93,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

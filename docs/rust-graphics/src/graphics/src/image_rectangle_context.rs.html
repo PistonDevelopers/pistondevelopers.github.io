@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -251,6 +251,46 @@
 <span id='212'>212</span>
 <span id='213'>213</span>
 <span id='214'>214</span>
+<span id='215'>215</span>
+<span id='216'>216</span>
+<span id='217'>217</span>
+<span id='218'>218</span>
+<span id='219'>219</span>
+<span id='220'>220</span>
+<span id='221'>221</span>
+<span id='222'>222</span>
+<span id='223'>223</span>
+<span id='224'>224</span>
+<span id='225'>225</span>
+<span id='226'>226</span>
+<span id='227'>227</span>
+<span id='228'>228</span>
+<span id='229'>229</span>
+<span id='230'>230</span>
+<span id='231'>231</span>
+<span id='232'>232</span>
+<span id='233'>233</span>
+<span id='234'>234</span>
+<span id='235'>235</span>
+<span id='236'>236</span>
+<span id='237'>237</span>
+<span id='238'>238</span>
+<span id='239'>239</span>
+<span id='240'>240</span>
+<span id='241'>241</span>
+<span id='242'>242</span>
+<span id='243'>243</span>
+<span id='244'>244</span>
+<span id='245'>245</span>
+<span id='246'>246</span>
+<span id='247'>247</span>
+<span id='248'>248</span>
+<span id='249'>249</span>
+<span id='250'>250</span>
+<span id='251'>251</span>
+<span id='252'>252</span>
+<span id='253'>253</span>
+<span id='254'>254</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> {
     <span class='ident'>AddColor</span>,
@@ -258,7 +298,7 @@
     <span class='ident'>Borrowed</span>,
     <span class='ident'>Draw</span>,
     <span class='ident'>Field</span>,
-    <span class='ident'>Image</span>,
+    <span class='ident'>ImageSize</span>,
     <span class='ident'>ImageRectangleColorContext</span>,
     <span class='ident'>Value</span>,
 };
@@ -285,21 +325,23 @@
     <span class='ident'>Rectangle</span>,
 };
 
-<span class='doccomment'>/// An image rectangle context.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// View transformation.
-</span>    <span class='kw'>pub</span> <span class='ident'>view</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current transformation.
-</span>    <span class='kw'>pub</span> <span class='ident'>transform</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current rectangle.
-</span>    <span class='kw'>pub</span> <span class='ident'>rect</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current image.
-</span>    <span class='kw'>pub</span> <span class='ident'>image</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;b</span> <span class='ident'>I</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current source rectangle.
-</span>    <span class='kw'>pub</span> <span class='ident'>source_rect</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span>,
+<span class='doccomment'>/// An image rectangle context.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// View transformation.</span>
+    <span class='kw'>pub</span> <span class='ident'>view</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current transformation.</span>
+    <span class='kw'>pub</span> <span class='ident'>transform</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current rectangle.</span>
+    <span class='kw'>pub</span> <span class='ident'>rect</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current image.</span>
+    <span class='kw'>pub</span> <span class='ident'>image</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;b</span> <span class='ident'>I</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current source rectangle.</span>
+    <span class='kw'>pub</span> <span class='ident'>source_rect</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span>,
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>Clone</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>Clone</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>clone</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;static</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='ident'>ImageRectangleContext</span> {
@@ -312,16 +354,23 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>HasTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>HasTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>get_transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Matrix2d</span> {
         <span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>CanTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>CanTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>Matrix2d</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>transform</span>(
+        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
+        <span class='ident'>value</span>: <span class='ident'>Matrix2d</span>
+    ) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='ident'>ImageRectangleContext</span> {
             <span class='ident'>view</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>view</span>.<span class='ident'>get</span>()),
             <span class='ident'>transform</span>: <span class='ident'>Value</span>(<span class='ident'>value</span>),
@@ -332,17 +381,23 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>HasViewTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>HasViewTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>get_view_transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Matrix2d</span> {
         <span class='self'>self</span>.<span class='ident'>view</span>.<span class='ident'>get</span>()
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>CanViewTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>CanViewTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>
 <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>view_transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>Matrix2d</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>view_transform</span>(
+        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
+        <span class='ident'>value</span>: <span class='ident'>Matrix2d</span>
+    ) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='ident'>ImageRectangleContext</span> {
             <span class='ident'>view</span>: <span class='ident'>Value</span>(<span class='ident'>value</span>),
             <span class='ident'>transform</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()),
@@ -355,16 +410,23 @@
 
 <span class='kw'>static</span> <span class='ident'>WHITE</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>Color</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span>[<span class='number'>1.0</span>, ..<span class='number'>4</span>];
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>HasColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Color</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>HasColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Color</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>get_color</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Color</span> {
         <span class='ident'>WHITE</span>
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>CanColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Color</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>CanColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Color</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>color</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>color</span>(
+        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
+        <span class='ident'>value</span>: <span class='ident'>Color</span>
+    ) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='ident'>ImageRectangleColorContext</span> {
             <span class='ident'>view</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>view</span>.<span class='ident'>get</span>()),
             <span class='ident'>transform</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()),
@@ -376,16 +438,23 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>HasRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>HasRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>get_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Rectangle</span> {
         <span class='self'>self</span>.<span class='ident'>rect</span>.<span class='ident'>get</span>()
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>CanRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>CanRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>rect</span>: <span class='ident'>Rectangle</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>rectangle</span>(
+        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
+        <span class='ident'>rect</span>: <span class='ident'>Rectangle</span>
+    ) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='ident'>ImageRectangleContext</span> {
             <span class='ident'>view</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>view</span>.<span class='ident'>get</span>()),
             <span class='ident'>transform</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()),
@@ -396,7 +465,8 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>HasSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span> 
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>HasSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span> 
 <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>get_source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>SourceRectangle</span> {
@@ -404,10 +474,14 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>CanSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span> 
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>CanSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>SourceRectangle</span><span class='op'>&gt;</span> 
 <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>source_rect</span>: <span class='ident'>SourceRectangle</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>source_rectangle</span>(
+        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
+        <span class='ident'>source_rect</span>: <span class='ident'>SourceRectangle</span>
+    ) <span class='op'>-&gt;</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
         <span class='ident'>ImageRectangleContext</span> {
             <span class='ident'>view</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>view</span>.<span class='ident'>get</span>()),
             <span class='ident'>transform</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>transform</span>.<span class='ident'>get</span>()),
@@ -418,7 +492,9 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span> <span class='ident'>Draw</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
+<span class='ident'>Draw</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>draw</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
         <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_single_texture</span>()
@@ -429,8 +505,10 @@
             <span class='kw'>let</span> <span class='ident'>source_rect</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>source_rect</span>.<span class='ident'>get</span>();<span class='comment'>
             // Complete transparency does not need to be rendered.
             </span><span class='kw'>if</span> <span class='ident'>color</span>[<span class='number'>3</span>] <span class='op'>==</span> <span class='number'>0.0</span> { <span class='kw'>return</span>; }<span class='comment'>
-            // Turn on alpha blending if not completely opaque or if the texture has alpha channel.
-            </span><span class='kw'>let</span> <span class='ident'>needs_alpha</span> <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>3</span>] <span class='op'>!=</span> <span class='number'>1.0</span> <span class='op'>||</span> <span class='ident'>back_end</span>.<span class='ident'>has_texture_alpha</span>(<span class='ident'>texture</span>);
+            // Turn on alpha blending if not completely opaque 
+            // or if the texture has alpha channel.
+            </span><span class='kw'>let</span> <span class='ident'>needs_alpha</span> <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>3</span>] <span class='op'>!=</span> <span class='number'>1.0</span> 
+                <span class='op'>||</span> <span class='ident'>back_end</span>.<span class='ident'>has_texture_alpha</span>(<span class='ident'>texture</span>);
             <span class='kw'>if</span> <span class='ident'>needs_alpha</span> { <span class='ident'>back_end</span>.<span class='ident'>enable_alpha_blend</span>(); }
             <span class='ident'>back_end</span>.<span class='ident'>enable_single_texture</span>(<span class='ident'>texture</span>);
             <span class='ident'>back_end</span>.<span class='ident'>tri_list_xy_f32_rgba_f32_uv_f32</span>(
@@ -446,7 +524,9 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> <span class='ident'>AddColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;&gt;</span> <span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='ident'>AddColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ImageRectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;&gt;</span> 
+<span class='kw'>for</span> <span class='ident'>ImageRectangleContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='lifetime'>&#39;b</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
     <span class='kw'>fn</span> <span class='ident'>rgba</span>(
         <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>,
@@ -480,9 +560,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
