@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -196,6 +196,7 @@
 <span id='157'>157</span>
 <span id='158'>158</span>
 <span id='159'>159</span>
+<span id='160'>160</span>
 </pre><pre class='rust '>
 
 <span class='kw'>use</span> {
@@ -203,7 +204,7 @@
     <span class='ident'>Borrowed</span>,
     <span class='ident'>Clear</span>,
     <span class='ident'>Field</span>,
-    <span class='ident'>Image</span>,
+    <span class='ident'>ImageSize</span>,
     <span class='ident'>Value</span>,
 };
 <span class='kw'>use</span> <span class='ident'>triangulation</span>::{
@@ -223,20 +224,20 @@
     <span class='ident'>Rectangle</span>,
 };
 
-<span class='doccomment'>/// A round rectangle border color context.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RoundRectangleBorderColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// View transformation.
-</span>    <span class='kw'>pub</span> <span class='ident'>view</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current transformation.
-</span>    <span class='kw'>pub</span> <span class='ident'>transform</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current rectangle.
-</span>    <span class='kw'>pub</span> <span class='ident'>rect</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current roundness radius.
-</span>    <span class='kw'>pub</span> <span class='ident'>round_radius</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Radius</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current color.
-</span>    <span class='kw'>pub</span> <span class='ident'>color</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Color</span><span class='op'>&gt;</span>,
-    <span class='doccomment'>/// Current border.
-</span>    <span class='kw'>pub</span> <span class='ident'>border</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Radius</span><span class='op'>&gt;</span>,
+<span class='doccomment'>/// A round rectangle border color context.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RoundRectangleBorderColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// View transformation.</span>
+    <span class='kw'>pub</span> <span class='ident'>view</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current transformation.</span>
+    <span class='kw'>pub</span> <span class='ident'>transform</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Matrix2d</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current rectangle.</span>
+    <span class='kw'>pub</span> <span class='ident'>rect</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Rectangle</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current roundness radius.</span>
+    <span class='kw'>pub</span> <span class='ident'>round_radius</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Radius</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current color.</span>
+    <span class='kw'>pub</span> <span class='ident'>color</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Color</span><span class='op'>&gt;</span>,
+    <span class='doccomment'>/// Current border.</span>
+    <span class='kw'>pub</span> <span class='ident'>border</span>: <span class='ident'>Field</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Radius</span><span class='op'>&gt;</span>,
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>Clone</span> <span class='kw'>for</span> <span class='ident'>RoundRectangleBorderColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
@@ -344,7 +345,8 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span> <span class='ident'>Clear</span><span class='op'>&lt;</span><span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
+<span class='ident'>Clear</span><span class='op'>&lt;</span><span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
 <span class='kw'>for</span> <span class='ident'>RoundRectangleBorderColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='kw'>fn</span> <span class='ident'>clear</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
         <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_clear_rgba</span>() {
@@ -370,9 +372,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -495,16 +495,73 @@
 <span id='456'>456</span>
 <span id='457'>457</span>
 <span id='458'>458</span>
+<span id='459'>459</span>
+<span id='460'>460</span>
+<span id='461'>461</span>
+<span id='462'>462</span>
+<span id='463'>463</span>
+<span id='464'>464</span>
+<span id='465'>465</span>
+<span id='466'>466</span>
+<span id='467'>467</span>
+<span id='468'>468</span>
+<span id='469'>469</span>
+<span id='470'>470</span>
+<span id='471'>471</span>
+<span id='472'>472</span>
+<span id='473'>473</span>
+<span id='474'>474</span>
+<span id='475'>475</span>
+<span id='476'>476</span>
+<span id='477'>477</span>
+<span id='478'>478</span>
+<span id='479'>479</span>
+<span id='480'>480</span>
+<span id='481'>481</span>
+<span id='482'>482</span>
+<span id='483'>483</span>
+<span id='484'>484</span>
+<span id='485'>485</span>
+<span id='486'>486</span>
+<span id='487'>487</span>
+<span id='488'>488</span>
+<span id='489'>489</span>
+<span id='490'>490</span>
+<span id='491'>491</span>
+<span id='492'>492</span>
+<span id='493'>493</span>
+<span id='494'>494</span>
+<span id='495'>495</span>
+<span id='496'>496</span>
+<span id='497'>497</span>
+<span id='498'>498</span>
+<span id='499'>499</span>
+<span id='500'>500</span>
+<span id='501'>501</span>
+<span id='502'>502</span>
+<span id='503'>503</span>
+<span id='504'>504</span>
+<span id='505'>505</span>
+<span id='506'>506</span>
+<span id='507'>507</span>
+<span id='508'>508</span>
+<span id='509'>509</span>
+<span id='510'>510</span>
+<span id='511'>511</span>
+<span id='512'>512</span>
+<span id='513'>513</span>
+<span id='514'>514</span>
+<span id='515'>515</span>
 </pre><pre class='rust '>
-<span class='doccomment'>//! Methods for converting shapes into triangles.
-</span>
+<span class='doccomment'>//! Methods for converting shapes into triangles.</span>
+
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>f64</span>::<span class='ident'>consts</span>::{
     <span class='ident'>PI</span>,
     <span class='ident'>PI_2</span>,
     <span class='ident'>FRAC_PI_2</span>,
 };
 <span class='kw'>use</span> {
-    <span class='ident'>Image</span>,
+    <span class='ident'>ImageSize</span>,
 };
 <span class='kw'>use</span> <span class='ident'>interpolation</span>::{<span class='ident'>lerp</span>};
 <span class='kw'>use</span> <span class='ident'>internal</span>::{
@@ -525,20 +582,20 @@
     <span class='ident'>translate</span>,
 };
 
-<span class='doccomment'>/// Transformed x coordinate as f32.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Transformed x coordinate as f32.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>fn</span> <span class='ident'>tx</span>(<span class='ident'>m</span>: <span class='ident'>Matrix2d</span>, <span class='ident'>x</span>: <span class='ident'>Scalar</span>, <span class='ident'>y</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>f32</span> {
     (<span class='ident'>m</span>[<span class='number'>0</span>] <span class='op'>*</span> <span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>m</span>[<span class='number'>1</span>] <span class='op'>*</span> <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>m</span>[<span class='number'>2</span>]) <span class='kw'>as</span> <span class='ident'>f32</span>
 }
 
-<span class='doccomment'>/// Transformed y coordinate as f32.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Transformed y coordinate as f32.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>fn</span> <span class='ident'>ty</span>(<span class='ident'>m</span>: <span class='ident'>Matrix2d</span>, <span class='ident'>x</span>: <span class='ident'>Scalar</span>, <span class='ident'>y</span>: <span class='ident'>Scalar</span>) <span class='op'>-&gt;</span> <span class='ident'>f32</span> {
     (<span class='ident'>m</span>[<span class='number'>3</span>] <span class='op'>*</span> <span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>m</span>[<span class='number'>4</span>] <span class='op'>*</span> <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>m</span>[<span class='number'>5</span>]) <span class='kw'>as</span> <span class='ident'>f32</span>
 }
 
-<span class='doccomment'>/// Streams tweened polygons using linear interpolation.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Streams tweened polygons using linear interpolation.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_lerp_polygons_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
     <span class='ident'>polygons</span>: <span class='ident'>Polygons</span>,
@@ -574,8 +631,8 @@
     }, <span class='ident'>color</span>, <span class='ident'>f</span>);
 }
 
-<span class='doccomment'>/// Streams an ellipse specified by a resolution.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Streams an ellipse specified by a resolution.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_ellipse_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>resolution</span>: <span class='ident'>uint</span>,
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
@@ -597,8 +654,8 @@
     }, <span class='ident'>color</span>, <span class='ident'>f</span>);
 }
 
-<span class='doccomment'>/// Streams a round border line.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Streams a round border line.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_round_border_line_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>resolution_cap</span>: <span class='ident'>uint</span>,
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
@@ -622,19 +679,25 @@
         <span class='ident'>i</span> <span class='op'>+=</span> <span class='number'>1</span>;<span class='comment'>
         // Detect the half circle from index.
         // There is one half circle at each end of the line.
-        // Together they form a full circle if the length of the line is zero.
+        // Together they form a full circle if
+        // the length of the line is zero.
         </span><span class='kw'>match</span> <span class='ident'>j</span> {
             <span class='ident'>j</span> <span class='kw'>if</span> <span class='ident'>j</span> <span class='op'>&gt;=</span> <span class='ident'>resolution_cap</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Compute the angle to match start and end point of half circle.
-                // This requires an angle offset since the other end of line is the first half circle.
-                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_cap</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> (<span class='ident'>resolution_cap</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>PI</span> <span class='op'>+</span> <span class='ident'>PI</span>;<span class='comment'>
+                // Compute the angle to match start and end 
+                // point of half circle.
+                // This requires an angle offset since 
+                // the other end of line is the first half circle.
+                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_cap</span>) <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>/</span> (<span class='ident'>resolution_cap</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>PI</span> <span class='op'>+</span> <span class='ident'>PI</span>;<span class='comment'>
                 // Rotate 90 degrees since the line is horizontal.
                 </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> <span class='ident'>angle</span> <span class='op'>+</span> <span class='ident'>FRAC_PI_2</span>;
                 <span class='prelude-val'>Some</span>([<span class='ident'>w</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>cos</span>() <span class='op'>*</span> <span class='ident'>radius</span>, <span class='ident'>angle</span>.<span class='ident'>sin</span>() <span class='op'>*</span> <span class='ident'>radius</span>])
             },
             <span class='ident'>j</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Compute the angle to match start and end point of half circle.
-                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> <span class='ident'>j</span> <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> (<span class='ident'>resolution_cap</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>PI</span>;<span class='comment'>
+                // Compute the angle to match start and end 
+                // point of half circle.
+                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> <span class='ident'>j</span> <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>/</span> (<span class='ident'>resolution_cap</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>PI</span>;<span class='comment'>
                 // Rotate 90 degrees since the line is horizontal.
                 </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> <span class='ident'>angle</span> <span class='op'>+</span> <span class='ident'>FRAC_PI_2</span>;
                 <span class='prelude-val'>Some</span>([<span class='ident'>angle</span>.<span class='ident'>cos</span>() <span class='op'>*</span> <span class='ident'>radius</span>, <span class='ident'>angle</span>.<span class='ident'>sin</span>() <span class='op'>*</span> <span class='ident'>radius</span>])
@@ -643,8 +706,8 @@
     }, <span class='ident'>color</span>, <span class='ident'>f</span>);
 }
 
-<span class='doccomment'>/// Streams a round rectangle.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Streams a round rectangle.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_round_rectangle_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>resolution_corner</span>: <span class='ident'>uint</span>,
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
@@ -664,38 +727,51 @@
         <span class='ident'>i</span> <span class='op'>+=</span> <span class='number'>1</span>;<span class='comment'>
         // Detect quarter circle from index.
         // There is one quarter circle at each corner.
-        // Together they form a full circle if each side of rectangle is 2 times the radius.
+        // Together they form a full circle if
+        // each side of rectangle is 2 times the radius.
         </span><span class='kw'>match</span> <span class='ident'>j</span> {
             <span class='ident'>j</span> <span class='kw'>if</span> <span class='ident'>j</span> <span class='op'>&gt;=</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>3</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Compute the angle to match start and end point of quarter circle.
-                // This requires an angle offset since this is the last quarter.
-                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>3</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>
+                // Compute the angle to match start and end
+                // point of quarter circle.
+                // This requires an angle offset since this
+                // is the last quarter.
+                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>3</span>) <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>
                     <span class='op'>+</span> <span class='number'>3.0</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>;<span class='comment'>
                 // Set center of the circle to the last corner.
                 </span><span class='kw'>let</span> (<span class='ident'>cx</span>, <span class='ident'>cy</span>) <span class='op'>=</span> (<span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>w</span> <span class='op'>-</span> <span class='ident'>radius</span>, <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>radius</span>);
                 <span class='prelude-val'>Some</span>([<span class='ident'>cx</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>cos</span>() <span class='op'>*</span> <span class='ident'>radius</span>, <span class='ident'>cy</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>sin</span>() <span class='op'>*</span> <span class='ident'>radius</span>])
             },
             <span class='ident'>j</span> <span class='kw'>if</span> <span class='ident'>j</span> <span class='op'>&gt;=</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Compute the angle to match start and end point of quarter circle.
-                // This requires an angle offset since this is the second last quarter.
-                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>2</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>
+                // Compute the angle to match start and end
+                // point of quarter circle.
+                // This requires an angle offset since
+                // this is the second last quarter.
+                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>2</span>) <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>
                     <span class='op'>+</span> <span class='ident'>PI</span>;<span class='comment'>
                 // Set center of the circle to the second last corner.
                 </span><span class='kw'>let</span> (<span class='ident'>cx</span>, <span class='ident'>cy</span>) <span class='op'>=</span> (<span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>radius</span>, <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>radius</span>);
                 <span class='prelude-val'>Some</span>([<span class='ident'>cx</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>cos</span>() <span class='op'>*</span> <span class='ident'>radius</span>, <span class='ident'>cy</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>sin</span>() <span class='op'>*</span> <span class='ident'>radius</span>])
             },
             <span class='ident'>j</span> <span class='kw'>if</span> <span class='ident'>j</span> <span class='op'>&gt;=</span> <span class='ident'>resolution_corner</span> <span class='op'>*</span> <span class='number'>1</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Compute the angle to match start and end point of quarter circle.
-                // This requires an angle offset since this is the second quarter.
-                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_corner</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>
+                // Compute the angle to match start and end
+                // point of quarter circle.
+                // This requires an angle offset since
+                // this is the second quarter.
+                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> (<span class='ident'>j</span> <span class='op'>-</span> <span class='ident'>resolution_corner</span>) <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>
                     <span class='op'>+</span> <span class='ident'>FRAC_PI_2</span>;<span class='comment'>
                 // Set center of the circle to the second corner.
                 </span><span class='kw'>let</span> (<span class='ident'>cx</span>, <span class='ident'>cy</span>) <span class='op'>=</span> (<span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>radius</span>, <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>h</span> <span class='op'>-</span> <span class='ident'>radius</span>);
                 <span class='prelude-val'>Some</span>([<span class='ident'>cx</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>cos</span>() <span class='op'>*</span> <span class='ident'>radius</span>, <span class='ident'>cy</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>sin</span>() <span class='op'>*</span> <span class='ident'>radius</span>])
             },
             <span class='ident'>j</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Compute the angle to match start and end point of quarter circle.
-                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> <span class='ident'>j</span> <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>;<span class='comment'>
+                // Compute the angle to match start and end
+                // point of quarter circle.
+                </span><span class='kw'>let</span> <span class='ident'>angle</span> <span class='op'>=</span> <span class='ident'>j</span> <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>/</span> (<span class='ident'>resolution_corner</span> <span class='op'>-</span> <span class='number'>1</span>) <span class='kw'>as</span> <span class='ident'>f64</span> 
+                    <span class='op'>*</span> <span class='ident'>FRAC_PI_2</span>;<span class='comment'>
                 // Set center of the circle to the first corner.
                 </span><span class='kw'>let</span> (<span class='ident'>cx</span>, <span class='ident'>cy</span>) <span class='op'>=</span> (<span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>w</span> <span class='op'>-</span> <span class='ident'>radius</span>, <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>h</span> <span class='op'>-</span> <span class='ident'>radius</span>);
                 <span class='prelude-val'>Some</span>([<span class='ident'>cx</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>cos</span>() <span class='op'>*</span> <span class='ident'>radius</span>, <span class='ident'>cy</span> <span class='op'>+</span> <span class='ident'>angle</span>.<span class='ident'>sin</span>() <span class='op'>*</span> <span class='ident'>radius</span>])
@@ -704,9 +780,9 @@
     }, <span class='ident'>color</span>, <span class='ident'>f</span>);
 }
 
-<span class='doccomment'>/// Streams a polygon into tri list with color per vertex.
-</span><span class='doccomment'>/// Uses buffers that fit inside L1 cache.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>stream_polygon_tri_list_xy_f32_rgba_f32</span>(
+<span class='doccomment'>/// Streams a polygon into tri list with color per vertex.</span>
+<span class='doccomment'>/// Uses buffers that fit inside L1 cache.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>stream_polygon_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
     <span class='ident'>polygon</span>: <span class='op'>||</span> <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Vec2d</span><span class='op'>&gt;</span>,
     <span class='ident'>color</span>: <span class='ident'>Color</span>,
@@ -723,18 +799,27 @@
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>gx</span> <span class='op'>=</span> <span class='ident'>gx</span>;
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>gy</span> <span class='op'>=</span> <span class='ident'>gy</span>;
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>i</span> <span class='op'>=</span> <span class='number'>0</span>;
+    <span class='kw'>let</span> <span class='ident'>vertices_per_triangle</span> <span class='op'>=</span> <span class='number'>3</span>;
+    <span class='kw'>let</span> <span class='ident'>position_components_per_vertex</span> <span class='op'>=</span> <span class='number'>2</span>;
+    <span class='kw'>let</span> <span class='ident'>color_components_per_vertex</span> <span class='op'>=</span> <span class='number'>4</span>;
+    <span class='kw'>let</span> <span class='ident'>align_vertices</span> <span class='op'>=</span> 
+        <span class='ident'>vertices_per_triangle</span> 
+        <span class='op'>*</span> <span class='ident'>position_components_per_vertex</span>;
+    <span class='kw'>let</span> <span class='ident'>align_colors</span> <span class='op'>=</span> 
+        <span class='ident'>vertices_per_triangle</span>
+        <span class='op'>*</span> <span class='ident'>color_components_per_vertex</span>;
     <span class='lifetime'>&#39;read_vertices</span>: <span class='kw'>loop</span> {
-        <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>*</span> <span class='number'>3</span>;
+        <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_vertices</span>;
         <span class='ident'>vertices</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>0</span>] <span class='op'>=</span> <span class='ident'>fx</span>;
         <span class='ident'>vertices</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>1</span>] <span class='op'>=</span> <span class='ident'>fy</span>;
-        <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>4</span> <span class='op'>*</span> <span class='number'>3</span>;
+        <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_colors</span>;
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>0</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>0</span>];
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>1</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>1</span>];
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>2</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>2</span>];
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>3</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>3</span>];<span class='comment'>
 
         // Copy vertex.
-        </span><span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>*</span> <span class='number'>3</span> <span class='op'>+</span> <span class='number'>2</span>;
+        </span><span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_vertices</span> <span class='op'>+</span> <span class='number'>2</span>;
         <span class='kw'>let</span> <span class='ident'>p</span> <span class='op'>=</span>
             <span class='kw'>match</span> <span class='ident'>polygon</span>() {
                 <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='kw'>break</span> <span class='lifetime'>&#39;read_vertices</span>,
@@ -749,7 +834,7 @@
         <span class='ident'>vertices</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>3</span>] <span class='op'>=</span> <span class='ident'>y</span>;
         <span class='ident'>gx</span> <span class='op'>=</span> <span class='ident'>x</span>;
         <span class='ident'>gy</span> <span class='op'>=</span> <span class='ident'>y</span>;
-        <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>4</span> <span class='op'>*</span> <span class='number'>3</span> <span class='op'>+</span> <span class='number'>4</span>;
+        <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_colors</span> <span class='op'>+</span> <span class='number'>4</span>;
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>0</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>0</span>];
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>1</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>1</span>];
         <span class='ident'>colors</span>[<span class='ident'>ind_out</span> <span class='op'>+</span> <span class='number'>2</span>] <span class='op'>=</span> <span class='ident'>color</span>[<span class='number'>2</span>];
@@ -761,25 +846,26 @@
 
         <span class='ident'>i</span> <span class='op'>+=</span> <span class='number'>1</span>;<span class='comment'>
         // Buffer is full.
-        </span><span class='kw'>if</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>*</span> <span class='number'>3</span> <span class='op'>+</span> <span class='number'>2</span> <span class='op'>&gt;=</span> <span class='ident'>vertices</span>.<span class='ident'>len</span>() {<span class='comment'>
+        </span><span class='kw'>if</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_vertices</span> <span class='op'>+</span> <span class='number'>2</span> <span class='op'>&gt;=</span> <span class='ident'>vertices</span>.<span class='ident'>len</span>() {<span class='comment'>
             // Send chunk and start over.
-            </span><span class='ident'>f</span>(<span class='ident'>vertices</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>*</span> <span class='number'>3</span>),
-                <span class='ident'>colors</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>4</span> <span class='op'>*</span> <span class='number'>3</span>));
+            </span><span class='ident'>f</span>(<span class='ident'>vertices</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_vertices</span>),
+                <span class='ident'>colors</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_colors</span>));
             <span class='ident'>i</span> <span class='op'>=</span> <span class='number'>0</span>;
         }
     }
 
     <span class='kw'>if</span> <span class='ident'>i</span> <span class='op'>&gt;</span> <span class='number'>0</span> {
-        <span class='ident'>f</span>(<span class='ident'>vertices</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>2</span> <span class='op'>*</span> <span class='number'>3</span>),
-            <span class='ident'>colors</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='number'>4</span> <span class='op'>*</span> <span class='number'>3</span>));
+        <span class='ident'>f</span>(<span class='ident'>vertices</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_vertices</span>),
+            <span class='ident'>colors</span>.<span class='ident'>slice</span>(<span class='number'>0</span>, <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_colors</span>));
     }
 }
 
-<span class='doccomment'>/// Streams a quad into tri list with color per vertex.
-</span><span class='doccomment'>///
-</span><span class='doccomment'>/// Uses buffers that fit inside L1 cache.
-</span><span class='doccomment'>/// The &#39;quad_edge&#39; stream returns two points defining the next edge.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>stream_quad_tri_list_xy_f32_rgba_f32</span>(
+<span class='doccomment'>/// Streams a quad into tri list with color per vertex.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// Uses buffers that fit inside L1 cache.</span>
+<span class='doccomment'>/// The &#39;quad_edge&#39; stream returns two points</span>
+<span class='doccomment'>/// defining the next edge.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>stream_quad_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
     <span class='ident'>quad_edge</span>: <span class='op'>||</span> <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span>(<span class='ident'>Vec2d</span>, <span class='ident'>Vec2d</span>)<span class='op'>&gt;</span>,
     <span class='ident'>color</span>: <span class='ident'>Color</span>,
@@ -794,8 +880,14 @@
             <span class='prelude-val'>Some</span>((<span class='ident'>val1</span>, <span class='ident'>val2</span>)) <span class='op'>=&gt;</span> (<span class='ident'>val1</span>, <span class='ident'>val2</span>) 
         };<span class='comment'>
     // Transform the points using the matrix.
-    </span><span class='kw'>let</span> (<span class='kw-2'>mut</span> <span class='ident'>fx1</span>, <span class='kw-2'>mut</span> <span class='ident'>fy1</span>) <span class='op'>=</span> (<span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>fp1</span>[<span class='number'>0</span>], <span class='ident'>fp1</span>[<span class='number'>1</span>]), <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>fp1</span>[<span class='number'>0</span>], <span class='ident'>fp1</span>[<span class='number'>1</span>]));
-    <span class='kw'>let</span> (<span class='kw-2'>mut</span> <span class='ident'>fx2</span>, <span class='kw-2'>mut</span> <span class='ident'>fy2</span>) <span class='op'>=</span> (<span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>fp2</span>[<span class='number'>0</span>], <span class='ident'>fp2</span>[<span class='number'>1</span>]), <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>fp2</span>[<span class='number'>0</span>], <span class='ident'>fp2</span>[<span class='number'>1</span>]));<span class='comment'>
+    </span><span class='kw'>let</span> (<span class='kw-2'>mut</span> <span class='ident'>fx1</span>, <span class='kw-2'>mut</span> <span class='ident'>fy1</span>) <span class='op'>=</span> (
+        <span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>fp1</span>[<span class='number'>0</span>], <span class='ident'>fp1</span>[<span class='number'>1</span>]), 
+        <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>fp1</span>[<span class='number'>0</span>], <span class='ident'>fp1</span>[<span class='number'>1</span>])
+    );
+    <span class='kw'>let</span> (<span class='kw-2'>mut</span> <span class='ident'>fx2</span>, <span class='kw-2'>mut</span> <span class='ident'>fy2</span>) <span class='op'>=</span> (
+        <span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>fp2</span>[<span class='number'>0</span>], <span class='ident'>fp2</span>[<span class='number'>1</span>]), 
+        <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>fp2</span>[<span class='number'>0</span>], <span class='ident'>fp2</span>[<span class='number'>1</span>])
+    );<span class='comment'>
     // Counts the quads.
     </span><span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>i</span> <span class='op'>=</span> <span class='number'>0</span>;
     <span class='kw'>let</span> <span class='ident'>triangles_per_quad</span> <span class='op'>=</span> <span class='number'>2</span>;
@@ -817,8 +909,14 @@
             <span class='prelude-val'>Some</span>((<span class='ident'>val1</span>, <span class='ident'>val2</span>)) <span class='op'>=&gt;</span> (<span class='ident'>val1</span>, <span class='ident'>val2</span>)
         };<span class='comment'>
         // Transform the points using the matrix.
-        </span><span class='kw'>let</span> (<span class='ident'>gx1</span>, <span class='ident'>gy1</span>) <span class='op'>=</span> (<span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>gp1</span>[<span class='number'>0</span>], <span class='ident'>gp1</span>[<span class='number'>1</span>]), <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>gp1</span>[<span class='number'>0</span>], <span class='ident'>gp1</span>[<span class='number'>1</span>]));
-        <span class='kw'>let</span> (<span class='ident'>gx2</span>, <span class='ident'>gy2</span>) <span class='op'>=</span> (<span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>gp2</span>[<span class='number'>0</span>], <span class='ident'>gp2</span>[<span class='number'>1</span>]), <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>gp2</span>[<span class='number'>0</span>], <span class='ident'>gp2</span>[<span class='number'>1</span>]));
+        </span><span class='kw'>let</span> (<span class='ident'>gx1</span>, <span class='ident'>gy1</span>) <span class='op'>=</span> (
+            <span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>gp1</span>[<span class='number'>0</span>], <span class='ident'>gp1</span>[<span class='number'>1</span>]), 
+            <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>gp1</span>[<span class='number'>0</span>], <span class='ident'>gp1</span>[<span class='number'>1</span>])
+        );
+        <span class='kw'>let</span> (<span class='ident'>gx2</span>, <span class='ident'>gy2</span>) <span class='op'>=</span> (
+            <span class='ident'>tx</span>(<span class='ident'>m</span>, <span class='ident'>gp2</span>[<span class='number'>0</span>], <span class='ident'>gp2</span>[<span class='number'>1</span>]), 
+            <span class='ident'>ty</span>(<span class='ident'>m</span>, <span class='ident'>gp2</span>[<span class='number'>0</span>], <span class='ident'>gp2</span>[<span class='number'>1</span>])
+        );
         <span class='kw'>let</span> <span class='ident'>ind_out</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='op'>*</span> <span class='ident'>align_vertices</span>;<span class='comment'>
 
         // First triangle.
@@ -891,9 +989,9 @@
     }
 }
 
-<span class='doccomment'>/// Splits polygon into convex segments with one color per vertex.
-</span><span class='doccomment'>/// Create a buffer that fits into L1 cache with 1KB overhead.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_polygon_tri_list_xy_f32_rgba_f32</span>(
+<span class='doccomment'>/// Splits polygon into convex segments with one color per vertex.</span>
+<span class='doccomment'>/// Create a buffer that fits into L1 cache with 1KB overhead.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>with_polygon_tri_list_xy_f32_rgba_f32</span>(
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
     <span class='ident'>polygon</span>: <span class='ident'>Polygon</span>,
     <span class='ident'>color</span>: <span class='ident'>Color</span>,
@@ -911,48 +1009,64 @@
         }, <span class='ident'>color</span>, <span class='ident'>f</span>);
 }
 
-<span class='doccomment'>/// Creates triangle list vertices from rectangle.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Creates triangle list vertices from rectangle.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rect_tri_list_xy_f32</span>(
     <span class='ident'>m</span>: <span class='ident'>Matrix2d</span>,
     <span class='ident'>rect</span>: <span class='ident'>Rectangle</span>
 ) <span class='op'>-&gt;</span> [<span class='ident'>f32</span>, ..<span class='number'>12</span>] {
     <span class='kw'>let</span> (<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>w</span>, <span class='ident'>h</span>) <span class='op'>=</span> (<span class='ident'>rect</span>[<span class='number'>0</span>], <span class='ident'>rect</span>[<span class='number'>1</span>], <span class='ident'>rect</span>[<span class='number'>2</span>], <span class='ident'>rect</span>[<span class='number'>3</span>]);
     <span class='kw'>let</span> (<span class='ident'>x2</span>, <span class='ident'>y2</span>) <span class='op'>=</span> (<span class='ident'>x</span> <span class='op'>+</span> <span class='ident'>w</span>, <span class='ident'>y</span> <span class='op'>+</span> <span class='ident'>h</span>);
-    [<span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y</span>), <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>),
-     <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y2</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y2</span>), <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>)]
+    [
+        <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y</span>), 
+        <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), 
+        <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>),
+        <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y</span>), 
+        <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y2</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x2</span>,<span class='ident'>y2</span>), 
+        <span class='ident'>tx</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>), <span class='ident'>ty</span>(<span class='ident'>m</span>,<span class='ident'>x</span>,<span class='ident'>y2</span>)
+    ]
 }
 
-<span class='doccomment'>/// Creates triangle list colors from rectangle.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='doccomment'>/// Creates triangle list colors from rectangle.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rect_tri_list_rgba_f32</span>(
     <span class='ident'>color</span>: <span class='ident'>Color</span>
 ) <span class='op'>-&gt;</span> [<span class='ident'>f32</span>, ..<span class='number'>48</span>] {
     <span class='kw'>let</span> (<span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>) <span class='op'>=</span> (<span class='ident'>color</span>[<span class='number'>0</span>], <span class='ident'>color</span>[<span class='number'>1</span>], <span class='ident'>color</span>[<span class='number'>2</span>], <span class='ident'>color</span>[<span class='number'>3</span>]);
-    [<span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 0
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 1
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 2
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 3
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 4
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 5
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 6
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 7
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 8
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 9
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 10
-     </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>]
+    [
+        <span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 0
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 1
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 2
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 3
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 4
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 5
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 6
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 7
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 8
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 9
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>,<span class='comment'> // 10
+        </span><span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>
+    ]
 }
 
-<span class='doccomment'>/// Creates triangle list texture coords from image.
-</span><span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rect_tri_list_uv_f32</span><span class='op'>&lt;</span><span class='ident'>I</span>: <span class='ident'>Image</span><span class='op'>&gt;</span>(<span class='ident'>image</span>: <span class='kw-2'>&amp;</span><span class='ident'>I</span>, <span class='ident'>source_rect</span>: <span class='ident'>SourceRectangle</span>) <span class='op'>-&gt;</span> [<span class='ident'>f32</span>, ..<span class='number'>12</span>] {
+<span class='doccomment'>/// Creates triangle list texture coords from image.</span>
+<span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>rect_tri_list_uv_f32</span><span class='op'>&lt;</span><span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span>(
+    <span class='ident'>image</span>: <span class='kw-2'>&amp;</span><span class='ident'>I</span>, <span class='ident'>source_rect</span>: <span class='ident'>SourceRectangle</span>
+) <span class='op'>-&gt;</span> [<span class='ident'>f32</span>, ..<span class='number'>12</span>] {
     <span class='kw'>let</span> (<span class='ident'>w</span>, <span class='ident'>h</span>) <span class='op'>=</span> <span class='ident'>image</span>.<span class='ident'>get_size</span>();
-    <span class='kw'>let</span> <span class='ident'>x1</span> <span class='op'>=</span> <span class='ident'>source_rect</span>[<span class='number'>0</span>] <span class='kw'>as</span> <span class='ident'>f32</span> <span class='op'>/</span> <span class='ident'>w</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
-    <span class='kw'>let</span> <span class='ident'>y1</span> <span class='op'>=</span> <span class='ident'>source_rect</span>[<span class='number'>1</span>] <span class='kw'>as</span> <span class='ident'>f32</span> <span class='op'>/</span> <span class='ident'>h</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
-    <span class='kw'>let</span> <span class='ident'>x2</span> <span class='op'>=</span> (<span class='ident'>source_rect</span>[<span class='number'>0</span>] <span class='op'>+</span> <span class='ident'>source_rect</span>[<span class='number'>2</span>]) <span class='kw'>as</span> <span class='ident'>f32</span> <span class='op'>/</span> <span class='ident'>w</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
-    <span class='kw'>let</span> <span class='ident'>y2</span> <span class='op'>=</span> (<span class='ident'>source_rect</span>[<span class='number'>1</span>] <span class='op'>+</span> <span class='ident'>source_rect</span>[<span class='number'>3</span>]) <span class='kw'>as</span> <span class='ident'>f32</span> <span class='op'>/</span> <span class='ident'>h</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
-    [<span class='ident'>x1</span>, <span class='ident'>y1</span>, <span class='ident'>x2</span>, <span class='ident'>y1</span>, <span class='ident'>x1</span>, <span class='ident'>y2</span>,
-     <span class='ident'>x2</span>, <span class='ident'>y1</span>, <span class='ident'>x2</span>, <span class='ident'>y2</span>, <span class='ident'>x1</span>, <span class='ident'>y2</span>]
+    <span class='kw'>let</span> <span class='ident'>x1</span> <span class='op'>=</span> <span class='ident'>source_rect</span>[<span class='number'>0</span>] <span class='kw'>as</span> <span class='ident'>f32</span> 
+        <span class='op'>/</span> <span class='ident'>w</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
+    <span class='kw'>let</span> <span class='ident'>y1</span> <span class='op'>=</span> <span class='ident'>source_rect</span>[<span class='number'>1</span>] <span class='kw'>as</span> <span class='ident'>f32</span> 
+        <span class='op'>/</span> <span class='ident'>h</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
+    <span class='kw'>let</span> <span class='ident'>x2</span> <span class='op'>=</span> (<span class='ident'>source_rect</span>[<span class='number'>0</span>] <span class='op'>+</span> <span class='ident'>source_rect</span>[<span class='number'>2</span>]) <span class='kw'>as</span> <span class='ident'>f32</span> 
+        <span class='op'>/</span> <span class='ident'>w</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
+    <span class='kw'>let</span> <span class='ident'>y2</span> <span class='op'>=</span> (<span class='ident'>source_rect</span>[<span class='number'>1</span>] <span class='op'>+</span> <span class='ident'>source_rect</span>[<span class='number'>3</span>]) <span class='kw'>as</span> <span class='ident'>f32</span> 
+        <span class='op'>/</span> <span class='ident'>h</span> <span class='kw'>as</span> <span class='ident'>f32</span>;
+    [
+        <span class='ident'>x1</span>, <span class='ident'>y1</span>, <span class='ident'>x2</span>, <span class='ident'>y1</span>, <span class='ident'>x1</span>, <span class='ident'>y2</span>,
+        <span class='ident'>x2</span>, <span class='ident'>y1</span>, <span class='ident'>x2</span>, <span class='ident'>y2</span>, <span class='ident'>x1</span>, <span class='ident'>y2</span>
+    ]
 }
 </pre>
 </section>
@@ -968,9 +1082,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

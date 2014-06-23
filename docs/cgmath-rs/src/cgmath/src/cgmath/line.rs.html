@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -166,8 +166,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-</span><span class='doccomment'>//! Line segments
-</span>
+</span><span class='doccomment'>//! Line segments</span>
+
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::{<span class='ident'>Zero</span>, <span class='ident'>zero</span>, <span class='ident'>One</span>, <span class='ident'>one</span>};
 
 <span class='kw'>use</span> <span class='ident'>num</span>::{<span class='ident'>BaseFloat</span>, <span class='ident'>BaseNum</span>};
@@ -175,8 +175,8 @@
 <span class='kw'>use</span> <span class='ident'>vector</span>::{<span class='ident'>Vector</span>, <span class='ident'>Vector2</span>};
 <span class='kw'>use</span> <span class='ident'>intersect</span>::<span class='ident'>Intersect</span>;
 
-<span class='doccomment'>/// A generic directed line segment from `origin` to `dest`.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>)]</span>
+<span class='doccomment'>/// A generic directed line segment from `origin` to `dest`.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Line</span><span class='op'>&lt;</span><span class='ident'>P</span><span class='op'>&gt;</span> {
     <span class='kw'>pub</span> <span class='ident'>origin</span>: <span class='ident'>P</span>,
     <span class='kw'>pub</span> <span class='ident'>dest</span>: <span class='ident'>P</span>,
@@ -191,10 +191,10 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Line2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Line</span><span class='op'>&lt;</span><span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;&gt;</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Line3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Line</span><span class='op'>&lt;</span><span class='ident'>Point3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;&gt;</span>;
 
-<span class='doccomment'>/// Determines if an intersection between two line segments is found. If the segments are
-</span><span class='doccomment'>/// collinear and overlapping, the intersection point that will be returned will be the first
-</span><span class='doccomment'>/// intersection point found by traversing the first line segment, starting at its origin.
-</span><span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>BaseFloat</span><span class='op'>&gt;</span> <span class='ident'>Intersect</span><span class='op'>&lt;</span><span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span> <span class='kw'>for</span> (<span class='ident'>Line2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>, <span class='ident'>Line2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>) {
+<span class='doccomment'>/// Determines if an intersection between two line segments is found. If the segments are</span>
+<span class='doccomment'>/// collinear and overlapping, the intersection point that will be returned will be the first</span>
+<span class='doccomment'>/// intersection point found by traversing the first line segment, starting at its origin.</span>
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>BaseFloat</span><span class='op'>&gt;</span> <span class='ident'>Intersect</span><span class='op'>&lt;</span><span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span> <span class='kw'>for</span> (<span class='ident'>Line2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>, <span class='ident'>Line2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>) {
     <span class='kw'>fn</span> <span class='ident'>intersection</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;&gt;</span> {
         <span class='kw'>match</span> <span class='op'>*</span><span class='self'>self</span> {
             (<span class='kw-2'>ref</span> <span class='ident'>l1</span>, <span class='kw-2'>ref</span> <span class='ident'>l2</span>) <span class='op'>=&gt;</span> {
@@ -278,9 +278,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

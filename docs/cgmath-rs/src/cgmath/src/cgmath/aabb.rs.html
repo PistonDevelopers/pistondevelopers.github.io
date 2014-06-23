@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -227,13 +227,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-</span><span class='doccomment'>//! Axis-aligned bounding boxes
-</span><span class='doccomment'>//!
-</span><span class='doccomment'>//! An AABB is a geometric object which encompasses a set of points and is not
-</span><span class='doccomment'>//! rotated. It is either a rectangle or a rectangular prism (depending on the
-</span><span class='doccomment'>//! dimension) where the slope of every line is either 0 or undefined. These
-</span><span class='doccomment'>//! are useful for very cheap collision detection.
-</span>
+</span><span class='doccomment'>//! Axis-aligned bounding boxes</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! An AABB is a geometric object which encompasses a set of points and is not</span>
+<span class='doccomment'>//! rotated. It is either a rectangle or a rectangular prism (depending on the</span>
+<span class='doccomment'>//! dimension) where the slope of every line is either 0 or undefined. These</span>
+<span class='doccomment'>//! are useful for very cheap collision detection.</span>
+
 <span class='kw'>use</span> <span class='ident'>point</span>::{<span class='ident'>Point</span>, <span class='ident'>Point2</span>, <span class='ident'>Point3</span>};
 <span class='kw'>use</span> <span class='ident'>vector</span>::{<span class='ident'>Vector</span>, <span class='ident'>Vector2</span>, <span class='ident'>Vector3</span>};
 <span class='kw'>use</span> <span class='ident'>num</span>::<span class='ident'>BaseNum</span>;
@@ -241,70 +241,70 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::{<span class='ident'>zero</span>, <span class='ident'>one</span>};
 
 <span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Aabb</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>BaseNum</span>, <span class='ident'>V</span>: <span class='ident'>Vector</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>, <span class='ident'>P</span>: <span class='ident'>Point</span><span class='op'>&lt;</span><span class='ident'>S</span>, <span class='ident'>V</span><span class='op'>&gt;&gt;</span> {
-    <span class='doccomment'>/// Create a new AABB using two points as opposing corners.
-</span>    <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>p1</span>: <span class='ident'>P</span>, <span class='ident'>p2</span>: <span class='ident'>P</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span>;
+    <span class='doccomment'>/// Create a new AABB using two points as opposing corners.</span>
+    <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>p1</span>: <span class='ident'>P</span>, <span class='ident'>p2</span>: <span class='ident'>P</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span>;
 
-    <span class='doccomment'>/// Return a shared reference to the point nearest to (-inf, -inf).
-</span>    <span class='kw'>fn</span> <span class='ident'>min</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>P</span>;
+    <span class='doccomment'>/// Return a shared reference to the point nearest to (-inf, -inf).</span>
+    <span class='kw'>fn</span> <span class='ident'>min</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>P</span>;
 
-    <span class='doccomment'>/// Return a shared reference to the point nearest to (inf, inf).
-</span>    <span class='kw'>fn</span> <span class='ident'>max</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>P</span>;
+    <span class='doccomment'>/// Return a shared reference to the point nearest to (inf, inf).</span>
+    <span class='kw'>fn</span> <span class='ident'>max</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>P</span>;
 
-    <span class='doccomment'>/// Return the dimensions of this AABB.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Return the dimensions of this AABB.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>dim</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>V</span> { <span class='self'>self</span>.<span class='ident'>max</span>().<span class='ident'>sub_p</span>(<span class='self'>self</span>.<span class='ident'>min</span>()) }
 
-    <span class='doccomment'>/// Return the volume this AABB encloses.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Return the volume this AABB encloses.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>volume</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>S</span> { <span class='self'>self</span>.<span class='ident'>dim</span>().<span class='ident'>comp_mul</span>() }
 
-    <span class='doccomment'>/// Return the center point of this AABB.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Return the center point of this AABB.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>center</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>P</span> {
         <span class='kw'>let</span> <span class='ident'>two</span> <span class='op'>=</span> <span class='ident'>one</span>::<span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>() <span class='op'>+</span> <span class='ident'>one</span>::<span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>();
         <span class='self'>self</span>.<span class='ident'>min</span>().<span class='ident'>add_v</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>dim</span>().<span class='ident'>div_s</span>(<span class='ident'>two</span>))
     }
 
-    <span class='doccomment'>/// Tests whether a point is cointained in the box, inclusive for min corner
-</span>    <span class='doccomment'>/// and exclusive for the max corner.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Tests whether a point is cointained in the box, inclusive for min corner</span>
+    <span class='doccomment'>/// and exclusive for the max corner.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>contains</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>p</span>: <span class='kw-2'>&amp;</span><span class='ident'>P</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span>;
 
-    <span class='doccomment'>/// Returns a new AABB that is grown to include the given point.
-</span>    <span class='kw'>fn</span> <span class='ident'>grow</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>p</span>: <span class='kw-2'>&amp;</span><span class='ident'>P</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
+    <span class='doccomment'>/// Returns a new AABB that is grown to include the given point.</span>
+    <span class='kw'>fn</span> <span class='ident'>grow</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>p</span>: <span class='kw-2'>&amp;</span><span class='ident'>P</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='kw'>let</span> <span class='ident'>min</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>min</span>().<span class='ident'>min</span>(<span class='ident'>p</span>);
         <span class='kw'>let</span> <span class='ident'>max</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>max</span>().<span class='ident'>max</span>(<span class='ident'>p</span>);
         <span class='ident'>Aabb</span>::<span class='ident'>new</span>(<span class='ident'>min</span>, <span class='ident'>max</span>)
     }
 
-    <span class='doccomment'>/// Add a vector to every point in the AABB, returning a new AABB.
-</span>    <span class='kw'>fn</span> <span class='ident'>add_v</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>v</span>: <span class='kw-2'>&amp;</span><span class='ident'>V</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
+    <span class='doccomment'>/// Add a vector to every point in the AABB, returning a new AABB.</span>
+    <span class='kw'>fn</span> <span class='ident'>add_v</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>v</span>: <span class='kw-2'>&amp;</span><span class='ident'>V</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='ident'>Aabb</span>::<span class='ident'>new</span>(<span class='self'>self</span>.<span class='ident'>min</span>().<span class='ident'>add_v</span>(<span class='ident'>v</span>), <span class='self'>self</span>.<span class='ident'>max</span>().<span class='ident'>add_v</span>(<span class='ident'>v</span>))
     }
 
-    <span class='doccomment'>/// Multiply every point in the AABB by a scalar, returning a new AABB.
-</span>    <span class='kw'>fn</span> <span class='ident'>mul_s</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
+    <span class='doccomment'>/// Multiply every point in the AABB by a scalar, returning a new AABB.</span>
+    <span class='kw'>fn</span> <span class='ident'>mul_s</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='ident'>Aabb</span>::<span class='ident'>new</span>(<span class='self'>self</span>.<span class='ident'>min</span>().<span class='ident'>mul_s</span>(<span class='ident'>s</span>.<span class='ident'>clone</span>()), <span class='self'>self</span>.<span class='ident'>max</span>().<span class='ident'>mul_s</span>(<span class='ident'>s</span>.<span class='ident'>clone</span>()))
     }
 
-    <span class='doccomment'>/// Multiply every point in the AABB by a vector, returning a new AABB.
-</span>    <span class='kw'>fn</span> <span class='ident'>mul_v</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>v</span>: <span class='kw-2'>&amp;</span><span class='ident'>V</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
+    <span class='doccomment'>/// Multiply every point in the AABB by a vector, returning a new AABB.</span>
+    <span class='kw'>fn</span> <span class='ident'>mul_v</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>v</span>: <span class='kw-2'>&amp;</span><span class='ident'>V</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span> {
         <span class='kw'>let</span> <span class='ident'>min</span> : <span class='ident'>P</span> <span class='op'>=</span> <span class='ident'>Point</span>::<span class='ident'>from_vec</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>min</span>().<span class='ident'>to_vec</span>().<span class='ident'>mul_v</span>(<span class='ident'>v</span>));
         <span class='kw'>let</span> <span class='ident'>max</span> : <span class='ident'>P</span> <span class='op'>=</span> <span class='ident'>Point</span>::<span class='ident'>from_vec</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>max</span>().<span class='ident'>to_vec</span>().<span class='ident'>mul_v</span>(<span class='ident'>v</span>));
         <span class='ident'>Aabb</span>::<span class='ident'>new</span>(<span class='ident'>min</span>, <span class='ident'>max</span>)
     }
 }
 
-<span class='doccomment'>/// A two-dimensional AABB, aka a rectangle.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>)]</span>
+<span class='doccomment'>/// A two-dimensional AABB, aka a rectangle.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Aabb2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
     <span class='kw'>pub</span> <span class='ident'>min</span>: <span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>,
     <span class='kw'>pub</span> <span class='ident'>max</span>: <span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>,
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>BaseNum</span><span class='op'>&gt;</span> <span class='ident'>Aabb2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Construct a new axis-aligned bounding box from two points.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Construct a new axis-aligned bounding box from two points.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>p1</span>: <span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>, <span class='ident'>p2</span>: <span class='ident'>Point2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>Aabb2</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
         <span class='ident'>Aabb2</span> {
             <span class='ident'>min</span>: <span class='ident'>Point2</span>::<span class='ident'>new</span>(<span class='ident'>p1</span>.<span class='ident'>x</span>.<span class='ident'>partial_min</span>(<span class='ident'>p2</span>.<span class='ident'>x</span>),
@@ -340,16 +340,16 @@
     }
 }
 
-<span class='doccomment'>/// A three-dimensional AABB, aka a rectangular prism.
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>)]</span>
+<span class='doccomment'>/// A three-dimensional AABB, aka a rectangular prism.</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Clone</span>, <span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Aabb3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
     <span class='kw'>pub</span> <span class='ident'>min</span>: <span class='ident'>Point3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>,
     <span class='kw'>pub</span> <span class='ident'>max</span>: <span class='ident'>Point3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>,
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>S</span>: <span class='ident'>BaseNum</span><span class='op'>&gt;</span> <span class='ident'>Aabb3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Construct a new axis-aligned bounding box from two points.
-</span>    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='doccomment'>/// Construct a new axis-aligned bounding box from two points.</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>p1</span>: <span class='ident'>Point3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>, <span class='ident'>p2</span>: <span class='ident'>Point3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>Aabb3</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span> {
         <span class='ident'>Aabb3</span> {
             <span class='ident'>min</span>: <span class='ident'>Point3</span>::<span class='ident'>new</span>(<span class='ident'>p1</span>.<span class='ident'>x</span>.<span class='ident'>partial_min</span>(<span class='ident'>p2</span>.<span class='ident'>x</span>),
@@ -400,9 +400,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

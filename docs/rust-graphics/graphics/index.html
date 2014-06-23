@@ -31,21 +31,24 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Crate <a class='mod' href=''>graphics</a><a class='source' id='src-0' href='../src/graphics/src/lib.rs.html#1-203'>[src]</a></h1>
+<h1 class='fqn'>Crate <a class='mod' href=''>graphics</a><a class='source' id='src-0' href='../src/graphics/src/lib.rs.html#1-289'>[src]</a></h1>
 <div class='docblock'><p>A library for 2D graphics that works with multiple back-ends.</p>
 
 <p>To implement your own back-end, use the BackEnd trait.</p>
 
 <h2 id="usage" class='section-header'><a
                            href="#usage">Usage</a></h2>
-<p>If you are using <a href="https://github.com/bvssvni/rust-empty">Rust-Empty</a> or Cargo, put the compiled library in the &quot;target/cpu-vendor-platform/lib/&quot; directory, then add the following to your source:</p>
+<p>If you are using <a href="https://github.com/bvssvni/rust-empty">Rust-Empty</a> 
+or Cargo, put the compiled library in 
+the &quot;target/cpu-vendor-platform/lib/&quot; directory, 
+then add the following to your source:</p>
 
 <pre><code class="language-Rust">#![feature(globs)] // Allow global imports
 
@@ -56,7 +59,8 @@ use graphics::*; // Use the graphics types in the module</code></pre>
 <p>To draw to the back-end, you need a context.
 The context contains the information necessary to perform the drawing.
 Unlike other graphics libraries, this library is not bound to the back-end.
-You do not have to specify which back-end to use before doing the actual drawing.</p>
+You do not have to specify which back-end to use 
+before doing the actual drawing.</p>
 
 <p>For example, assuming we have a back-end called <code>back_end</code>:</p>
 <pre class='rust '>
@@ -66,14 +70,17 @@ You do not have to specify which back-end to use before doing the actual drawing
 <h2 id="important!" class='section-header'><a
                            href="#important!">Important!</a></h2>
 <p>Because the context is built using borrowed pointers,
-it is not possible to do two or more steps at a time and assign it to a variable:</p>
+it is not possible to do two or more steps at a time and 
+assign it to a variable:</p>
 <pre class='rust '>
 <span class='comment'>// ERROR: Borrowed value does not live long enough
 </span><span class='kw'>let</span> <span class='ident'>rect</span> <span class='op'>=</span> <span class='ident'>Context</span>::<span class='ident'>new</span>().<span class='ident'>rect</span>(<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>w</span>, <span class='ident'>h</span>);
 </pre>
 
-<p>This is because the lifetime of the first step only lives inside the expression.
-To solve this problem, break the statement into two parts, one for each step:</p>
+<p>This is because the lifetime of the first step only 
+lives inside the expression.
+To solve this problem, break the statement into two parts, 
+one for each step:</p>
 <pre class='rust '>
 <span class='kw'>let</span> <span class='ident'>c</span> <span class='op'>=</span> <span class='ident'>Context</span>::<span class='ident'>new</span>();
 <span class='kw'>let</span> <span class='ident'>rect</span> <span class='op'>=</span> <span class='ident'>c</span>.<span class='ident'>rect</span>(<span class='ident'>x</span>, <span class='ident'>y</span>, <span class='ident'>w</span>, <span class='ident'>h</span>);
@@ -509,9 +516,9 @@ This trait uses default methods to simplify implementation.</p>
                     </tr>
                 
                     <tr>
-                        <td><a class='trait' href='trait.Image.html'
-                               title='graphics::Image'>Image</a></td>
-                        <td class='docblock short'><p>Must be implemented by all images.</p>
+                        <td><a class='trait' href='trait.ImageSize.html'
+                               title='graphics::ImageSize'>ImageSize</a></td>
+                        <td class='docblock short'><p>Must be implemented by all images to be used with graphics back-end.</p>
 </td>
                     </tr>
                 
@@ -532,7 +539,8 @@ This trait uses default methods to simplify implementation.</p>
                     <tr>
                         <td><a class='trait' href='trait.RelativeSourceRectangle.html'
                                title='graphics::RelativeSourceRectangle'>RelativeSourceRectangle</a></td>
-                        <td class='docblock short'><p>Should be implemented by contexts that have source rectangle information.</p>
+                        <td class='docblock short'><p>Should be implemented by contexts that
+have source rectangle information.</p>
 </td>
                     </tr>
                 
@@ -553,7 +561,8 @@ This trait uses default methods to simplify implementation.</p>
                     <tr>
                         <td><a class='trait' href='trait.View.html'
                                title='graphics::View'>View</a></td>
-                        <td class='docblock short'><p>Should be implemented by contexts that draws something relative to view.</p>
+                        <td class='docblock short'><p>Should be implemented by contexts that
+draws something relative to view.</p>
 </td>
                     </tr>
                 </table></section>
@@ -569,9 +578,9 @@ This trait uses default methods to simplify implementation.</p>
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -907,10 +907,10 @@
 	<span class='ident'>End</span>
 }
 
-<span class='doccomment'>/// The representation of a JPEG decoder
-</span><span class='doccomment'>///
-</span><span class='doccomment'>/// Does not support decoding progressive JPEG images
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>JPEGDecoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
+<span class='doccomment'>/// The representation of a JPEG decoder</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// Does not support decoding progressive JPEG images</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>JPEGDecoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
 	<span class='ident'>r</span>: <span class='ident'>R</span>,
 
 	<span class='ident'>qtables</span>: [<span class='ident'>u8</span>, ..<span class='number'>64</span> <span class='op'>*</span> <span class='number'>4</span>],
@@ -942,8 +942,8 @@
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>R</span>: <span class='ident'>Reader</span><span class='op'>&gt;</span><span class='ident'>JPEGDecoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
-	<span class='doccomment'>/// Create a new decoder that decodes from the stream ```r```
-</span>	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>r</span>: <span class='ident'>R</span>) <span class='op'>-&gt;</span> <span class='ident'>JPEGDecoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
+	<span class='doccomment'>/// Create a new decoder that decodes from the stream ```r```</span>
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>r</span>: <span class='ident'>R</span>) <span class='op'>-&gt;</span> <span class='ident'>JPEGDecoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='ident'>h</span>: <span class='ident'>HuffTable</span>  <span class='op'>=</span> <span class='ident'>Default</span>::<span class='ident'>default</span>();
 
 		<span class='ident'>JPEGDecoder</span> {
@@ -1640,9 +1640,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

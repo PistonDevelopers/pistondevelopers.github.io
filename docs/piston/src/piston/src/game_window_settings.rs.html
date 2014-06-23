@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -64,37 +64,31 @@
 <span id='25'>25</span>
 <span id='26'>26</span>
 <span id='27'>27</span>
-<span id='28'>28</span>
-<span id='29'>29</span>
-<span id='30'>30</span>
 </pre><pre class='rust '>
 
-<span class='doccomment'>/// Settings for window behavior.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameWindowSettings</span> {
-    <span class='doccomment'>/// Title of the window.
-</span>    <span class='kw'>pub</span> <span class='ident'>title</span>: <span class='ident'>String</span>,
-    <span class='doccomment'>/// The size of the window
-</span>    <span class='kw'>pub</span> <span class='ident'>size</span>: [<span class='ident'>u32</span>, ..<span class='number'>2</span>],
-    <span class='doccomment'>/// If true, the window is fullscreen.
-</span>    <span class='kw'>pub</span> <span class='ident'>fullscreen</span>: <span class='ident'>bool</span>,
-    <span class='doccomment'>/// If true, exit when pressing Esc.
-</span>    <span class='kw'>pub</span> <span class='ident'>exit_on_esc</span>: <span class='ident'>bool</span>,
-    <span class='doccomment'>/// The background color.
-</span>    <span class='kw'>pub</span> <span class='ident'>background_color</span>: [<span class='ident'>f32</span>, ..<span class='number'>4</span>],
+<span class='doccomment'>/// Settings for window behavior.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameWindowSettings</span> {
+    <span class='doccomment'>/// Title of the window.</span>
+    <span class='kw'>pub</span> <span class='ident'>title</span>: <span class='ident'>String</span>,
+    <span class='doccomment'>/// The size of the window</span>
+    <span class='kw'>pub</span> <span class='ident'>size</span>: [<span class='ident'>u32</span>, ..<span class='number'>2</span>],
+    <span class='doccomment'>/// If true, the window is fullscreen.</span>
+    <span class='kw'>pub</span> <span class='ident'>fullscreen</span>: <span class='ident'>bool</span>,
+    <span class='doccomment'>/// If true, exit when pressing Esc.</span>
+    <span class='kw'>pub</span> <span class='ident'>exit_on_esc</span>: <span class='ident'>bool</span>,
 }
 
 <span class='kw'>impl</span> <span class='ident'>GameWindowSettings</span> {
-    <span class='doccomment'>/// Gets default settings.
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// This exits the window when pressing `Esc`.
-</span>    <span class='doccomment'>/// The background color is set to black.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>default</span>() <span class='op'>-&gt;</span> <span class='ident'>GameWindowSettings</span> {
+    <span class='doccomment'>/// Gets default settings.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// This exits the window when pressing `Esc`.</span>
+    <span class='doccomment'>/// The background color is set to black.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>default</span>() <span class='op'>-&gt;</span> <span class='ident'>GameWindowSettings</span> {
         <span class='ident'>GameWindowSettings</span> {
             <span class='ident'>title</span>: <span class='string'>&quot;Piston&quot;</span>.<span class='ident'>to_string</span>(),
             <span class='ident'>size</span>: [<span class='number'>640</span>, <span class='number'>480</span>],
             <span class='ident'>fullscreen</span>: <span class='boolval'>false</span>,
             <span class='ident'>exit_on_esc</span>: <span class='boolval'>true</span>,
-            <span class='ident'>background_color</span>: [<span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>1.0</span>],
         }
     }
 }
@@ -112,9 +106,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

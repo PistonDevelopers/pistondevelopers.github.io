@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -62,33 +62,31 @@
 <span id='23'>23</span>
 <span id='24'>24</span>
 <span id='25'>25</span>
-<span id='26'>26</span>
 </pre><pre class='rust '>
-<span class='doccomment'>//! A trait for window operations.
-</span>
+<span class='doccomment'>//! A trait for window operations.</span>
+
 <span class='kw'>use</span> <span class='ident'>event</span>;
 <span class='kw'>use</span> <span class='ident'>game_window_settings</span>::<span class='ident'>GameWindowSettings</span>;
 
-<span class='doccomment'>/// Implemented by window back-end.
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>GameWindow</span> {
-    <span class='doccomment'>/// Creates a window.
-</span>    <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>settings</span>: <span class='ident'>GameWindowSettings</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span>;
-    <span class='doccomment'>/// Get the window&#39;s settings.
-</span>    <span class='kw'>fn</span> <span class='ident'>get_settings</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>GameWindowSettings</span>;
+<span class='doccomment'>/// Implemented by window back-end.</span>
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>GameWindow</span> {
+    <span class='doccomment'>/// Get the window&#39;s settings.</span>
+    <span class='kw'>fn</span> <span class='ident'>get_settings</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>GameWindowSettings</span>;
 
-    <span class='doccomment'>/// Returns ture if the window should close.
-</span>    <span class='kw'>fn</span> <span class='ident'>should_close</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span>;
+    <span class='doccomment'>/// Returns ture if the window should close.</span>
+    <span class='kw'>fn</span> <span class='ident'>should_close</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span>;
 
-    <span class='doccomment'>/// Get the window&#39;s size
-</span>    <span class='kw'>fn</span> <span class='ident'>get_size</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> (<span class='ident'>u32</span>, <span class='ident'>u32</span>) {
+    <span class='doccomment'>/// Get the window&#39;s size</span>
+    <span class='kw'>fn</span> <span class='ident'>get_size</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> (<span class='ident'>u32</span>, <span class='ident'>u32</span>) {
         (<span class='self'>self</span>.<span class='ident'>get_settings</span>().<span class='ident'>size</span>[<span class='number'>0</span>], <span class='self'>self</span>.<span class='ident'>get_settings</span>().<span class='ident'>size</span>[<span class='number'>1</span>])
     }
 
-    <span class='doccomment'>/// If window support double buffers, called this to tell implementation
-</span>    <span class='doccomment'>/// swap buffers.
-</span>    <span class='kw'>fn</span> <span class='ident'>swap_buffers</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) {}
-    <span class='doccomment'>/// Poll a event from window&#39;s event queue.
-</span>    <span class='kw'>fn</span> <span class='ident'>poll_event</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>event</span>::<span class='ident'>Event</span> { <span class='ident'>event</span>::<span class='ident'>NoEvent</span> }
+    <span class='doccomment'>/// If window support double buffers, called this to tell implementation</span>
+    <span class='doccomment'>/// swap buffers.</span>
+    <span class='kw'>fn</span> <span class='ident'>swap_buffers</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) {}
+    
+    <span class='doccomment'>/// Poll a event from window&#39;s event queue.</span>
+    <span class='kw'>fn</span> <span class='ident'>poll_event</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>event</span>::<span class='ident'>Event</span> { <span class='ident'>event</span>::<span class='ident'>NoEvent</span> }
 }
 </pre>
 </section>
@@ -104,9 +102,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

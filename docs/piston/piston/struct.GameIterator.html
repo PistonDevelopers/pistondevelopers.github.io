@@ -23,7 +23,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a><a class='mod ' href='shader_utils/index.html'>shader_utils</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.AudioSDL2.html'>AudioSDL2</a><a class='struct current' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowGLFW.html'>GameWindowGLFW</a><a class='struct ' href='struct.GameWindowSDL2.html'>GameWindowSDL2</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.Gl.html'>Gl</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.MusicSDL2.html'>MusicSDL2</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.SoundSDL2.html'>SoundSDL2</a><a class='struct ' href='struct.Texture.html'>Texture</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.AudioBackEnd.html'>AudioBackEnd</a><a class='trait ' href='trait.Game.html'>Game</a><a class='trait ' href='trait.Music.html'>Music</a><a class='trait ' href='trait.Sound.html'>Sound</a></div>
+        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct current' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Game.html'>Game</a></div>
     </section>
 
     <nav class="sub">
@@ -31,17 +31,38 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>piston</a>::<a class='struct' href=''>GameIterator</a><a class='source' id='src-20073' href='../src/piston/src/game_iterator.rs.html#129-142'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>piston</a>::<a class='struct' href=''>GameIterator</a><a class='source' id='src-19762' href='../src/piston/src/game_iterator.rs.html#145-156'>[src]</a></h1>
 <pre class='rust struct'>pub struct GameIterator&lt;'a, W&gt; {
     // some fields omitted
 }</pre><div class='docblock'><p>A game loop iterator.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-Rust">let game_iter_settings = GameIteratorSettings {
+    updates_per_second: 120,
+    max_frames_per_second: 60,
+};
+let mut game_iter = GameIterator::new(&amp;mut window, &amp;game_iter_settings);
+loop {
+    match game_iter.next() {
+        None =&gt; break,
+        Some(mut e) =&gt; match e {
+            Render(ref mut args) =&gt; {
+                // Create graphics context with absolute coordinates.
+                let c = Context::abs(args.width as f64, args.height as f64);
+                // Do rendering here.
+            },
+            _ =&gt; {},       
+        },
+    }
+}</code></pre>
 </div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a, W: <a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>&gt; <a class='struct' href='../piston/struct.GameIterator.html' title='piston::GameIterator'>GameIterator</a>&lt;'a, W&gt;</code></h3><div class='methods'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(game_window: &amp;'a mut W, settings: &amp;<a class='struct' href='../piston/struct.GameIteratorSettings.html' title='piston::GameIteratorSettings'>GameIteratorSettings</a>) -&gt; <a class='struct' href='../piston/struct.GameIterator.html' title='piston::GameIterator'>GameIterator</a>&lt;'a, W&gt;</code></h4>
 <div class='docblock'><p>Creates a new game iterator.</p>
 </div><h4 id='method.next' class='method'><code>fn <a href='#method.next' class='fnname'>next</a>&lt;'a&gt;(&amp;'a mut self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>&lt;'a&gt;&gt;</code></h4>
@@ -59,9 +80,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

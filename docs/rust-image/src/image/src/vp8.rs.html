@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -1861,20 +1861,20 @@
 <span id='1822'>1822</span>
 <span id='1823'>1823</span>
 </pre><pre class='rust '>
-<span class='doccomment'>//!     An implementation of the VP8 Video Codec
-</span><span class='doccomment'>//!
-</span><span class='doccomment'>//!     This module contains a partial implementation of the
-</span><span class='doccomment'>//!     VP8 video format as defined in RFC-6386.
-</span><span class='doccomment'>//!
-</span><span class='doccomment'>//!     It decodes Keyframes only sans Loop Filtering.
-</span><span class='doccomment'>//!     VP8 is the underpinning of the Webp image format
-</span><span class='doccomment'>//!
-</span><span class='doccomment'>//!     # Related Links
-</span><span class='doccomment'>//!     * [rfc-6386](http://tools.ietf.org/html/rfc6386) - The VP8 Data Format and Decoding Guide
-</span><span class='doccomment'>//!     * [VP8.pdf](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37073.pdf) - An overview of
-</span><span class='doccomment'>//!     of the VP8 format
-</span><span class='doccomment'>//!
-</span>
+<span class='doccomment'>//!     An implementation of the VP8 Video Codec</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//!     This module contains a partial implementation of the</span>
+<span class='doccomment'>//!     VP8 video format as defined in RFC-6386.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//!     It decodes Keyframes only sans Loop Filtering.</span>
+<span class='doccomment'>//!     VP8 is the underpinning of the Webp image format</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//!     # Related Links</span>
+<span class='doccomment'>//!     * [rfc-6386](http://tools.ietf.org/html/rfc6386) - The VP8 Data Format and Decoding Guide</span>
+<span class='doccomment'>//!     * [VP8.pdf](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37073.pdf) - An overview of</span>
+<span class='doccomment'>//!     of the VP8 format</span>
+<span class='doccomment'>//!</span>
+
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>IoResult</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>default</span>::<span class='ident'>Default</span>;
 
@@ -2606,30 +2606,30 @@
         }
 }
 
-<span class='doccomment'>///A Representation of the last decoded video frame
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
+<span class='doccomment'>///A Representation of the last decoded video frame</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>Show</span>, <span class='ident'>Clone</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Frame</span> {
-        <span class='doccomment'>///The width of the luma plane
-</span>        <span class='kw'>pub</span> <span class='ident'>width</span>: <span class='ident'>u16</span>,
+        <span class='doccomment'>///The width of the luma plane</span>
+        <span class='kw'>pub</span> <span class='ident'>width</span>: <span class='ident'>u16</span>,
 
-        <span class='doccomment'>///The height of the luma plane
-</span>        <span class='kw'>pub</span> <span class='ident'>height</span>: <span class='ident'>u16</span>,
+        <span class='doccomment'>///The height of the luma plane</span>
+        <span class='kw'>pub</span> <span class='ident'>height</span>: <span class='ident'>u16</span>,
 
-        <span class='doccomment'>///The luma plane of the frame
-</span>        <span class='kw'>pub</span> <span class='ident'>ybuf</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span>,
+        <span class='doccomment'>///The luma plane of the frame</span>
+        <span class='kw'>pub</span> <span class='ident'>ybuf</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span>,
 
-        <span class='doccomment'>///Indicates whether this frame is a keyframe
-</span>	<span class='kw'>pub</span> <span class='ident'>keyframe</span>: <span class='ident'>bool</span>,
+        <span class='doccomment'>///Indicates whether this frame is a keyframe</span>
+	<span class='kw'>pub</span> <span class='ident'>keyframe</span>: <span class='ident'>bool</span>,
 
         <span class='ident'>version</span>: <span class='ident'>u8</span>,
 
-        <span class='doccomment'>///Indicates whether this frame is intended for display
-</span>	<span class='kw'>pub</span> <span class='ident'>for_display</span>: <span class='ident'>bool</span>,<span class='comment'>
+        <span class='doccomment'>///Indicates whether this frame is intended for display</span>
+	<span class='kw'>pub</span> <span class='ident'>for_display</span>: <span class='ident'>bool</span>,<span class='comment'>
 
 	//Section 9.2
-        </span><span class='doccomment'>///The pixel type of the frame as defined by Section 9.2
-</span>        <span class='doccomment'>///of the VP8 Specification
-</span>	<span class='kw'>pub</span> <span class='ident'>pixel_type</span>: <span class='ident'>u8</span>,<span class='comment'>
+        </span><span class='doccomment'>///The pixel type of the frame as defined by Section 9.2</span>
+        <span class='doccomment'>///of the VP8 Specification</span>
+	<span class='kw'>pub</span> <span class='ident'>pixel_type</span>: <span class='ident'>u8</span>,<span class='comment'>
 
 	//Section 9.4 and 15
 	</span><span class='ident'>filter</span>: <span class='ident'>u8</span>,
@@ -2654,9 +2654,9 @@
 	<span class='ident'>loopfilter_level</span>: <span class='ident'>i8</span>,
 }
 
-<span class='doccomment'>/// VP8 Decoder
-</span><span class='doccomment'>/// Only decodes keyframes
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>VP8Decoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
+<span class='doccomment'>/// VP8 Decoder</span>
+<span class='doccomment'>/// Only decodes keyframes</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>VP8Decoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
         <span class='ident'>r</span>: <span class='ident'>R</span>,
 	<span class='ident'>b</span>: <span class='ident'>BoolReader</span>,
 
@@ -2689,9 +2689,9 @@
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>R</span>: <span class='ident'>Reader</span><span class='op'>&gt;</span> <span class='ident'>VP8Decoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>/// Create a new decoder.
-</span>        <span class='doccomment'>/// The reader must present a raw vp8 bitstream to the decoder
-</span>	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>r</span>: <span class='ident'>R</span>) <span class='op'>-&gt;</span> <span class='ident'>VP8Decoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
+        <span class='doccomment'>/// Create a new decoder.</span>
+        <span class='doccomment'>/// The reader must present a raw vp8 bitstream to the decoder</span>
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>r</span>: <span class='ident'>R</span>) <span class='op'>-&gt;</span> <span class='ident'>VP8Decoder</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='ident'>f</span>: <span class='ident'>Frame</span> <span class='op'>=</span> <span class='ident'>Default</span>::<span class='ident'>default</span>();
 		<span class='kw'>let</span> <span class='ident'>s</span>: <span class='ident'>Segment</span> <span class='op'>=</span> <span class='ident'>Default</span>::<span class='ident'>default</span>();
                 <span class='kw'>let</span> <span class='ident'>m</span> <span class='op'>=</span> <span class='ident'>MacroBlock</span>::<span class='ident'>new</span>();
@@ -3231,8 +3231,8 @@
                 <span class='ident'>blocks</span>
         }
 
-        <span class='doccomment'>/// Decodes the current frame and returns a reference to it
-</span>	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>decode_frame</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>IoResult</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Frame</span><span class='op'>&gt;</span> {
+        <span class='doccomment'>/// Decodes the current frame and returns a reference to it</span>
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>decode_frame</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>IoResult</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Frame</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> _ <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='self'>self</span>.<span class='ident'>read_frame_header</span>());
 
 		<span class='kw'>for</span> <span class='ident'>mby</span> <span class='kw'>in</span> <span class='ident'>range</span>(<span class='number'>0</span>, <span class='self'>self</span>.<span class='ident'>mbheight</span> <span class='kw'>as</span> <span class='ident'>uint</span>) {
@@ -3698,9 +3698,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

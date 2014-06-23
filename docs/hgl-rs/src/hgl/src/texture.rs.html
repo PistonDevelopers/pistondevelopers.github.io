@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -443,9 +443,9 @@
     <span class='ident'>Texture1DArray</span>,
     <span class='ident'>Texture2DArray</span>,
     <span class='ident'>TextureRectangle</span>,
-    <span class='doccomment'>/// Note: cube maps aren&#39;t entirely supported quite yet. Can&#39;t use
-</span>    <span class='doccomment'>/// TexImage with them.
-</span>    <span class='ident'>TextureCubeMap</span>,
+    <span class='doccomment'>/// Note: cube maps aren&#39;t entirely supported quite yet. Can&#39;t use</span>
+    <span class='doccomment'>/// TexImage with them.</span>
+    <span class='ident'>TextureCubeMap</span>,
     <span class='ident'>TextureBuffer</span>,
 }
 
@@ -504,9 +504,9 @@
     }
 }
 
-<span class='doccomment'>/// ImageInfo represents the non-data parameters to glTexImage*, with the goal
-</span><span class='doccomment'>/// of making the numerous arguments more readable.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>ImageInfo</span> {
+<span class='doccomment'>/// ImageInfo represents the non-data parameters to glTexImage*, with the goal</span>
+<span class='doccomment'>/// of making the numerous arguments more readable.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>ImageInfo</span> {
     <span class='kw'>pub</span> <span class='ident'>level</span>: <span class='ident'>GLint</span>,
     <span class='kw'>pub</span> <span class='ident'>internal_format</span>: <span class='ident'>GLint</span>,
     <span class='kw'>pub</span> <span class='ident'>width</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GLsizei</span><span class='op'>&gt;</span>,
@@ -517,18 +517,18 @@
 }
 
 <span class='kw'>impl</span> <span class='ident'>ImageInfo</span> {
-    <span class='doccomment'>/// Create a new ImageInfo where everything is set to a &quot;good default&quot;,
-</span>    <span class='doccomment'>/// that is, RGBA with the data type being bytes.
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// Note that this struct uses the builder pattern. Its intended usage is:
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>///     let ii = ImageInfo::new().width(4).level(3).pixel_type(pixel::BYTE);
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// This usually reads nicer. Note that since internal formats are so
-</span>    <span class='doccomment'>/// numerous and complex, they do not have a typesafe wrapper. The
-</span>    <span class='doccomment'>/// dimensions of the image will be inferred based on whether width etc
-</span>    <span class='doccomment'>/// are called.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Create a new ImageInfo where everything is set to a &quot;good default&quot;,</span>
+    <span class='doccomment'>/// that is, RGBA with the data type being bytes.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Note that this struct uses the builder pattern. Its intended usage is:</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///     let ii = ImageInfo::new().width(4).level(3).pixel_type(pixel::BYTE);</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// This usually reads nicer. Note that since internal formats are so</span>
+    <span class='doccomment'>/// numerous and complex, they do not have a typesafe wrapper. The</span>
+    <span class='doccomment'>/// dimensions of the image will be inferred based on whether width etc</span>
+    <span class='doccomment'>/// are called.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> {
             <span class='ident'>level</span>: <span class='number'>0</span>,
             <span class='ident'>internal_format</span>: <span class='ident'>gl</span>::<span class='ident'>RGBA</span> <span class='kw'>as</span> <span class='ident'>GLint</span>,
@@ -540,45 +540,45 @@
         }
     }
 
-    <span class='doccomment'>/// Set the mipmap level
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>level</span>(<span class='self'>self</span>, <span class='ident'>level</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the mipmap level</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>level</span>(<span class='self'>self</span>, <span class='ident'>level</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>level</span>: <span class='ident'>level</span>, ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the width. 1D textures only have width.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>width</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the width. 1D textures only have width.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>width</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>width</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the height. 2D and 3D textures require this.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>height</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the height. 2D and 3D textures require this.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>height</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>height</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the depth. Only 3D textures have depth.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>depth</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the depth. Only 3D textures have depth.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>depth</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>depth</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the pixel data format
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_format</span>(<span class='self'>self</span>, <span class='ident'>format</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelFormat</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the pixel data format</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_format</span>(<span class='self'>self</span>, <span class='ident'>format</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelFormat</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>format</span>: <span class='ident'>format</span>, ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the pixel data type
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_type</span>(<span class='self'>self</span>, <span class='ident'>ptype</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelType</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the pixel data type</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_type</span>(<span class='self'>self</span>, <span class='ident'>ptype</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelType</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>ptype</span>: <span class='ident'>ptype</span>, ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the internal format
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>internal_format</span>(<span class='self'>self</span>, <span class='ident'>ifmt</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
+    <span class='doccomment'>/// Set the internal format</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>internal_format</span>(<span class='self'>self</span>, <span class='ident'>ifmt</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageInfo</span> {
         <span class='ident'>ImageInfo</span> { <span class='ident'>internal_format</span>: <span class='ident'>ifmt</span>, ..<span class='self'>self</span> }
     }
 }
 
-<span class='doccomment'>/// SubImageInfo represents the non-data parameters to glTexSubImage*, with
-</span><span class='doccomment'>/// the goal of making the numerous arguments more readable.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SubImageInfo</span> {
+<span class='doccomment'>/// SubImageInfo represents the non-data parameters to glTexSubImage*, with</span>
+<span class='doccomment'>/// the goal of making the numerous arguments more readable.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SubImageInfo</span> {
     <span class='ident'>level</span>: <span class='ident'>GLint</span>,
     <span class='ident'>width</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GLsizei</span><span class='op'>&gt;</span>,
     <span class='ident'>height</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GLsizei</span><span class='op'>&gt;</span>,
@@ -591,18 +591,18 @@
 }
 
 <span class='kw'>impl</span> <span class='ident'>SubImageInfo</span> {
-    <span class='doccomment'>/// Create a new SubImageInfo where everything is set to a &quot;good default&quot;,
-</span>    <span class='doccomment'>/// that is, RGBA with the data type being bytes.
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// Note that this struct uses the builder pattern. Its intended usage is:
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>///     let ii = SubImageInfo::new().width(4).xoffset(5).level(3).pixel_type(pixel::BYTE);
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// This usually reads nicer. Note that since internal formats are so
-</span>    <span class='doccomment'>/// numerous and complex, they do not have a typesafe wrapper. The
-</span>    <span class='doccomment'>/// dimensions of the image will be inferred based on whether width etc
-</span>    <span class='doccomment'>/// are called.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Create a new SubImageInfo where everything is set to a &quot;good default&quot;,</span>
+    <span class='doccomment'>/// that is, RGBA with the data type being bytes.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Note that this struct uses the builder pattern. Its intended usage is:</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>///     let ii = SubImageInfo::new().width(4).xoffset(5).level(3).pixel_type(pixel::BYTE);</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// This usually reads nicer. Note that since internal formats are so</span>
+    <span class='doccomment'>/// numerous and complex, they do not have a typesafe wrapper. The</span>
+    <span class='doccomment'>/// dimensions of the image will be inferred based on whether width etc</span>
+    <span class='doccomment'>/// are called.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> {
             <span class='ident'>level</span>: <span class='number'>0</span>,
             <span class='ident'>width</span>: <span class='prelude-val'>None</span>,
@@ -616,63 +616,63 @@
         }
     }
 
-    <span class='doccomment'>/// Set the mipmap level
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>level</span>(<span class='self'>self</span>, <span class='ident'>level</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the mipmap level</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>level</span>(<span class='self'>self</span>, <span class='ident'>level</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>level</span>: <span class='ident'>level</span>, ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the width. 1D textures only have width.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>width</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the width. 1D textures only have width.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>width</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>width</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the height. 2D and 3D textures require this.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>height</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the height. 2D and 3D textures require this.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>height</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>height</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the depth. Only 3D textures have depth.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>depth</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the depth. Only 3D textures have depth.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>depth</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>depth</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the X offset into the texture. 1D textures only have an X offset.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xoffset</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the X offset into the texture. 1D textures only have an X offset.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>xoffset</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>xoffset</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the Y offset into the texture. 2D and 3D textures require this.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>yoffset</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the Y offset into the texture. 2D and 3D textures require this.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>yoffset</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>yoffset</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the Z offset into the texture. Only 3D textures have a Z offset.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>zoffset</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the Z offset into the texture. Only 3D textures have a Z offset.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>zoffset</span>(<span class='self'>self</span>, <span class='ident'>s</span>: <span class='ident'>GLint</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>zoffset</span>: <span class='prelude-val'>Some</span>(<span class='ident'>s</span>), ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the pixel data format
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_format</span>(<span class='self'>self</span>, <span class='ident'>format</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelFormat</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the pixel data format</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_format</span>(<span class='self'>self</span>, <span class='ident'>format</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelFormat</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>format</span>: <span class='ident'>format</span>, ..<span class='self'>self</span> }
     }
 
-    <span class='doccomment'>/// Set the pixel data type
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_type</span>(<span class='self'>self</span>, <span class='ident'>ptype</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelType</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
+    <span class='doccomment'>/// Set the pixel data type</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pixel_type</span>(<span class='self'>self</span>, <span class='ident'>ptype</span>: <span class='ident'>pixel</span>::<span class='ident'>PixelType</span>) <span class='op'>-&gt;</span> <span class='ident'>SubImageInfo</span> {
         <span class='ident'>SubImageInfo</span> { <span class='ident'>ptype</span>: <span class='ident'>ptype</span>, ..<span class='self'>self</span> }
     }
 }
 
-<span class='doccomment'>/// A texture object.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Texture</span> {
+<span class='doccomment'>/// A texture object.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Texture</span> {
     <span class='kw'>pub</span> <span class='ident'>name</span>: <span class='ident'>GLuint</span>,
     <span class='kw'>pub</span> <span class='ident'>target</span>: <span class='ident'>GLenum</span>,
 }
 
 <span class='kw'>impl</span> <span class='ident'>Texture</span> {
-    <span class='doccomment'>/// Create a new texture and load an image into it.  Note that even if
-</span>    <span class='doccomment'>/// your data isn&#39;t GL_BYTE, you can pass a *u8 anyway since the GL
-</span>    <span class='doccomment'>/// doesn&#39;t care about the type.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>target</span>: <span class='ident'>TextureTarget</span>, <span class='ident'>info</span>: <span class='ident'>ImageInfo</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>Texture</span> {
+    <span class='doccomment'>/// Create a new texture and load an image into it.  Note that even if</span>
+    <span class='doccomment'>/// your data isn&#39;t GL_BYTE, you can pass a *u8 anyway since the GL</span>
+    <span class='doccomment'>/// doesn&#39;t care about the type.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>target</span>: <span class='ident'>TextureTarget</span>, <span class='ident'>info</span>: <span class='ident'>ImageInfo</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>Texture</span> {
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>tex</span>: <span class='ident'>GLuint</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>gl</span>::<span class='ident'>GenTextures</span>(<span class='number'>1</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>tex</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>GLuint</span>); }
         <span class='kw'>let</span> <span class='ident'>t</span> <span class='op'>=</span> <span class='ident'>Texture</span> { <span class='ident'>name</span>: <span class='ident'>tex</span>, <span class='ident'>target</span>: <span class='ident'>target</span>.<span class='ident'>to_glenum</span>() };
@@ -682,8 +682,8 @@
         <span class='ident'>t</span>
     }
 
-    <span class='doccomment'>/// Create a texture without binding it.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_raw</span>(<span class='ident'>target</span>: <span class='ident'>TextureTarget</span>) <span class='op'>-&gt;</span> <span class='ident'>Texture</span> {
+    <span class='doccomment'>/// Create a texture without binding it.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new_raw</span>(<span class='ident'>target</span>: <span class='ident'>TextureTarget</span>) <span class='op'>-&gt;</span> <span class='ident'>Texture</span> {
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>tex</span>: <span class='ident'>GLuint</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>unsafe</span> { <span class='ident'>gl</span>::<span class='ident'>GenTextures</span>(<span class='number'>1</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>tex</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>GLuint</span>); }
         <span class='ident'>Texture</span> { <span class='ident'>name</span>: <span class='ident'>tex</span>, <span class='ident'>target</span>: <span class='ident'>target</span>.<span class='ident'>to_glenum</span>() }
@@ -736,14 +736,14 @@
         <span class='ident'>gl</span>::<span class='ident'>TexParameteri</span>(<span class='self'>self</span>.<span class='ident'>target</span>, <span class='ident'>gl</span>::<span class='ident'>TEXTURE_MAG_FILTER</span>, <span class='ident'>fm</span>.<span class='ident'>to_glenum</span>() <span class='kw'>as</span> <span class='ident'>GLint</span>);
     }
 
-    <span class='doccomment'>/// SAFETY NOTE: You *must* call `load_data` before calling this method.
-</span>    <span class='doccomment'>/// Bad Things will happen otherwise.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gen_mipmaps</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) {
+    <span class='doccomment'>/// SAFETY NOTE: You *must* call `load_data` before calling this method.</span>
+    <span class='doccomment'>/// Bad Things will happen otherwise.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>gen_mipmaps</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) {
         <span class='ident'>gl</span>::<span class='ident'>GenerateMipmap</span>(<span class='self'>self</span>.<span class='ident'>target</span>);
     }
 
-    <span class='doccomment'>/// Load an image into this texture.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>load_image</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>info</span>: <span class='ident'>ImageInfo</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='ident'>u8</span>) {
+    <span class='doccomment'>/// Load an image into this texture.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>load_image</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>info</span>: <span class='ident'>ImageInfo</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='ident'>u8</span>) {
         <span class='self'>self</span>.<span class='ident'>bind</span>();
 
         <span class='kw'>let</span> <span class='ident'>ImageInfo</span> { <span class='ident'>level</span>, <span class='ident'>internal_format</span>, <span class='ident'>width</span>, <span class='ident'>height</span>, <span class='ident'>depth</span>, <span class='ident'>format</span>, <span class='ident'>ptype</span> } <span class='op'>=</span> <span class='ident'>info</span>;
@@ -772,8 +772,8 @@
         } }
     }
 
-    <span class='doccomment'>/// Load an image into part of this texture.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>load_subimage</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>info</span>: <span class='ident'>SubImageInfo</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='ident'>u8</span>) {
+    <span class='doccomment'>/// Load an image into part of this texture.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>load_subimage</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>info</span>: <span class='ident'>SubImageInfo</span>, <span class='ident'>data</span>: <span class='op'>*</span><span class='ident'>u8</span>) {
         <span class='self'>self</span>.<span class='ident'>bind</span>();
 
         <span class='kw'>let</span> <span class='ident'>SubImageInfo</span> { <span class='ident'>level</span>, <span class='ident'>width</span>, <span class='ident'>height</span>, <span class='ident'>depth</span>, <span class='ident'>xoffset</span>, <span class='ident'>yoffset</span>, <span class='ident'>zoffset</span>, <span class='ident'>format</span>, <span class='ident'>ptype</span> } <span class='op'>=</span> <span class='ident'>info</span>;
@@ -809,8 +809,8 @@
         } }
     }
 
-    <span class='doccomment'>/// Bind this texture to texture unit `num` (GL_TEXTURE0 + num)
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>activate</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>num</span>: <span class='ident'>GLuint</span>) {
+    <span class='doccomment'>/// Bind this texture to texture unit `num` (GL_TEXTURE0 + num)</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>activate</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>num</span>: <span class='ident'>GLuint</span>) {
         <span class='ident'>gl</span>::<span class='ident'>ActiveTexture</span>(<span class='ident'>gl</span>::<span class='ident'>TEXTURE0</span> <span class='op'>+</span> <span class='ident'>num</span>);
         <span class='self'>self</span>.<span class='ident'>bind</span>();
     }
@@ -836,9 +836,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

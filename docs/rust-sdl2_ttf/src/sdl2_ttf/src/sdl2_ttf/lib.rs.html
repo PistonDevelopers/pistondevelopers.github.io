@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -545,8 +545,8 @@
 </pre><pre class='rust '>
 <span class='doccomment'>/*!
 A binding for SDL2_ttf.
- */
-</span>
+ */</span>
+
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span><span class='op'>=</span><span class='string'>&quot;sdl2_ttf#sdl2_ttf:0.1&quot;</span>]</span>
@@ -601,8 +601,8 @@ A binding for SDL2_ttf.
     }
 }
 
-<span class='doccomment'>/// Font Style
-</span><span class='macro'>bitflags</span><span class='macro'>!</span>(<span class='ident'>flags</span> <span class='ident'>FontStyle</span> : <span class='ident'>c_int</span> {
+<span class='doccomment'>/// Font Style</span>
+<span class='macro'>bitflags</span><span class='macro'>!</span>(<span class='ident'>flags</span> <span class='ident'>FontStyle</span> : <span class='ident'>c_int</span> {
     <span class='kw'>static</span> <span class='ident'>StyleNormal</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_STYLE_NORMAL</span>,
     <span class='kw'>static</span> <span class='ident'>StyleBold</span>   <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_STYLE_BOLD</span>,
     <span class='kw'>static</span> <span class='ident'>StyleItalic</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_STYLE_ITALIC</span>,
@@ -618,8 +618,8 @@ A binding for SDL2_ttf.
     <span class='ident'>HintingNone</span>   <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_HINTING_NONE</span>   <span class='kw'>as</span> <span class='ident'>int</span>
 }
 
-<span class='doccomment'>/// Glyph Metrics
-</span><span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+<span class='doccomment'>/// Glyph Metrics</span>
+<span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GlyphMetrics</span> {
     <span class='kw'>pub</span> <span class='ident'>minx</span>: <span class='ident'>int</span>,
     <span class='kw'>pub</span> <span class='ident'>maxx</span>: <span class='ident'>int</span>,
@@ -628,16 +628,16 @@ A binding for SDL2_ttf.
     <span class='kw'>pub</span> <span class='ident'>advance</span>: <span class='ident'>int</span>
 }
 
-<span class='doccomment'>/// Returns the version of the dynamically linked SDL_ttf library
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_linked_version</span>() <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
+<span class='doccomment'>/// Returns the version of the dynamically linked SDL_ttf library</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_linked_version</span>() <span class='op'>-&gt;</span> <span class='ident'>Version</span> {
     <span class='kw'>unsafe</span> {
         <span class='ident'>Version</span>::<span class='ident'>from_ll</span>(<span class='ident'>ffi</span>::<span class='ident'>TTF_Linked_Version</span>())
     }
 }
 
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>init</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
-    <span class='doccomment'>//! Initialize the truetype font API.
-</span>    <span class='kw'>unsafe</span> {
+    <span class='doccomment'>//! Initialize the truetype font API.</span>
+    <span class='kw'>unsafe</span> {
         <span class='kw'>if</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_WasInit</span>() <span class='op'>==</span> <span class='number'>1</span> {
             <span class='boolval'>true</span>
         } <span class='kw'>else</span> {
@@ -647,19 +647,19 @@ A binding for SDL2_ttf.
 }
 
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>was_inited</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
-    <span class='doccomment'>//! Query the initilization status of the truetype font API.
-</span>    <span class='kw'>unsafe</span> {
+    <span class='doccomment'>//! Query the initilization status of the truetype font API.</span>
+    <span class='kw'>unsafe</span> {
         <span class='ident'>ffi</span>::<span class='ident'>TTF_WasInit</span>() <span class='op'>==</span> <span class='number'>1</span>
     }
 }
 
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>quit</span>() {
-    <span class='doccomment'>//! Shutdown and cleanup the truetype font API.
-</span>    <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>TTF_Quit</span>(); }
+    <span class='doccomment'>//! Shutdown and cleanup the truetype font API.</span>
+    <span class='kw'>unsafe</span> { <span class='ident'>ffi</span>::<span class='ident'>TTF_Quit</span>(); }
 }
 
-<span class='doccomment'>/// The opaque holder of a loaded font.
-</span><span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
+<span class='doccomment'>/// The opaque holder of a loaded font.</span>
+<span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>raw_pointer_deriving</span>)]</span>
 <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Font</span> {
     <span class='ident'>raw</span>: <span class='op'>*</span><span class='ident'>ffi</span>::<span class='ident'>TTF_Font</span>,
@@ -685,8 +685,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_file</span>(<span class='ident'>filename</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>, <span class='ident'>ptsize</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Font</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Load file for use as a font, at ptsize size.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Load file for use as a font, at ptsize size.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_OpenFont</span>(<span class='ident'>filename</span>.<span class='ident'>to_c_str</span>().<span class='ident'>unwrap</span>(), <span class='ident'>ptsize</span> <span class='kw'>as</span> <span class='ident'>c_int</span>);
             <span class='kw'>if</span> <span class='ident'>raw</span>.<span class='ident'>is_null</span>() {
                 <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -697,8 +697,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_file_index</span>(<span class='ident'>filename</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>, <span class='ident'>ptsize</span>: <span class='ident'>int</span>, <span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Font</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Load file, face index, for use as a font, at ptsize size.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Load file, face index, for use as a font, at ptsize size.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_OpenFontIndex</span>(<span class='ident'>filename</span>.<span class='ident'>to_c_str</span>().<span class='ident'>unwrap</span>(), <span class='ident'>ptsize</span> <span class='kw'>as</span> <span class='ident'>c_int</span>, <span class='ident'>index</span> <span class='kw'>as</span> <span class='ident'>c_long</span>);
             <span class='kw'>if</span> <span class='ident'>raw</span>.<span class='ident'>is_null</span>() {
                 <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -709,107 +709,107 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_style</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>FontStyle</span> {
-        <span class='doccomment'>//! Get font render style
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get font render style</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_GetFontStyle</span>(<span class='self'>self</span>.<span class='ident'>raw</span>);
             <span class='ident'>FontStyle</span>::<span class='ident'>from_bits_truncate</span>(<span class='ident'>raw</span>)
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_style</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>styles</span>: <span class='ident'>FontStyle</span>) {
-        <span class='doccomment'>//! Set font render style.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Set font render style.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_SetFontStyle</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>styles</span>.<span class='ident'>bits</span>())
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_outline</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
-        <span class='doccomment'>//! Get font outline width.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get font outline width.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_GetFontOutline</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_outline</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>outline</span>: <span class='ident'>int</span>) {
-        <span class='doccomment'>//! Set font outline width.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Set font outline width.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_SetFontOutline</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>outline</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_hinting</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Hinting</span> {
-        <span class='doccomment'>//! Get freetype hinter setting.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get freetype hinter setting.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>FromPrimitive</span>::<span class='ident'>from_i32</span>(<span class='ident'>ffi</span>::<span class='ident'>TTF_GetFontHinting</span>(<span class='self'>self</span>.<span class='ident'>raw</span>)).<span class='ident'>unwrap</span>()
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_hinting</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hinting</span>: <span class='ident'>Hinting</span>) {
-        <span class='doccomment'>//! Set freetype hinter setting.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Set freetype hinter setting.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_SetFontHinting</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>hinting</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_kerning</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
-        <span class='doccomment'>//! Get freetype kerning setting.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get freetype kerning setting.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_GetFontKerning</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='op'>!=</span> <span class='number'>0</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_kerning</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>kerning</span>: <span class='ident'>bool</span>) {
-        <span class='doccomment'>//! Set freetype kerning setting.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Set freetype kerning setting.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_SetFontKerning</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>kerning</span> <span class='kw'>as</span> <span class='ident'>c_int</span>)
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>height</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
-        <span class='doccomment'>//! Get font maximum total height.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get font maximum total height.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_FontHeight</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>ascent</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
-        <span class='doccomment'>//! Get font highest ascent (height above base).
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get font highest ascent (height above base).</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_FontAscent</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>descent</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
-        <span class='doccomment'>//! Get font lowest descent (height below base).
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get font lowest descent (height below base).</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_FontDescent</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>line_skip</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
-        <span class='doccomment'>//! Get font recommended line spacing.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get font recommended line spacing.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_FontLineSkip</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>faces</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
-        <span class='doccomment'>//! Get the number of faces in a font.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get the number of faces in a font.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_FontFaces</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='kw'>as</span> <span class='ident'>int</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>face_is_fixed_width</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
-        <span class='doccomment'>//! Get whether font is monospaced or not.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get whether font is monospaced or not.</span>
+        <span class='kw'>unsafe</span> {
             <span class='ident'>ffi</span>::<span class='ident'>TTF_FontFaceIsFixedWidth</span>(<span class='self'>self</span>.<span class='ident'>raw</span>) <span class='op'>!=</span> <span class='number'>0</span>
         }
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>face_family_name</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Get current font face family name string.
-</span>        <span class='kw'>unsafe</span> {<span class='comment'>
+        <span class='doccomment'>//! Get current font face family name string.</span>
+        <span class='kw'>unsafe</span> {<span class='comment'>
             // not owns buffer
             </span><span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_FontFaceFamilyName</span>(<span class='self'>self</span>.<span class='ident'>raw</span>);
             <span class='kw'>if</span> <span class='ident'>cname</span>.<span class='ident'>is_null</span>() {
@@ -821,8 +821,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>face_style_name</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Get current font face style name string.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get current font face style name string.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>cname</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_FontFaceStyleName</span>(<span class='self'>self</span>.<span class='ident'>raw</span>);
             <span class='kw'>if</span> <span class='ident'>cname</span>.<span class='ident'>is_null</span>() {
                 <span class='prelude-val'>None</span>
@@ -833,8 +833,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>index_of_char</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ch</span>: <span class='ident'>char</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>uint</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Get individual font glyph availability.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Get individual font glyph availability.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_GlyphIsProvided</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>u16</span>);
             <span class='kw'>if</span> <span class='ident'>ret</span> <span class='op'>==</span> <span class='number'>0</span> {
                 <span class='prelude-val'>None</span>
@@ -845,8 +845,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>metrics_of_char</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ch</span>: <span class='ident'>char</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GlyphMetrics</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Get individual font glyph metrics.
-</span>        <span class='kw'>let</span> <span class='ident'>minx</span> <span class='op'>=</span> <span class='number'>0</span>;
+        <span class='doccomment'>//! Get individual font glyph metrics.</span>
+        <span class='kw'>let</span> <span class='ident'>minx</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>maxx</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>miny</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>maxy</span> <span class='op'>=</span> <span class='number'>0</span>;
@@ -865,8 +865,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>size_of_bytes</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>]) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>(<span class='ident'>int</span>, <span class='ident'>int</span>)<span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Get size of LATIN1 text string as would be rendered.
-</span>        <span class='kw'>let</span> <span class='ident'>w</span> <span class='op'>=</span> <span class='number'>0</span>;
+        <span class='doccomment'>//! Get size of LATIN1 text string as would be rendered.</span>
+        <span class='kw'>let</span> <span class='ident'>w</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>h</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
@@ -881,8 +881,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>size_of_str</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span>(<span class='ident'>int</span>, <span class='ident'>int</span>)<span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Get size of UTF8 text string as would be rendered.
-</span>        <span class='kw'>let</span> <span class='ident'>w</span> <span class='op'>=</span> <span class='number'>0</span>;
+        <span class='doccomment'>//! Get size of UTF8 text string as would be rendered.</span>
+        <span class='kw'>let</span> <span class='ident'>w</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>h</span> <span class='op'>=</span> <span class='number'>0</span>;
         <span class='kw'>let</span> <span class='ident'>ret</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
             <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
@@ -897,8 +897,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_bytes_solid</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>], <span class='ident'>fg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw LATIN1 text in solid mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw LATIN1 text in solid mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
                     <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderText_Solid</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ctext</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>))
                 });
@@ -911,8 +911,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_str_solid</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>fg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw UTF8 text in solid mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw UTF8 text in solid mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
                     <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderUTF8_Solid</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ctext</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>))
                 });
@@ -925,8 +925,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_char_solid</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ch</span>: <span class='ident'>char</span>, <span class='ident'>fg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw a UNICODE glyph in solid mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw a UNICODE glyph in solid mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderGlyph_Solid</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>u16</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>));
             <span class='kw'>if</span> <span class='ident'>raw</span>.<span class='ident'>is_null</span>() {
                 <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -937,8 +937,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_bytes_shaded</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>], <span class='ident'>fg</span>: <span class='ident'>Color</span>, <span class='ident'>bg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw LATIN1 text in shaded mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw LATIN1 text in shaded mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
                     <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderText_Shaded</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ctext</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>), <span class='ident'>color_to_c_color</span>(<span class='ident'>bg</span>))
                 });
@@ -951,8 +951,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_str_shaded</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>fg</span>: <span class='ident'>Color</span>, <span class='ident'>bg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw UTF8 text in shaded mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw UTF8 text in shaded mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
                     <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderUTF8_Shaded</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ctext</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>), <span class='ident'>color_to_c_color</span>(<span class='ident'>bg</span>))
                 });
@@ -965,8 +965,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_char_shaded</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ch</span>: <span class='ident'>char</span>, <span class='ident'>fg</span>: <span class='ident'>Color</span>, <span class='ident'>bg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw a UNICODE glyph in shaded mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw a UNICODE glyph in shaded mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderGlyph_Shaded</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>u16</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>), <span class='ident'>color_to_c_color</span>(<span class='ident'>bg</span>));
             <span class='kw'>if</span> <span class='ident'>raw</span>.<span class='ident'>is_null</span>() {
                 <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -977,8 +977,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_bytes_blended</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>], <span class='ident'>fg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw LATIN1 text in blended mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw LATIN1 text in blended mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
                     <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderText_Blended</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ctext</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>))
                 });
@@ -991,8 +991,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_str_blended</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>text</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>fg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw UTF8 text in blended mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw UTF8 text in blended mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>text</span>.<span class='ident'>with_c_str</span>(<span class='op'>|</span><span class='ident'>ctext</span><span class='op'>|</span> {
                     <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderUTF8_Blended</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ctext</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>))
                 });
@@ -1005,8 +1005,8 @@ A binding for SDL2_ttf.
     }
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>render_char_blended</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ch</span>: <span class='ident'>char</span>, <span class='ident'>fg</span>: <span class='ident'>Color</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Surface</span><span class='op'>&gt;</span> {
-        <span class='doccomment'>//! Draw a UNICODE glyph in blended mode.
-</span>        <span class='kw'>unsafe</span> {
+        <span class='doccomment'>//! Draw a UNICODE glyph in blended mode.</span>
+        <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>raw</span> <span class='op'>=</span> <span class='ident'>ffi</span>::<span class='ident'>TTF_RenderGlyph_Blended</span>(<span class='self'>self</span>.<span class='ident'>raw</span>, <span class='ident'>ch</span> <span class='kw'>as</span> <span class='ident'>u16</span>, <span class='ident'>color_to_c_color</span>(<span class='ident'>fg</span>));
             <span class='kw'>if</span> <span class='ident'>raw</span>.<span class='ident'>is_null</span>() {
                 <span class='prelude-val'>Err</span>(<span class='ident'>get_error</span>())
@@ -1018,12 +1018,12 @@ A binding for SDL2_ttf.
 }
 
 
-<span class='doccomment'>/// Loader trait for RWops
-</span><span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>LoaderRWops</span> {
-    <span class='doccomment'>/// Load src for use as a font.
-</span>    <span class='kw'>fn</span> <span class='ident'>load_font</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ptsize</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Font</span><span class='op'>&gt;</span>;
-    <span class='doccomment'>/// Load src for use as a font.
-</span>    <span class='kw'>fn</span> <span class='ident'>load_font_index</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ptsize</span>: <span class='ident'>int</span>, <span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Font</span><span class='op'>&gt;</span>;
+<span class='doccomment'>/// Loader trait for RWops</span>
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>LoaderRWops</span> {
+    <span class='doccomment'>/// Load src for use as a font.</span>
+    <span class='kw'>fn</span> <span class='ident'>load_font</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ptsize</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Font</span><span class='op'>&gt;</span>;
+    <span class='doccomment'>/// Load src for use as a font.</span>
+    <span class='kw'>fn</span> <span class='ident'>load_font_index</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>ptsize</span>: <span class='ident'>int</span>, <span class='ident'>index</span>: <span class='ident'>int</span>) <span class='op'>-&gt;</span> <span class='ident'>SdlResult</span><span class='op'>&lt;</span><span class='ident'>Font</span><span class='op'>&gt;</span>;
 }
 
 <span class='kw'>impl</span> <span class='ident'>LoaderRWops</span> <span class='kw'>for</span> <span class='ident'>RWops</span> {
@@ -1062,9 +1062,9 @@ A binding for SDL2_ttf.
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -390,103 +390,99 @@
 <span id='351'>351</span>
 <span id='352'>352</span>
 <span id='353'>353</span>
+<span id='354'>354</span>
+<span id='355'>355</span>
+<span id='356'>356</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>time</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>timer</span>::<span class='ident'>sleep</span>;
-<span class='kw'>use</span> <span class='ident'>gl</span>;
-<span class='kw'>use</span> <span class='ident'>gl</span>::<span class='ident'>types</span>::<span class='ident'>GLint</span>;
 
-<span class='kw'>use</span> {
-    <span class='ident'>Gl</span>,
-    <span class='ident'>GameWindow</span>,
-};
+<span class='kw'>use</span> <span class='ident'>GameWindow</span>;
 <span class='kw'>use</span> <span class='ident'>keyboard</span>;
 <span class='kw'>use</span> <span class='ident'>mouse</span>;
 <span class='kw'>use</span> <span class='ident'>event</span>;
 
-<span class='doccomment'>/// Render argument.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RenderArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Extrapolated time in seconds, used to do smooth animation.
-</span>    <span class='kw'>pub</span> <span class='ident'>ext_dt</span>: <span class='ident'>f64</span>,
-    <span class='doccomment'>/// OpenGL back-end for Rust-Graphics.
-</span>    <span class='kw'>pub</span> <span class='ident'>gl</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>Gl</span>,
-    <span class='doccomment'>/// The width of rendered area.
-</span>    <span class='kw'>pub</span> <span class='ident'>width</span>: <span class='ident'>u32</span>,
-    <span class='doccomment'>/// The height of rendered area.
-</span>    <span class='kw'>pub</span> <span class='ident'>height</span>: <span class='ident'>u32</span>,
+<span class='doccomment'>/// Render argument.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>RenderArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Extrapolated time in seconds, used to do smooth animation.</span>
+    <span class='kw'>pub</span> <span class='ident'>ext_dt</span>: <span class='ident'>f64</span>,
+    <span class='doccomment'>/// OpenGL back-end for Rust-Graphics.</span>
+    <span class='kw'>pub</span> <span class='ident'>width</span>: <span class='ident'>u32</span>,
+    <span class='doccomment'>/// The height of rendered area.</span>
+    <span class='kw'>pub</span> <span class='ident'>height</span>: <span class='ident'>u32</span>,
 }
 
-<span class='doccomment'>/// Update argument.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>UpdateArgs</span> {
-    <span class='doccomment'>/// Delta time in seconds.
-</span>    <span class='kw'>pub</span> <span class='ident'>dt</span>: <span class='ident'>f64</span>,
+<span class='doccomment'>/// Update argument.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>UpdateArgs</span> {
+    <span class='doccomment'>/// Delta time in seconds.</span>
+    <span class='kw'>pub</span> <span class='ident'>dt</span>: <span class='ident'>f64</span>,
 }
 
-<span class='doccomment'>/// Key press arguments.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeyPressArgs</span> {
-    <span class='doccomment'>/// Keyboard key.
-</span>    <span class='kw'>pub</span> <span class='ident'>key</span>: <span class='ident'>keyboard</span>::<span class='ident'>Key</span>,
+<span class='doccomment'>/// Key press arguments.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeyPressArgs</span> {
+    <span class='doccomment'>/// Keyboard key.</span>
+    <span class='kw'>pub</span> <span class='ident'>key</span>: <span class='ident'>keyboard</span>::<span class='ident'>Key</span>,
 }
 
-<span class='doccomment'>/// Key release arguments.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeyReleaseArgs</span> {
-    <span class='doccomment'>/// Keyboard key.
-</span>    <span class='kw'>pub</span> <span class='ident'>key</span>: <span class='ident'>keyboard</span>::<span class='ident'>Key</span>,
+<span class='doccomment'>/// Key release arguments.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>KeyReleaseArgs</span> {
+    <span class='doccomment'>/// Keyboard key.</span>
+    <span class='kw'>pub</span> <span class='ident'>key</span>: <span class='ident'>keyboard</span>::<span class='ident'>Key</span>,
 }
 
-<span class='doccomment'>/// Mouse press arguments.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MousePressArgs</span> {
-    <span class='doccomment'>/// Mouse button.
-</span>    <span class='kw'>pub</span> <span class='ident'>button</span>: <span class='ident'>mouse</span>::<span class='ident'>Button</span>,
+<span class='doccomment'>/// Mouse press arguments.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MousePressArgs</span> {
+    <span class='doccomment'>/// Mouse button.</span>
+    <span class='kw'>pub</span> <span class='ident'>button</span>: <span class='ident'>mouse</span>::<span class='ident'>Button</span>,
 }
 
-<span class='doccomment'>/// Mouse release arguments.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MouseReleaseArgs</span> {
-    <span class='doccomment'>/// Mouse button.
-</span>    <span class='kw'>pub</span> <span class='ident'>button</span>: <span class='ident'>mouse</span>::<span class='ident'>Button</span>,
+<span class='doccomment'>/// Mouse release arguments.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MouseReleaseArgs</span> {
+    <span class='doccomment'>/// Mouse button.</span>
+    <span class='kw'>pub</span> <span class='ident'>button</span>: <span class='ident'>mouse</span>::<span class='ident'>Button</span>,
 }
 
-<span class='doccomment'>/// Mouse move arguments.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MouseMoveArgs</span> {
-    <span class='doccomment'>/// y.
-</span>    <span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>f64</span>,
-    <span class='doccomment'>/// x.
-</span>    <span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>f64</span>,
+<span class='doccomment'>/// Mouse move arguments.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MouseMoveArgs</span> {
+    <span class='doccomment'>/// y.</span>
+    <span class='kw'>pub</span> <span class='ident'>x</span>: <span class='ident'>f64</span>,
+    <span class='doccomment'>/// x.</span>
+    <span class='kw'>pub</span> <span class='ident'>y</span>: <span class='ident'>f64</span>,
 }
 
-<span class='doccomment'>/// Mouse relative move arguments.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MouseRelativeMoveArgs</span> {
-    <span class='doccomment'>/// Delta x.
-</span>    <span class='kw'>pub</span> <span class='ident'>dx</span>: <span class='ident'>f64</span>,
-    <span class='doccomment'>/// Delta y.
-</span>    <span class='kw'>pub</span> <span class='ident'>dy</span>: <span class='ident'>f64</span>,
+<span class='doccomment'>/// Mouse relative move arguments.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>MouseRelativeMoveArgs</span> {
+    <span class='doccomment'>/// Delta x.</span>
+    <span class='kw'>pub</span> <span class='ident'>dx</span>: <span class='ident'>f64</span>,
+    <span class='doccomment'>/// Delta y.</span>
+    <span class='kw'>pub</span> <span class='ident'>dy</span>: <span class='ident'>f64</span>,
 }
 
-<span class='doccomment'>/// Contains the different game events.
-</span><span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Render graphics.
-</span>    <span class='ident'>Render</span>(<span class='ident'>RenderArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>),
-    <span class='doccomment'>/// Update physical state of the game.
-</span>    <span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span>),
-    <span class='doccomment'>/// Pressed a keyboard key.
-</span>    <span class='ident'>KeyPress</span>(<span class='ident'>KeyPressArgs</span>),
-    <span class='doccomment'>/// Released a keyboard key.
-</span>    <span class='ident'>KeyRelease</span>(<span class='ident'>KeyReleaseArgs</span>),
-    <span class='doccomment'>/// Pressed a mouse button.
-</span>    <span class='ident'>MousePress</span>(<span class='ident'>MousePressArgs</span>),
-    <span class='doccomment'>/// Released a mouse button.
-</span>    <span class='ident'>MouseRelease</span>(<span class='ident'>MouseReleaseArgs</span>),
-    <span class='doccomment'>/// Moved mouse cursor.
-</span>    <span class='ident'>MouseMove</span>(<span class='ident'>MouseMoveArgs</span>),
-    <span class='doccomment'>/// Moved mouse relative, not bounded by cursor.
-</span>    <span class='ident'>MouseRelativeMove</span>(<span class='ident'>MouseRelativeMoveArgs</span>)
+<span class='doccomment'>/// Contains the different game events.</span>
+<span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='doccomment'>/// Render graphics.</span>
+    <span class='ident'>Render</span>(<span class='ident'>RenderArgs</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>),
+    <span class='doccomment'>/// Update physical state of the game.</span>
+    <span class='ident'>Update</span>(<span class='ident'>UpdateArgs</span>),
+    <span class='doccomment'>/// Pressed a keyboard key.</span>
+    <span class='ident'>KeyPress</span>(<span class='ident'>KeyPressArgs</span>),
+    <span class='doccomment'>/// Released a keyboard key.</span>
+    <span class='ident'>KeyRelease</span>(<span class='ident'>KeyReleaseArgs</span>),
+    <span class='doccomment'>/// Pressed a mouse button.</span>
+    <span class='ident'>MousePress</span>(<span class='ident'>MousePressArgs</span>),
+    <span class='doccomment'>/// Released a mouse button.</span>
+    <span class='ident'>MouseRelease</span>(<span class='ident'>MouseReleaseArgs</span>),
+    <span class='doccomment'>/// Moved mouse cursor.</span>
+    <span class='ident'>MouseMove</span>(<span class='ident'>MouseMoveArgs</span>),
+    <span class='doccomment'>/// Moved mouse relative, not bounded by cursor.</span>
+    <span class='ident'>MouseRelativeMove</span>(<span class='ident'>MouseRelativeMoveArgs</span>)
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Maps event to something that can be sent between tasks if possible.
-</span>    <span class='doccomment'>///
-</span>    <span class='doccomment'>/// Render events are not sendable between tasks. 
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_sendable</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;static</span><span class='op'>&gt;&gt;</span> {
+    <span class='doccomment'>/// Maps event to something that can be sent between tasks if possible.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Render events are not sendable between tasks. </span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_sendable</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;static</span><span class='op'>&gt;&gt;</span> {
         <span class='kw'>match</span> <span class='op'>*</span><span class='self'>self</span> {
             <span class='ident'>Render</span>(_) <span class='op'>=&gt;</span> <span class='prelude-val'>None</span>,
             <span class='ident'>Update</span>(<span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>Update</span>(<span class='ident'>args</span>)),
@@ -510,20 +506,41 @@
     <span class='ident'>UpdateState</span>,
 }
 
-<span class='doccomment'>/// Settings for the game loop behavior.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameIteratorSettings</span> {
-    <span class='doccomment'>/// The number of updates per second (UPS).
-</span>    <span class='kw'>pub</span> <span class='ident'>updates_per_second</span>: <span class='ident'>u64</span>,
-    <span class='doccomment'>/// The maximum number of frames per second (FPS target).
-</span>    <span class='kw'>pub</span> <span class='ident'>max_frames_per_second</span>: <span class='ident'>u64</span>,
+<span class='doccomment'>/// Settings for the game loop behavior.</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameIteratorSettings</span> {
+    <span class='doccomment'>/// The number of updates per second (UPS).</span>
+    <span class='kw'>pub</span> <span class='ident'>updates_per_second</span>: <span class='ident'>u64</span>,
+    <span class='doccomment'>/// The maximum number of frames per second (FPS target).</span>
+    <span class='kw'>pub</span> <span class='ident'>max_frames_per_second</span>: <span class='ident'>u64</span>,
 }
 
-<span class='doccomment'>/// A game loop iterator.
-</span><span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameIterator</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span><span class='op'>&gt;</span> {
+<span class='doccomment'>/// A game loop iterator.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// Example:</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// ```Rust</span>
+<span class='doccomment'>/// let game_iter_settings = GameIteratorSettings {</span>
+<span class='doccomment'>///     updates_per_second: 120,</span>
+<span class='doccomment'>///     max_frames_per_second: 60,</span>
+<span class='doccomment'>/// };</span>
+<span class='doccomment'>/// let mut game_iter = GameIterator::new(&amp;mut window, &amp;game_iter_settings);</span>
+<span class='doccomment'>/// loop {</span>
+<span class='doccomment'>///     match game_iter.next() {</span>
+<span class='doccomment'>///         None =&gt; break,</span>
+<span class='doccomment'>///         Some(mut e) =&gt; match e {</span>
+<span class='doccomment'>///             Render(ref mut args) =&gt; {</span>
+<span class='doccomment'>///                 // Create graphics context with absolute coordinates.</span>
+<span class='doccomment'>///                 let c = Context::abs(args.width as f64, args.height as f64);</span>
+<span class='doccomment'>///                 // Do rendering here.</span>
+<span class='doccomment'>///             },</span>
+<span class='doccomment'>///             _ =&gt; {},       </span>
+<span class='doccomment'>///         },</span>
+<span class='doccomment'>///     }</span>
+<span class='doccomment'>/// }</span>
+<span class='doccomment'>/// ```</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameIterator</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span><span class='op'>&gt;</span> {
     <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>,
     <span class='ident'>state</span>: <span class='ident'>GameIteratorState</span>,
-    <span class='ident'>gl</span>: <span class='ident'>Gl</span>,
-    <span class='ident'>bg_color</span>: [<span class='ident'>f32</span>, ..<span class='number'>4</span>],
     <span class='ident'>last_update</span>: <span class='ident'>u64</span>,
     <span class='ident'>update_time_in_ns</span>: <span class='ident'>u64</span>,
     <span class='ident'>dt</span>: <span class='ident'>f64</span>,
@@ -537,9 +554,8 @@
 <span class='kw'>static</span> <span class='ident'>billion</span>: <span class='ident'>u64</span> <span class='op'>=</span> <span class='number'>1_000_000_000</span>;
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span>: <span class='ident'>GameWindow</span><span class='op'>&gt;</span> <span class='ident'>GameIterator</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Creates a new game iterator.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>settings</span>: <span class='kw-2'>&amp;</span><span class='ident'>GameIteratorSettings</span>) <span class='op'>-&gt;</span> <span class='ident'>GameIterator</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span><span class='op'>&gt;</span> {
-        <span class='kw'>let</span> <span class='ident'>bg_color</span> <span class='op'>=</span> <span class='ident'>game_window</span>.<span class='ident'>get_settings</span>().<span class='ident'>background_color</span>;
+    <span class='doccomment'>/// Creates a new game iterator.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>settings</span>: <span class='kw-2'>&amp;</span><span class='ident'>GameIteratorSettings</span>) <span class='op'>-&gt;</span> <span class='ident'>GameIterator</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>updates_per_second</span>: <span class='ident'>u64</span> <span class='op'>=</span> <span class='ident'>settings</span>.<span class='ident'>updates_per_second</span>;
         <span class='kw'>let</span> <span class='ident'>max_frames_per_second</span>: <span class='ident'>u64</span> <span class='op'>=</span> <span class='ident'>settings</span>.<span class='ident'>max_frames_per_second</span>;
 
@@ -547,7 +563,6 @@
         <span class='ident'>GameIterator</span> {
             <span class='ident'>game_window</span>: <span class='ident'>game_window</span>,
             <span class='ident'>state</span>: <span class='ident'>RenderState</span>,
-            <span class='ident'>gl</span>: <span class='ident'>Gl</span>::<span class='ident'>new</span>(),
             <span class='ident'>last_update</span>: <span class='ident'>start</span>,
             <span class='ident'>update_time_in_ns</span>: <span class='ident'>billion</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span>,
             <span class='ident'>dt</span>: <span class='number'>1.0</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span> <span class='kw'>as</span> <span class='ident'>f64</span>,<span class='comment'>
@@ -556,13 +571,12 @@
             <span class='ident'>min_ns_per_frame</span>: <span class='ident'>billion</span> <span class='op'>/</span> <span class='ident'>max_frames_per_second</span>,
             <span class='ident'>start_render</span>: <span class='ident'>start</span>,
             <span class='ident'>next_render</span>: <span class='ident'>start</span>,
-            <span class='ident'>bg_color</span>: <span class='ident'>bg_color</span>,
             <span class='ident'>updated</span>: <span class='number'>0</span>,
         }
     }
 
-    <span class='doccomment'>/// Returns the next game event.
-</span>    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>next</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;&gt;</span> {
+    <span class='doccomment'>/// Returns the next game event.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>next</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>GameEvent</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;&gt;</span> {
         <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>state</span> {
             <span class='ident'>RenderState</span> <span class='op'>=&gt;</span> {
                 <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>should_close</span>() { <span class='kw'>return</span> <span class='prelude-val'>None</span>; }
@@ -570,21 +584,13 @@
                 <span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>=</span> <span class='ident'>time</span>::<span class='ident'>precise_time_ns</span>();<span class='comment'>
                 // Rendering code
                 </span><span class='kw'>let</span> (<span class='ident'>w</span>, <span class='ident'>h</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>get_size</span>();
-                <span class='kw'>if</span> <span class='ident'>w</span> <span class='op'>!=</span> <span class='number'>0</span> <span class='op'>&amp;&amp;</span> <span class='ident'>h</span> <span class='op'>!=</span> <span class='number'>0</span> {
-                    <span class='ident'>gl</span>::<span class='ident'>Viewport</span>(<span class='number'>0</span>, <span class='number'>0</span>, <span class='ident'>w</span> <span class='kw'>as</span> <span class='ident'>GLint</span>, <span class='ident'>h</span> <span class='kw'>as</span> <span class='ident'>GLint</span>);
-                    <span class='kw'>let</span> <span class='ident'>r</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>bg_color</span>[<span class='number'>0</span>];
-                    <span class='kw'>let</span> <span class='ident'>g</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>bg_color</span>[<span class='number'>1</span>];
-                    <span class='kw'>let</span> <span class='ident'>b</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>bg_color</span>[<span class='number'>2</span>];
-                    <span class='kw'>let</span> <span class='ident'>a</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>bg_color</span>[<span class='number'>3</span>];
-                    <span class='ident'>gl</span>::<span class='ident'>ClearColor</span>(<span class='ident'>r</span>, <span class='ident'>g</span>, <span class='ident'>b</span>, <span class='ident'>a</span>);
-                    <span class='ident'>gl</span>::<span class='ident'>Clear</span>(<span class='ident'>gl</span>::<span class='ident'>COLOR_BUFFER_BIT</span> <span class='op'>|</span> <span class='ident'>gl</span>::<span class='ident'>DEPTH_BUFFER_BIT</span>);<span class='comment'>
+                <span class='kw'>if</span> <span class='ident'>w</span> <span class='op'>!=</span> <span class='number'>0</span> <span class='op'>&amp;&amp;</span> <span class='ident'>h</span> <span class='op'>!=</span> <span class='number'>0</span> {<span class='comment'>
                     // Swap buffers next time.
                     </span><span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>SwapBuffersState</span>;
                     <span class='kw'>return</span> <span class='prelude-val'>Some</span>(<span class='ident'>Render</span>(<span class='ident'>RenderArgs</span> {<span class='comment'>
                             // Extrapolate time forward to allow smooth motion.
                             // &#39;start_render&#39; is always bigger than &#39;last_update&#39;.
                             </span><span class='ident'>ext_dt</span>: (<span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>-</span> <span class='self'>self</span>.<span class='ident'>last_update</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> <span class='ident'>billion</span> <span class='kw'>as</span> <span class='ident'>f64</span>,
-                            <span class='ident'>gl</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>gl</span>,
                             <span class='ident'>width</span>: <span class='ident'>w</span>,
                             <span class='ident'>height</span>: <span class='ident'>h</span>,
                         }
@@ -758,9 +764,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>

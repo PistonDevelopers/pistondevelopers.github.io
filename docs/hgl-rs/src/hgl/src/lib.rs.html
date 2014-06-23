@@ -31,7 +31,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Search documentation..."
+                       placeholder="Click or press 'S' to search, '?' for more options..."
                        type="search">
             </div>
         </form>
@@ -116,16 +116,16 @@
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>license</span> <span class='op'>=</span> <span class='string'>&quot;ASL2/MIT&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>comment</span> <span class='op'>=</span> <span class='string'>&quot;Helper utilities for working with OpenGL&quot;</span>]</span>
 
-<span class='doccomment'>//! hgl-rs - helpers for working with OpenGL.
-</span><span class='doccomment'>//!
-</span><span class='doccomment'>//! hgl assumes GL 3.1 with GLSL 140. There are reexports for most types, but
-</span><span class='doccomment'>//! constants need to be scoped by the module name.
-</span><span class='doccomment'>//!
-</span><span class='doccomment'>//! *NOTE*: The various `bind` methods will explicitly bind the object,
-</span><span class='doccomment'>//! but the other methods frequently bind themselves too! Be careful what you
-</span><span class='doccomment'>//! call if you expect something to be bound to stay bound. They do not
-</span><span class='doccomment'>//! restore the current binding before they return.
-</span>
+<span class='doccomment'>//! hgl-rs - helpers for working with OpenGL.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! hgl assumes GL 3.1 with GLSL 140. There are reexports for most types, but</span>
+<span class='doccomment'>//! constants need to be scoped by the module name.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! *NOTE*: The various `bind` methods will explicitly bind the object,</span>
+<span class='doccomment'>//! but the other methods frequently bind themselves too! Be careful what you</span>
+<span class='doccomment'>//! call if you expect something to be bound to stay bound. They do not</span>
+<span class='doccomment'>//! restore the current binding before they return.</span>
+
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>gl</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
@@ -144,8 +144,8 @@
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>vao</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>texture</span>;
 
-<span class='doccomment'>/// A simple wrapper for glPrimitiveRestartIndex.
-</span><span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>restart_index</span>(<span class='ident'>index</span>: <span class='ident'>GLuint</span>) {
+<span class='doccomment'>/// A simple wrapper for glPrimitiveRestartIndex.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>restart_index</span>(<span class='ident'>index</span>: <span class='ident'>GLuint</span>) {
     <span class='ident'>gl</span>::<span class='ident'>PrimitiveRestartIndex</span>(<span class='ident'>index</span>);
 }<span class='comment'>
 
@@ -188,9 +188,9 @@
                 <dd>Show this help dialog</dd>
                 <dt>S</dt>
                 <dd>Focus the search field</dd>
-                <dt>&uarr;</dt>
+                <dt>&larrb;</dt>
                 <dd>Move up in search results</dd>
-                <dt>&darr;</dt>
+                <dt>&rarrb;</dt>
                 <dd>Move down in search results</dd>
                 <dt>&#9166;</dt>
                 <dd>Go to active search result</dd>
