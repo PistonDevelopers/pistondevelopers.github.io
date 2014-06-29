@@ -236,34 +236,15 @@
 <span id='197'>197</span>
 <span id='198'>198</span>
 <span id='199'>199</span>
-<span id='200'>200</span>
-<span id='201'>201</span>
-<span id='202'>202</span>
-<span id='203'>203</span>
-<span id='204'>204</span>
-<span id='205'>205</span>
-<span id='206'>206</span>
-<span id='207'>207</span>
-<span id='208'>208</span>
-<span id='209'>209</span>
-<span id='210'>210</span>
-<span id='211'>211</span>
-<span id='212'>212</span>
-<span id='213'>213</span>
-<span id='214'>214</span>
-<span id='215'>215</span>
-<span id='216'>216</span>
-<span id='217'>217</span>
 </pre><pre class='rust '>
 
 <span class='kw'>use</span> {
     <span class='ident'>AddBorder</span>,
     <span class='ident'>BackEnd</span>,
-    <span class='ident'>Clear</span>,
     <span class='ident'>Borrowed</span>,
     <span class='ident'>EllipseBorderColorContext</span>,
     <span class='ident'>Field</span>,
-    <span class='ident'>Fill</span>,
+    <span class='ident'>Draw</span>,
     <span class='ident'>ImageSize</span>,
     <span class='ident'>Value</span>,
 };
@@ -408,14 +389,11 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> 
-<span class='ident'>Fill</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> 
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
+<span class='ident'>Draw</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
 <span class='kw'>for</span> <span class='ident'>EllipseColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>fill</span><span class='op'>&lt;</span><span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span>(
-        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
-        <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>
-    ) {
+    <span class='kw'>fn</span> <span class='ident'>draw</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
         <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_tri_list_xy_f32_rgba_f32</span>() {
             <span class='kw'>let</span> <span class='ident'>rect</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>rect</span>.<span class='ident'>get</span>();
             <span class='kw'>let</span> <span class='ident'>color</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>();<span class='comment'>
@@ -434,20 +412,6 @@
                 }
             );
             <span class='kw'>if</span> <span class='ident'>needs_alpha</span> { <span class='ident'>back_end</span>.<span class='ident'>disable_alpha_blend</span>(); }
-        } <span class='kw'>else</span> {
-            <span class='macro'>unimplemented</span><span class='macro'>!</span>();
-        }
-    }
-}
-
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
-<span class='ident'>Clear</span><span class='op'>&lt;</span><span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
-<span class='kw'>for</span> <span class='ident'>EllipseColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>clear</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
-        <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_clear_rgba</span>() {
-            <span class='kw'>let</span> <span class='ident'>color</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>();
-            <span class='ident'>back_end</span>.<span class='ident'>clear_rgba</span>(<span class='ident'>color</span>[<span class='number'>0</span>], <span class='ident'>color</span>[<span class='number'>1</span>], <span class='ident'>color</span>[<span class='number'>2</span>], <span class='ident'>color</span>[<span class='number'>3</span>]);
         } <span class='kw'>else</span> {
             <span class='macro'>unimplemented</span><span class='macro'>!</span>();
         }

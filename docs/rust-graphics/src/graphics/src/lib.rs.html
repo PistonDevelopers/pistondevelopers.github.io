@@ -300,33 +300,6 @@
 <span id='261'>261</span>
 <span id='262'>262</span>
 <span id='263'>263</span>
-<span id='264'>264</span>
-<span id='265'>265</span>
-<span id='266'>266</span>
-<span id='267'>267</span>
-<span id='268'>268</span>
-<span id='269'>269</span>
-<span id='270'>270</span>
-<span id='271'>271</span>
-<span id='272'>272</span>
-<span id='273'>273</span>
-<span id='274'>274</span>
-<span id='275'>275</span>
-<span id='276'>276</span>
-<span id='277'>277</span>
-<span id='278'>278</span>
-<span id='279'>279</span>
-<span id='280'>280</span>
-<span id='281'>281</span>
-<span id='282'>282</span>
-<span id='283'>283</span>
-<span id='284'>284</span>
-<span id='285'>285</span>
-<span id='286'>286</span>
-<span id='287'>287</span>
-<span id='288'>288</span>
-<span id='289'>289</span>
-<span id='290'>290</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;graphics&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
@@ -385,19 +358,8 @@
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! This is only the case when you are assigning the context to a variable.</span>
 
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>gl</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>image</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>core</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>std</span>;
-
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Gl</span> <span class='op'>=</span> <span class='ident'>gl_back_end</span>::<span class='ident'>Gl</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Texture</span> <span class='op'>=</span> <span class='ident'>texture</span>::<span class='ident'>Texture</span>;
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AddBevel</span> 
     <span class='op'>=</span> <span class='ident'>add_bevel</span>::<span class='ident'>AddBevel</span>;
@@ -441,8 +403,6 @@
     <span class='op'>=</span> <span class='ident'>bevel_rectangle_color_context</span>::<span class='ident'>BevelRectangleColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>BevelRectangleContext</span> 
     <span class='op'>=</span> <span class='ident'>bevel_rectangle_context</span>::<span class='ident'>BevelRectangleContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Clear</span> 
-    <span class='op'>=</span> <span class='ident'>clear</span>::<span class='ident'>Clear</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ColorContext</span> 
     <span class='op'>=</span> <span class='ident'>color_context</span>::<span class='ident'>ColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Context</span> 
@@ -457,8 +417,6 @@
     <span class='op'>=</span> <span class='ident'>ellipse_color_context</span>::<span class='ident'>EllipseColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>EllipseBorderColorContext</span> 
     <span class='op'>=</span> <span class='ident'>ellipse_border_color_context</span>::<span class='ident'>EllipseBorderColorContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Fill</span> 
-    <span class='op'>=</span> <span class='ident'>fill</span>::<span class='ident'>Fill</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageSize</span> 
     <span class='op'>=</span> <span class='ident'>image_size</span>::<span class='ident'>ImageSize</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageContext</span> 
@@ -513,21 +471,12 @@
     <span class='op'>=</span> <span class='ident'>round_rectangle_color_context</span>::<span class='ident'>RoundRectangleColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RoundRectangleContext</span> 
     <span class='op'>=</span> <span class='ident'>round_rectangle_context</span>::<span class='ident'>RoundRectangleContext</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Stroke</span> 
-    <span class='op'>=</span> <span class='ident'>stroke</span>::<span class='ident'>Stroke</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SquareBorderLineColorContext</span> 
     <span class='op'>=</span> <span class='ident'>square_border_line_color_context</span>::<span class='ident'>SquareBorderLineColorContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SquareBorderLineContext</span> 
     <span class='op'>=</span> <span class='ident'>square_border_line_context</span>::<span class='ident'>SquareBorderLineContext</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>View</span> 
     <span class='op'>=</span> <span class='ident'>view</span>::<span class='ident'>View</span>;
-
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>mod</span> <span class='ident'>gl_back_end</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>mod</span> <span class='ident'>texture</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>gl</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>shader_utils</span>;
 
 <span class='kw'>mod</span> <span class='ident'>add_bevel</span>;
 <span class='kw'>mod</span> <span class='ident'>add_bevel_border</span>;
@@ -550,7 +499,6 @@
 <span class='kw'>mod</span> <span class='ident'>bevel_rectangle_border_context</span>;
 <span class='kw'>mod</span> <span class='ident'>bevel_rectangle_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>bevel_rectangle_context</span>;
-<span class='kw'>mod</span> <span class='ident'>clear</span>;
 <span class='kw'>mod</span> <span class='ident'>color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>context</span>;
 <span class='kw'>mod</span> <span class='ident'>draw</span>;
@@ -558,7 +506,6 @@
 <span class='kw'>mod</span> <span class='ident'>ellipse_border_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>ellipse_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>ellipse_context</span>;
-<span class='kw'>mod</span> <span class='ident'>fill</span>;
 <span class='kw'>mod</span> <span class='ident'>image_size</span>;
 <span class='kw'>mod</span> <span class='ident'>image_context</span>;
 <span class='kw'>mod</span> <span class='ident'>image_color_context</span>;
@@ -584,7 +531,6 @@
 <span class='kw'>mod</span> <span class='ident'>round_rectangle_context</span>;
 <span class='kw'>mod</span> <span class='ident'>square_border_line_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>square_border_line_context</span>;
-<span class='kw'>mod</span> <span class='ident'>stroke</span>;
 <span class='kw'>mod</span> <span class='ident'>lerp_tween_color_context</span>;
 <span class='kw'>mod</span> <span class='ident'>lerp_tween_context</span>;
 <span class='kw'>mod</span> <span class='ident'>lerp_tween_polygons_color_context</span>;

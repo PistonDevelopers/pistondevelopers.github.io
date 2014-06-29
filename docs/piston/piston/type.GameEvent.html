@@ -23,7 +23,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Game.html'>Game</a></div>
+        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.MouseScrollArgs.html'>MouseScrollArgs</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.ConcurrentGame.html'>ConcurrentGame</a><a class='trait ' href='trait.Game.html'>Game</a></div>
     </section>
 
     <nav class="sub">
@@ -38,9 +38,9 @@
     </nav>
 
     <section id='main' class="content type">
-<h1 class='fqn'>Enum <a href='index.html'>piston</a>::<a class='type' href=''>GameEvent</a><a class='source' id='src-19635' href='../src/piston/src/game_iterator.rs.html#66-83'>[src]</a></h1>
-<pre class='rust enum'>pub enum GameEvent&lt;'a&gt; {
-    Render(<a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>&lt;'a&gt;),
+<h1 class='fqn'>Enum <a href='index.html'>piston</a>::<a class='type' href=''>GameEvent</a><a class='source' id='src-20759' href='../src/piston/src/game_iterator.rs.html#84-103'>[src]</a></h1>
+<pre class='rust enum'>pub enum GameEvent {
+    Render(<a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>),
     Update(<a class='struct' href='../piston/struct.UpdateArgs.html' title='piston::UpdateArgs'>UpdateArgs</a>),
     KeyPress(<a class='struct' href='../piston/struct.KeyPressArgs.html' title='piston::KeyPressArgs'>KeyPressArgs</a>),
     KeyRelease(<a class='struct' href='../piston/struct.KeyReleaseArgs.html' title='piston::KeyReleaseArgs'>KeyReleaseArgs</a>),
@@ -48,6 +48,7 @@
     MouseRelease(<a class='struct' href='../piston/struct.MouseReleaseArgs.html' title='piston::MouseReleaseArgs'>MouseReleaseArgs</a>),
     MouseMove(<a class='struct' href='../piston/struct.MouseMoveArgs.html' title='piston::MouseMoveArgs'>MouseMoveArgs</a>),
     MouseRelativeMove(<a class='struct' href='../piston/struct.MouseRelativeMoveArgs.html' title='piston::MouseRelativeMoveArgs'>MouseRelativeMoveArgs</a>),
+    MouseScroll(<a class='struct' href='../piston/struct.MouseScrollArgs.html' title='piston::MouseScrollArgs'>MouseScrollArgs</a>),
 }</pre><div class='docblock'><p>Contains the different game events.</p>
 </div><h2 class='variants'>Variants</h2>
 <table><tr><td id='variant.Render'><code>Render</code></td><td><div class='docblock'><p>Render graphics.</p>
@@ -58,11 +59,10 @@
 </div></td></tr><tr><td id='variant.MouseRelease'><code>MouseRelease</code></td><td><div class='docblock'><p>Released a mouse button.</p>
 </div></td></tr><tr><td id='variant.MouseMove'><code>MouseMove</code></td><td><div class='docblock'><p>Moved mouse cursor.</p>
 </div></td></tr><tr><td id='variant.MouseRelativeMove'><code>MouseRelativeMove</code></td><td><div class='docblock'><p>Moved mouse relative, not bounded by cursor.</p>
-</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>&lt;'a&gt;</code></h3><div class='methods'><h4 id='method.to_sendable' class='method'><code>fn <a href='#method.to_sendable' class='fnname'>to_sendable</a>(&amp;'a self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a>&lt;'static&gt;&gt;</code></h4>
-<div class='docblock'><p>Maps event to something that can be sent between tasks if possible.</p>
-
-<p>Render events are not sendable between tasks. </p>
-</div></div></section>
+</div></td></tr><tr><td id='variant.MouseScroll'><code>MouseScroll</code></td><td><div class='docblock'><p>Scrolled mouse.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

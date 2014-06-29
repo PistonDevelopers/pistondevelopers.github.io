@@ -217,37 +217,15 @@
 <span id='178'>178</span>
 <span id='179'>179</span>
 <span id='180'>180</span>
-<span id='181'>181</span>
-<span id='182'>182</span>
-<span id='183'>183</span>
-<span id='184'>184</span>
-<span id='185'>185</span>
-<span id='186'>186</span>
-<span id='187'>187</span>
-<span id='188'>188</span>
-<span id='189'>189</span>
-<span id='190'>190</span>
-<span id='191'>191</span>
-<span id='192'>192</span>
-<span id='193'>193</span>
-<span id='194'>194</span>
-<span id='195'>195</span>
-<span id='196'>196</span>
-<span id='197'>197</span>
-<span id='198'>198</span>
-<span id='199'>199</span>
 </pre><pre class='rust '>
 
 <span class='kw'>use</span> {
     <span class='ident'>AddBevelBorder</span>,
     <span class='ident'>AddRoundBorder</span>,
     <span class='ident'>AddSquareBorder</span>,
-    <span class='ident'>BackEnd</span>,
     <span class='ident'>BevelBorderLineColorContext</span>,
     <span class='ident'>Borrowed</span>,
-    <span class='ident'>Clear</span>,
     <span class='ident'>Field</span>,
-    <span class='ident'>ImageSize</span>,
     <span class='ident'>RoundBorderLineColorContext</span>,
     <span class='ident'>SquareBorderLineColorContext</span>,
     <span class='ident'>Value</span>,
@@ -416,22 +394,6 @@
             <span class='ident'>line</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>line</span>.<span class='ident'>get</span>()),
             <span class='ident'>square_border_radius</span>: <span class='ident'>Value</span>(<span class='ident'>radius</span>),
             <span class='ident'>color</span>: <span class='ident'>Borrowed</span>(<span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>()),
-        }
-    }
-}
-
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
-<span class='ident'>Clear</span><span class='op'>&lt;</span><span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
-<span class='kw'>for</span> <span class='ident'>LineColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='kw'>fn</span> <span class='ident'>clear</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
-        <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_clear_rgba</span>() {
-            <span class='kw'>let</span> <span class='ident'>color</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>();
-            <span class='ident'>back_end</span>.<span class='ident'>clear_rgba</span>(
-                <span class='ident'>color</span>[<span class='number'>0</span>], 
-                <span class='ident'>color</span>[<span class='number'>1</span>], 
-                <span class='ident'>color</span>[<span class='number'>2</span>], 
-                <span class='ident'>color</span>[<span class='number'>3</span>]
-            );
         }
     }
 }
