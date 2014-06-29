@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The image library documentation.">
+
+    <title>image::imaging::pixelbuf::PixelBuf - Rust</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+</head>
+<body>
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>image</a>&#8203;::<a href='../index.html'>imaging</a>&#8203;::<a href='index.html'>pixelbuf</a></p>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content type">
+<h1 class='fqn'>Enum <a href='../../index.html'>image</a>::<a href='../index.html'>imaging</a>::<a href='index.html'>pixelbuf</a>::<a class='type' href=''>PixelBuf</a><a class='source' id='src-42606' href='../../../src/image/src/imaging/pixelbuf.rs.html#20-36'>[src]</a></h1>
+<pre class='rust enum'>pub enum PixelBuf {
+    Luma8(<a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../image/imaging/pixel/struct.Luma.html' title='image::imaging::pixel::Luma'>Luma</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;&gt;),
+    LumaA8(<a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../image/imaging/pixel/struct.LumaA.html' title='image::imaging::pixel::LumaA'>LumaA</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;&gt;),
+    Rgb8(<a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../image/imaging/pixel/struct.Rgb.html' title='image::imaging::pixel::Rgb'>Rgb</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;&gt;),
+    Rgba8(<a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../image/imaging/pixel/struct.Rgba.html' title='image::imaging::pixel::Rgba'>Rgba</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;&gt;),
+}</pre><div class='docblock'><p>An abstraction over a vector of pixel types</p>
+</div><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.Luma8'><code>Luma8</code></td><td><div class='docblock'><p>Each pixel in this buffer is 8-bit Luma</p>
+</div></td></tr><tr><td id='variant.LumaA8'><code>LumaA8</code></td><td><div class='docblock'><p>Each pixel in this buffer is 8-bit Luma with alpha</p>
+</div></td></tr><tr><td id='variant.Rgb8'><code>Rgb8</code></td><td><div class='docblock'><p>Each pixel in this buffer is 8-bit Rgb</p>
+</div></td></tr><tr><td id='variant.Rgba8'><code>Rgba8</code></td><td><div class='docblock'><p>Each pixel in this buffer is 8-bit Rgb with alpha</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h3><div class='methods'><h4 id='method.as_luma8' class='method'><code>fn <a href='#method.as_luma8' class='fnname'>as_luma8</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a class='struct' href='../../../image/imaging/pixel/struct.Luma.html' title='image::imaging::pixel::Luma'>Luma</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;]</a></code></h4>
+<div class='docblock'><p>Convert from self to an array of 8-bit Luma pixels.</p>
+</div><h4 id='method.as_luma_alpha8' class='method'><code>fn <a href='#method.as_luma_alpha8' class='fnname'>as_luma_alpha8</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a class='struct' href='../../../image/imaging/pixel/struct.LumaA.html' title='image::imaging::pixel::LumaA'>LumaA</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;]</a></code></h4>
+<div class='docblock'><p>Convert from self to an array of 8-bit Luma pixels with alpha.</p>
+</div><h4 id='method.as_rgb8' class='method'><code>fn <a href='#method.as_rgb8' class='fnname'>as_rgb8</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a class='struct' href='../../../image/imaging/pixel/struct.Rgb.html' title='image::imaging::pixel::Rgb'>Rgb</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;]</a></code></h4>
+<div class='docblock'><p>Convert from self to an array of 8-bit RGB pixels.</p>
+</div><h4 id='method.as_rgba8' class='method'><code>fn <a href='#method.as_rgba8' class='fnname'>as_rgba8</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a href='http://doc.rust-lang.org/std/primitive.slice.html'>[<a class='struct' href='../../../image/imaging/pixel/struct.Rgba.html' title='image::imaging::pixel::Rgba'>Rgba</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;]</a></code></h4>
+<div class='docblock'><p>Convert from self to an array of 8-bit RGB pixels with alpha.</p>
+</div><h4 id='method.from_bytes' class='method'><code>fn <a href='#method.from_bytes' class='fnname'>from_bytes</a>(buf: <a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;, color: <a class='type' href='../../../image/imaging/colortype/type.ColorType.html' title='image::imaging::colortype::ColorType'>ColorType</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a>, <a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;&gt;</code></h4>
+<div class='docblock'><p>Convert from a vector of bytes to a <code>PixelBuf</code>
+Returns the original buffer if the conversion cannot be done.</p>
+</div><h4 id='method.to_bytes' class='method'><code>fn <a href='#method.to_bytes' class='fnname'>to_bytes</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>&gt;</code></h4>
+<div class='docblock'><p>Convert from a <code>PixelBuf</code> to a vector of bytes</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/collections/trait.Collection.html' title='core::collections::Collection'>Collection</a> for <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h3><div class='methods'><h4 id='method.len' class='method'><code>fn <a href='#method.len' class='fnname'>len</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a></code></h4>
+<h4 id='method.is_empty' class='method'><code>fn <a href='#tymethod.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h3><div class='methods'><h4 id='method.assert_receiver_is_total_eq' class='method'><code>fn <a href='#tymethod.assert_receiver_is_total_eq' class='fnname'>assert_receiver_is_total_eq</a>(&amp;self)</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../../../image/imaging/pixelbuf/type.PixelBuf.html' title='image::imaging::pixelbuf::PixelBuf'>PixelBuf</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "image";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script async src="../../../search-index.js"></script>
+</body>
+</html>

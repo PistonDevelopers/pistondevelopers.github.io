@@ -87,77 +87,57 @@
 <span id='48'>48</span>
 <span id='49'>49</span>
 <span id='50'>50</span>
-<span id='51'>51</span>
-<span id='52'>52</span>
-<span id='53'>53</span>
-<span id='54'>54</span>
-<span id='55'>55</span>
-<span id='56'>56</span>
-<span id='57'>57</span>
-<span id='58'>58</span>
-<span id='59'>59</span>
-<span id='60'>60</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;piston&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>dead_code</span>)]</span>
 
 <span class='doccomment'>//! A user friendly graphics engine.</span>
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>glfw</span>)]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>glfw</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>sdl2</span>)]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sdl2</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>glfw</span>)]</span>
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>sdl2</span>)]</span>
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>gl</span>;
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>time</span>;
 
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>time</span>;
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>sync</span>;
+
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ConcurrentGame</span> <span class='op'>=</span> <span class='ident'>concurrent_game</span>::<span class='ident'>ConcurrentGame</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Game</span> <span class='op'>=</span> <span class='ident'>game</span>::<span class='ident'>Game</span>;
 
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Render</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>Render</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Update</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>Update</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>KeyPress</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyPress</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>KeyRelease</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyRelease</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MousePress</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MousePress</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MouseRelease</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseRelease</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MouseMove</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseMove</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MouseRelativeMove</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseRelativeMove</span>;
-
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameEvent</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>GameEvent</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameIterator</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>GameIterator</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameIteratorSettings</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>GameIteratorSettings</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RenderArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>RenderArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>UpdateArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>UpdateArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>KeyPressArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyPressArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>KeyReleaseArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyReleaseArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MousePressArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MousePressArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MouseReleaseArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseReleaseArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MouseMoveArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseMoveArgs</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MouseRelativeMoveArgs</span> <span class='op'>=</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseRelativeMoveArgs</span>;
-
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameWindow</span> <span class='op'>=</span> <span class='ident'>game_window</span>::<span class='ident'>GameWindow</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>sdl2</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameWindowSDL2</span> <span class='op'>=</span> <span class='ident'>game_window_sdl2</span>::<span class='ident'>GameWindowSDL2</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>glfw</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameWindowGLFW</span> <span class='op'>=</span> <span class='ident'>game_window_glfw</span>::<span class='ident'>GameWindowGLFW</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RenderWindow</span> <span class='op'>=</span> <span class='ident'>game_window</span>::<span class='ident'>RenderWindow</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GameWindowSettings</span> <span class='op'>=</span> <span class='ident'>game_window_settings</span>::<span class='ident'>GameWindowSettings</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>AssetStore</span> <span class='op'>=</span> <span class='ident'>asset_store</span>::<span class='ident'>AssetStore</span>;
+
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>Render</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>Update</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyPress</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyRelease</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MousePress</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseRelease</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseMove</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseRelativeMove</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseScroll</span>;
+
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>GameEvent</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>GameIterator</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>GameIteratorSettings</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>RenderArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>UpdateArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyPressArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>KeyReleaseArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MousePressArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseReleaseArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseMoveArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseRelativeMoveArgs</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>game_iterator</span>::<span class='ident'>MouseScrollArgs</span>;
 
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>game_window</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>keyboard</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>event</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>mouse</span>;
 
+<span class='kw'>mod</span> <span class='ident'>concurrent_game</span>;
 <span class='kw'>mod</span> <span class='ident'>game</span>;
 <span class='kw'>mod</span> <span class='ident'>game_iterator</span>;
 <span class='kw'>mod</span> <span class='ident'>game_window_settings</span>;
 <span class='kw'>mod</span> <span class='ident'>asset_store</span>;
-
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>sdl2</span>)]</span>
-<span class='kw'>mod</span> <span class='ident'>game_window_sdl2</span>;
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>glfw</span>)]</span>
-<span class='kw'>mod</span> <span class='ident'>game_window_glfw</span>;
-
 </pre>
 </section>
     <section id='search' class="content hidden"></section>

@@ -296,23 +296,6 @@
 <span id='257'>257</span>
 <span id='258'>258</span>
 <span id='259'>259</span>
-<span id='260'>260</span>
-<span id='261'>261</span>
-<span id='262'>262</span>
-<span id='263'>263</span>
-<span id='264'>264</span>
-<span id='265'>265</span>
-<span id='266'>266</span>
-<span id='267'>267</span>
-<span id='268'>268</span>
-<span id='269'>269</span>
-<span id='270'>270</span>
-<span id='271'>271</span>
-<span id='272'>272</span>
-<span id='273'>273</span>
-<span id='274'>274</span>
-<span id='275'>275</span>
-<span id='276'>276</span>
 </pre><pre class='rust '>
 
 <span class='kw'>use</span> {
@@ -323,9 +306,8 @@
     <span class='ident'>BackEnd</span>,
     <span class='ident'>BevelRectangleColorContext</span>,
     <span class='ident'>Borrowed</span>,
-    <span class='ident'>Clear</span>,
     <span class='ident'>Field</span>,
-    <span class='ident'>Fill</span>,
+    <span class='ident'>Draw</span>,
     <span class='ident'>ImageSize</span>,
     <span class='ident'>ImageRectangleColorContext</span>,
     <span class='ident'>RectangleBorderColorContext</span>,
@@ -477,14 +459,11 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> 
-<span class='ident'>Fill</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> 
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
+<span class='ident'>Draw</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
 <span class='kw'>for</span> <span class='ident'>RectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>(<span class='ident'>always</span>)]</span>
-    <span class='kw'>fn</span> <span class='ident'>fill</span><span class='op'>&lt;</span><span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span>(
-        <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, 
-        <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>
-    ) {
+    <span class='kw'>fn</span> <span class='ident'>draw</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
         <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_tri_list_xy_f32_rgba_f32</span>() {
             <span class='kw'>let</span> <span class='ident'>rect</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>rect</span>.<span class='ident'>get</span>();
             <span class='kw'>let</span> <span class='ident'>color</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>();<span class='comment'>
@@ -498,19 +477,6 @@
                 <span class='ident'>rect_tri_list_rgba_f32</span>(<span class='op'>*</span><span class='ident'>color</span>)
             );
             <span class='kw'>if</span> <span class='ident'>needs_alpha</span> { <span class='ident'>back_end</span>.<span class='ident'>disable_alpha_blend</span>(); }
-        } <span class='kw'>else</span> {
-            <span class='macro'>unimplemented</span><span class='macro'>!</span>();
-        }
-    }
-}
-
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>B</span>: <span class='ident'>BackEnd</span><span class='op'>&lt;</span><span class='ident'>I</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>ImageSize</span><span class='op'>&gt;</span> 
-<span class='ident'>Clear</span><span class='op'>&lt;</span><span class='ident'>B</span>, <span class='ident'>I</span><span class='op'>&gt;</span> 
-<span class='kw'>for</span> <span class='ident'>RectangleColorContext</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
-    <span class='kw'>fn</span> <span class='ident'>clear</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>back_end</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>B</span>) {
-        <span class='kw'>if</span> <span class='ident'>back_end</span>.<span class='ident'>supports_clear_rgba</span>() {
-            <span class='kw'>let</span> <span class='ident'>color</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>color</span>.<span class='ident'>get</span>();
-            <span class='ident'>back_end</span>.<span class='ident'>clear_rgba</span>(<span class='ident'>color</span>[<span class='number'>0</span>], <span class='ident'>color</span>[<span class='number'>1</span>], <span class='ident'>color</span>[<span class='number'>2</span>], <span class='ident'>color</span>[<span class='number'>3</span>]);
         } <span class='kw'>else</span> {
             <span class='macro'>unimplemented</span><span class='macro'>!</span>();
         }
