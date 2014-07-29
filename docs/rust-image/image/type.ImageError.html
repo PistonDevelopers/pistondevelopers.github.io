@@ -7,10 +7,9 @@
 
     <title>image::ImageError - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -21,9 +20,11 @@
     </div>
     <![endif]-->
 
+    
+
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='codecs/index.html'>codecs</a><a class='mod ' href='imaging/index.html'>imaging</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.GIFDecoder.html'>GIFDecoder</a><a class='struct ' href='struct.Image.html'>Image</a><a class='struct ' href='struct.JPEGDecoder.html'>JPEGDecoder</a><a class='struct ' href='struct.JPEGEncoder.html'>JPEGEncoder</a><a class='struct ' href='struct.PNGDecoder.html'>PNGDecoder</a><a class='struct ' href='struct.PNGEncoder.html'>PNGEncoder</a><a class='struct ' href='struct.SubImage.html'>SubImage</a><a class='struct ' href='struct.Tiles.html'>Tiles</a><a class='struct ' href='struct.WebpDecoder.html'>WebpDecoder</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.ImageDecoder.html'>ImageDecoder</a></div>
+        <p class='location'><a href='index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='gif/index.html'>gif</a><a class='mod ' href='imageops/index.html'>imageops</a><a class='mod ' href='jpeg/index.html'>jpeg</a><a class='mod ' href='png/index.html'>png</a><a class='mod ' href='ppm/index.html'>ppm</a><a class='mod ' href='webp/index.html'>webp</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.ImageBuf.html'>ImageBuf</a><a class='struct ' href='struct.Luma.html'>Luma</a><a class='struct ' href='struct.LumaA.html'>LumaA</a><a class='struct ' href='struct.MutPixels.html'>MutPixels</a><a class='struct ' href='struct.Pixels.html'>Pixels</a><a class='struct ' href='struct.Rgb.html'>Rgb</a><a class='struct ' href='struct.Rgba.html'>Rgba</a><a class='struct ' href='struct.SubImage.html'>SubImage</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.GenericImage.html'>GenericImage</a><a class='trait ' href='trait.ImageDecoder.html'>ImageDecoder</a><a class='trait ' href='trait.MutableRefImage.html'>MutableRefImage</a><a class='trait ' href='trait.Pixel.html'>Pixel</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.load.html'>load</a><a class='fn ' href='fn.load_from_memory.html'>load_from_memory</a><a class='fn ' href='fn.open.html'>open</a></div>
     </section>
 
     <nav class="sub">
@@ -38,7 +39,7 @@
     </nav>
 
     <section id='main' class="content type">
-<h1 class='fqn'>Enum <a href='index.html'>image</a>::<a class='type' href=''>ImageError</a><a class='source' id='src-44426' href='../src/image/src/image.rs.html#39-61'>[src]</a></h1>
+<h1 class='fqn'>Enum <a href='index.html'>image</a>::<a class='type' href=''>ImageError</a><span class='out-of-band'><a id='src-40437' href='../src/image/src/image.rs.html#14-36'>[src]</a></span></h1>
 <pre class='rust enum'>pub enum ImageError {
     FormatError,
     DimensionError,
@@ -49,18 +50,18 @@
     ImageEnd,
 }</pre><div class='docblock'><p>An enumeration of Image Errors</p>
 </div><h2 class='variants'>Variants</h2>
-<table><tr><td id='variant.FormatError'><code>FormatError</code></td><td><div class='docblock'><p>The Image is not formatted properly</p>
-</div></td></tr><tr><td id='variant.DimensionError'><code>DimensionError</code></td><td><div class='docblock'><p>The Image&#39;s dimensions are either too small or too large</p>
-</div></td></tr><tr><td id='variant.UnsupportedError'><code>UnsupportedError</code></td><td><div class='docblock'><p>The Decoder does not support this image format</p>
-</div></td></tr><tr><td id='variant.UnsupportedColor'><code>UnsupportedColor</code></td><td><div class='docblock'><p>The Decoder does not support this color type</p>
-</div></td></tr><tr><td id='variant.NotEnoughData'><code>NotEnoughData</code></td><td><div class='docblock'><p>Not enough data was provided to the Decoder
+<table><tr><td id='variant.FormatError'><a class='stability Unmarked' title='No stability level'></a><code>FormatError</code></td><td><div class='docblock'><p>The Image is not formatted properly</p>
+</div></td></tr><tr><td id='variant.DimensionError'><a class='stability Unmarked' title='No stability level'></a><code>DimensionError</code></td><td><div class='docblock'><p>The Image&#39;s dimensions are either too small or too large</p>
+</div></td></tr><tr><td id='variant.UnsupportedError'><a class='stability Unmarked' title='No stability level'></a><code>UnsupportedError</code></td><td><div class='docblock'><p>The Decoder does not support this image format</p>
+</div></td></tr><tr><td id='variant.UnsupportedColor'><a class='stability Unmarked' title='No stability level'></a><code>UnsupportedColor</code></td><td><div class='docblock'><p>The Decoder does not support this color type</p>
+</div></td></tr><tr><td id='variant.NotEnoughData'><a class='stability Unmarked' title='No stability level'></a><code>NotEnoughData</code></td><td><div class='docblock'><p>Not enough data was provided to the Decoder
 to decode the image</p>
-</div></td></tr><tr><td id='variant.IoError'><code>IoError</code></td><td><div class='docblock'><p>An I/O Error occurred while decoding the image</p>
-</div></td></tr><tr><td id='variant.ImageEnd'><code>ImageEnd</code></td><td><div class='docblock'><p>The end of the image has been reached</p>
-</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a></code></h3><div class='methods'><h4 id='method.assert_receiver_is_total_eq' class='method'><code>fn <a href='#tymethod.assert_receiver_is_total_eq' class='fnname'>assert_receiver_is_total_eq</a>(&amp;self)</code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a></code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></td></tr><tr><td id='variant.IoError'><a class='stability Unmarked' title='No stability level'></a><code>IoError</code></td><td><div class='docblock'><p>An I/O Error occurred while decoding the image</p>
+</div></td></tr><tr><td id='variant.ImageEnd'><a class='stability Unmarked' title='No stability level'></a><code>ImageEnd</code></td><td><div class='docblock'><p>The end of the image has been reached</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a></code></h3><div class='impl-methods'><h4 id='method.assert_receiver_is_total_eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.assert_receiver_is_total_eq' class='fnname'>assert_receiver_is_total_eq</a>(&amp;self)</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a></code></h3><div class='impl-methods'><h4 id='method.eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../image/type.ImageError.html' title='image::ImageError'>ImageError</a></code></h3><div class='impl-methods'><h4 id='method.fmt' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -96,6 +97,8 @@ to decode the image</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";
