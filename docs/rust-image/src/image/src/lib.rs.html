@@ -7,10 +7,9 @@
 
     <title>lib.rs.html -- source</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -133,30 +134,40 @@
 <span class='doccomment'>//! Image encoders and decoders and basic image manipulation</span>
 <span class='doccomment'>//! functions.</span>
 
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_id</span> <span class='op'>=</span> <span class='string'>&quot;image&quot;</span>]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_name</span> <span class='op'>=</span> <span class='string'>&quot;image&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;rlib&quot;</span>]</span>
 
-<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>deny</span>(<span class='ident'>missing_doc</span>)]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>missing_doc</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>unnecessary_qualification</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>unnecessary_typecast</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>macro_rules</span>)]</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>flate</span>;
 
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ColorType</span> <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>colortype</span>::<span class='ident'>ColorType</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Grey</span>      <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>colortype</span>::<span class='ident'>Grey</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RGB</span>       <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>colortype</span>::<span class='ident'>RGB</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Palette</span>   <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>colortype</span>::<span class='ident'>Palette</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GreyA</span>     <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>colortype</span>::<span class='ident'>GreyA</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>RGBA</span>      <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>colortype</span>::<span class='ident'>RGBA</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ColorType</span> <span class='op'>=</span> <span class='ident'>color</span>::<span class='ident'>ColorType</span>;
+
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>color</span>:: {
+    <span class='ident'>Grey</span>,
+    <span class='ident'>RGB</span>,
+    <span class='ident'>Palette</span>,
+    <span class='ident'>GreyA</span>,
+    <span class='ident'>RGBA</span>,
+
+    <span class='ident'>Pixel</span>,
+
+    <span class='ident'>Luma</span>,
+    <span class='ident'>LumaA</span>,
+    <span class='ident'>Rgb</span>,
+    <span class='ident'>Rgba</span>,
+};
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageDecoder</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageDecoder</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageError</span>   <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageError</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageResult</span>  <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageResult</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageFormat</span>  <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageFormat</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>FilterType</span>   <span class='op'>=</span> <span class='ident'>imaging</span>::<span class='ident'>sample</span>::<span class='ident'>FilterType</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>FilterType</span>   <span class='op'>=</span> <span class='ident'>imageops</span>::<span class='ident'>FilterType</span>;
 
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>imaging</span>::<span class='ident'>sample</span>::{
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>imageops</span>:: {
     <span class='ident'>Triangle</span>,
     <span class='ident'>Nearest</span>,
     <span class='ident'>CatmullRom</span>,
@@ -164,7 +175,7 @@
     <span class='ident'>Lanczos3</span>
 };
 
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>image</span>::{
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>image</span>:: {
     <span class='ident'>PNG</span>,
     <span class='ident'>JPEG</span>,
     <span class='ident'>GIF</span>,
@@ -172,54 +183,44 @@
     <span class='ident'>PPM</span>
 };
 
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Image</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>Image</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SubImage</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>SubImage</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Tiles</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>Tiles</span>;
+<span class='comment'>//Image Types</span>
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>SubImage</span>        <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>SubImage</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>ImageBuf</span>        <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>ImageBuf</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>DynamicImage</span>    <span class='op'>=</span> <span class='ident'>dynimage</span>::<span class='ident'>DynamicImage</span>;
 
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>JPEGDecoder</span> <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>jpeg</span>::<span class='ident'>JPEGDecoder</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>JPEGEncoder</span> <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>jpeg</span>::<span class='ident'>JPEGEncoder</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>PNGDecoder</span>  <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>png</span>::<span class='ident'>PNGDecoder</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>PNGEncoder</span>  <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>png</span>::<span class='ident'>PNGEncoder</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GIFDecoder</span>  <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>gif</span>::<span class='ident'>GIFDecoder</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>PPMEncoder</span>  <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>ppm</span>::<span class='ident'>PPMEncoder</span>;
-<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>WebpDecoder</span> <span class='op'>=</span> <span class='ident'>codecs</span>::<span class='ident'>webp</span>::<span class='ident'>WebpDecoder</span>;
+<span class='comment'>//Traits</span>
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>GenericImage</span>    <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>GenericImage</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MutableRefImage</span> <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>MutableRefImage</span>;
 
-<span class='doccomment'>///Image Codecs</span>
-<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>codecs</span> {
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>vp8</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>jpeg</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>png</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>gif</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>webp</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ppm</span>;
-}
+<span class='comment'>//Iterators</span>
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>Pixels</span>          <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>Pixels</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>MutPixels</span>       <span class='op'>=</span> <span class='ident'>image</span>::<span class='ident'>MutPixels</span>;
 
-<span class='attribute'>#[<span class='ident'>path</span> <span class='op'>=</span> <span class='string'>&quot;codecs/hash.rs&quot;</span>]</span>
-<span class='kw'>mod</span> <span class='ident'>hash</span>;
+<span class='doccomment'>///opening and loading images</span>
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>dynimage</span>:: {
+    <span class='ident'>open</span>,
+    <span class='ident'>load</span>,
+    <span class='ident'>load_from_memory</span>,
 
-<span class='attribute'>#[<span class='ident'>path</span> <span class='op'>=</span> <span class='string'>&quot;codecs/transform.rs&quot;</span>]</span>
-<span class='kw'>mod</span> <span class='ident'>transform</span>;
+    <span class='ident'>ImageRgb8</span>,
+    <span class='ident'>ImageRgba8</span>,
+    <span class='ident'>ImageLuma8</span>,
+    <span class='ident'>ImageLumaA8</span>,
+};
 
-<span class='attribute'>#[<span class='ident'>path</span> <span class='op'>=</span> <span class='string'>&quot;codecs/deflate.rs&quot;</span>]</span>
-<span class='kw'>mod</span> <span class='ident'>deflate</span>;
+<span class='comment'>//Image Processing Functions</span>
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>imageops</span>;
 
-<span class='attribute'>#[<span class='ident'>path</span> <span class='op'>=</span> <span class='string'>&quot;codecs/zlib.rs&quot;</span>]</span>
-<span class='kw'>mod</span> <span class='ident'>zlib</span>;
-
-<span class='attribute'>#[<span class='ident'>path</span> <span class='op'>=</span> <span class='string'>&quot;codecs/lzw.rs&quot;</span>]</span>
-<span class='kw'>mod</span> <span class='ident'>lzw</span>;
-
-<span class='doccomment'>///Image Processing Functions</span>
-<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>imaging</span> {
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>colortype</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>pixel</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>sample</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>colorops</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>pixelbuf</span>;
-    <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>affine</span>;
-}
+<span class='comment'>//Image Codecs</span>
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>webp</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ppm</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>png</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>jpeg</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>gif</span>;
 
 <span class='kw'>mod</span> <span class='ident'>image</span>;
+<span class='kw'>mod</span> <span class='ident'>dynimage</span>;
+<span class='kw'>mod</span> <span class='ident'>color</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -256,6 +257,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../../";
