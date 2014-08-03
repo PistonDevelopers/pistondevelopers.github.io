@@ -7,10 +7,9 @@
 
     <title>glfw::WindowEvent - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,26 +39,29 @@
     </nav>
 
     <section id='main' class="content type">
-<h1 class='fqn'>Enum <a href='index.html'>glfw</a>::<a class='type' href=''>WindowEvent</a><a class='source' id='src-16755' href='../src/glfw/src/lib/lib.rs.html#1036-1050'>[src]</a></h1>
+<h1 class='fqn'>Enum <a href='index.html'>glfw</a>::<a class='type' href=''>WindowEvent</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-19320' href='../src/glfw/src/glfw.rs.html#1050-1064'>[src]</a></span></h1>
 <pre class='rust enum'>pub enum WindowEvent {
-    PosEvent(<a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>),
-    SizeEvent(<a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>),
+    PosEvent(<a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>),
+    SizeEvent(<a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>),
     CloseEvent,
     RefreshEvent,
-    FocusEvent(<a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a>),
-    IconifyEvent(<a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a>),
-    FramebufferSizeEvent(<a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>),
+    FocusEvent(<a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>),
+    IconifyEvent(<a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>),
+    FramebufferSizeEvent(<a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>),
     MouseButtonEvent(<a class='type' href='../glfw/type.MouseButton.html' title='glfw::MouseButton'>MouseButton</a>, <a class='type' href='../glfw/type.Action.html' title='glfw::Action'>Action</a>, <a class='struct' href='../glfw/struct.Modifiers.html' title='glfw::Modifiers'>Modifiers</a>),
-    CursorPosEvent(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>),
-    CursorEnterEvent(<a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a>),
-    ScrollEvent(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>),
+    CursorPosEvent(<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>),
+    CursorEnterEvent(<a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>),
+    ScrollEvent(<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>),
     KeyEvent(<a class='type' href='../glfw/type.Key.html' title='glfw::Key'>Key</a>, <a class='type' href='../glfw/type.Scancode.html' title='glfw::Scancode'>Scancode</a>, <a class='type' href='../glfw/type.Action.html' title='glfw::Action'>Action</a>, <a class='struct' href='../glfw/struct.Modifiers.html' title='glfw::Modifiers'>Modifiers</a>),
-    CharEvent(<a href='http://doc.rust-lang.org/std/primitive.char.html'>char</a>),
+    CharEvent(<a href='http://doc.rust-lang.org/master/core/primitive.char.html'>char</a>),
 }</pre><div class='docblock'><p>Window event messages.</p>
 </div><h2 class='variants'>Variants</h2>
-<table><tr><td id='variant.PosEvent'><code>PosEvent</code></td><td></td></tr><tr><td id='variant.SizeEvent'><code>SizeEvent</code></td><td></td></tr><tr><td id='variant.CloseEvent'><code>CloseEvent</code></td><td></td></tr><tr><td id='variant.RefreshEvent'><code>RefreshEvent</code></td><td></td></tr><tr><td id='variant.FocusEvent'><code>FocusEvent</code></td><td></td></tr><tr><td id='variant.IconifyEvent'><code>IconifyEvent</code></td><td></td></tr><tr><td id='variant.FramebufferSizeEvent'><code>FramebufferSizeEvent</code></td><td></td></tr><tr><td id='variant.MouseButtonEvent'><code>MouseButtonEvent</code></td><td></td></tr><tr><td id='variant.CursorPosEvent'><code>CursorPosEvent</code></td><td></td></tr><tr><td id='variant.CursorEnterEvent'><code>CursorEnterEvent</code></td><td></td></tr><tr><td id='variant.ScrollEvent'><code>ScrollEvent</code></td><td></td></tr><tr><td id='variant.KeyEvent'><code>KeyEvent</code></td><td></td></tr><tr><td id='variant.CharEvent'><code>CharEvent</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a></code></h4>
-<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<table><tr><td id='variant.PosEvent'><a class='stability Unmarked' title='No stability level'></a><code>PosEvent</code></td><td></td></tr><tr><td id='variant.SizeEvent'><a class='stability Unmarked' title='No stability level'></a><code>SizeEvent</code></td><td></td></tr><tr><td id='variant.CloseEvent'><a class='stability Unmarked' title='No stability level'></a><code>CloseEvent</code></td><td></td></tr><tr><td id='variant.RefreshEvent'><a class='stability Unmarked' title='No stability level'></a><code>RefreshEvent</code></td><td></td></tr><tr><td id='variant.FocusEvent'><a class='stability Unmarked' title='No stability level'></a><code>FocusEvent</code></td><td></td></tr><tr><td id='variant.IconifyEvent'><a class='stability Unmarked' title='No stability level'></a><code>IconifyEvent</code></td><td></td></tr><tr><td id='variant.FramebufferSizeEvent'><a class='stability Unmarked' title='No stability level'></a><code>FramebufferSizeEvent</code></td><td></td></tr><tr><td id='variant.MouseButtonEvent'><a class='stability Unmarked' title='No stability level'></a><code>MouseButtonEvent</code></td><td></td></tr><tr><td id='variant.CursorPosEvent'><a class='stability Unmarked' title='No stability level'></a><code>CursorPosEvent</code></td><td></td></tr><tr><td id='variant.CursorEnterEvent'><a class='stability Unmarked' title='No stability level'></a><code>CursorEnterEvent</code></td><td></td></tr><tr><td id='variant.ScrollEvent'><a class='stability Unmarked' title='No stability level'></a><code>ScrollEvent</code></td><td></td></tr><tr><td id='variant.KeyEvent'><a class='stability Unmarked' title='No stability level'></a><code>KeyEvent</code></td><td></td></tr><tr><td id='variant.CharEvent'><a class='stability Unmarked' title='No stability level'></a><code>CharEvent</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a></code></h3><div class='impl-methods'><h4 id='method.clone' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a></code></h4>
+<h4 id='method.clone_from' class='method'><a class='stability Experimental' title='Experimental: this function is mostly unused'></a><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../glfw/type.WindowEvent.html' title='glfw::WindowEvent'>WindowEvent</a></code></h3><div class='impl-methods'><h4 id='method.fmt' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -93,6 +97,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";

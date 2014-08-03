@@ -7,10 +7,9 @@
 
     <title>sdl2_mixer::Channel - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,51 +39,54 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>sdl2_mixer</a>::<a class='struct' href=''>Channel</a><a class='source' id='src-2353' href='../src/sdl2_mixer/src/sdl2_mixer/lib.rs.html#253'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>sdl2_mixer</a>::<a class='struct' href=''>Channel</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-2727' href='../src/sdl2_mixer/src/sdl2_mixer/lib.rs.html#253'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Channel(_);</pre><div class='docblock'><p>Sound effect channel.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h3><div class='methods'><h4 id='method.all' class='method'><code>fn <a href='#method.all' class='fnname'>all</a>() -&gt; <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h3><div class='impl-methods'><h4 id='method.all' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.all' class='fnname'>all</a>() -&gt; <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h4>
 <div class='docblock'><p>Represent for all channels (-1)</p>
-</div><h4 id='method.post' class='method'><code>fn <a href='#method.post' class='fnname'>post</a>() -&gt; <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h4>
+</div><h4 id='method.post' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.post' class='fnname'>post</a>() -&gt; <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h4>
 <div class='docblock'><p>This is the MIX_CHANNEL_POST (-2)</p>
-</div><h4 id='method.set_volume' class='method'><code>fn <a href='#method.set_volume' class='fnname'>set_volume</a>(self, volume: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
+</div><h4 id='method.set_volume' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_volume' class='fnname'>set_volume</a>(self, volume: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
 <div class='docblock'><p>Set the volume for any allocated channel.</p>
-</div><h4 id='method.get_volume' class='method'><code>fn <a href='#method.get_volume' class='fnname'>get_volume</a>(self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
-<h4 id='method.play' class='method'><code>fn <a href='#method.play' class='fnname'>play</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+</div><h4 id='method.get_volume' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_volume' class='fnname'>get_volume</a>(self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
+<h4 id='method.play' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.play' class='fnname'>play</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
 <div class='docblock'><p>Play chunk on channel, or if channel is -1, pick the first free unreserved channel.</p>
-</div><h4 id='method.play_timed' class='method'><code>fn <a href='#method.play_timed' class='fnname'>play_timed</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, ticks: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
-<h4 id='method.fade_in' class='method'><code>fn <a href='#method.fade_in' class='fnname'>fade_in</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, ms: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+</div><h4 id='method.play_timed' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.play_timed' class='fnname'>play_timed</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>, ticks: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+<h4 id='method.fade_in' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.fade_in' class='fnname'>fade_in</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>, ms: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
 <div class='docblock'><p>Play chunk on channel, or if channel is -1, pick the first free unreserved channel.</p>
-</div><h4 id='method.fade_in_timed' class='method'><code>fn <a href='#method.fade_in_timed' class='fnname'>fade_in_timed</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, ms: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, ticks: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
-<h4 id='method.pause' class='method'><code>fn <a href='#method.pause' class='fnname'>pause</a>(self)</code></h4>
+</div><h4 id='method.fade_in_timed' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.fade_in_timed' class='fnname'>fade_in_timed</a>(self, chunk: &amp;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>, loops: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>, ms: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>, ticks: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; SdlResult&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+<h4 id='method.pause' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.pause' class='fnname'>pause</a>(self)</code></h4>
 <div class='docblock'><p>Pause channel, or all playing channels if -1 is passed in.</p>
-</div><h4 id='method.resume' class='method'><code>fn <a href='#method.resume' class='fnname'>resume</a>(self)</code></h4>
+</div><h4 id='method.resume' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.resume' class='fnname'>resume</a>(self)</code></h4>
 <div class='docblock'><p>Unpause channel, or all playing and paused channels if -1 is passed in.</p>
-</div><h4 id='method.halt' class='method'><code>fn <a href='#method.halt' class='fnname'>halt</a>(self)</code></h4>
+</div><h4 id='method.halt' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.halt' class='fnname'>halt</a>(self)</code></h4>
 <div class='docblock'><p>Halt channel playback</p>
-</div><h4 id='method.expire' class='method'><code>fn <a href='#method.expire' class='fnname'>expire</a>(self, ticks: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
+</div><h4 id='method.expire' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.expire' class='fnname'>expire</a>(self, ticks: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
 <div class='docblock'><p>Halt channel playback, after ticks milliseconds.</p>
-</div><h4 id='method.fade_out' class='method'><code>fn <a href='#method.fade_out' class='fnname'>fade_out</a>(self, ms: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
+</div><h4 id='method.fade_out' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.fade_out' class='fnname'>fade_out</a>(self, ms: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
 <div class='docblock'><p>Gradually fade out which channel over ms milliseconds starting from now.</p>
-</div><h4 id='method.is_playing' class='method'><code>fn <a href='#method.is_playing' class='fnname'>is_playing</a>(self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.is_playing' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_playing' class='fnname'>is_playing</a>(self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>if channel is playing, or not.</p>
-</div><h4 id='method.is_paused' class='method'><code>fn <a href='#method.is_paused' class='fnname'>is_paused</a>(self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.is_paused' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_paused' class='fnname'>is_paused</a>(self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>if channel is paused, or not.</p>
-</div><h4 id='method.get_fading' class='method'><code>fn <a href='#method.get_fading' class='fnname'>get_fading</a>(self) -&gt; <a class='type' href='../sdl2_mixer/type.Fading.html' title='sdl2_mixer::Fading'>Fading</a></code></h4>
+</div><h4 id='method.get_fading' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_fading' class='fnname'>get_fading</a>(self) -&gt; <a class='type' href='../sdl2_mixer/type.Fading.html' title='sdl2_mixer::Fading'>Fading</a></code></h4>
 <div class='docblock'><p>if channel is fading in, out, or not</p>
-</div><h4 id='method.get_chunk' class='method'><code>fn <a href='#method.get_chunk' class='fnname'>get_chunk</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>&gt;</code></h4>
+</div><h4 id='method.get_chunk' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_chunk' class='fnname'>get_chunk</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Chunk.html' title='sdl2_mixer::Chunk'>Chunk</a>&gt;</code></h4>
 <div class='docblock'><p>Get the most recent sample chunk pointer played on channel.</p>
-</div><h4 id='method.unregister_all_effects' class='method'><code>fn <a href='#method.unregister_all_effects' class='fnname'>unregister_all_effects</a>(self) -&gt; SdlResult&lt;()&gt;</code></h4>
+</div><h4 id='method.unregister_all_effects' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.unregister_all_effects' class='fnname'>unregister_all_effects</a>(self) -&gt; SdlResult&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>This removes all effects registered to channel.</p>
-</div><h4 id='method.set_panning' class='method'><code>fn <a href='#method.set_panning' class='fnname'>set_panning</a>(self, left: <a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>, right: <a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>) -&gt; SdlResult&lt;()&gt;</code></h4>
-<h4 id='method.set_distance' class='method'><code>fn <a href='#method.set_distance' class='fnname'>set_distance</a>(self, distance: <a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>) -&gt; SdlResult&lt;()&gt;</code></h4>
+</div><h4 id='method.set_panning' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_panning' class='fnname'>set_panning</a>(self, left: <a href='http://doc.rust-lang.org/master/std/primitive.u8.html'>u8</a>, right: <a href='http://doc.rust-lang.org/master/std/primitive.u8.html'>u8</a>) -&gt; SdlResult&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt;</code></h4>
+<h4 id='method.set_distance' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_distance' class='fnname'>set_distance</a>(self, distance: <a href='http://doc.rust-lang.org/master/std/primitive.u8.html'>u8</a>) -&gt; SdlResult&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>This effect simulates a simple attenuation of volume due to distance.</p>
-</div><h4 id='method.set_position' class='method'><code>fn <a href='#method.set_position' class='fnname'>set_position</a>(self, angle: <a href='http://doc.rust-lang.org/std/primitive.i16.html'>i16</a>, distance: <a href='http://doc.rust-lang.org/std/primitive.u8.html'>u8</a>) -&gt; SdlResult&lt;()&gt;</code></h4>
+</div><h4 id='method.set_position' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_position' class='fnname'>set_position</a>(self, angle: <a href='http://doc.rust-lang.org/master/std/primitive.i16.html'>i16</a>, distance: <a href='http://doc.rust-lang.org/master/std/primitive.u8.html'>u8</a>) -&gt; SdlResult&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>This effect emulates a simple 3D audio effect.</p>
-</div><h4 id='method.set_reverse_stereo' class='method'><code>fn <a href='#method.set_reverse_stereo' class='fnname'>set_reverse_stereo</a>(self, flip: <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a>) -&gt; SdlResult&lt;()&gt;</code></h4>
+</div><h4 id='method.set_reverse_stereo' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_reverse_stereo' class='fnname'>set_reverse_stereo</a>(self, flip: <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>) -&gt; SdlResult&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Simple reverse stereo, swaps left and right channel sound.</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h3><div class='impl-methods'><h4 id='method.fmt' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a></code></h3><div class='impl-methods'><h4 id='method.eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -118,6 +122,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";

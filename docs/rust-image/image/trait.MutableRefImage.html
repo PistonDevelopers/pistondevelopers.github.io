@@ -39,7 +39,10 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='index.html'>image</a>::<a class='trait' href=''>MutableRefImage</a><span class='out-of-band'><a id='src-42095' href='../src/image/src/image.rs.html#218-236'>[src]</a></span></h1>
+<h1 class='fqn'>Trait <a href='index.html'>image</a>::<a class='trait' href=''>MutableRefImage</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-39469' href='../src/image/src/image.rs.html#218-236'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait MutableRefImage&lt;P&gt;: <a class='trait' href='../image/trait.GenericImage.html' title='image::GenericImage'>GenericImage</a>&lt;P&gt; {
     fn <a href='#tymethod.get_mut_pixel' class='fnname'>get_mut_pixel</a>(&amp;mut self, x: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>) -&gt; &amp;mut P;
 
@@ -53,7 +56,7 @@
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
         <h3 id='method.mut_pixels' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.mut_pixels' class='fnname'>mut_pixels</a>(&amp;mut self) -&gt; <a class='struct' href='../image/struct.MutPixels.html' title='image::MutPixels'>MutPixels</a>&lt;Self&gt;</code></h3><div class='docblock'><p>Return an Iterator over mutable pixels of this image.
-The iterator yeilds the coordiates of each pixel
+The iterator yields the coordinates of each pixel
 along with a mutable reference to them.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>

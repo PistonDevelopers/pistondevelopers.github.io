@@ -7,10 +7,9 @@
 
     <title>game_iterator.rs.html -- source</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -408,6 +409,7 @@
 <span id='369'>369</span>
 <span id='370'>370</span>
 <span id='371'>371</span>
+<span id='372'>372</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>time</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>timer</span>::<span class='ident'>sleep</span>;
@@ -557,7 +559,8 @@
 <span class='doccomment'>/// }</span>
 <span class='doccomment'>/// ```</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>GameIterator</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>W</span><span class='op'>&gt;</span> {
-    <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>,
+    <span class='doccomment'>/// The game window used by iterator.</span>
+    <span class='kw'>pub</span> <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='kw-2'>mut</span> <span class='ident'>W</span>,
     <span class='ident'>state</span>: <span class='ident'>GameIteratorState</span>,
     <span class='ident'>last_update</span>: <span class='ident'>u64</span>,
     <span class='ident'>update_time_in_ns</span>: <span class='ident'>u64</span>,
@@ -586,9 +589,9 @@
             <span class='ident'>state</span>: <span class='ident'>RenderState</span>,
             <span class='ident'>last_update</span>: <span class='ident'>start</span>,
             <span class='ident'>update_time_in_ns</span>: <span class='ident'>billion</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span>,
-            <span class='ident'>dt</span>: <span class='number'>1.0</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span> <span class='kw'>as</span> <span class='ident'>f64</span>,<span class='comment'>
-            // You can make this lower if needed.
-            </span><span class='ident'>min_updates_per_frame</span>: <span class='ident'>updates_per_second</span> <span class='op'>/</span> <span class='ident'>max_frames_per_second</span>,
+            <span class='ident'>dt</span>: <span class='number'>1.0</span> <span class='op'>/</span> <span class='ident'>updates_per_second</span> <span class='kw'>as</span> <span class='ident'>f64</span>,
+            <span class='comment'>// You can make this lower if needed.</span>
+            <span class='ident'>min_updates_per_frame</span>: <span class='ident'>updates_per_second</span> <span class='op'>/</span> <span class='ident'>max_frames_per_second</span>,
             <span class='ident'>min_ns_per_frame</span>: <span class='ident'>billion</span> <span class='op'>/</span> <span class='ident'>max_frames_per_second</span>,
             <span class='ident'>start_render</span>: <span class='ident'>start</span>,
             <span class='ident'>next_render</span>: <span class='ident'>start</span>,
@@ -606,16 +609,16 @@
             <span class='ident'>RenderState</span> <span class='op'>=&gt;</span> {
                 <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>should_close</span>() { <span class='kw'>return</span> <span class='prelude-val'>None</span>; }
 
-                <span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>=</span> <span class='ident'>time</span>::<span class='ident'>precise_time_ns</span>();<span class='comment'>
-                // Rendering code
-                </span><span class='kw'>let</span> (<span class='ident'>w</span>, <span class='ident'>h</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>get_size</span>();
-                <span class='kw'>if</span> <span class='ident'>w</span> <span class='op'>!=</span> <span class='number'>0</span> <span class='op'>&amp;&amp;</span> <span class='ident'>h</span> <span class='op'>!=</span> <span class='number'>0</span> {<span class='comment'>
-                    // Swap buffers next time.
-                    </span><span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>SwapBuffersState</span>;
-                    <span class='kw'>return</span> <span class='prelude-val'>Some</span>(<span class='ident'>Render</span>(<span class='ident'>RenderArgs</span> {<span class='comment'>
-                            // Extrapolate time forward to allow smooth motion.
-                            // &#39;start_render&#39; is always bigger than &#39;last_update&#39;.
-                            </span><span class='ident'>ext_dt</span>: (<span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>-</span> <span class='self'>self</span>.<span class='ident'>last_update</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> <span class='ident'>billion</span> <span class='kw'>as</span> <span class='ident'>f64</span>,
+                <span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>=</span> <span class='ident'>time</span>::<span class='ident'>precise_time_ns</span>();
+                <span class='comment'>// Rendering code</span>
+                <span class='kw'>let</span> (<span class='ident'>w</span>, <span class='ident'>h</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>get_size</span>();
+                <span class='kw'>if</span> <span class='ident'>w</span> <span class='op'>!=</span> <span class='number'>0</span> <span class='op'>&amp;&amp;</span> <span class='ident'>h</span> <span class='op'>!=</span> <span class='number'>0</span> {
+                    <span class='comment'>// Swap buffers next time.</span>
+                    <span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>SwapBuffersState</span>;
+                    <span class='kw'>return</span> <span class='prelude-val'>Some</span>(<span class='ident'>Render</span>(<span class='ident'>RenderArgs</span> {
+                            <span class='comment'>// Extrapolate time forward to allow smooth motion.</span>
+                            <span class='comment'>// &#39;start_render&#39; is always bigger than &#39;last_update&#39;.</span>
+                            <span class='ident'>ext_dt</span>: (<span class='self'>self</span>.<span class='ident'>start_render</span> <span class='op'>-</span> <span class='self'>self</span>.<span class='ident'>last_update</span>) <span class='kw'>as</span> <span class='ident'>f64</span> <span class='op'>/</span> <span class='ident'>billion</span> <span class='kw'>as</span> <span class='ident'>f64</span>,
                             <span class='ident'>width</span>: <span class='ident'>w</span>,
                             <span class='ident'>height</span>: <span class='ident'>h</span>,
                         }
@@ -645,22 +648,22 @@
                 <span class='kw'>if</span> ( <span class='ident'>got_time_to_update</span> <span class='op'>||</span> <span class='ident'>got_min_updates</span> ) <span class='op'>&amp;&amp;</span> <span class='ident'>before_next_frame</span> {
                     <span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>HandleEventsState</span>;
                     <span class='kw'>return</span> <span class='self'>self</span>.<span class='ident'>next</span>();
-                }<span class='comment'>
+                }
 
-                // Wait if possible.
-                // Convert to ms because that is what the sleep function takes.
-                </span><span class='kw'>let</span> <span class='ident'>t</span> <span class='op'>=</span> (<span class='self'>self</span>.<span class='ident'>next_render</span> <span class='op'>-</span> <span class='ident'>time</span>::<span class='ident'>precise_time_ns</span>() ) <span class='op'>/</span> <span class='number'>1_000_000</span>;
-                <span class='kw'>if</span> <span class='ident'>t</span> <span class='op'>&gt;</span> <span class='number'>1</span> <span class='op'>&amp;&amp;</span> <span class='ident'>t</span> <span class='op'>&lt;</span> <span class='number'>1000000</span> {<span class='comment'> // The second half just checks if it overflowed,
-                                          // which tells us that t should have been negative
-                                          // and we are running slow and shouldn&#39;t sleep.
-                    </span><span class='ident'>sleep</span>( <span class='ident'>t</span> );
+                <span class='comment'>// Wait if possible.</span>
+                <span class='comment'>// Convert to ms because that is what the sleep function takes.</span>
+                <span class='kw'>let</span> <span class='ident'>t</span> <span class='op'>=</span> (<span class='self'>self</span>.<span class='ident'>next_render</span> <span class='op'>-</span> <span class='ident'>time</span>::<span class='ident'>precise_time_ns</span>() ) <span class='op'>/</span> <span class='number'>1_000_000</span>;
+                <span class='kw'>if</span> <span class='ident'>t</span> <span class='op'>&gt;</span> <span class='number'>1</span> <span class='op'>&amp;&amp;</span> <span class='ident'>t</span> <span class='op'>&lt;</span> <span class='number'>1000000</span> { <span class='comment'>// The second half just checks if it overflowed,</span>
+                                          <span class='comment'>// which tells us that t should have been negative</span>
+                                          <span class='comment'>// and we are running slow and shouldn&#39;t sleep.</span>
+                    <span class='ident'>sleep</span>( <span class='ident'>t</span> );
                 }
                 <span class='self'>self</span>.<span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>RenderState</span>;
                 <span class='kw'>return</span> <span class='self'>self</span>.<span class='ident'>next</span>();
             },
-            <span class='ident'>HandleEventsState</span> <span class='op'>=&gt;</span> {<span class='comment'>
-                // Handle all events before updating.
-                </span><span class='kw'>return</span> <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>poll_event</span>() {
+            <span class='ident'>HandleEventsState</span> <span class='op'>=&gt;</span> {
+                <span class='comment'>// Handle all events before updating.</span>
+                <span class='kw'>return</span> <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>game_window</span>.<span class='ident'>poll_event</span>() {
                     <span class='ident'>event</span>::<span class='ident'>KeyPressed</span>(<span class='ident'>key</span>) <span class='op'>=&gt;</span> {
                         <span class='prelude-val'>Some</span>(<span class='ident'>KeyPress</span>(<span class='ident'>KeyPressArgs</span> {
                             <span class='ident'>key</span>: <span class='ident'>key</span>,
@@ -719,9 +722,9 @@
                     <span class='ident'>dt</span>: <span class='self'>self</span>.<span class='ident'>dt</span>,
                 }));
             },
-        };<span class='comment'>
+        };
 
-        /*
+        <span class='comment'>/*
         // copied.
 
         while !self.should_close(game_window) {
@@ -777,8 +780,8 @@
             }
 
         }
-        */
-    </span>}
+        */</span>
+    }
 }
 </pre>
 </section>
@@ -816,6 +819,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../../";

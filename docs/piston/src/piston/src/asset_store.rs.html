@@ -7,10 +7,9 @@
 
     <title>asset_store.rs.html -- source</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -88,18 +89,18 @@
 <span id='49'>49</span>
 </pre><pre class='rust '>
 
-<span class='doccomment'>//! Storing sounds, textures, animations etc.</span><span class='comment'>
+<span class='doccomment'>//! Storing sounds, textures, animations etc.</span>
 
-// Extern crates.
-</span><span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>os</span>::<span class='ident'>self_exe_path</span>;
+<span class='comment'>// Extern crates.</span>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>os</span>::<span class='ident'>self_exe_path</span>;
 
 <span class='doccomment'>/// A place to store sounds, textures, animations etc.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// The idea is to have one object which the app can use</span>
 <span class='doccomment'>/// to load assets for the game with a simple interface.</span>
-<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AssetStore</span> {<span class='comment'>
-    // The folder to load assets from.
-    </span><span class='ident'>assets_folder</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AssetStore</span> {
+    <span class='comment'>// The folder to load assets from.</span>
+    <span class='ident'>assets_folder</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
 }
 
 <span class='kw'>impl</span> <span class='ident'>AssetStore</span> {
@@ -172,6 +173,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../../";

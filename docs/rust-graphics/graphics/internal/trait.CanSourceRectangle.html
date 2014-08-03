@@ -7,10 +7,9 @@
 
     <title>graphics::internal::CanSourceRectangle - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,21 +39,21 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>graphics</a>::<a href='index.html'>internal</a>::<a class='trait' href=''>CanSourceRectangle</a><a class='source' id='src-18549' href='../../src/graphics/src/internal.rs.html#76-79'>[src]</a></h1>
-<pre class='rust trait'>pub trait CanSourceRectangle&lt;'a, T, U&gt; {
-    fn <a href='#tymethod.source_rectangle' class='fnname'>source_rectangle</a>(&amp;'a self, value: U) -&gt; T;
+<h1 class='fqn'>Trait <a href='../index.html'>graphics</a>::<a href='index.html'>internal</a>::<a class='trait' href=''>CanSourceRectangle</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-5590' href='../../src/graphics/src/internal.rs.html#75-78'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait CanSourceRectangle&lt;T, U&gt; {
+    fn <a href='#tymethod.source_rectangle' class='fnname'>source_rectangle</a>(&amp;self, value: U) -&gt; T;
 }</pre><div class='docblock'><p>Implemented by contexts that can set source rectangle information.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.source_rectangle' class='method'><code>fn <a href='#tymethod.source_rectangle' class='fnname'>source_rectangle</a>(&amp;'a self, value: U) -&gt; T</code></h3><div class='docblock'><p>Create new context with source rectangle information.</p>
+        <h3 id='tymethod.source_rectangle' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.source_rectangle' class='fnname'>source_rectangle</a>(&amp;self, value: U) -&gt; T</code></h3><div class='docblock'><p>Create new context with source rectangle information.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanSourceRectangle.html' title='graphics::internal::CanSourceRectangle'>CanSourceRectangle</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageContext.html' title='graphics::ImageContext'>ImageContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.SourceRectangle.html' title='graphics::internal::SourceRectangle'>SourceRectangle</a>&gt; for <a class='struct' href='../../graphics/struct.ImageContext.html' title='graphics::ImageContext'>ImageContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanSourceRectangle.html' title='graphics::internal::CanSourceRectangle'>CanSourceRectangle</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageColorContext.html' title='graphics::ImageColorContext'>ImageColorContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.SourceRectangle.html' title='graphics::internal::SourceRectangle'>SourceRectangle</a>&gt; for <a class='struct' href='../../graphics/struct.ImageColorContext.html' title='graphics::ImageColorContext'>ImageColorContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanSourceRectangle.html' title='graphics::internal::CanSourceRectangle'>CanSourceRectangle</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageRectangleColorContext.html' title='graphics::ImageRectangleColorContext'>ImageRectangleColorContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.SourceRectangle.html' title='graphics::internal::SourceRectangle'>SourceRectangle</a>&gt; for <a class='struct' href='../../graphics/struct.ImageRectangleColorContext.html' title='graphics::ImageRectangleColorContext'>ImageRectangleColorContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanSourceRectangle.html' title='graphics::internal::CanSourceRectangle'>CanSourceRectangle</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageRectangleContext.html' title='graphics::ImageRectangleContext'>ImageRectangleContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.SourceRectangle.html' title='graphics::internal::SourceRectangle'>SourceRectangle</a>&gt; for <a class='struct' href='../../graphics/struct.ImageRectangleContext.html' title='graphics::ImageRectangleContext'>ImageRectangleContext</a>&lt;'a, 'b, I&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a> + <a class='trait' href='../../graphics/internal/trait.CanSourceRectangle.html' title='graphics::internal::CanSourceRectangle'>CanSourceRectangle</a>&lt;S, <a class='type' href='../../graphics/internal/type.SourceRectangle.html' title='graphics::internal::SourceRectangle'>SourceRectangle</a>&gt;, C: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../graphics/internal/trait.CanSourceRectangle.html' title='graphics::internal::CanSourceRectangle'>CanSourceRectangle</a>&lt;<a class='struct' href='../../graphics/struct.Context.html' title='graphics::Context'>Context</a>&lt;S, C&gt;, <a class='type' href='../../graphics/internal/type.SourceRectangle.html' title='graphics::internal::SourceRectangle'>SourceRectangle</a>&gt; for <a class='struct' href='../../graphics/struct.Context.html' title='graphics::Context'>Context</a>&lt;S, C&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/graphics/internal/trait.CanSourceRectangle.js">
                       </script></section>
@@ -90,6 +91,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

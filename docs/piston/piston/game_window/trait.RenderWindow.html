@@ -7,10 +7,9 @@
 
     <title>piston::game_window::RenderWindow - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,14 +39,21 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>piston</a>::<a href='index.html'>game_window</a>::<a class='trait' href=''>RenderWindow</a><a class='source' id='src-88' href='../../src/piston/src/game_window.rs.html#27-30'>[src]</a></h1>
+<h1 class='fqn'>Trait <a href='../index.html'>piston</a>::<a href='index.html'>game_window</a>::<a class='trait' href=''>RenderWindow</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-98' href='../../src/piston/src/game_window.rs.html#32-40'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait RenderWindow {
     fn <a href='#method.swap_buffers' class='fnname'>swap_buffers</a>(&amp;self) { ... }
+    fn <a href='#method.capture_cursor' class='fnname'>capture_cursor</a>(&amp;mut self, _enabled: <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>) { ... }
 }</pre><div class='docblock'><p>For use in seperate render threads, implemented by window back-end.</p>
 </div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.swap_buffers' class='method'><code>fn <a href='#method.swap_buffers' class='fnname'>swap_buffers</a>(&amp;self)</code></h3><div class='docblock'><p>Swap buffers.</p>
+        <h3 id='method.swap_buffers' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.swap_buffers' class='fnname'>swap_buffers</a>(&amp;self)</code></h3><div class='docblock'><p>Swap buffers.</p>
+</div><h3 id='method.capture_cursor' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.capture_cursor' class='fnname'>capture_cursor</a>(&amp;mut self, _enabled: <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>)</code></h3><div class='docblock'><p>When the cursor is captured,
+it is hidden and the cursor position does not change.
+Only relative mouse motion is registered.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
@@ -86,6 +94,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

@@ -7,10 +7,9 @@
 
     <title>game.rs.html -- source</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -137,10 +138,10 @@
 <span id='98'>98</span>
 <span id='99'>99</span>
 </pre><pre class='rust '>
-<span class='doccomment'>//! Game loop.</span><span class='comment'>
+<span class='doccomment'>//! Game loop.</span>
 
-// Local crate.
-</span><span class='kw'>use</span> <span class='ident'>GameEvent</span>;
+<span class='comment'>// Local crate.</span>
+<span class='kw'>use</span> <span class='ident'>GameEvent</span>;
 <span class='kw'>use</span> <span class='ident'>GameWindow</span> <span class='op'>=</span> <span class='ident'>game_window</span>::<span class='ident'>GameWindow</span>;
 <span class='kw'>use</span> <span class='ident'>GameIteratorSettings</span>;
 <span class='kw'>use</span> <span class='ident'>GameIterator</span>;
@@ -164,73 +165,73 @@
 <span class='kw'>use</span> <span class='ident'>UpdateArgs</span>;
 
 <span class='doccomment'>/// Implemented by game applications.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Game</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Game</span><span class='op'>&lt;</span><span class='ident'>W</span>: <span class='ident'>GameWindow</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Render graphics.</span>
-    <span class='kw'>fn</span> <span class='ident'>render</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>RenderArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>render</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>RenderArgs</span>) {}
 
     <span class='doccomment'>/// Update the physical state of the game.</span>
-    <span class='kw'>fn</span> <span class='ident'>update</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>UpdateArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>update</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>UpdateArgs</span>) {}
 
     <span class='doccomment'>/// Perform tasks for loading before showing anything.</span>
-    <span class='kw'>fn</span> <span class='ident'>load</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>load</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>) {}
 
     <span class='doccomment'>/// User pressed a key.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// This can be overridden to handle key pressed events.</span>
-    <span class='kw'>fn</span> <span class='ident'>key_press</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>KeyPressArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>key_press</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>KeyPressArgs</span>) {}
 
     <span class='doccomment'>/// User released a key.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// This can be overridden to handle key released events.</span>
-    <span class='kw'>fn</span> <span class='ident'>key_release</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>KeyReleaseArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>key_release</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>KeyReleaseArgs</span>) {}
 
     <span class='doccomment'>/// Pressed a mouse button.</span>
-    <span class='kw'>fn</span> <span class='ident'>mouse_press</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MousePressArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>mouse_press</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MousePressArgs</span>) {}
 
     <span class='doccomment'>/// Released a mouse button.</span>
-    <span class='kw'>fn</span> <span class='ident'>mouse_release</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseReleaseArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>mouse_release</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseReleaseArgs</span>) {}
 
     <span class='doccomment'>/// Moved mouse cursor.</span>
-    <span class='kw'>fn</span> <span class='ident'>mouse_move</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseMoveArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>mouse_move</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseMoveArgs</span>) {}
 
     <span class='doccomment'>/// Moved mouse relative, not bounded by cursor.</span>
-    <span class='kw'>fn</span> <span class='ident'>mouse_relative_move</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseRelativeMoveArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>mouse_relative_move</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseRelativeMoveArgs</span>) {}
 
     <span class='doccomment'>/// Scrolled mouse.</span>
-    <span class='kw'>fn</span> <span class='ident'>mouse_scroll</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseScrollArgs</span>) {}
+    <span class='kw'>fn</span> <span class='ident'>mouse_scroll</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>_args</span>: <span class='kw-2'>&amp;</span><span class='ident'>MouseScrollArgs</span>) {}
 
     <span class='doccomment'>/// Handles a game event.</span>
-    <span class='kw'>fn</span> <span class='ident'>event</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>event</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>GameEvent</span>) {
+    <span class='kw'>fn</span> <span class='ident'>event</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>, <span class='ident'>event</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>GameEvent</span>) {
         <span class='kw'>match</span> <span class='op'>*</span><span class='ident'>event</span> {
-            <span class='ident'>Render</span>(<span class='kw-2'>ref</span> <span class='kw-2'>mut</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>render</span>(<span class='ident'>args</span>),
-            <span class='ident'>Update</span>(<span class='kw-2'>ref</span> <span class='kw-2'>mut</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>update</span>(<span class='ident'>args</span>),
-            <span class='ident'>KeyPress</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>key_press</span>(<span class='ident'>args</span>),
-            <span class='ident'>KeyRelease</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>key_release</span>(<span class='ident'>args</span>),
-            <span class='ident'>MousePress</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_press</span>(<span class='ident'>args</span>),
-            <span class='ident'>MouseRelease</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_release</span>(<span class='ident'>args</span>),
-            <span class='ident'>MouseMove</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_move</span>(<span class='ident'>args</span>),
-            <span class='ident'>MouseRelativeMove</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_relative_move</span>(<span class='ident'>args</span>),
-            <span class='ident'>MouseScroll</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_scroll</span>(<span class='ident'>args</span>),
+            <span class='ident'>Render</span>(<span class='kw-2'>ref</span> <span class='kw-2'>mut</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>render</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>Update</span>(<span class='kw-2'>ref</span> <span class='kw-2'>mut</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>update</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>KeyPress</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>key_press</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>KeyRelease</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>key_release</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>MousePress</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_press</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>MouseRelease</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_release</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>MouseMove</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_move</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>MouseRelativeMove</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_relative_move</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
+            <span class='ident'>MouseScroll</span>(<span class='kw-2'>ref</span> <span class='ident'>args</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>mouse_scroll</span>(<span class='ident'>game_window</span>, <span class='ident'>args</span>),
         }
     }
 
     <span class='doccomment'>/// Executes a game loop.</span>
-    <span class='kw'>fn</span> <span class='ident'>run</span><span class='op'>&lt;</span><span class='ident'>W</span>: <span class='ident'>GameWindow</span><span class='op'>&gt;</span>(
+    <span class='kw'>fn</span> <span class='ident'>run</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>,
         <span class='ident'>game_window</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>,
         <span class='ident'>game_iter_settings</span>: <span class='kw-2'>&amp;</span><span class='ident'>GameIteratorSettings</span>
     ) {
+        <span class='self'>self</span>.<span class='ident'>load</span>(<span class='ident'>game_window</span>);
+
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>game_iter</span> <span class='op'>=</span> <span class='ident'>GameIterator</span>::<span class='ident'>new</span>(
             <span class='ident'>game_window</span>,
             <span class='ident'>game_iter_settings</span>
         );
 
-        <span class='self'>self</span>.<span class='ident'>load</span>();
-
         <span class='kw'>loop</span> {
             <span class='kw'>match</span> <span class='ident'>game_iter</span>.<span class='ident'>next</span>() {
                 <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='kw'>break</span>,
-                <span class='prelude-val'>Some</span>(<span class='kw-2'>mut</span> <span class='ident'>e</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>event</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>e</span>)
+                <span class='prelude-val'>Some</span>(<span class='kw-2'>mut</span> <span class='ident'>e</span>) <span class='op'>=&gt;</span> <span class='self'>self</span>.<span class='ident'>event</span>(<span class='ident'>game_iter</span>.<span class='ident'>game_window</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>e</span>)
             }
         }
     }
@@ -272,6 +273,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../../";

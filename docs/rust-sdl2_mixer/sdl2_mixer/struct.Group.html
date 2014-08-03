@@ -7,10 +7,9 @@
 
     <title>sdl2_mixer::Group - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,27 +39,30 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>sdl2_mixer</a>::<a class='struct' href=''>Group</a><a class='source' id='src-3413' href='../src/sdl2_mixer/src/sdl2_mixer/lib.rs.html#483'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>sdl2_mixer</a>::<a class='struct' href=''>Group</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-3787' href='../src/sdl2_mixer/src/sdl2_mixer/lib.rs.html#483'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Group(_);</pre><div class='docblock'><p>Sound effect channel grouping.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../sdl2_mixer/struct.Group.html' title='sdl2_mixer::Group'>Group</a></code></h3><div class='methods'><h4 id='method.add_channels_range' class='method'><code>fn <a href='#method.add_channels_range' class='fnname'>add_channels_range</a>(self, from: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>, to: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../sdl2_mixer/struct.Group.html' title='sdl2_mixer::Group'>Group</a></code></h3><div class='impl-methods'><h4 id='method.add_channels_range' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.add_channels_range' class='fnname'>add_channels_range</a>(self, from: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>, to: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
 <div class='docblock'><p>Add channels starting at from up through to to group tag,
 or reset it&#39;s group to the default group tag (-1).</p>
-</div><h4 id='method.add_channel' class='method'><code>fn <a href='#method.add_channel' class='fnname'>add_channel</a>(self, Channel: <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
+</div><h4 id='method.add_channel' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.add_channel' class='fnname'>add_channel</a>(self, Channel: <a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Add which channel to group tag, or reset it&#39;s group to the default group tag</p>
-</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>(self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
+</div><h4 id='method.count' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.count' class='fnname'>count</a>(self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
 <div class='docblock'><p>Count the number of channels in group</p>
-</div><h4 id='method.find_available' class='method'><code>fn <a href='#method.find_available' class='fnname'>find_available</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+</div><h4 id='method.find_available' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_available' class='fnname'>find_available</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
 <div class='docblock'><p>Find the first available (not playing) channel in group</p>
-</div><h4 id='method.find_oldest' class='method'><code>fn <a href='#method.find_oldest' class='fnname'>find_oldest</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+</div><h4 id='method.find_oldest' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_oldest' class='fnname'>find_oldest</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
 <div class='docblock'><p>Find the oldest actively playing channel in group</p>
-</div><h4 id='method.find_newest' class='method'><code>fn <a href='#method.find_newest' class='fnname'>find_newest</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
+</div><h4 id='method.find_newest' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_newest' class='fnname'>find_newest</a>(self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../sdl2_mixer/struct.Channel.html' title='sdl2_mixer::Channel'>Channel</a>&gt;</code></h4>
 <div class='docblock'><p>Find the newest, most recently started, actively playing channel in group.</p>
-</div><h4 id='method.fade_out' class='method'><code>fn <a href='#method.fade_out' class='fnname'>fade_out</a>(self, ms: <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.int.html'>int</a></code></h4>
+</div><h4 id='method.fade_out' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.fade_out' class='fnname'>fade_out</a>(self, ms: <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.int.html'>int</a></code></h4>
 <div class='docblock'><p>Gradually fade out channels in group over some milliseconds starting from now.
 Returns the number of channels set to fade out.</p>
-</div><h4 id='method.halt' class='method'><code>fn <a href='#method.halt' class='fnname'>halt</a>(self)</code></h4>
+</div><h4 id='method.halt' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.halt' class='fnname'>halt</a>(self)</code></h4>
 <div class='docblock'><p>Halt playback on all channels in group.</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../sdl2_mixer/struct.Group.html' title='sdl2_mixer::Group'>Group</a></code></h3><div class='methods'><h4 id='method.default' class='method'><code>fn <a href='#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../sdl2_mixer/struct.Group.html' title='sdl2_mixer::Group'>Group</a></code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../sdl2_mixer/struct.Group.html' title='sdl2_mixer::Group'>Group</a></code></h3><div class='impl-methods'><h4 id='method.default' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../sdl2_mixer/struct.Group.html' title='sdl2_mixer::Group'>Group</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -94,6 +98,8 @@ Returns the number of channels set to fade out.</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";

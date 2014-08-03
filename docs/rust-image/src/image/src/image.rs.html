@@ -448,6 +448,8 @@
 <span id='408'>408</span>
 <span id='409'>409</span>
 <span id='410'>410</span>
+<span id='411'>411</span>
+<span id='412'>412</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>;
@@ -640,7 +642,7 @@
     <span class='doccomment'>///The width and height of this image.</span>
     <span class='kw'>fn</span> <span class='ident'>dimensions</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> (<span class='ident'>u32</span>, <span class='ident'>u32</span>);
 
-    <span class='doccomment'>///The bounding rectange of this image.</span>
+    <span class='doccomment'>///The bounding rectangle of this image.</span>
     <span class='kw'>fn</span> <span class='ident'>bounds</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> (<span class='ident'>u32</span>, <span class='ident'>u32</span>, <span class='ident'>u32</span>, <span class='ident'>u32</span>);
 
     <span class='doccomment'>///Return the pixel located at (x, y)</span>
@@ -650,7 +652,7 @@
     <span class='kw'>fn</span> <span class='ident'>put_pixel</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>u32</span>, <span class='ident'>y</span>: <span class='ident'>u32</span>, <span class='ident'>pixel</span>: <span class='ident'>P</span>);
 
     <span class='doccomment'>///Return an Iterator over the pixels of this image.</span>
-    <span class='doccomment'>///The iterator yeilds the coordiates of each pixel</span>
+    <span class='doccomment'>///The iterator yields the coordinates of each pixel</span>
     <span class='doccomment'>///along with their value</span>
     <span class='kw'>fn</span> <span class='ident'>pixels</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Pixels</span><span class='op'>&lt;</span><span class='ident'>Self</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> (<span class='ident'>width</span>, <span class='ident'>height</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>dimensions</span>();
@@ -671,7 +673,7 @@
     <span class='kw'>fn</span> <span class='ident'>get_mut_pixel</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>x</span>: <span class='ident'>u32</span>, <span class='ident'>y</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>P</span>;
 
     <span class='doccomment'>///Return an Iterator over mutable pixels of this image.</span>
-    <span class='doccomment'>///The iterator yeilds the coordiates of each pixel</span>
+    <span class='doccomment'>///The iterator yields the coordinates of each pixel</span>
     <span class='doccomment'>///along with a mutable reference to them.</span>
     <span class='kw'>fn</span> <span class='ident'>mut_pixels</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>MutPixels</span><span class='op'>&lt;</span><span class='ident'>Self</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> (<span class='ident'>width</span>, <span class='ident'>height</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>dimensions</span>();
@@ -710,11 +712,13 @@
     <span class='doccomment'>///Construct a new ImageBuf by repeated application of the supplied function.</span>
     <span class='doccomment'>///The arguments to the function are the pixel&#39;s x and y coordinates.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_fn</span>(<span class='ident'>width</span>: <span class='ident'>u32</span>, <span class='ident'>height</span>: <span class='ident'>u32</span>, <span class='ident'>f</span>: <span class='op'>|</span> <span class='ident'>u32</span>, <span class='ident'>u32</span> <span class='op'>|</span> <span class='op'>-&gt;</span> <span class='ident'>P</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageBuf</span><span class='op'>&lt;</span><span class='ident'>P</span><span class='op'>&gt;</span> {
-        <span class='kw'>let</span> <span class='ident'>pixels</span> <span class='op'>=</span> <span class='ident'>range</span>(<span class='number'>0</span>, <span class='ident'>width</span>).<span class='ident'>cycle</span>()
-                                    .<span class='ident'>enumerate</span>()
-                                    .<span class='ident'>take</span>(<span class='ident'>height</span> <span class='kw'>as</span> <span class='ident'>uint</span>)
-                                    .<span class='ident'>map</span>( <span class='op'>|</span>(<span class='ident'>y</span>, <span class='ident'>x</span>)<span class='op'>|</span> <span class='ident'>f</span>(<span class='ident'>x</span>, <span class='ident'>y</span> <span class='kw'>as</span> <span class='ident'>u32</span>))
-                                    .<span class='ident'>collect</span>();
+        <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>pixels</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>P</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>with_capacity</span>((<span class='ident'>width</span> <span class='op'>*</span> <span class='ident'>height</span>) <span class='kw'>as</span> <span class='ident'>uint</span>);
+
+        <span class='kw'>for</span> <span class='ident'>y</span> <span class='kw'>in</span> <span class='ident'>range</span>(<span class='number'>0</span>, <span class='ident'>height</span>) {
+            <span class='kw'>for</span> <span class='ident'>x</span> <span class='kw'>in</span> <span class='ident'>range</span>(<span class='number'>0</span>, <span class='ident'>width</span>) {
+                <span class='ident'>pixels</span>.<span class='ident'>insert</span>((<span class='ident'>y</span> <span class='op'>*</span> <span class='ident'>width</span> <span class='op'>+</span> <span class='ident'>x</span>) <span class='kw'>as</span> <span class='ident'>uint</span>, <span class='ident'>f</span>(<span class='ident'>x</span>, <span class='ident'>y</span>));
+            }
+        }
 
         <span class='ident'>ImageBuf</span>::<span class='ident'>from_pixels</span>(<span class='ident'>pixels</span>, <span class='ident'>width</span>, <span class='ident'>height</span>)
     }

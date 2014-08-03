@@ -7,10 +7,9 @@
 
     <title>cgmath::rotation::Rotation - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,8 +39,11 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>rotation</a>::<a class='trait' href=''>Rotation</a><a class='source' id='src-22261' href='../../src/cgmath/src/cgmath/rotation.rs.html#29-74'>[src]</a></h1>
-<pre class='rust trait'>pub trait Rotation&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>, V: <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt;, P: <a class='trait' href='../../cgmath/point/trait.Point.html' title='cgmath::point::Point'>Point</a>&lt;S, V&gt;&gt;: <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> + <a class='trait' href='../../cgmath/approx/trait.ApproxEq.html' title='cgmath::approx::ApproxEq'>ApproxEq</a>&lt;S&gt; {
+<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>rotation</a>::<a class='trait' href=''>Rotation</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-23820' href='../../src/cgmath/src/rotation.rs.html#29-74'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Rotation&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>, V: <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt;, P: <a class='trait' href='../../cgmath/point/trait.Point.html' title='cgmath::point::Point'>Point</a>&lt;S, V&gt;&gt;: <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> + <a class='trait' href='../../cgmath/approx/trait.ApproxEq.html' title='cgmath::approx::ApproxEq'>ApproxEq</a>&lt;S&gt; {
     fn <a href='#tymethod.identity' class='fnname'>identity</a>() -&gt; Self;
     fn <a href='#tymethod.look_at' class='fnname'>look_at</a>(dir: &amp;V, up: &amp;V) -&gt; Self;
     fn <a href='#tymethod.between_vectors' class='fnname'>between_vectors</a>(a: &amp;V, b: &amp;V) -&gt; Self;
@@ -56,28 +60,28 @@ creates a circular motion, and preserves at least one point in the space.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.identity' class='method'><code>fn <a href='#tymethod.identity' class='fnname'>identity</a>() -&gt; Self</code></h3><div class='docblock'><p>Create the identity transform (causes no transformation).</p>
-</div><h3 id='tymethod.look_at' class='method'><code>fn <a href='#tymethod.look_at' class='fnname'>look_at</a>(dir: &amp;V, up: &amp;V) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation to a given direction with an &#39;up&#39; vector</p>
-</div><h3 id='tymethod.between_vectors' class='method'><code>fn <a href='#tymethod.between_vectors' class='fnname'>between_vectors</a>(a: &amp;V, b: &amp;V) -&gt; Self</code></h3><div class='docblock'><p>Create a shortest rotation to transform vector &#39;a&#39; into &#39;b&#39;.
+        <h3 id='tymethod.identity' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.identity' class='fnname'>identity</a>() -&gt; Self</code></h3><div class='docblock'><p>Create the identity transform (causes no transformation).</p>
+</div><h3 id='tymethod.look_at' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.look_at' class='fnname'>look_at</a>(dir: &amp;V, up: &amp;V) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation to a given direction with an &#39;up&#39; vector</p>
+</div><h3 id='tymethod.between_vectors' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.between_vectors' class='fnname'>between_vectors</a>(a: &amp;V, b: &amp;V) -&gt; Self</code></h3><div class='docblock'><p>Create a shortest rotation to transform vector &#39;a&#39; into &#39;b&#39;.
 Both given vectors are assumed to have unit length.</p>
-</div><h3 id='tymethod.rotate_vector' class='method'><code>fn <a href='#tymethod.rotate_vector' class='fnname'>rotate_vector</a>(&amp;self, vec: &amp;V) -&gt; V</code></h3><div class='docblock'><p>Rotate a vector using this rotation.</p>
-</div><h3 id='tymethod.concat' class='method'><code>fn <a href='#tymethod.concat' class='fnname'>concat</a>(&amp;self, other: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Create a new rotation which combines both this rotation, and another.</p>
-</div><h3 id='tymethod.invert' class='method'><code>fn <a href='#tymethod.invert' class='fnname'>invert</a>(&amp;self) -&gt; Self</code></h3><div class='docblock'><p>Create a new rotation which &quot;un-does&quot; this rotation. That is,
+</div><h3 id='tymethod.rotate_vector' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rotate_vector' class='fnname'>rotate_vector</a>(&amp;self, vec: &amp;V) -&gt; V</code></h3><div class='docblock'><p>Rotate a vector using this rotation.</p>
+</div><h3 id='tymethod.concat' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.concat' class='fnname'>concat</a>(&amp;self, other: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Create a new rotation which combines both this rotation, and another.</p>
+</div><h3 id='tymethod.invert' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.invert' class='fnname'>invert</a>(&amp;self) -&gt; Self</code></h3><div class='docblock'><p>Create a new rotation which &quot;un-does&quot; this rotation. That is,
 <code>r.concat(r.invert())</code> is the identity.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.rotate_point' class='method'><code>fn <a href='#method.rotate_point' class='fnname'>rotate_point</a>(&amp;self, point: &amp;P) -&gt; P</code></h3><div class='docblock'><p>Rotate a point using this rotation, by converting it to its
+        <h3 id='method.rotate_point' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.rotate_point' class='fnname'>rotate_point</a>(&amp;self, point: &amp;P) -&gt; P</code></h3><div class='docblock'><p>Rotate a point using this rotation, by converting it to its
 representation as a vector.</p>
-</div><h3 id='method.rotate_ray' class='method'><code>fn <a href='#method.rotate_ray' class='fnname'>rotate_ray</a>(&amp;self, ray: &amp;<a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;) -&gt; <a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;</code></h3><div class='docblock'><p>Rotate a ray using this rotation.</p>
-</div><h3 id='method.concat_self' class='method'><code>fn <a href='#method.concat_self' class='fnname'>concat_self</a>(&amp;mut self, other: &amp;Self)</code></h3><div class='docblock'><p>Modify this rotation in-place by combining it with another.</p>
-</div><h3 id='method.invert_self' class='method'><code>fn <a href='#method.invert_self' class='fnname'>invert_self</a>(&amp;mut self)</code></h3><div class='docblock'><p>Invert this rotation in-place.</p>
+</div><h3 id='method.rotate_ray' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.rotate_ray' class='fnname'>rotate_ray</a>(&amp;self, ray: &amp;<a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;) -&gt; <a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;</code></h3><div class='docblock'><p>Rotate a ray using this rotation.</p>
+</div><h3 id='method.concat_self' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.concat_self' class='fnname'>concat_self</a>(&amp;mut self, other: &amp;Self)</code></h3><div class='docblock'><p>Modify this rotation in-place by combining it with another.</p>
+</div><h3 id='method.invert_self' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.invert_self' class='fnname'>invert_self</a>(&amp;mut self)</code></h3><div class='docblock'><p>Invert this rotation in-place.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/quaternion/struct.Quaternion.html' title='cgmath::quaternion::Quaternion'>Quaternion</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point2.html' title='cgmath::point::Point2'>Point2</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/rotation/struct.Basis2.html' title='cgmath::rotation::Basis2'>Basis2</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/rotation/struct.Basis3.html' title='cgmath::rotation::Basis3'>Basis3</a>&lt;S&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/quaternion/struct.Quaternion.html' title='cgmath::quaternion::Quaternion'>Quaternion</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point2.html' title='cgmath::point::Point2'>Point2</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/rotation/struct.Basis2.html' title='cgmath::rotation::Basis2'>Basis2</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/rotation/struct.Basis3.html' title='cgmath::rotation::Basis3'>Basis3</a>&lt;S&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/cgmath/rotation/trait.Rotation.js">
                       </script></section>
@@ -115,6 +119,8 @@ representation as a vector.</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

@@ -7,10 +7,9 @@
 
     <title>cgmath::rotation::Rotation3 - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,7 +39,10 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>rotation</a>::<a class='trait' href=''>Rotation3</a><a class='source' id='src-22443' href='../../src/cgmath/src/cgmath/rotation.rs.html#86-119'>[src]</a></h1>
+<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>rotation</a>::<a class='trait' href=''>Rotation3</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-24002' href='../../src/cgmath/src/rotation.rs.html#86-119'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Rotation3&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt;: <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; + <a class='trait' href='../../cgmath/matrix/trait.ToMatrix3.html' title='cgmath::matrix::ToMatrix3'>ToMatrix3</a>&lt;S&gt; + <a class='trait' href='../../cgmath/rotation/trait.ToBasis3.html' title='cgmath::rotation::ToBasis3'>ToBasis3</a>&lt;S&gt; + <a class='trait' href='../../cgmath/quaternion/trait.ToQuaternion.html' title='cgmath::quaternion::ToQuaternion'>ToQuaternion</a>&lt;S&gt; {
     fn <a href='#tymethod.from_axis_angle' class='fnname'>from_axis_angle</a>(axis: &amp;<a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, angle: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self;
     fn <a href='#tymethod.from_euler' class='fnname'>from_euler</a>(x: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, y: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, z: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self;
@@ -50,8 +54,8 @@
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.from_axis_angle' class='method'><code>fn <a href='#tymethod.from_axis_angle' class='fnname'>from_axis_angle</a>(axis: &amp;<a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, angle: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation using an angle around a given axis.</p>
-</div><h3 id='tymethod.from_euler' class='method'><code>fn <a href='#tymethod.from_euler' class='fnname'>from_euler</a>(x: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, y: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, z: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from a set of euler angles.</p>
+        <h3 id='tymethod.from_axis_angle' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.from_axis_angle' class='fnname'>from_axis_angle</a>(axis: &amp;<a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, angle: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation using an angle around a given axis.</p>
+</div><h3 id='tymethod.from_euler' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.from_euler' class='fnname'>from_euler</a>(x: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, y: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;, z: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from a set of euler angles.</p>
 
 <h1 id="parameters" class='section-header'><a
                            href="#parameters">Parameters</a></h1>
@@ -63,14 +67,14 @@
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.from_angle_x' class='method'><code>fn <a href='#method.from_angle_x' class='fnname'>from_angle_x</a>(theta: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from an angle around the <code>x</code> axis (pitch).</p>
-</div><h3 id='method.from_angle_y' class='method'><code>fn <a href='#method.from_angle_y' class='fnname'>from_angle_y</a>(theta: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from an angle around the <code>y</code> axis (yaw).</p>
-</div><h3 id='method.from_angle_z' class='method'><code>fn <a href='#method.from_angle_z' class='fnname'>from_angle_z</a>(theta: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from an angle around the <code>z</code> axis (roll).</p>
+        <h3 id='method.from_angle_x' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.from_angle_x' class='fnname'>from_angle_x</a>(theta: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from an angle around the <code>x</code> axis (pitch).</p>
+</div><h3 id='method.from_angle_y' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.from_angle_y' class='fnname'>from_angle_y</a>(theta: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from an angle around the <code>y</code> axis (yaw).</p>
+</div><h3 id='method.from_angle_z' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.from_angle_z' class='fnname'>from_angle_z</a>(theta: <a class='struct' href='../../cgmath/angle/struct.Rad.html' title='cgmath::angle::Rad'>Rad</a>&lt;S&gt;) -&gt; Self</code></h3><div class='docblock'><p>Create a rotation from an angle around the <code>z</code> axis (roll).</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation3.html' title='cgmath::rotation::Rotation3'>Rotation3</a>&lt;S&gt; for <a class='struct' href='../../cgmath/quaternion/struct.Quaternion.html' title='cgmath::quaternion::Quaternion'>Quaternion</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation3.html' title='cgmath::rotation::Rotation3'>Rotation3</a>&lt;S&gt; for <a class='struct' href='../../cgmath/rotation/struct.Basis3.html' title='cgmath::rotation::Basis3'>Basis3</a>&lt;S&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation3.html' title='cgmath::rotation::Rotation3'>Rotation3</a>&lt;S&gt; for <a class='struct' href='../../cgmath/quaternion/struct.Quaternion.html' title='cgmath::quaternion::Quaternion'>Quaternion</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/rotation/trait.Rotation3.html' title='cgmath::rotation::Rotation3'>Rotation3</a>&lt;S&gt; for <a class='struct' href='../../cgmath/rotation/struct.Basis3.html' title='cgmath::rotation::Basis3'>Basis3</a>&lt;S&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/cgmath/rotation/trait.Rotation3.js">
                       </script></section>
@@ -108,6 +112,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

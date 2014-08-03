@@ -7,10 +7,9 @@
 
     <title>glfw::Callback - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,13 +39,16 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Callback</a><a class='source' id='src-12047' href='../src/glfw/src/lib/lib.rs.html#282-285'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Callback</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-13781' href='../src/glfw/src/glfw.rs.html#282-285'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Callback&lt;Fn, UserData&gt; {
     pub f: Fn,
     pub data: UserData,
 }</pre><h2 class='fields'>Fields</h2>
-<table><tr><td id='structfield.f'><code>f</code></td><td></td></tr><tr><td id='structfield.data'><code>data</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;UserData&gt; Object&lt;Args&gt; for <a class='struct' href='../glfw/struct.Callback.html' title='glfw::Callback'>Callback</a>&lt;fn(<a class='type' href='../glfw/type.Error.html' title='glfw::Error'>Error</a>, <a class='struct' href='http://doc.rust-lang.org/collections/string/struct.String.html' title='collections::string::String'>String</a>, &amp;UserData), UserData&gt;</code></h3><div class='methods'><h4 id='method.call' class='method'><code>fn <a href='#method.call' class='fnname'>call</a>(&amp;self, (tuple arg NYI): Args)</code></h4>
-</div><h3 class='impl'><code>impl&lt;UserData&gt; Object&lt;Args&gt; for <a class='struct' href='../glfw/struct.Callback.html' title='glfw::Callback'>Callback</a>&lt;fn(<a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a>, <a class='type' href='../glfw/type.MonitorEvent.html' title='glfw::MonitorEvent'>MonitorEvent</a>, &amp;UserData), UserData&gt;</code></h3><div class='methods'><h4 id='method.call' class='method'><code>fn <a href='#method.call' class='fnname'>call</a>(&amp;self, (tuple arg NYI): Args)</code></h4>
+<table><tr><td id='structfield.f'><a class='stability Unmarked' title='No stability level'></a><code>f</code></td><td></td></tr><tr><td id='structfield.data'><a class='stability Unmarked' title='No stability level'></a><code>data</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;UserData&gt; Object&lt;Args&gt; for <a class='struct' href='../glfw/struct.Callback.html' title='glfw::Callback'>Callback</a>&lt;fn(<a class='type' href='../glfw/type.Error.html' title='glfw::Error'>Error</a>, <a class='struct' href='http://doc.rust-lang.org/master/collections/string/struct.String.html' title='collections::string::String'>String</a>, &amp;UserData), UserData&gt;</code></h3><div class='impl-methods'><h4 id='method.call' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call' class='fnname'>call</a>(&amp;self, (error, description): Args)</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;UserData&gt; Object&lt;Args&gt; for <a class='struct' href='../glfw/struct.Callback.html' title='glfw::Callback'>Callback</a>&lt;fn(<a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a>, <a class='type' href='../glfw/type.MonitorEvent.html' title='glfw::MonitorEvent'>MonitorEvent</a>, &amp;UserData), UserData&gt;</code></h3><div class='impl-methods'><h4 id='method.call' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call' class='fnname'>call</a>(&amp;self, (monitor, event): Args)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -80,6 +84,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";

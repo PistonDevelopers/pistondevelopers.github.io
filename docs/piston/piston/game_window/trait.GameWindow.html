@@ -7,10 +7,9 @@
 
     <title>piston::game_window::GameWindow - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,26 +39,33 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>piston</a>::<a href='index.html'>game_window</a>::<a class='trait' href=''>GameWindow</a><a class='source' id='src-36' href='../../src/piston/src/game_window.rs.html#7-24'>[src]</a></h1>
+<h1 class='fqn'>Trait <a href='../index.html'>piston</a>::<a href='index.html'>game_window</a>::<a class='trait' href=''>GameWindow</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-36' href='../../src/piston/src/game_window.rs.html#7-29'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait GameWindow {
     fn <a href='#tymethod.get_settings' class='fnname'>get_settings</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a class='struct' href='../../piston/struct.GameWindowSettings.html' title='piston::GameWindowSettings'>GameWindowSettings</a>;
-    fn <a href='#tymethod.should_close' class='fnname'>should_close</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a>;
+    fn <a href='#tymethod.should_close' class='fnname'>should_close</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>;
 
-    fn <a href='#method.get_size' class='fnname'>get_size</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>)</a> { ... }
+    fn <a href='#method.get_size' class='fnname'>get_size</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>)</a> { ... }
     fn <a href='#method.swap_buffers' class='fnname'>swap_buffers</a>(&amp;self) { ... }
+    fn <a href='#method.capture_cursor' class='fnname'>capture_cursor</a>(&amp;mut self, _enabled: <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>) { ... }
     fn <a href='#method.poll_event' class='fnname'>poll_event</a>(&amp;mut self) -&gt; <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a> { ... }
 }</pre><div class='docblock'><p>Implemented by window back-end.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.get_settings' class='method'><code>fn <a href='#tymethod.get_settings' class='fnname'>get_settings</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a class='struct' href='../../piston/struct.GameWindowSettings.html' title='piston::GameWindowSettings'>GameWindowSettings</a></code></h3><div class='docblock'><p>Get the window&#39;s settings.</p>
-</div><h3 id='tymethod.should_close' class='method'><code>fn <a href='#tymethod.should_close' class='fnname'>should_close</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns ture if the window should close.</p>
+        <h3 id='tymethod.get_settings' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.get_settings' class='fnname'>get_settings</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a <a class='struct' href='../../piston/struct.GameWindowSettings.html' title='piston::GameWindowSettings'>GameWindowSettings</a></code></h3><div class='docblock'><p>Get the window&#39;s settings.</p>
+</div><h3 id='tymethod.should_close' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.should_close' class='fnname'>should_close</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Returns ture if the window should close.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.get_size' class='method'><code>fn <a href='#method.get_size' class='fnname'>get_size</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/std/primitive.u32.html'>u32</a>)</a></code></h3><div class='docblock'><p>Get the window&#39;s size</p>
-</div><h3 id='method.swap_buffers' class='method'><code>fn <a href='#method.swap_buffers' class='fnname'>swap_buffers</a>(&amp;self)</code></h3><div class='docblock'><p>swap buffers.</p>
-</div><h3 id='method.poll_event' class='method'><code>fn <a href='#method.poll_event' class='fnname'>poll_event</a>(&amp;mut self) -&gt; <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='docblock'><p>Poll a event from window&#39;s event queue.</p>
+        <h3 id='method.get_size' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_size' class='fnname'>get_size</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>)</a></code></h3><div class='docblock'><p>Get the window&#39;s size</p>
+</div><h3 id='method.swap_buffers' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.swap_buffers' class='fnname'>swap_buffers</a>(&amp;self)</code></h3><div class='docblock'><p>Swap buffers.</p>
+</div><h3 id='method.capture_cursor' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.capture_cursor' class='fnname'>capture_cursor</a>(&amp;mut self, _enabled: <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a>)</code></h3><div class='docblock'><p>When the cursor is captured,
+it is hidden and the cursor position does not change.
+Only relative mouse motion is registered.</p>
+</div><h3 id='method.poll_event' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.poll_event' class='fnname'>poll_event</a>(&amp;mut self) -&gt; <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='docblock'><p>Poll a event from window&#39;s event queue.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
@@ -98,6 +106,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";
