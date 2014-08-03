@@ -7,10 +7,9 @@
 
     <title>glfw::Monitor - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,25 +39,28 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Monitor</a><a class='source' id='src-14554' href='../src/glfw/src/lib/lib.rs.html#743-748'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='index.html'>glfw</a>::<a class='struct' href=''>Monitor</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-16625' href='../src/glfw/src/glfw.rs.html#758-763'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Monitor {
     // some fields omitted
 }</pre><div class='docblock'><p>A struct that wraps a <code>*GLFWmonitor</code> handle.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a></code></h3><div class='methods'><h4 id='method.get_pos' class='method'><code>fn <a href='#method.get_pos' class='fnname'>get_pos</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>)</a></code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../glfw/struct.Monitor.html' title='glfw::Monitor'>Monitor</a></code></h3><div class='impl-methods'><h4 id='method.get_pos' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_pos' class='fnname'>get_pos</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>)</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetMonitorPos</code>.</p>
-</div><h4 id='method.get_physical_size' class='method'><code>fn <a href='#method.get_physical_size' class='fnname'>get_physical_size</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/std/primitive.i32.html'>i32</a>)</a></code></h4>
+</div><h4 id='method.get_physical_size' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_physical_size' class='fnname'>get_physical_size</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.i32.html'>i32</a>)</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetMonitorPhysicalSize</code>.</p>
-</div><h4 id='method.get_name' class='method'><code>fn <a href='#method.get_name' class='fnname'>get_name</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
+</div><h4 id='method.get_name' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_name' class='fnname'>get_name</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/master/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetMonitorName</code>.</p>
-</div><h4 id='method.get_video_modes' class='method'><code>fn <a href='#method.get_video_modes' class='fnname'>get_video_modes</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../glfw/struct.VidMode.html' title='glfw::VidMode'>VidMode</a>&gt;</code></h4>
+</div><h4 id='method.get_video_modes' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_video_modes' class='fnname'>get_video_modes</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/master/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../glfw/struct.VidMode.html' title='glfw::VidMode'>VidMode</a>&gt;</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetVideoModes</code>.</p>
-</div><h4 id='method.get_video_mode' class='method'><code>fn <a href='#method.get_video_mode' class='fnname'>get_video_mode</a>(&amp;self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../glfw/struct.VidMode.html' title='glfw::VidMode'>VidMode</a>&gt;</code></h4>
+</div><h4 id='method.get_video_mode' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_video_mode' class='fnname'>get_video_mode</a>(&amp;self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../glfw/struct.VidMode.html' title='glfw::VidMode'>VidMode</a>&gt;</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetVideoMode</code>.</p>
-</div><h4 id='method.set_gamma' class='method'><code>fn <a href='#method.set_gamma' class='fnname'>set_gamma</a>(&amp;self, gamma: <a href='http://doc.rust-lang.org/std/primitive.f32.html'>f32</a>)</code></h4>
+</div><h4 id='method.set_gamma' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_gamma' class='fnname'>set_gamma</a>(&amp;self, gamma: <a href='http://doc.rust-lang.org/master/std/primitive.f32.html'>f32</a>)</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwSetGamma</code>.</p>
-</div><h4 id='method.get_gamma_ramp' class='method'><code>fn <a href='#method.get_gamma_ramp' class='fnname'>get_gamma_ramp</a>(&amp;self) -&gt; <a class='struct' href='../glfw/struct.GammaRamp.html' title='glfw::GammaRamp'>GammaRamp</a></code></h4>
+</div><h4 id='method.get_gamma_ramp' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_gamma_ramp' class='fnname'>get_gamma_ramp</a>(&amp;self) -&gt; <a class='struct' href='../glfw/struct.GammaRamp.html' title='glfw::GammaRamp'>GammaRamp</a></code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwGetGammaRamp</code>.</p>
-</div><h4 id='method.set_gamma_ramp' class='method'><code>fn <a href='#method.set_gamma_ramp' class='fnname'>set_gamma_ramp</a>(&amp;self, ramp: &amp;<a class='struct' href='../glfw/struct.GammaRamp.html' title='glfw::GammaRamp'>GammaRamp</a>)</code></h4>
+</div><h4 id='method.set_gamma_ramp' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_gamma_ramp' class='fnname'>set_gamma_ramp</a>(&amp;self, ramp: <a class='struct' href='../glfw/struct.GammaRamp.html' title='glfw::GammaRamp'>GammaRamp</a>)</code></h4>
 <div class='docblock'><p>Wrapper for <code>glfwSetGammaRamp</code>.</p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -93,6 +97,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";

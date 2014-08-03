@@ -39,7 +39,10 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='index.html'>image</a>::<a class='trait' href=''>Pixel</a><span class='out-of-band'><a id='src-47296' href='../src/image/src/color.rs.html#118-152'>[src]</a></span></h1>
+<h1 class='fqn'>Trait <a href='index.html'>image</a>::<a class='trait' href=''>Pixel</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-44591' href='../src/image/src/color.rs.html#118-152'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Pixel&lt;T&gt;: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a> + <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> + <a class='trait' href='http://doc.rust-lang.org/master/core/default/trait.Default.html' title='core::default::Default'>Default</a> {
     fn <a href='#tymethod.from_channels' class='fnname'>from_channels</a>(a: T, b: T, c: T, d: T) -&gt; Self;
     fn <a href='#tymethod.to_rgb' class='fnname'>to_rgb</a>(&amp;self) -&gt; <a class='struct' href='../image/struct.Rgb.html' title='image::Rgb'>Rgb</a>&lt;T&gt;;
@@ -67,7 +70,7 @@ If the pixel does not contain 4 channels the extra are ignored.</p>
 Apply the function g to the alpha channel.</p>
 </div><h3 id='tymethod.map2' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.map2' class='fnname'>map2</a>(&amp;self, other: Self, f: |T, T| -&gt; T) -&gt; Self</code></h3><div class='docblock'><p>Apply the function <code>f</code> to each channel of this pixel and
 <code>other</code> pairwise.</p>
-</div><h3 id='tymethod.channels4' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.channels4' class='fnname'>channels4</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(T, T, T, T)</a></code></h3><div class='docblock'><p>Returns the channels of this pixes as a 4 tuple. If the pixel
+</div><h3 id='tymethod.channels4' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.channels4' class='fnname'>channels4</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(T, T, T, T)</a></code></h3><div class='docblock'><p>Returns the channels of this pixel as a 4 tuple. If the pixel
 has less than 4 channels the remainder is filled with the maximum value</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>

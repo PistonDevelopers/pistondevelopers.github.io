@@ -7,10 +7,9 @@
 
     <title>cgmath::array::Array2 - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,44 +39,49 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>array</a>::<a class='trait' href=''>Array2</a><a class='source' id='src-100' href='../../src/cgmath/src/cgmath/array.rs.html#48-96'>[src]</a></h1>
-<pre class='rust trait'>pub trait Array2&lt;Column: <a class='trait' href='../../cgmath/array/trait.Array1.html' title='cgmath::array::Array1'>Array1</a>&lt;Element&gt;, Row: <a class='trait' href='../../cgmath/array/trait.Array1.html' title='cgmath::array::Array1'>Array1</a>&lt;Element&gt;, Element: <a class='trait' href='http://doc.rust-lang.org/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; {
-    fn <a href='#tymethod.ptr' class='fnname'>ptr</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a Element;
-    fn <a href='#tymethod.mut_ptr' class='fnname'>mut_ptr</a>&lt;'a&gt;(&amp;'a mut self) -&gt; &amp;'a mut Element;
-    fn <a href='#tymethod.c' class='fnname'>c</a>&lt;'a&gt;(&amp;'a self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a Column;
-    fn <a href='#tymethod.mut_c' class='fnname'>mut_c</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Column;
-    fn <a href='#tymethod.r' class='fnname'>r</a>(&amp;self, r: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; Row;
-    fn <a href='#tymethod.swap_r' class='fnname'>swap_r</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>);
+<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>array</a>::<a class='trait' href=''>Array2</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-166' href='../../src/cgmath/src/array.rs.html#63-131'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Array2&lt;Column: <a class='trait' href='../../cgmath/array/trait.Array1.html' title='cgmath::array::Array1'>Array1</a>&lt;Element&gt;, Row: <a class='trait' href='../../cgmath/array/trait.Array1.html' title='cgmath::array::Array1'>Array1</a>&lt;Element&gt;, Element: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt;: <a class='trait' href='http://doc.rust-lang.org/master/core/ops/trait.Index.html' title='core::ops::Index'>Index</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, Column&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/ops/trait.IndexMut.html' title='core::ops::IndexMut'>IndexMut</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, Column&gt; {
+    fn <a href='#tymethod.r' class='fnname'>r</a>(&amp;self, r: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; Row;
+    fn <a href='#tymethod.swap_r' class='fnname'>swap_r</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>);
+    fn <a href='#tymethod.map' class='fnname'>map</a>(&amp;mut self, op: |&amp;Column| -&gt; Column) -&gt; Self;
 
-    fn <a href='#method.swap_c' class='fnname'>swap_c</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) { ... }
-    fn <a href='#method.replace_c' class='fnname'>replace_c</a>(&amp;mut self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, src: Column) -&gt; Column { ... }
-    fn <a href='#method.cr' class='fnname'>cr</a>(&amp;self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; Element { ... }
-    fn <a href='#method.mut_cr' class='fnname'>mut_cr</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Element { ... }
-    fn <a href='#method.swap_cr' class='fnname'>swap_cr</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</a>, b: <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</a>) { ... }
+    fn <a href='#method.ptr' class='fnname'>ptr</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a Element { ... }
+    fn <a href='#method.mut_ptr' class='fnname'>mut_ptr</a>&lt;'a&gt;(&amp;'a mut self) -&gt; &amp;'a mut Element { ... }
+    fn <a href='#method.c' class='fnname'>c</a>&lt;'a&gt;(&amp;'a self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a Column { ... }
+    fn <a href='#method.mut_c' class='fnname'>mut_c</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Column { ... }
+    fn <a href='#method.swap_c' class='fnname'>swap_c</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) { ... }
+    fn <a href='#method.replace_c' class='fnname'>replace_c</a>(&amp;mut self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, src: Column) -&gt; Column { ... }
+    fn <a href='#method.cr' class='fnname'>cr</a>&lt;'a&gt;(&amp;'a self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a Element { ... }
+    fn <a href='#method.mut_cr' class='fnname'>mut_cr</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Element { ... }
+    fn <a href='#method.swap_cr' class='fnname'>swap_cr</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</a>, b: <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</a>) { ... }
 }</pre><div class='docblock'><p>A column-major array</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.ptr' class='method'><code>fn <a href='#tymethod.ptr' class='fnname'>ptr</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a Element</code></h3><div class='docblock'><p>Get the pointer to the first element of the array.</p>
-</div><h3 id='tymethod.mut_ptr' class='method'><code>fn <a href='#tymethod.mut_ptr' class='fnname'>mut_ptr</a>&lt;'a&gt;(&amp;'a mut self) -&gt; &amp;'a mut Element</code></h3><div class='docblock'><p>Get a mutable pointer to the first element of the array.</p>
-</div><h3 id='tymethod.c' class='method'><code>fn <a href='#tymethod.c' class='fnname'>c</a>&lt;'a&gt;(&amp;'a self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a Column</code></h3><div class='docblock'><p>Get a shared reference to a column of this array.</p>
-</div><h3 id='tymethod.mut_c' class='method'><code>fn <a href='#tymethod.mut_c' class='fnname'>mut_c</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Column</code></h3><div class='docblock'><p>Get a mutable reference to a column of this array.</p>
-</div><h3 id='tymethod.r' class='method'><code>fn <a href='#tymethod.r' class='fnname'>r</a>(&amp;self, r: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; Row</code></h3><div class='docblock'><p>Get a row from this array by-value.</p>
-</div><h3 id='tymethod.swap_r' class='method'><code>fn <a href='#tymethod.swap_r' class='fnname'>swap_r</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</code></h3><div class='docblock'><p>Swap two rows of this array.</p>
+        <h3 id='tymethod.r' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.r' class='fnname'>r</a>(&amp;self, r: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; Row</code></h3><div class='docblock'><p>Get a row from this array by-value.</p>
+</div><h3 id='tymethod.swap_r' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.swap_r' class='fnname'>swap_r</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</code></h3><div class='docblock'><p>Swap two rows of this array.</p>
+</div><h3 id='tymethod.map' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.map' class='fnname'>map</a>(&amp;mut self, op: |&amp;Column| -&gt; Column) -&gt; Self</code></h3><div class='docblock'><p>Apply a function to each column.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.swap_c' class='method'><code>fn <a href='#method.swap_c' class='fnname'>swap_c</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</code></h3><div class='docblock'><p>Swap two columns of this array.</p>
-</div><h3 id='method.replace_c' class='method'><code>fn <a href='#method.replace_c' class='fnname'>replace_c</a>(&amp;mut self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, src: Column) -&gt; Column</code></h3><div class='docblock'><p>Replace a column in the array.</p>
-</div><h3 id='method.cr' class='method'><code>fn <a href='#method.cr' class='fnname'>cr</a>(&amp;self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; Element</code></h3><div class='docblock'><p>Return a shared reference to the element at column <code>c</code> and row <code>r</code>.</p>
-</div><h3 id='method.mut_cr' class='method'><code>fn <a href='#method.mut_cr' class='fnname'>mut_cr</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Element</code></h3><div class='docblock'><p>Return a mutable reference to the element at column <code>c</code> and row <code>r</code>.</p>
-</div><h3 id='method.swap_cr' class='method'><code>fn <a href='#method.swap_cr' class='fnname'>swap_cr</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</a>, b: <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/std/primitive.uint.html'>uint</a>)</a>)</code></h3><div class='docblock'><p>Swap the values at index <code>a</code> and <code>b</code></p>
+        <h3 id='method.ptr' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.ptr' class='fnname'>ptr</a>&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a Element</code></h3><div class='docblock'><p>Get the pointer to the first element of the array.</p>
+</div><h3 id='method.mut_ptr' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.mut_ptr' class='fnname'>mut_ptr</a>&lt;'a&gt;(&amp;'a mut self) -&gt; &amp;'a mut Element</code></h3><div class='docblock'><p>Get a mutable pointer to the first element of the array.</p>
+</div><h3 id='method.c' class='method'><a class='stability Deprecated' title='Deprecated: Use index operator instead'></a><code>fn <a href='#method.c' class='fnname'>c</a>&lt;'a&gt;(&amp;'a self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a Column</code></h3><div class='docblock'><p>Get a shared reference to a column of this array.</p>
+</div><h3 id='method.mut_c' class='method'><a class='stability Deprecated' title='Deprecated: Use index operator instead'></a><code>fn <a href='#method.mut_c' class='fnname'>mut_c</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Column</code></h3><div class='docblock'><p>Get a mutable reference to a column of this array.</p>
+</div><h3 id='method.swap_c' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.swap_c' class='fnname'>swap_c</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, b: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</code></h3><div class='docblock'><p>Swap two columns of this array.</p>
+</div><h3 id='method.replace_c' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.replace_c' class='fnname'>replace_c</a>(&amp;mut self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, src: Column) -&gt; Column</code></h3><div class='docblock'><p>Replace a column in the array.</p>
+</div><h3 id='method.cr' class='method'><a class='stability Deprecated' title='Deprecated: Use index operators instead'></a><code>fn <a href='#method.cr' class='fnname'>cr</a>&lt;'a&gt;(&amp;'a self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a Element</code></h3><div class='docblock'><p>Return a shared reference to the element at column <code>c</code> and row <code>r</code>.</p>
+</div><h3 id='method.mut_cr' class='method'><a class='stability Deprecated' title='Deprecated: Use index operators instead'></a><code>fn <a href='#method.mut_cr' class='fnname'>mut_cr</a>&lt;'a&gt;(&amp;'a mut self, c: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, r: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>) -&gt; &amp;'a mut Element</code></h3><div class='docblock'><p>Return a mutable reference to the element at column <code>c</code> and row <code>r</code>.</p>
+</div><h3 id='method.swap_cr' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.swap_cr' class='fnname'>swap_cr</a>(&amp;mut self, a: <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</a>, b: <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>, <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</a>)</code></h3><div class='docblock'><p>Swap the values at index <code>a</code> and <code>b</code></p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../cgmath/array/trait.Array2.html' title='cgmath::array::Array2'>Array2</a>&lt;<a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;, <a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;, S&gt; for <a class='struct' href='../../cgmath/matrix/struct.Matrix2.html' title='cgmath::matrix::Matrix2'>Matrix2</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../cgmath/array/trait.Array2.html' title='cgmath::array::Array2'>Array2</a>&lt;<a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, S&gt; for <a class='struct' href='../../cgmath/matrix/struct.Matrix3.html' title='cgmath::matrix::Matrix3'>Matrix3</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../cgmath/array/trait.Array2.html' title='cgmath::array::Array2'>Array2</a>&lt;<a class='struct' href='../../cgmath/vector/struct.Vector4.html' title='cgmath::vector::Vector4'>Vector4</a>&lt;S&gt;, <a class='struct' href='../../cgmath/vector/struct.Vector4.html' title='cgmath::vector::Vector4'>Vector4</a>&lt;S&gt;, S&gt; for <a class='struct' href='../../cgmath/matrix/struct.Matrix4.html' title='cgmath::matrix::Matrix4'>Matrix4</a>&lt;S&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../cgmath/array/trait.Array2.html' title='cgmath::array::Array2'>Array2</a>&lt;<a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;, <a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;, S&gt; for <a class='struct' href='../../cgmath/matrix/struct.Matrix2.html' title='cgmath::matrix::Matrix2'>Matrix2</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../cgmath/array/trait.Array2.html' title='cgmath::array::Array2'>Array2</a>&lt;<a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, S&gt; for <a class='struct' href='../../cgmath/matrix/struct.Matrix3.html' title='cgmath::matrix::Matrix3'>Matrix3</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../cgmath/array/trait.Array2.html' title='cgmath::array::Array2'>Array2</a>&lt;<a class='struct' href='../../cgmath/vector/struct.Vector4.html' title='cgmath::vector::Vector4'>Vector4</a>&lt;S&gt;, <a class='struct' href='../../cgmath/vector/struct.Vector4.html' title='cgmath::vector::Vector4'>Vector4</a>&lt;S&gt;, S&gt; for <a class='struct' href='../../cgmath/matrix/struct.Matrix4.html' title='cgmath::matrix::Matrix4'>Matrix4</a>&lt;S&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/cgmath/array/trait.Array2.js">
                       </script></section>
@@ -113,6 +119,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

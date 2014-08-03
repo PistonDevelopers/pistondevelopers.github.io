@@ -7,10 +7,9 @@
 
     <title>piston::event::Event - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,39 +39,43 @@
     </nav>
 
     <section id='main' class="content type">
-<h1 class='fqn'>Enum <a href='../index.html'>piston</a>::<a href='index.html'>event</a>::<a class='type' href=''>Event</a><a class='source' id='src-15708' href='../../src/piston/src/event.rs.html#9-30'>[src]</a></h1>
+<h1 class='fqn'>Enum <a href='../index.html'>piston</a>::<a href='index.html'>event</a>::<a class='type' href=''>Event</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-12213' href='../../src/piston/src/event.rs.html#9-30'>[src]</a></span></h1>
 <pre class='rust enum'>pub enum Event {
     NoEvent,
     KeyReleased(<a class='type' href='../../piston/keyboard/type.Key.html' title='piston::keyboard::Key'>Key</a>),
     KeyPressed(<a class='type' href='../../piston/keyboard/type.Key.html' title='piston::keyboard::Key'>Key</a>),
     MouseButtonPressed(<a class='type' href='../../piston/mouse/type.Button.html' title='piston::mouse::Button'>Button</a>),
     MouseButtonReleased(<a class='type' href='../../piston/mouse/type.Button.html' title='piston::mouse::Button'>Button</a>),
-    MouseMoved(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>)</a>&gt;),
-    MouseScrolled(<a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/std/primitive.f64.html'>f64</a>),
+    MouseMoved(<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>)</a>&gt;),
+    MouseScrolled(<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>),
 }</pre><div class='docblock'><p>Contains the information associated with an event.</p>
 </div><h2 class='variants'>Variants</h2>
-<table><tr><td id='variant.NoEvent'><code>NoEvent</code></td><td><div class='docblock'><p>No event occured.</p>
-</div></td></tr><tr><td id='variant.KeyReleased'><code>KeyReleased</code></td><td><div class='docblock'><p>A key was released.</p>
-</div></td></tr><tr><td id='variant.KeyPressed'><code>KeyPressed</code></td><td><div class='docblock'><p>A key was pressed.</p>
-</div></td></tr><tr><td id='variant.MouseButtonPressed'><code>MouseButtonPressed</code></td><td><div class='docblock'><p>A mouse button was pressed.</p>
-</div></td></tr><tr><td id='variant.MouseButtonReleased'><code>MouseButtonReleased</code></td><td><div class='docblock'><p>A mouse button was released.</p>
-</div></td></tr><tr><td id='variant.MouseMoved'><code>MouseMoved</code></td><td><div class='docblock'><p>The mouse moved.</p>
+<table><tr><td id='variant.NoEvent'><a class='stability Unmarked' title='No stability level'></a><code>NoEvent</code></td><td><div class='docblock'><p>No event occured.</p>
+</div></td></tr><tr><td id='variant.KeyReleased'><a class='stability Unmarked' title='No stability level'></a><code>KeyReleased</code></td><td><div class='docblock'><p>A key was released.</p>
+</div></td></tr><tr><td id='variant.KeyPressed'><a class='stability Unmarked' title='No stability level'></a><code>KeyPressed</code></td><td><div class='docblock'><p>A key was pressed.</p>
+</div></td></tr><tr><td id='variant.MouseButtonPressed'><a class='stability Unmarked' title='No stability level'></a><code>MouseButtonPressed</code></td><td><div class='docblock'><p>A mouse button was pressed.</p>
+</div></td></tr><tr><td id='variant.MouseButtonReleased'><a class='stability Unmarked' title='No stability level'></a><code>MouseButtonReleased</code></td><td><div class='docblock'><p>A mouse button was released.</p>
+</div></td></tr><tr><td id='variant.MouseMoved'><a class='stability Unmarked' title='No stability level'></a><code>MouseMoved</code></td><td><div class='docblock'><p>The mouse moved.</p>
 
 <p>(x, y, Some((dx, dy)))
 The second part is relative motion which is not bounded.
 Relative motion might not be supported by all window back-ends.</p>
-</div></td></tr><tr><td id='variant.MouseScrolled'><code>MouseScrolled</code></td><td><div class='docblock'><p>The mouse wheel.</p>
+</div></td></tr><tr><td id='variant.MouseScrolled'><a class='stability Unmarked' title='No stability level'></a><code>MouseScrolled</code></td><td><div class='docblock'><p>The mouse wheel.</p>
 
 <p>(x, y)</p>
-</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='methods'><h4 id='method.fmt' class='method'><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='methods'><h4 id='method.lt' class='method'><code>fn <a href='#method.lt' class='fnname'>lt</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.le' class='method'><code>fn <a href='#method.le' class='fnname'>le</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.gt' class='method'><code>fn <a href='#method.gt' class='fnname'>gt</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.ge' class='method'><code>fn <a href='#method.ge' class='fnname'>ge</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h4>
-<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='impl-methods'><h4 id='method.fmt' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='impl-methods'><h4 id='method.partial_cmp' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.partial_cmp' class='fnname'>partial_cmp</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='http://doc.rust-lang.org/master/core/cmp/type.Ordering.html' title='core::cmp::Ordering'>Ordering</a>&gt;</code></h4>
+<h4 id='method.lt' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.lt' class='fnname'>lt</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.le' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.le' class='fnname'>le</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.gt' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.gt' class='fnname'>gt</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ge' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.ge' class='fnname'>ge</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='impl-methods'><h4 id='method.eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a>) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h3><div class='impl-methods'><h4 id='method.clone' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../../piston/event/type.Event.html' title='piston::event::Event'>Event</a></code></h4>
+<h4 id='method.clone_from' class='method'><a class='stability Experimental' title='Experimental: this function is mostly unused'></a><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -106,6 +111,8 @@ Relative motion might not be supported by all window back-ends.</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

@@ -7,10 +7,9 @@
 
     <title>graphics::internal::CanColor - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,39 +39,23 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>graphics</a>::<a href='index.html'>internal</a>::<a class='trait' href=''>CanColor</a><a class='source' id='src-18519' href='../../src/graphics/src/internal.rs.html#64-67'>[src]</a></h1>
-<pre class='rust trait'>pub trait CanColor&lt;'a, T, U&gt; {
-    fn <a href='#tymethod.color' class='fnname'>color</a>(&amp;'a self, value: U) -&gt; T;
+<h1 class='fqn'>Trait <a href='../index.html'>graphics</a>::<a href='index.html'>internal</a>::<a class='trait' href=''>CanColor</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-5564' href='../../src/graphics/src/internal.rs.html#63-66'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait CanColor&lt;T, U&gt; {
+    fn <a href='#tymethod.color' class='fnname'>color</a>(&amp;self, value: U) -&gt; T;
 }</pre><div class='docblock'><p>Implemented by contexts that can color.</p>
 
 <p>The context can color to type <code>T</code> by adding value <code>U</code>.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.color' class='method'><code>fn <a href='#tymethod.color' class='fnname'>color</a>(&amp;'a self, value: U) -&gt; T</code></h3><div class='docblock'><p>Create a new context with color.</p>
+        <h3 id='tymethod.color' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.color' class='fnname'>color</a>(&amp;self, value: U) -&gt; T</code></h3><div class='docblock'><p>Create a new context with color.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.BevelBorderLineColorContext.html' title='graphics::BevelBorderLineColorContext'>BevelBorderLineColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.BevelBorderLineColorContext.html' title='graphics::BevelBorderLineColorContext'>BevelBorderLineColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.BevelRectangleBorderColorContext.html' title='graphics::BevelRectangleBorderColorContext'>BevelRectangleBorderColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.BevelRectangleBorderColorContext.html' title='graphics::BevelRectangleBorderColorContext'>BevelRectangleBorderColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.BevelRectangleColorContext.html' title='graphics::BevelRectangleColorContext'>BevelRectangleColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.BevelRectangleColorContext.html' title='graphics::BevelRectangleColorContext'>BevelRectangleColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.ColorContext.html' title='graphics::ColorContext'>ColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.ColorContext.html' title='graphics::ColorContext'>ColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.EllipseBorderColorContext.html' title='graphics::EllipseBorderColorContext'>EllipseBorderColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.EllipseBorderColorContext.html' title='graphics::EllipseBorderColorContext'>EllipseBorderColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.EllipseColorContext.html' title='graphics::EllipseColorContext'>EllipseColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageColorContext.html' title='graphics::ImageColorContext'>ImageColorContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.ImageContext.html' title='graphics::ImageContext'>ImageContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageColorContext.html' title='graphics::ImageColorContext'>ImageColorContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.ImageColorContext.html' title='graphics::ImageColorContext'>ImageColorContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageRectangleColorContext.html' title='graphics::ImageRectangleColorContext'>ImageRectangleColorContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.ImageRectangleColorContext.html' title='graphics::ImageRectangleColorContext'>ImageRectangleColorContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a, 'b, I&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.ImageRectangleColorContext.html' title='graphics::ImageRectangleColorContext'>ImageRectangleColorContext</a>&lt;'a, 'b, I&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.ImageRectangleContext.html' title='graphics::ImageRectangleContext'>ImageRectangleContext</a>&lt;'a, 'b, I&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.LineColorContext.html' title='graphics::LineColorContext'>LineColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.LineColorContext.html' title='graphics::LineColorContext'>LineColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a, 'b&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.PolygonColorContext.html' title='graphics::PolygonColorContext'>PolygonColorContext</a>&lt;'a, 'b&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.PolygonColorContext.html' title='graphics::PolygonColorContext'>PolygonColorContext</a>&lt;'a, 'b&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.RectangleBorderColorContext.html' title='graphics::RectangleBorderColorContext'>RectangleBorderColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.RectangleBorderColorContext.html' title='graphics::RectangleBorderColorContext'>RectangleBorderColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.RectangleColorContext.html' title='graphics::RectangleColorContext'>RectangleColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.RectangleColorContext.html' title='graphics::RectangleColorContext'>RectangleColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.RoundBorderLineColorContext.html' title='graphics::RoundBorderLineColorContext'>RoundBorderLineColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.RoundBorderLineColorContext.html' title='graphics::RoundBorderLineColorContext'>RoundBorderLineColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.RoundRectangleBorderColorContext.html' title='graphics::RoundRectangleBorderColorContext'>RoundRectangleBorderColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.RoundRectangleBorderColorContext.html' title='graphics::RoundRectangleBorderColorContext'>RoundRectangleBorderColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.RoundRectangleColorContext.html' title='graphics::RoundRectangleColorContext'>RoundRectangleColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.RoundRectangleColorContext.html' title='graphics::RoundRectangleColorContext'>RoundRectangleColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.SquareBorderLineColorContext.html' title='graphics::SquareBorderLineColorContext'>SquareBorderLineColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.SquareBorderLineColorContext.html' title='graphics::SquareBorderLineColorContext'>SquareBorderLineColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.LerpTweenColorContext.html' title='graphics::LerpTweenColorContext'>LerpTweenColorContext</a>&lt;'a&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.LerpTweenColorContext.html' title='graphics::LerpTweenColorContext'>LerpTweenColorContext</a>&lt;'a&gt;</code></li>
-<li><code>impl&lt;'a, 'b&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;'a, <a class='struct' href='../../graphics/struct.LerpTweenPolygonsColorContext.html' title='graphics::LerpTweenPolygonsColorContext'>LerpTweenPolygonsColorContext</a>&lt;'a, 'b&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.LerpTweenPolygonsColorContext.html' title='graphics::LerpTweenPolygonsColorContext'>LerpTweenPolygonsColorContext</a>&lt;'a, 'b&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a>&gt; <a class='trait' href='../../graphics/internal/trait.CanColor.html' title='graphics::internal::CanColor'>CanColor</a>&lt;<a class='struct' href='../../graphics/struct.Context.html' title='graphics::Context'>Context</a>&lt;S, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt;, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt; for <a class='struct' href='../../graphics/struct.Context.html' title='graphics::Context'>Context</a>&lt;S, <a class='type' href='../../graphics/internal/type.Color.html' title='graphics::internal::Color'>Color</a>&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/graphics/internal/trait.CanColor.js">
                       </script></section>
@@ -108,6 +93,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

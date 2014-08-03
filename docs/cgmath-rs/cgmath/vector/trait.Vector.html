@@ -7,10 +7,9 @@
 
     <title>cgmath::vector::Vector - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,8 +39,11 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>vector</a>::<a class='trait' href=''>Vector</a><a class='source' id='src-10560' href='../../src/cgmath/src/cgmath/vector.rs.html#28-92'>[src]</a></h1>
-<pre class='rust trait'>pub trait Vector&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt;: <a class='trait' href='../../cgmath/array/trait.Array1.html' title='cgmath::array::Array1'>Array1</a>&lt;S&gt; + <a class='trait' href='http://doc.rust-lang.org/core/ops/trait.Neg.html' title='core::ops::Neg'>Neg</a>&lt;Self&gt; + <a class='trait' href='http://doc.rust-lang.org/core/num/trait.Zero.html' title='core::num::Zero'>Zero</a> + <a class='trait' href='http://doc.rust-lang.org/core/num/trait.One.html' title='core::num::One'>One</a> {
+<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>vector</a>::<a class='trait' href=''>Vector</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-11563' href='../../src/cgmath/src/vector.rs.html#114-178'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Vector&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt;: <a class='trait' href='../../cgmath/array/trait.Array1.html' title='cgmath::array::Array1'>Array1</a>&lt;S&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/ops/trait.Neg.html' title='core::ops::Neg'>Neg</a>&lt;Self&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/num/trait.Zero.html' title='core::num::Zero'>Zero</a> + <a class='trait' href='http://doc.rust-lang.org/master/core/num/trait.One.html' title='core::num::One'>One</a> {
     fn <a href='#tymethod.add_s' class='fnname'>add_s</a>(&amp;self, s: S) -&gt; Self;
     fn <a href='#tymethod.sub_s' class='fnname'>sub_s</a>(&amp;self, s: S) -&gt; Self;
     fn <a href='#tymethod.mul_s' class='fnname'>mul_s</a>(&amp;self, s: S) -&gt; Self;
@@ -73,41 +77,41 @@ for pragmatic reasons.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.add_s' class='method'><code>fn <a href='#tymethod.add_s' class='fnname'>add_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Add a scalar to this vector, returning a new vector.</p>
-</div><h3 id='tymethod.sub_s' class='method'><code>fn <a href='#tymethod.sub_s' class='fnname'>sub_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Subtract a scalar from this vector, returning a new vector.</p>
-</div><h3 id='tymethod.mul_s' class='method'><code>fn <a href='#tymethod.mul_s' class='fnname'>mul_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Multiply this vector by a scalar, returning a new vector.</p>
-</div><h3 id='tymethod.div_s' class='method'><code>fn <a href='#tymethod.div_s' class='fnname'>div_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Divide this vector by a scalar, returning a new vector.</p>
-</div><h3 id='tymethod.rem_s' class='method'><code>fn <a href='#tymethod.rem_s' class='fnname'>rem_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Take the remainder of this vector by a scalar, returning a new vector.</p>
-</div><h3 id='tymethod.add_v' class='method'><code>fn <a href='#tymethod.add_v' class='fnname'>add_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Add this vector to another, returning a new vector.</p>
-</div><h3 id='tymethod.sub_v' class='method'><code>fn <a href='#tymethod.sub_v' class='fnname'>sub_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Subtract another vector from this one, returning a new vector.</p>
-</div><h3 id='tymethod.mul_v' class='method'><code>fn <a href='#tymethod.mul_v' class='fnname'>mul_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Multiply this vector by another, returning a new vector.</p>
-</div><h3 id='tymethod.div_v' class='method'><code>fn <a href='#tymethod.div_v' class='fnname'>div_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Divide this vector by another, returning a new vector.</p>
-</div><h3 id='tymethod.rem_v' class='method'><code>fn <a href='#tymethod.rem_v' class='fnname'>rem_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Take the remainder of this vector by another, returning a new scalar.</p>
-</div><h3 id='tymethod.neg_self' class='method'><code>fn <a href='#tymethod.neg_self' class='fnname'>neg_self</a>(&amp;mut self)</code></h3><div class='docblock'><p>Negate this vector in-place.</p>
-</div><h3 id='tymethod.add_self_s' class='method'><code>fn <a href='#tymethod.add_self_s' class='fnname'>add_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Add a scalar to this vector in-place.</p>
-</div><h3 id='tymethod.sub_self_s' class='method'><code>fn <a href='#tymethod.sub_self_s' class='fnname'>sub_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Subtract a scalar from this vector, in-place.</p>
-</div><h3 id='tymethod.mul_self_s' class='method'><code>fn <a href='#tymethod.mul_self_s' class='fnname'>mul_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Multiply this vector by a scalar, in-place.</p>
-</div><h3 id='tymethod.div_self_s' class='method'><code>fn <a href='#tymethod.div_self_s' class='fnname'>div_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Divide this vector by a scalar, in-place.</p>
-</div><h3 id='tymethod.rem_self_s' class='method'><code>fn <a href='#tymethod.rem_self_s' class='fnname'>rem_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Take the remainder of this vector by a scalar, in-place.</p>
-</div><h3 id='tymethod.add_self_v' class='method'><code>fn <a href='#tymethod.add_self_v' class='fnname'>add_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Add another vector to this one, in-place.</p>
-</div><h3 id='tymethod.sub_self_v' class='method'><code>fn <a href='#tymethod.sub_self_v' class='fnname'>sub_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Subtract another vector from this one, in-place.</p>
-</div><h3 id='tymethod.mul_self_v' class='method'><code>fn <a href='#tymethod.mul_self_v' class='fnname'>mul_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Multiply this matrix by another, in-place.</p>
-</div><h3 id='tymethod.div_self_v' class='method'><code>fn <a href='#tymethod.div_self_v' class='fnname'>div_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Divide this matrix by anothor, in-place.</p>
-</div><h3 id='tymethod.rem_self_v' class='method'><code>fn <a href='#tymethod.rem_self_v' class='fnname'>rem_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Take the remainder of this vector by another, in-place.</p>
-</div><h3 id='tymethod.comp_add' class='method'><code>fn <a href='#tymethod.comp_add' class='fnname'>comp_add</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The sum of each component of the vector.</p>
-</div><h3 id='tymethod.comp_mul' class='method'><code>fn <a href='#tymethod.comp_mul' class='fnname'>comp_mul</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The product of each component of the vector.</p>
-</div><h3 id='tymethod.comp_min' class='method'><code>fn <a href='#tymethod.comp_min' class='fnname'>comp_min</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The minimum component of the vector.</p>
-</div><h3 id='tymethod.comp_max' class='method'><code>fn <a href='#tymethod.comp_max' class='fnname'>comp_max</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The maximum component of the vector.</p>
+        <h3 id='tymethod.add_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.add_s' class='fnname'>add_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Add a scalar to this vector, returning a new vector.</p>
+</div><h3 id='tymethod.sub_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.sub_s' class='fnname'>sub_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Subtract a scalar from this vector, returning a new vector.</p>
+</div><h3 id='tymethod.mul_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.mul_s' class='fnname'>mul_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Multiply this vector by a scalar, returning a new vector.</p>
+</div><h3 id='tymethod.div_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.div_s' class='fnname'>div_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Divide this vector by a scalar, returning a new vector.</p>
+</div><h3 id='tymethod.rem_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rem_s' class='fnname'>rem_s</a>(&amp;self, s: S) -&gt; Self</code></h3><div class='docblock'><p>Take the remainder of this vector by a scalar, returning a new vector.</p>
+</div><h3 id='tymethod.add_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.add_v' class='fnname'>add_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Add this vector to another, returning a new vector.</p>
+</div><h3 id='tymethod.sub_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.sub_v' class='fnname'>sub_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Subtract another vector from this one, returning a new vector.</p>
+</div><h3 id='tymethod.mul_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.mul_v' class='fnname'>mul_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Multiply this vector by another, returning a new vector.</p>
+</div><h3 id='tymethod.div_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.div_v' class='fnname'>div_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Divide this vector by another, returning a new vector.</p>
+</div><h3 id='tymethod.rem_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rem_v' class='fnname'>rem_v</a>(&amp;self, v: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Take the remainder of this vector by another, returning a new scalar.</p>
+</div><h3 id='tymethod.neg_self' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.neg_self' class='fnname'>neg_self</a>(&amp;mut self)</code></h3><div class='docblock'><p>Negate this vector in-place.</p>
+</div><h3 id='tymethod.add_self_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.add_self_s' class='fnname'>add_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Add a scalar to this vector in-place.</p>
+</div><h3 id='tymethod.sub_self_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.sub_self_s' class='fnname'>sub_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Subtract a scalar from this vector, in-place.</p>
+</div><h3 id='tymethod.mul_self_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.mul_self_s' class='fnname'>mul_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Multiply this vector by a scalar, in-place.</p>
+</div><h3 id='tymethod.div_self_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.div_self_s' class='fnname'>div_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Divide this vector by a scalar, in-place.</p>
+</div><h3 id='tymethod.rem_self_s' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rem_self_s' class='fnname'>rem_self_s</a>(&amp;mut self, s: S)</code></h3><div class='docblock'><p>Take the remainder of this vector by a scalar, in-place.</p>
+</div><h3 id='tymethod.add_self_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.add_self_v' class='fnname'>add_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Add another vector to this one, in-place.</p>
+</div><h3 id='tymethod.sub_self_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.sub_self_v' class='fnname'>sub_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Subtract another vector from this one, in-place.</p>
+</div><h3 id='tymethod.mul_self_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.mul_self_v' class='fnname'>mul_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Multiply this matrix by another, in-place.</p>
+</div><h3 id='tymethod.div_self_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.div_self_v' class='fnname'>div_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Divide this matrix by anothor, in-place.</p>
+</div><h3 id='tymethod.rem_self_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rem_self_v' class='fnname'>rem_self_v</a>(&amp;mut self, v: &amp;Self)</code></h3><div class='docblock'><p>Take the remainder of this vector by another, in-place.</p>
+</div><h3 id='tymethod.comp_add' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.comp_add' class='fnname'>comp_add</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The sum of each component of the vector.</p>
+</div><h3 id='tymethod.comp_mul' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.comp_mul' class='fnname'>comp_mul</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The product of each component of the vector.</p>
+</div><h3 id='tymethod.comp_min' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.comp_min' class='fnname'>comp_min</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The minimum component of the vector.</p>
+</div><h3 id='tymethod.comp_max' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.comp_max' class='fnname'>comp_max</a>(&amp;self) -&gt; S</code></h3><div class='docblock'><p>The maximum component of the vector.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.dot' class='method'><code>fn <a href='#method.dot' class='fnname'>dot</a>(&amp;self, v: &amp;Self) -&gt; S</code></h3><div class='docblock'><p>Vector dot product.</p>
+        <h3 id='method.dot' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.dot' class='fnname'>dot</a>(&amp;self, v: &amp;Self) -&gt; S</code></h3><div class='docblock'><p>Vector dot product.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt; <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt; for <a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt; <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt; for <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt; <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt; for <a class='struct' href='../../cgmath/vector/struct.Vector4.html' title='cgmath::vector::Vector4'>Vector4</a>&lt;S&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt; <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt; for <a class='struct' href='../../cgmath/vector/struct.Vector2.html' title='cgmath::vector::Vector2'>Vector2</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt; <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt; for <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>&gt; <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt; for <a class='struct' href='../../cgmath/vector/struct.Vector4.html' title='cgmath::vector::Vector4'>Vector4</a>&lt;S&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/cgmath/vector/trait.Vector.js">
                       </script></section>
@@ -145,6 +149,8 @@ for pragmatic reasons.</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

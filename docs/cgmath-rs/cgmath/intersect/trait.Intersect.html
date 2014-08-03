@@ -7,10 +7,9 @@
 
     <title>cgmath::intersect::Intersect - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,20 +39,23 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>intersect</a>::<a class='trait' href=''>Intersect</a><a class='source' id='src-29222' href='../../src/cgmath/src/cgmath/intersect.rs.html#16-18'>[src]</a></h1>
+<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>intersect</a>::<a class='trait' href=''>Intersect</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-30925' href='../../src/cgmath/src/intersect.rs.html#16-18'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Intersect&lt;Result&gt; {
     fn <a href='#tymethod.intersection' class='fnname'>intersection</a>(&amp;self) -&gt; Result;
 }</pre>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.intersection' class='method'><code>fn <a href='#tymethod.intersection' class='fnname'>intersection</a>(&amp;self) -&gt; Result</code></h3></div>
+        <h3 id='tymethod.intersection' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.intersection' class='fnname'>intersection</a>(&amp;self) -&gt; Result</code></h3></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='type' href='../../cgmath/ray/type.Ray3.html' title='cgmath::ray::Ray3'>Ray3</a>&lt;S&gt;)</a></code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../cgmath/ray/type.Ray3.html' title='cgmath::ray::Ray3'>Ray3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;)</a></code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;)</a></code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point2.html' title='cgmath::point::Point2'>Point2</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='type' href='../../cgmath/line/type.Line2.html' title='cgmath::line::Line2'>Line2</a>&lt;S&gt;, <a class='type' href='../../cgmath/line/type.Line2.html' title='cgmath::line::Line2'>Line2</a>&lt;S&gt;)</a></code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/sphere/struct.Sphere.html' title='cgmath::sphere::Sphere'>Sphere</a>&lt;S&gt;, <a class='type' href='../../cgmath/ray/type.Ray3.html' title='cgmath::ray::Ray3'>Ray3</a>&lt;S&gt;)</a></code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='type' href='../../cgmath/ray/type.Ray3.html' title='cgmath::ray::Ray3'>Ray3</a>&lt;S&gt;)</a></code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../cgmath/ray/type.Ray3.html' title='cgmath::ray::Ray3'>Ray3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;)</a></code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;)</a></code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point2.html' title='cgmath::point::Point2'>Point2</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a class='type' href='../../cgmath/line/type.Line2.html' title='cgmath::line::Line2'>Line2</a>&lt;S&gt;, <a class='type' href='../../cgmath/line/type.Line2.html' title='cgmath::line::Line2'>Line2</a>&lt;S&gt;)</a></code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/intersect/trait.Intersect.html' title='cgmath::intersect::Intersect'>Intersect</a>&lt;<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt;&gt; for <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a class='struct' href='../../cgmath/sphere/struct.Sphere.html' title='cgmath::sphere::Sphere'>Sphere</a>&lt;S&gt;, <a class='type' href='../../cgmath/ray/type.Ray3.html' title='cgmath::ray::Ray3'>Ray3</a>&lt;S&gt;)</a></code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/cgmath/intersect/trait.Intersect.js">
                       </script></section>
@@ -89,6 +93,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

@@ -7,10 +7,9 @@
 
     <title>glfw::init - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,8 +39,11 @@
     </nav>
 
     <section id='main' class="content fn">
-<h1 class='fqn'>Function <a href='index.html'>glfw</a>::<a class='fn' href=''>init</a><a class='source' id='src-13560' href='../src/glfw/src/lib/lib.rs.html#410-437'>[src]</a></h1>
-<pre class='rust fn'>pub fn init&lt;UserData: 'static&gt;(callback: <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.ErrorCallback.html' title='glfw::ErrorCallback'>ErrorCallback</a>&lt;UserData&gt;&gt;) -&gt; <a class='type' href='http://doc.rust-lang.org/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a>, <a class='type' href='../glfw/type.InitError.html' title='glfw::InitError'>InitError</a>&gt;</pre><div class='docblock'><p>Initializes the GLFW library. This must be called on the main platform
+<h1 class='fqn'>Function <a href='index.html'>glfw</a>::<a class='fn' href=''>init</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-15624' href='../src/glfw/src/glfw.rs.html#410-437'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn init&lt;UserData: 'static&gt;(callback: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../glfw/type.ErrorCallback.html' title='glfw::ErrorCallback'>ErrorCallback</a>&lt;UserData&gt;&gt;) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../glfw/struct.Glfw.html' title='glfw::Glfw'>Glfw</a>, <a class='type' href='../glfw/type.InitError.html' title='glfw::InitError'>InitError</a>&gt;</pre><div class='docblock'><p>Initializes the GLFW library. This must be called on the main platform
 thread.</p>
 
 <p>Wrapper for <code>glfwInit</code>.</p>
@@ -56,9 +60,9 @@ using the <code>Glfw::set_error_callback</code> function.</p>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>glfw</span>;
 
 <span class='attribute'>#[<span class='ident'>start</span>]</span>
-<span class='kw'>fn</span> <span class='ident'>start</span>(<span class='ident'>argc</span>: <span class='ident'>int</span>, <span class='ident'>argv</span>: <span class='op'>*</span><span class='op'>*</span><span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {<span class='comment'>
-    // Run GLFW on the main thread
-    </span><span class='ident'>native</span>::<span class='ident'>start</span>(<span class='ident'>argc</span>, <span class='ident'>argv</span>, <span class='ident'>main</span>)
+<span class='kw'>fn</span> <span class='ident'>start</span>(<span class='ident'>argc</span>: <span class='ident'>int</span>, <span class='ident'>argv</span>: <span class='op'>*</span><span class='op'>*</span><span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>int</span> {
+    <span class='comment'>// Run GLFW on the main thread</span>
+    <span class='ident'>native</span>::<span class='ident'>start</span>(<span class='ident'>argc</span>, <span class='ident'>argv</span>, <span class='ident'>main</span>)
 }
 
 <span class='kw'>fn</span> <span class='ident'>main</span>() {
@@ -110,6 +114,8 @@ with a <code>Receiver</code> from which errors can be intercepted.</li>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../";

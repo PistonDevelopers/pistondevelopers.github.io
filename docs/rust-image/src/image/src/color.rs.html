@@ -538,7 +538,7 @@
     }
 }
 
-<span class='doccomment'>/// A type to hold a grayscale pixel with an alha channel</span>
+<span class='doccomment'>/// A type to hold a grayscale pixel with an alpha channel</span>
 <span class='attribute'>#[<span class='ident'>packed</span>]</span>
 <span class='attribute'>#[<span class='ident'>deriving</span>(<span class='ident'>Default</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>, <span class='ident'>Copy</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>LumaA</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>(<span class='kw'>pub</span> <span class='ident'>T</span>, <span class='kw'>pub</span> <span class='ident'>T</span>);
@@ -626,7 +626,7 @@
     <span class='doccomment'>/// ```other``` pairwise.</span>
     <span class='kw'>fn</span> <span class='ident'>map2</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>other</span>: <span class='ident'>Self</span>, <span class='ident'>f</span>: <span class='op'>|</span> <span class='ident'>T</span>, <span class='ident'>T</span> <span class='op'>|</span> <span class='op'>-&gt;</span> <span class='ident'>T</span>) <span class='op'>-&gt;</span> <span class='ident'>Self</span>;
 
-    <span class='doccomment'>/// Returns the channels of this pixes as a 4 tuple. If the pixel</span>
+    <span class='doccomment'>/// Returns the channels of this pixel as a 4 tuple. If the pixel</span>
     <span class='doccomment'>/// has less than 4 channels the remainder is filled with the maximum value</span>
     <span class='kw'>fn</span> <span class='ident'>channels4</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> (<span class='ident'>T</span>, <span class='ident'>T</span>, <span class='ident'>T</span>, <span class='ident'>T</span>);
 }

@@ -7,10 +7,9 @@
 
     <title>cgmath::frustum::Frustum - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,7 +39,10 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='../index.html'>cgmath</a>::<a href='index.html'>frustum</a>::<a class='struct' href=''>Frustum</a><a class='source' id='src-28480' href='../../src/cgmath/src/cgmath/frustum.rs.html#26-33'>[src]</a></h1>
+<h1 class='fqn'>Struct <a href='../index.html'>cgmath</a>::<a href='index.html'>frustum</a>::<a class='struct' href=''>Frustum</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-30183' href='../../src/cgmath/src/frustum.rs.html#26-33'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Frustum&lt;S&gt; {
     pub left: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;,
     pub right: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;,
@@ -47,14 +51,14 @@
     pub near: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;,
     pub far: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;,
 }</pre><h2 class='fields'>Fields</h2>
-<table><tr><td id='structfield.left'><code>left</code></td><td></td></tr><tr><td id='structfield.right'><code>right</code></td><td></td></tr><tr><td id='structfield.bottom'><code>bottom</code></td><td></td></tr><tr><td id='structfield.top'><code>top</code></td><td></td></tr><tr><td id='structfield.near'><code>near</code></td><td></td></tr><tr><td id='structfield.far'><code>far</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(left: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, right: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, bottom: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, top: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, near: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, far: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h4>
+<table><tr><td id='structfield.left'><a class='stability Unmarked' title='No stability level'></a><code>left</code></td><td></td></tr><tr><td id='structfield.right'><a class='stability Unmarked' title='No stability level'></a><code>right</code></td><td></td></tr><tr><td id='structfield.bottom'><a class='stability Unmarked' title='No stability level'></a><code>bottom</code></td><td></td></tr><tr><td id='structfield.top'><a class='stability Unmarked' title='No stability level'></a><code>top</code></td><td></td></tr><tr><td id='structfield.near'><a class='stability Unmarked' title='No stability level'></a><code>near</code></td><td></td></tr><tr><td id='structfield.far'><a class='stability Unmarked' title='No stability level'></a><code>far</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h3><div class='impl-methods'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>(left: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, right: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, bottom: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, top: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, near: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;, far: <a class='struct' href='../../cgmath/plane/struct.Plane.html' title='cgmath::plane::Plane'>Plane</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h4>
 <div class='docblock'><p>Constructs a frustum</p>
-</div><h4 id='method.from_matrix4' class='method'><code>fn <a href='#method.from_matrix4' class='fnname'>from_matrix4</a>(mat: <a class='struct' href='../../cgmath/matrix/struct.Matrix4.html' title='cgmath::matrix::Matrix4'>Matrix4</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h4>
+</div><h4 id='method.from_matrix4' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.from_matrix4' class='fnname'>from_matrix4</a>(mat: <a class='struct' href='../../cgmath/matrix/struct.Matrix4.html' title='cgmath::matrix::Matrix4'>Matrix4</a>&lt;S&gt;) -&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h4>
 <div class='docblock'><p>Extracts frustum planes from a projection matrix</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.eq' class='method'><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-<h4 id='method.ne' class='method'><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/std/primitive.bool.html'>bool</a></code></h4>
-</div><h3 class='impl'><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a>&gt; <a class='trait' href='http://doc.rust-lang.org/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h3><div class='methods'><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h4>
-<h4 id='method.clone_from' class='method'><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a>&gt; <a class='trait' href='http://doc.rust-lang.org/master/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h3><div class='impl-methods'><h4 id='method.eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a>&gt; <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h3><div class='impl-methods'><h4 id='method.clone' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../cgmath/frustum/struct.Frustum.html' title='cgmath::frustum::Frustum'>Frustum</a>&lt;S&gt;</code></h4>
+<h4 id='method.clone_from' class='method'><a class='stability Experimental' title='Experimental: this function is mostly unused'></a><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
@@ -90,6 +94,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

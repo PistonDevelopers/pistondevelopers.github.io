@@ -7,10 +7,9 @@
 
     <title>cgmath::vector - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,30 +39,114 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Module <a href='../index.html'>cgmath</a>::<a class='mod' href=''>vector</a><a class='source' id='src-10542' href='../../src/cgmath/src/cgmath/vector.rs.html#16-424'>[src]</a></h1>
-<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<h1 class='fqn'>Module <a href='../index.html'>cgmath</a>::<a class='mod' href=''>vector</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-11545' href='../../src/cgmath/src/vector.rs.html#16-521'>[src]</a></span></h1>
+<div class='docblock'><p>Types and traits for two, three, and four-dimensional vectors.</p>
+
+<h2 id="working-with-vectors" class='section-header'><a
+                           href="#working-with-vectors">Working with Vectors</a></h2>
+<p>Vectors can be created in several different ways. There is, of course, the
+traditional <code>new()</code> method, but unit vectors, zero vectors, and an identity
+vector are also provided:</p>
+<pre class='rust '>
+<span class='kw'>use</span> <span class='ident'>cgmath</span>::<span class='ident'>vector</span>::{<span class='ident'>Vector2</span>, <span class='ident'>Vector3</span>, <span class='ident'>Vector4</span>};
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Vector2</span>::<span class='ident'>new</span>(<span class='number'>1.0f64</span>, <span class='number'>0.0f64</span>), <span class='ident'>Vector2</span>::<span class='ident'>unit_x</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Vector3</span>::<span class='ident'>new</span>(<span class='number'>0.0f64</span>, <span class='number'>0.0f64</span>, <span class='number'>0.0f64</span>), <span class='ident'>Vector3</span>::<span class='ident'>zero</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Vector4</span>::<span class='ident'>from_value</span>(<span class='number'>1.0f64</span>), <span class='ident'>Vector4</span>::<span class='ident'>ident</span>());
+</pre>
+
+<p>Vectors can be manipulated with typical mathematical operations (addition,
+subtraction, element-wise multiplication, element-wise division, negation)
+using the built-in operators. The additive and multiplicative inverses
+(zero and one) provided by the standard library&#39;s <code>Zero</code> and <code>One</code> are also
+available:</p>
+<pre class='rust '>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::{<span class='ident'>Zero</span>, <span class='ident'>One</span>};
+<span class='kw'>use</span> <span class='ident'>cgmath</span>::<span class='ident'>vector</span>::{<span class='ident'>Vector2</span>, <span class='ident'>Vector3</span>, <span class='ident'>Vector4</span>};
+
+<span class='kw'>let</span> <span class='ident'>a</span>: <span class='ident'>Vector2</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector2</span>::<span class='ident'>new</span>(<span class='number'>3.0</span>, <span class='number'>4.0</span>);
+<span class='kw'>let</span> <span class='ident'>b</span>: <span class='ident'>Vector2</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector2</span>::<span class='ident'>new</span>(<span class='op'>-</span><span class='number'>3.0</span>, <span class='op'>-</span><span class='number'>4.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>a</span> <span class='op'>+</span> <span class='ident'>b</span>, <span class='ident'>Zero</span>::<span class='ident'>zero</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='op'>-</span>(<span class='ident'>a</span> <span class='op'>*</span> <span class='ident'>b</span>), <span class='ident'>Vector2</span>::<span class='ident'>new</span>(<span class='number'>9.0f64</span>, <span class='number'>16.0f64</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>a</span> <span class='op'>/</span> <span class='ident'>One</span>::<span class='ident'>one</span>(), <span class='ident'>a</span>);
+
+<span class='comment'>// As with Rust&#39;s `int` and `f32` types, Vectors of different types cannot</span>
+<span class='comment'>// be added and so on with impunity. The following will fail to compile:</span>
+<span class='comment'>// let c = a + Vector3::new(1.0, 0.0, 2.0);</span>
+
+<span class='comment'>// Instead, we need to convert the Vector2 to a Vector3 by &quot;extending&quot; it</span>
+<span class='comment'>// with the value for the last coordinate:</span>
+<span class='kw'>let</span> <span class='ident'>c</span>: <span class='ident'>Vector3</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>a</span>.<span class='ident'>extend</span>(<span class='number'>0.0</span>) <span class='op'>+</span> <span class='ident'>Vector3</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>2.0</span>);
+
+<span class='comment'>// Similarly, we can &quot;truncate&quot; a Vector4 down to a Vector3:</span>
+<span class='kw'>let</span> <span class='ident'>d</span>: <span class='ident'>Vector3</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>c</span> <span class='op'>+</span> <span class='ident'>Vector4</span>::<span class='ident'>unit_x</span>().<span class='ident'>truncate</span>();
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>d</span>, <span class='ident'>Vector3</span>::<span class='ident'>new</span>(<span class='number'>5.0f64</span>, <span class='number'>4.0f64</span>, <span class='number'>2.0f64</span>));
+</pre>
+
+<p>Vectors also provide methods for typical operations such as
+<a href="http://en.wikipedia.org/wiki/Scalar_multiplication">scalar multiplication</a>,
+<a href="http://en.wikipedia.org/wiki/Dot_product">dot products</a>,
+and <a href="http://en.wikipedia.org/wiki/Cross_product">cross products</a>.</p>
+<pre class='rust '>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::<span class='ident'>Zero</span>;
+<span class='kw'>use</span> <span class='ident'>cgmath</span>::<span class='ident'>vector</span>::{<span class='ident'>Vector</span>, <span class='ident'>Vector2</span>, <span class='ident'>Vector3</span>, <span class='ident'>Vector4</span>, <span class='ident'>dot</span>};
+
+<span class='comment'>// All vectors implement the dot product as a method:</span>
+<span class='kw'>let</span> <span class='ident'>a</span>: <span class='ident'>Vector2</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector2</span>::<span class='ident'>new</span>(<span class='number'>3.0</span>, <span class='number'>6.0</span>);
+<span class='kw'>let</span> <span class='ident'>b</span>: <span class='ident'>Vector2</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector2</span>::<span class='ident'>new</span>(<span class='op'>-</span><span class='number'>2.0</span>, <span class='number'>1.0</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>a</span>.<span class='ident'>dot</span>(<span class='kw-2'>&amp;</span><span class='ident'>b</span>), <span class='ident'>Zero</span>::<span class='ident'>zero</span>());
+
+<span class='comment'>// But there is also a top-level function:</span>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>a</span>.<span class='ident'>dot</span>(<span class='kw-2'>&amp;</span><span class='ident'>b</span>), <span class='ident'>dot</span>(<span class='ident'>a</span>, <span class='ident'>b</span>));
+
+<span class='comment'>// Scalar multiplication can return a new object, or be done in place</span>
+<span class='comment'>// to avoid an allocation:</span>
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>c</span>: <span class='ident'>Vector4</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector4</span>::<span class='ident'>from_value</span>(<span class='number'>3.0</span>);
+<span class='kw'>let</span> <span class='ident'>d</span>: <span class='ident'>Vector4</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>c</span>.<span class='ident'>mul_s</span>(<span class='number'>2.0</span>);
+<span class='ident'>c</span>.<span class='ident'>mul_self_s</span>(<span class='number'>2.0</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>c</span>, <span class='ident'>d</span>);
+
+<span class='comment'>// Cross products are defined for 3-dimensional vectors:</span>
+<span class='kw'>let</span> <span class='ident'>e</span>: <span class='ident'>Vector3</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector3</span>::<span class='ident'>unit_x</span>();
+<span class='kw'>let</span> <span class='ident'>f</span>: <span class='ident'>Vector3</span><span class='op'>&lt;</span><span class='ident'>f64</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Vector3</span>::<span class='ident'>unit_y</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>e</span>.<span class='ident'>cross</span>(<span class='kw-2'>&amp;</span><span class='ident'>f</span>), <span class='ident'>Vector3</span>::<span class='ident'>unit_z</span>());
+</pre>
+
+<p>Several other useful methods are provided as well. Vector fields can be
+accessed using array syntax (i.e. <code>vector[0] == vector.x</code>), or by using
+the methods provided by the <a href="../array/trait.Array1.html"><code>Array1</code></a> trait.
+This trait also provides a <code>map()</code> method for applying arbitrary functions.</p>
+
+<p>The <a href="../trait.Vector.html"><code>Vector</code></a> trait presents the most general
+features of the vectors, while <a href="../array/trait.EuclideanVector.html"><code>EuclideanVector</code></a> is more specific to Euclidean space.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                     <tr>
-                        <td><a class='struct' href='struct.Vector2.html'
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Vector2.html'
                                title='cgmath::vector::Vector2'>Vector2</a></td>
                         <td class='docblock short'></td>
                     </tr>
                 
                     <tr>
-                        <td><a class='struct' href='struct.Vector3.html'
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Vector3.html'
                                title='cgmath::vector::Vector3'>Vector3</a></td>
                         <td class='docblock short'></td>
                     </tr>
                 
                     <tr>
-                        <td><a class='struct' href='struct.Vector4.html'
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Vector4.html'
                                title='cgmath::vector::Vector4'>Vector4</a></td>
                         <td class='docblock short'></td>
                     </tr>
                 </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
                     <tr>
-                        <td><a class='trait' href='trait.EuclideanVector.html'
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.EuclideanVector.html'
                                title='cgmath::vector::EuclideanVector'>EuclideanVector</a></td>
                         <td class='docblock short'><p>Specifies geometric operations for vectors. This is only implemented for
 2-dimensional and 3-dimensional vectors.</p>
@@ -69,7 +154,7 @@
                     </tr>
                 
                     <tr>
-                        <td><a class='trait' href='trait.Vector.html'
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Vector.html'
                                title='cgmath::vector::Vector'>Vector</a></td>
                         <td class='docblock short'><p>A trait that specifies a range of numeric operations for vectors. Not all
 of these make sense from a linear algebra point of view, but are included
@@ -79,7 +164,7 @@ for pragmatic reasons.</p>
                 </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
                     <tr>
-                        <td><a class='fn' href='fn.dot.html'
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='fn' href='fn.dot.html'
                                title='cgmath::vector::dot'>dot</a></td>
                         <td class='docblock short'><p>Dot product of two vectors.</p>
 </td>
@@ -119,6 +204,8 @@ for pragmatic reasons.</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

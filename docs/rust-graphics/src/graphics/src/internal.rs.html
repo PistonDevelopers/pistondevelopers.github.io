@@ -7,10 +7,9 @@
 
     <title>internal.rs.html -- source</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -166,7 +167,6 @@
 <span id='127'>127</span>
 <span id='128'>128</span>
 <span id='129'>129</span>
-<span id='130'>130</span>
 </pre><pre class='rust '>
 
 <span class='doccomment'>//! Contains internal type aliases and traits.</span>
@@ -174,6 +174,8 @@
 <span class='doccomment'>//! These do not affect the normal usage of the library.</span>
 <span class='doccomment'>//! Using these might lead to breaking changes.</span>
 <span class='doccomment'>//! Made public to clarify documentation.</span>
+
+<span class='kw'>use</span> <span class='ident'>vecmath</span>::<span class='ident'>Scalar</span>;
 
 <span class='doccomment'>/// The type used for area.</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Area</span> <span class='op'>=</span> <span class='ident'>Scalar</span>;
@@ -216,9 +218,6 @@
 <span class='doccomment'>/// [x, y, w, h]</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Rectangle</span> <span class='op'>=</span> [<span class='ident'>Scalar</span>, ..<span class='number'>4</span>];
 
-<span class='doccomment'>/// The type used for scalars.</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Scalar</span> <span class='op'>=</span> <span class='ident'>f64</span>;
-
 <span class='doccomment'>/// [x1, y1, x2, y2, x3, y3]</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>Triangle</span> <span class='op'>=</span> [<span class='ident'>Scalar</span>, ..<span class='number'>6</span>];
 
@@ -231,71 +230,71 @@
 <span class='doccomment'>/// Implemented by contexts that can color.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// The context can color to type `T` by adding value `U`.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanColor</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Create a new context with color.</span>
-    <span class='kw'>fn</span> <span class='ident'>color</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+    <span class='kw'>fn</span> <span class='ident'>color</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that can set rectangle information.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanRectangle</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Create new context with rectangle information.</span>
-    <span class='kw'>fn</span> <span class='ident'>rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+    <span class='kw'>fn</span> <span class='ident'>rectangle</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that can set source rectangle information.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanSourceRectangle</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Create new context with source rectangle information.</span>
-    <span class='kw'>fn</span> <span class='ident'>source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+    <span class='kw'>fn</span> <span class='ident'>source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that can transform.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// The context can transform to type `T` by adding value `U`.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanTransform</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Create a new context with transformation.</span>
-    <span class='kw'>fn</span> <span class='ident'>transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+    <span class='kw'>fn</span> <span class='ident'>transform</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that can view transform.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// The context can view transform to type `T` by adding value `U`.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanViewTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>CanViewTransform</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Create a new context with view transformation.</span>
-    <span class='kw'>fn</span> <span class='ident'>view_transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
+    <span class='kw'>fn</span> <span class='ident'>view_transform</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>value</span>: <span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>T</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that uses type `U` as current color.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasColor</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasColor</span><span class='op'>&lt;</span><span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns the current color.</span>
-    <span class='kw'>fn</span> <span class='ident'>get_color</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
+    <span class='kw'>fn</span> <span class='ident'>get_color</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that uses type `U` as current rectangle.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasRectangle</span><span class='op'>&lt;</span><span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns the current rectangle.</span>
-    <span class='kw'>fn</span> <span class='ident'>get_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
+    <span class='kw'>fn</span> <span class='ident'>get_rectangle</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that uses type `U` as current source rectangle.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasSourceRectangle</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasSourceRectangle</span><span class='op'>&lt;</span><span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns the current source rectangle.</span>
-    <span class='kw'>fn</span> <span class='ident'>get_source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
+    <span class='kw'>fn</span> <span class='ident'>get_source_rectangle</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that uses type `U` as current transform.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// This helps to remove redundant code.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasTransform</span><span class='op'>&lt;</span><span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns the current transform.</span>
-    <span class='kw'>fn</span> <span class='ident'>get_transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
+    <span class='kw'>fn</span> <span class='ident'>get_transform</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span>;
 }
 
 <span class='doccomment'>/// Implemented by contexts that uses type `U` as current view transform.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// This helps to remove redundant code.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasViewTransform</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>U</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>HasViewTransform</span><span class='op'>&lt;</span><span class='ident'>U</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Returns the current view transform.</span>
-    <span class='kw'>fn</span> <span class='ident'>get_view_transform</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>U</span>;
+    <span class='kw'>fn</span> <span class='ident'>get_view_transform</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>U</span>;
 }
 
 </pre>
@@ -334,6 +333,8 @@
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../../";

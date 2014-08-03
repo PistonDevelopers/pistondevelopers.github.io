@@ -7,10 +7,9 @@
 
     <title>cgmath::transform::Transform - Rust</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
+    
     
 </head>
 <body>
@@ -20,6 +19,8 @@
         things.
     </div>
     <![endif]-->
+
+    
 
     <section class="sidebar">
         
@@ -38,14 +39,17 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>transform</a>::<a class='trait' href=''>Transform</a><a class='source' id='src-23534' href='../../src/cgmath/src/cgmath/transform.rs.html#29-75'>[src]</a></h1>
+<h1 class='fqn'>Trait <a href='../index.html'>cgmath</a>::<a href='index.html'>transform</a>::<a class='trait' href=''>Transform</a><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[collapse all]</a>
+            <a id="expand-all" href="#">[expand all]</a>
+        </span><a id='src-25093' href='../../src/cgmath/src/transform.rs.html#29-75'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Transform&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseNum.html' title='cgmath::num::BaseNum'>BaseNum</a>, V: <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt;, P: <a class='trait' href='../../cgmath/point/trait.Point.html' title='cgmath::point::Point'>Point</a>&lt;S, V&gt;&gt; {
     fn <a href='#tymethod.identity' class='fnname'>identity</a>() -&gt; Self;
     fn <a href='#tymethod.look_at' class='fnname'>look_at</a>(eye: &amp;P, center: &amp;P, up: &amp;V) -&gt; Self;
     fn <a href='#tymethod.transform_vector' class='fnname'>transform_vector</a>(&amp;self, vec: &amp;V) -&gt; V;
     fn <a href='#tymethod.transform_point' class='fnname'>transform_point</a>(&amp;self, point: &amp;P) -&gt; P;
     fn <a href='#tymethod.concat' class='fnname'>concat</a>(&amp;self, other: &amp;Self) -&gt; Self;
-    fn <a href='#tymethod.invert' class='fnname'>invert</a>(&amp;self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;Self&gt;;
+    fn <a href='#tymethod.invert' class='fnname'>invert</a>(&amp;self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;Self&gt;;
 
     fn <a href='#method.transform_ray' class='fnname'>transform_ray</a>(&amp;self, ray: &amp;<a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;) -&gt; <a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt; { ... }
     fn <a href='#method.transform_as_point' class='fnname'>transform_as_point</a>(&amp;self, vec: &amp;V) -&gt; V { ... }
@@ -57,28 +61,28 @@ can be applied to points or vectors. An affine transformation is one which</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.identity' class='method'><code>fn <a href='#tymethod.identity' class='fnname'>identity</a>() -&gt; Self</code></h3><div class='docblock'><p>Create an identity transformation. That is, a transformation which
+        <h3 id='tymethod.identity' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.identity' class='fnname'>identity</a>() -&gt; Self</code></h3><div class='docblock'><p>Create an identity transformation. That is, a transformation which
 does nothing.</p>
-</div><h3 id='tymethod.look_at' class='method'><code>fn <a href='#tymethod.look_at' class='fnname'>look_at</a>(eye: &amp;P, center: &amp;P, up: &amp;V) -&gt; Self</code></h3><div class='docblock'><p>Create a transformation that rotates a vector to look at <code>center</code> from
+</div><h3 id='tymethod.look_at' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.look_at' class='fnname'>look_at</a>(eye: &amp;P, center: &amp;P, up: &amp;V) -&gt; Self</code></h3><div class='docblock'><p>Create a transformation that rotates a vector to look at <code>center</code> from
 <code>eye</code>, using <code>up</code> for orientation.</p>
-</div><h3 id='tymethod.transform_vector' class='method'><code>fn <a href='#tymethod.transform_vector' class='fnname'>transform_vector</a>(&amp;self, vec: &amp;V) -&gt; V</code></h3><div class='docblock'><p>Transform a vector using this transform.</p>
-</div><h3 id='tymethod.transform_point' class='method'><code>fn <a href='#tymethod.transform_point' class='fnname'>transform_point</a>(&amp;self, point: &amp;P) -&gt; P</code></h3><div class='docblock'><p>Transform a point using this transform.</p>
-</div><h3 id='tymethod.concat' class='method'><code>fn <a href='#tymethod.concat' class='fnname'>concat</a>(&amp;self, other: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Combine this transform with another, yielding a new transformation
+</div><h3 id='tymethod.transform_vector' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.transform_vector' class='fnname'>transform_vector</a>(&amp;self, vec: &amp;V) -&gt; V</code></h3><div class='docblock'><p>Transform a vector using this transform.</p>
+</div><h3 id='tymethod.transform_point' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.transform_point' class='fnname'>transform_point</a>(&amp;self, point: &amp;P) -&gt; P</code></h3><div class='docblock'><p>Transform a point using this transform.</p>
+</div><h3 id='tymethod.concat' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.concat' class='fnname'>concat</a>(&amp;self, other: &amp;Self) -&gt; Self</code></h3><div class='docblock'><p>Combine this transform with another, yielding a new transformation
 which has the effects of both.</p>
-</div><h3 id='tymethod.invert' class='method'><code>fn <a href='#tymethod.invert' class='fnname'>invert</a>(&amp;self) -&gt; <a class='type' href='http://doc.rust-lang.org/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;Self&gt;</code></h3><div class='docblock'><p>Create a transform that &quot;un-does&quot; this one.</p>
+</div><h3 id='tymethod.invert' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.invert' class='fnname'>invert</a>(&amp;self) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;Self&gt;</code></h3><div class='docblock'><p>Create a transform that &quot;un-does&quot; this one.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.transform_ray' class='method'><code>fn <a href='#method.transform_ray' class='fnname'>transform_ray</a>(&amp;self, ray: &amp;<a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;) -&gt; <a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;</code></h3><div class='docblock'><p>Transform a ray using this transform.</p>
-</div><h3 id='method.transform_as_point' class='method'><code>fn <a href='#method.transform_as_point' class='fnname'>transform_as_point</a>(&amp;self, vec: &amp;V) -&gt; V</code></h3><div class='docblock'><p>Transform a vector as a point using this transform.</p>
-</div><h3 id='method.concat_self' class='method'><code>fn <a href='#method.concat_self' class='fnname'>concat_self</a>(&amp;mut self, other: &amp;Self)</code></h3><div class='docblock'><p>Combine this transform with another, in-place.</p>
-</div><h3 id='method.invert_self' class='method'><code>fn <a href='#method.invert_self' class='fnname'>invert_self</a>(&amp;mut self)</code></h3><div class='docblock'><p>Invert this transform in-place, failing if the transformation is not
+        <h3 id='method.transform_ray' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.transform_ray' class='fnname'>transform_ray</a>(&amp;self, ray: &amp;<a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;) -&gt; <a class='struct' href='../../cgmath/ray/struct.Ray.html' title='cgmath::ray::Ray'>Ray</a>&lt;P, V&gt;</code></h3><div class='docblock'><p>Transform a ray using this transform.</p>
+</div><h3 id='method.transform_as_point' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.transform_as_point' class='fnname'>transform_as_point</a>(&amp;self, vec: &amp;V) -&gt; V</code></h3><div class='docblock'><p>Transform a vector as a point using this transform.</p>
+</div><h3 id='method.concat_self' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.concat_self' class='fnname'>concat_self</a>(&amp;mut self, other: &amp;Self)</code></h3><div class='docblock'><p>Combine this transform with another, in-place.</p>
+</div><h3 id='method.invert_self' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.invert_self' class='fnname'>invert_self</a>(&amp;mut self)</code></h3><div class='docblock'><p>Invert this transform in-place, failing if the transformation is not
 invertible.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>, V: <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt;, P: <a class='trait' href='../../cgmath/point/trait.Point.html' title='cgmath::point::Point'>Point</a>&lt;S, V&gt;, R: <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, V, P&gt;&gt; <a class='trait' href='../../cgmath/transform/trait.Transform.html' title='cgmath::transform::Transform'>Transform</a>&lt;S, V, P&gt; for <a class='struct' href='../../cgmath/transform/struct.Decomposed.html' title='cgmath::transform::Decomposed'>Decomposed</a>&lt;S, V, R&gt;</code></li>
-<li><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/transform/trait.Transform.html' title='cgmath::transform::Transform'>Transform</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/transform/struct.AffineMatrix3.html' title='cgmath::transform::AffineMatrix3'>AffineMatrix3</a>&lt;S&gt;</code></li>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>, V: <a class='trait' href='../../cgmath/vector/trait.Vector.html' title='cgmath::vector::Vector'>Vector</a>&lt;S&gt;, P: <a class='trait' href='../../cgmath/point/trait.Point.html' title='cgmath::point::Point'>Point</a>&lt;S, V&gt;, R: <a class='trait' href='../../cgmath/rotation/trait.Rotation.html' title='cgmath::rotation::Rotation'>Rotation</a>&lt;S, V, P&gt;&gt; <a class='trait' href='../../cgmath/transform/trait.Transform.html' title='cgmath::transform::Transform'>Transform</a>&lt;S, V, P&gt; for <a class='struct' href='../../cgmath/transform/struct.Decomposed.html' title='cgmath::transform::Decomposed'>Decomposed</a>&lt;S, V, R&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;S: <a class='trait' href='../../cgmath/num/trait.BaseFloat.html' title='cgmath::num::BaseFloat'>BaseFloat</a>&gt; <a class='trait' href='../../cgmath/transform/trait.Transform.html' title='cgmath::transform::Transform'>Transform</a>&lt;S, <a class='struct' href='../../cgmath/vector/struct.Vector3.html' title='cgmath::vector::Vector3'>Vector3</a>&lt;S&gt;, <a class='struct' href='../../cgmath/point/struct.Point3.html' title='cgmath::point::Point3'>Point3</a>&lt;S&gt;&gt; for <a class='struct' href='../../cgmath/transform/struct.AffineMatrix3.html' title='cgmath::transform::AffineMatrix3'>AffineMatrix3</a>&lt;S&gt;</code></li>
 </ul><script type="text/javascript" async
                               src="../../implementors/cgmath/transform/trait.Transform.js">
                       </script></section>
@@ -116,6 +120,8 @@ invertible.</p>
             </p>
         </div>
     </div>
+
+    
 
     <script>
         window.rootPath = "../../";

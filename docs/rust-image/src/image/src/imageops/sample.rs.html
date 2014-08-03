@@ -568,7 +568,7 @@
     <span class='ident'>Lanczos3</span>
 }
 
-<span class='doccomment'>/// A Representation of a seperable filter.</span>
+<span class='doccomment'>/// A Representation of a separable filter.</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Filter</span> <span class='op'>&lt;</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// The filter&#39;s filter function.</span>
     <span class='kw'>pub</span> <span class='ident'>kernel</span>:  <span class='op'>|</span> <span class='ident'>f32</span> <span class='op'>|</span> : <span class='lifetime'>&#39;a</span> <span class='op'>-&gt;</span> <span class='ident'>f32</span>,
@@ -960,8 +960,8 @@
     <span class='ident'>horizontal_sample</span>(<span class='kw-2'>&amp;</span><span class='ident'>tmp</span>, <span class='ident'>nwidth</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>method</span>)
 }
 
-<span class='doccomment'>/// Perfomrs a Gausian blur on the supplied image.</span>
-<span class='doccomment'>/// ```sigma``` is a meausure of how much to blur by.</span>
+<span class='doccomment'>/// Performs a Gaussian blur on the supplied image.</span>
+<span class='doccomment'>/// ```sigma``` is a measure of how much to blur by.</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>blur</span><span class='op'>&lt;</span><span class='ident'>A</span>: <span class='ident'>Primitive</span>, <span class='ident'>T</span>: <span class='ident'>Pixel</span><span class='op'>&lt;</span><span class='ident'>A</span><span class='op'>&gt;</span>, <span class='ident'>I</span>: <span class='ident'>GenericImage</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span>(
     <span class='ident'>image</span>:  <span class='kw-2'>&amp;</span><span class='ident'>I</span>,
     <span class='ident'>sigma</span>:  <span class='ident'>f32</span>) <span class='op'>-&gt;</span> <span class='ident'>ImageBuf</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span> {
