@@ -1,3 +1,4 @@
 _site/
 generate_docs.sh
 Gemfile.lock
+.DS_Store
