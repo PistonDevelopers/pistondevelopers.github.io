@@ -42,20 +42,28 @@ categories : [piston]
 
         {% highlight Rust %}
 use graphics::*;
-use piston::{Game, GameWindow, RenderArgs};
+use piston::{
+    GameIterator,
+    GameIteratorSettings,
+    GameWindow,
+    Input,
+    Render,
+    Update
+};
 
-pub struct App { ... } // your application data
+fn main() {
+    let mut window = ...; // Initialize window.
+    let game_iter_settings = GameIteratorSettings {
+        updates_per_second: 60,
+        max_frames_per_second: 60
+    };
 
-impl<W: GameWindow> Game<W> for App {
-    fn render(&mut self, _window: &mut W, args: &RenderArgs) {
-        let ref mut gl = self.gl;
-        gl.viewport(0, 0, args.width as i32, args.height as i32);
-        // Start with absolute coordintes.
-        let ref c = Context::abs(args.width as f64, args.height as f64);
-        // Clear background with white color.
-        c.rgb(1.0, 1.0, 1.0).draw(gl);
-        // Draw a red rectangle in upper left corner
-        c.rect(0.0, 0.0, 50.0, 50.0).rgb(1.0, 0.0, 0.0).draw(gl);
+    for e in GameIterator::new(&mut window, &game_iter_settings) {
+        match e {
+            Render(args) => { ... }
+            Update(args) => { ... }
+            Input(e)  => { ... }
+        }
     }
 }
         {% endhighlight %}
