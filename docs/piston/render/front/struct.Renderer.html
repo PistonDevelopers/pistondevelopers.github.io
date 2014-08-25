@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Renderer` struct in crate `render`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Renderer">
+
+    <title>render::front::Renderer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>render</a>::<wbr><a href='index.html'>front</a></p><div class='block struct'><h2>Structs</h2><a class='struct current' href='struct.Renderer.html'>Renderer</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.DeviceHelper.html'>DeviceHelper</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><div class='in-band'>Struct <a href='../index.html'>render</a>::<wbr><a href='index.html'>front</a>::<wbr><a class='struct' href=''>Renderer</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-1623' href='../../src/render/front.rs.html#154-160'>[src]</a></div></h1>
+<pre class='rust struct'>pub struct Renderer {
+    // some fields omitted
+}</pre><div class='docblock'><p>Renderer front-end</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../../render/front/struct.Renderer.html' title='render::front::Renderer'>Renderer</a></code></h3><div class='impl-methods'><h4 id='method.reset' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.reset' class='fnname'>reset</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Reset all commands for the command buffer re-usal.</p>
+</div><h4 id='method.as_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.as_buffer' class='fnname'>as_buffer</a>(&amp;self) -&gt; &amp;<a class='type' href='../../device/type.ActualCommandBuffer.html' title='device::ActualCommandBuffer'>ActualCommandBuffer</a></code></h4>
+<div class='docblock'><p>Get a command buffer to be submitted</p>
+</div><h4 id='method.clone_empty' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.clone_empty' class='fnname'>clone_empty</a>(&amp;self) -&gt; <a class='struct' href='../../render/front/struct.Renderer.html' title='render::front::Renderer'>Renderer</a></code></h4>
+<div class='docblock'><p>Clone the renderer shared data but ignore the commands</p>
+</div><h4 id='method.clear' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self, data: <a class='struct' href='../../device/target/struct.ClearData.html' title='device::target::ClearData'>ClearData</a>, frame: &amp;<a class='struct' href='../../render/target/struct.Frame.html' title='render::target::Frame'>Frame</a>)</code></h4>
+<div class='docblock'><p>Clear the <code>Frame</code> as the <code>ClearData</code> specifies.</p>
+</div><h4 id='method.draw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.draw' class='fnname'>draw</a>&lt;P: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a> + <a class='trait' href='../../render/shade/trait.Program.html' title='render::shade::Program'>Program</a>&gt;(&amp;mut self, mesh: &amp;<a class='struct' href='../../render/mesh/struct.Mesh.html' title='render::mesh::Mesh'>Mesh</a>, slice: <a class='type' href='../../render/mesh/type.Slice.html' title='render::mesh::Slice'>Slice</a>, frame: &amp;<a class='struct' href='../../render/target/struct.Frame.html' title='render::target::Frame'>Frame</a>, program: P, state: &amp;<a class='struct' href='../../render/state/struct.DrawState.html' title='render::state::DrawState'>DrawState</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>, <a class='type' href='../../render/front/type.DrawError.html' title='render::front::DrawError'>DrawError</a>&gt;</code></h4>
+<div class='docblock'><p>Draw <code>slice</code> of <code>mesh</code> into <code>frame</code>, using a program shell, and a given draw state.</p>
+</div><h4 id='method.update_buffer_vec' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_buffer_vec' class='fnname'>update_buffer_vec</a>&lt;T: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;(&amp;mut self, buf: <a class='struct' href='../../device/struct.BufferHandle.html' title='device::BufferHandle'>BufferHandle</a>&lt;T&gt;, data: <a class='struct' href='http://doc.rust-lang.org/master/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;T&gt;, offset_elements: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</code></h4>
+<div class='docblock'><p>Update a buffer with data from a vector.</p>
+</div><h4 id='method.update_buffer_struct' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_buffer_struct' class='fnname'>update_buffer_struct</a>&lt;U, T: <a class='trait' href='../../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;U&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;(&amp;mut self, buf: <a class='struct' href='../../device/struct.BufferHandle.html' title='device::BufferHandle'>BufferHandle</a>&lt;U&gt;, data: T)</code></h4>
+<div class='docblock'><p>Update a buffer with data from a single type.</p>
+</div><h4 id='method.update_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_texture' class='fnname'>update_texture</a>&lt;T: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;(&amp;mut self, tex: <a class='type' href='../../device/type.TextureHandle.html' title='device::TextureHandle'>TextureHandle</a>, img: <a class='struct' href='../../device/tex/struct.ImageInfo.html' title='device::tex::ImageInfo'>ImageInfo</a>, data: <a class='struct' href='http://doc.rust-lang.org/master/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;T&gt;)</code></h4>
+<div class='docblock'><p>Update the contents of a texture.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "render";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

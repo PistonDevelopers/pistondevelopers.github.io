@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The piston library documentation.">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `game_window` mod in crate `piston`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, game_window">
 
     <title>piston::game_window - Rust</title>
 
@@ -12,7 +14,7 @@
     
     
 </head>
-<body>
+<body class="rustdoc">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -24,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='../index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='../event/index.html'>event</a><a class='mod current' href='../game_window/index.html'>game_window</a><a class='mod ' href='../keyboard/index.html'>keyboard</a><a class='mod ' href='../mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='../struct.AssetStore.html'>AssetStore</a><a class='struct ' href='../struct.GameIterator.html'>GameIterator</a><a class='struct ' href='../struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='../struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='../struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='../struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='../struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='../struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='../struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='../struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='../struct.MouseScrollArgs.html'>MouseScrollArgs</a><a class='struct ' href='../struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='../struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='../trait.ConcurrentGame.html'>ConcurrentGame</a><a class='trait ' href='../trait.Game.html'>Game</a></div>
+        <p class='location'><a href='../index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='../cam/index.html'>cam</a><a class='mod current' href='../game_window/index.html'>game_window</a><a class='mod ' href='../gfx/index.html'>gfx</a><a class='mod ' href='../graphics/index.html'>graphics</a><a class='mod ' href='../image/index.html'>image</a><a class='mod ' href='../input/index.html'>input</a><a class='mod ' href='../shader_version/index.html'>shader_version</a><a class='mod ' href='../vecmath/index.html'>vecmath</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='../struct.AssetStore.html'>AssetStore</a><a class='struct ' href='../struct.GameIterator.html'>GameIterator</a><a class='struct ' href='../struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='../struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='../struct.UpdateArgs.html'>UpdateArgs</a></div>
     </section>
 
     <nav class="sub">
@@ -39,24 +41,33 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Module <a href='../index.html'>piston</a>::<a class='mod' href=''>game_window</a><span class='out-of-band'><span id='render-detail'>
-            <a id="collapse-all" href="#">[collapse all]</a>
-            <a id="expand-all" href="#">[expand all]</a>
-        </span><a id='src-32' href='../../src/piston/src/game_window.rs.html#1-40'>[src]</a></span></h1>
-<div class='docblock'><p>A trait for window operations.</p>
-</div><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<h1 class='fqn'><div class='in-band'>Module <a href='../index.html'>piston</a>::<wbr><a class='mod' href=''>game_window</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-30' href='../../src/piston/src/game_window.rs.html#1-89'>[src]</a></div></h1>
+<div class='docblock'><p>Game window operations.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.GameWindowSettings.html'
+                               title='piston::game_window::GameWindowSettings'>GameWindowSettings</a></td>
+                        <td class='docblock short'><p>Settings for window behavior.</p>
+</td>
+                    </tr>
+                </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='type' href='type.Event.html'
+                               title='piston::game_window::Event'>Event</a></td>
+                        <td class='docblock short'><p>Used by window back-end to model window events.</p>
+</td>
+                    </tr>
+                </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.GameWindow.html'
                                title='piston::game_window::GameWindow'>GameWindow</a></td>
                         <td class='docblock short'><p>Implemented by window back-end.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.RenderWindow.html'
-                               title='piston::game_window::RenderWindow'>RenderWindow</a></td>
-                        <td class='docblock short'><p>For use in seperate render threads, implemented by window back-end.</p>
 </td>
                     </tr>
                 </table></section>
@@ -88,7 +99,7 @@
             </p>
             <p>
                 Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>struct</code>, <code>enum</code>,
                 <code>trait</code>, <code>typedef</code> (or
                 <code>tdef</code>).
             </p>

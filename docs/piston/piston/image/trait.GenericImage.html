@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GenericImage` trait in crate `piston`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GenericImage">
+
+    <title>piston::image::GenericImage - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>piston</a>::<wbr><a href='index.html'>image</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='gif/index.html'>gif</a><a class='mod ' href='imageops/index.html'>imageops</a><a class='mod ' href='jpeg/index.html'>jpeg</a><a class='mod ' href='png/index.html'>png</a><a class='mod ' href='ppm/index.html'>ppm</a><a class='mod ' href='webp/index.html'>webp</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.ImageBuf.html'>ImageBuf</a><a class='struct ' href='struct.Luma.html'>Luma</a><a class='struct ' href='struct.LumaA.html'>LumaA</a><a class='struct ' href='struct.MutPixels.html'>MutPixels</a><a class='struct ' href='struct.Pixels.html'>Pixels</a><a class='struct ' href='struct.Rgb.html'>Rgb</a><a class='struct ' href='struct.Rgba.html'>Rgba</a><a class='struct ' href='struct.SubImage.html'>SubImage</a></div><div class='block trait'><h2>Traits</h2><a class='trait current' href='trait.GenericImage.html'>GenericImage</a><a class='trait ' href='trait.ImageDecoder.html'>ImageDecoder</a><a class='trait ' href='trait.MutableRefImage.html'>MutableRefImage</a><a class='trait ' href='trait.Pixel.html'>Pixel</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.load.html'>load</a><a class='fn ' href='fn.load_from_memory.html'>load_from_memory</a><a class='fn ' href='fn.open.html'>open</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><div class='in-band'>Trait <a href='../index.html'>piston</a>::<wbr><a href='index.html'>image</a>::<wbr><a class='trait' href=''>GenericImage</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-40584' href='../../image/image/trait.GenericImage.html?gotosrc=40584'>[src]</a></div></h1>
+<pre class='rust trait'>pub trait GenericImage&lt;P&gt; {
+    fn <a href='#tymethod.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>)</a>;
+    fn <a href='#tymethod.bounds' class='fnname'>bounds</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>)</a>;
+    fn <a href='#tymethod.get_pixel' class='fnname'>get_pixel</a>(&amp;self, x: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>) -&gt; P;
+    fn <a href='#tymethod.put_pixel' class='fnname'>put_pixel</a>(&amp;mut self, x: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, pixel: P);
+
+    fn <a href='#tymethod.pixels' class='fnname'>pixels</a>(&amp;self) -&gt; <a class='struct' href='../../piston/image/struct.Pixels.html' title='piston::image::Pixels'>Pixels</a>&lt;Self&gt; { ... }
+}</pre><div class='docblock'><p>A trait for manipulating images.</p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.dimensions' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>)</a></code></h3><div class='docblock'><p>The width and height of this image.</p>
+</div><h3 id='tymethod.bounds' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.bounds' class='fnname'>bounds</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>)</a></code></h3><div class='docblock'><p>The bounding rectangle of this image.</p>
+</div><h3 id='tymethod.get_pixel' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.get_pixel' class='fnname'>get_pixel</a>(&amp;self, x: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>) -&gt; P</code></h3><div class='docblock'><p>Return the pixel located at (x, y)</p>
+</div><h3 id='tymethod.put_pixel' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.put_pixel' class='fnname'>put_pixel</a>(&amp;mut self, x: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.u32.html'>u32</a>, pixel: P)</code></h3><div class='docblock'><p>Put a pixel at location (x, y)</p>
+</div></div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.pixels' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.pixels' class='fnname'>pixels</a>(&amp;self) -&gt; <a class='struct' href='../../piston/image/struct.Pixels.html' title='piston::image::Pixels'>Pixels</a>&lt;Self&gt;</code></h3><div class='docblock'><p>Return an Iterator over the pixels of this image.
+The iterator yields the coordinates of each pixel
+along with their value</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;T: <a class='trait' href='http://doc.rust-lang.org/master/core/num/trait.Primitive.html' title='core::num::Primitive'>Primitive</a>, P: <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Copy.html' title='core::kinds::Copy'>Copy</a> + <a class='trait' href='../../piston/image/trait.Pixel.html' title='piston::image::Pixel'>Pixel</a>&lt;T&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a>&gt; <a class='trait' href='../../piston/image/trait.GenericImage.html' title='piston::image::GenericImage'>GenericImage</a>&lt;P&gt; for <a class='struct' href='../../piston/image/struct.ImageBuf.html' title='piston::image::ImageBuf'>ImageBuf</a>&lt;P&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a, T: <a class='trait' href='http://doc.rust-lang.org/master/core/num/trait.Primitive.html' title='core::num::Primitive'>Primitive</a>, P: <a class='trait' href='../../piston/image/trait.Pixel.html' title='piston::image::Pixel'>Pixel</a>&lt;T&gt;, I: <a class='trait' href='../../piston/image/trait.GenericImage.html' title='piston::image::GenericImage'>GenericImage</a>&lt;P&gt;&gt; <a class='trait' href='../../piston/image/trait.GenericImage.html' title='piston::image::GenericImage'>GenericImage</a>&lt;P&gt; for <a class='struct' href='../../piston/image/struct.SubImage.html' title='piston::image::SubImage'>SubImage</a>&lt;'a, I&gt;</code></li>
+<li><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='../../piston/image/trait.GenericImage.html' title='piston::image::GenericImage'>GenericImage</a>&lt;<a class='struct' href='../../piston/image/struct.Rgba.html' title='piston::image::Rgba'>Rgba</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.u8.html'>u8</a>&gt;&gt; for <a class='type' href='../../piston/image/type.DynamicImage.html' title='piston::image::DynamicImage'>DynamicImage</a></code></li>
+</ul><script type="text/javascript" async
+                              src="../../implementors/image/image/trait.GenericImage.js">
+                      </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "piston";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

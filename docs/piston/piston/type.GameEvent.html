@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The piston library documentation.">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GameEvent` type in crate `piston`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GameEvent">
 
     <title>piston::GameEvent - Rust</title>
 
@@ -12,7 +14,7 @@
     
     
 </head>
-<body>
+<body class="rustdoc">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -24,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.MouseScrollArgs.html'>MouseScrollArgs</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.ConcurrentGame.html'>ConcurrentGame</a><a class='trait ' href='trait.Game.html'>Game</a></div>
+        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='cam/index.html'>cam</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='gfx/index.html'>gfx</a><a class='mod ' href='graphics/index.html'>graphics</a><a class='mod ' href='image/index.html'>image</a><a class='mod ' href='input/index.html'>input</a><a class='mod ' href='shader_version/index.html'>shader_version</a><a class='mod ' href='vecmath/index.html'>vecmath</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct ' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div>
     </section>
 
     <nav class="sub">
@@ -39,31 +41,19 @@
     </nav>
 
     <section id='main' class="content type">
-<h1 class='fqn'>Enum <a href='index.html'>piston</a>::<a class='type' href=''>GameEvent</a><span class='out-of-band'><span id='render-detail'>
-            <a id="collapse-all" href="#">[collapse all]</a>
-            <a id="expand-all" href="#">[expand all]</a>
-        </span><a id='src-17379' href='../src/piston/src/game_iterator.rs.html#84-103'>[src]</a></span></h1>
+<h1 class='fqn'><div class='in-band'>Enum <a href='index.html'>piston</a>::<wbr><a class='type' href=''>GameEvent</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-2797' href='../src/piston/src/game_iterator.rs.html#31-38'>[src]</a></div></h1>
 <pre class='rust enum'>pub enum GameEvent {
     Render(<a class='struct' href='../piston/struct.RenderArgs.html' title='piston::RenderArgs'>RenderArgs</a>),
     Update(<a class='struct' href='../piston/struct.UpdateArgs.html' title='piston::UpdateArgs'>UpdateArgs</a>),
-    KeyPress(<a class='struct' href='../piston/struct.KeyPressArgs.html' title='piston::KeyPressArgs'>KeyPressArgs</a>),
-    KeyRelease(<a class='struct' href='../piston/struct.KeyReleaseArgs.html' title='piston::KeyReleaseArgs'>KeyReleaseArgs</a>),
-    MousePress(<a class='struct' href='../piston/struct.MousePressArgs.html' title='piston::MousePressArgs'>MousePressArgs</a>),
-    MouseRelease(<a class='struct' href='../piston/struct.MouseReleaseArgs.html' title='piston::MouseReleaseArgs'>MouseReleaseArgs</a>),
-    MouseMove(<a class='struct' href='../piston/struct.MouseMoveArgs.html' title='piston::MouseMoveArgs'>MouseMoveArgs</a>),
-    MouseRelativeMove(<a class='struct' href='../piston/struct.MouseRelativeMoveArgs.html' title='piston::MouseRelativeMoveArgs'>MouseRelativeMoveArgs</a>),
-    MouseScroll(<a class='struct' href='../piston/struct.MouseScrollArgs.html' title='piston::MouseScrollArgs'>MouseScrollArgs</a>),
+    Input(<a class='type' href='../piston/input/type.InputEvent.html' title='piston::input::InputEvent'>InputEvent</a>),
 }</pre><div class='docblock'><p>Contains the different game events.</p>
 </div><h2 class='variants'>Variants</h2>
 <table><tr><td id='variant.Render'><a class='stability Unmarked' title='No stability level'></a><code>Render</code></td><td><div class='docblock'><p>Render graphics.</p>
 </div></td></tr><tr><td id='variant.Update'><a class='stability Unmarked' title='No stability level'></a><code>Update</code></td><td><div class='docblock'><p>Update physical state of the game.</p>
-</div></td></tr><tr><td id='variant.KeyPress'><a class='stability Unmarked' title='No stability level'></a><code>KeyPress</code></td><td><div class='docblock'><p>Pressed a keyboard key.</p>
-</div></td></tr><tr><td id='variant.KeyRelease'><a class='stability Unmarked' title='No stability level'></a><code>KeyRelease</code></td><td><div class='docblock'><p>Released a keyboard key.</p>
-</div></td></tr><tr><td id='variant.MousePress'><a class='stability Unmarked' title='No stability level'></a><code>MousePress</code></td><td><div class='docblock'><p>Pressed a mouse button.</p>
-</div></td></tr><tr><td id='variant.MouseRelease'><a class='stability Unmarked' title='No stability level'></a><code>MouseRelease</code></td><td><div class='docblock'><p>Released a mouse button.</p>
-</div></td></tr><tr><td id='variant.MouseMove'><a class='stability Unmarked' title='No stability level'></a><code>MouseMove</code></td><td><div class='docblock'><p>Moved mouse cursor.</p>
-</div></td></tr><tr><td id='variant.MouseRelativeMove'><a class='stability Unmarked' title='No stability level'></a><code>MouseRelativeMove</code></td><td><div class='docblock'><p>Moved mouse relative, not bounded by cursor.</p>
-</div></td></tr><tr><td id='variant.MouseScroll'><a class='stability Unmarked' title='No stability level'></a><code>MouseScroll</code></td><td><div class='docblock'><p>Scrolled mouse.</p>
+</div></td></tr><tr><td id='variant.Input'><a class='stability Unmarked' title='No stability level'></a><code>Input</code></td><td><div class='docblock'><p>Input event.</p>
 </div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a></code></h3><div class='impl-methods'><h4 id='method.clone' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>GameEvent</a></code></h4>
 <h4 id='method.clone_from' class='method'><a class='stability Experimental' title='Experimental: this function is mostly unused'></a><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div></section>
@@ -95,7 +85,7 @@
             </p>
             <p>
                 Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>struct</code>, <code>enum</code>,
                 <code>trait</code>, <code>typedef</code> (or
                 <code>tdef</code>).
             </p>
