@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The piston library documentation.">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `piston` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, piston">
 
     <title>piston - Rust</title>
 
@@ -12,7 +14,7 @@
     
     
 </head>
-<body>
+<body class="rustdoc">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -39,40 +41,61 @@
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'>Crate <a class='mod' href=''>piston</a><span class='out-of-band'><a href='stability.html'>[stability dashboard]</a> <span id='render-detail'>
-            <a id="collapse-all" href="#">[collapse all]</a>
-            <a id="expand-all" href="#">[expand all]</a>
-        </span><a id='src-0' href='../src/piston/src/lib.rs.html#1-50'>[src]</a></span></h1>
+<h1 class='fqn'><div class='in-band'>Crate <a class='mod' href=''>piston</a><wbr></div><div class='out-of-band'><a href='stability.html'>[stability]</a> <span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-0' href='../src/piston/src/lib.rs.html#1-46'>[src]</a></div></h1>
 <div class='docblock'><p>A user friendly graphics engine.</p>
 </div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
-<table><tr><td><code>pub use game_window::<a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>;</code></td></tr><tr><td><code>pub use game_window::<a class='trait' href='../piston/game_window/trait.RenderWindow.html' title='piston::game_window::RenderWindow'>RenderWindow</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>Render</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>Update</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>KeyPress</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>KeyRelease</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>MousePress</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>MouseRelease</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>MouseMove</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>MouseRelativeMove</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>MouseScroll</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table><tr><td><code>pub use game_window::<a class='trait' href='../piston/game_window/trait.GameWindow.html' title='piston::game_window::GameWindow'>GameWindow</a>;</code></td></tr><tr><td><code>pub use game_window::<a class='struct' href='../piston/game_window/struct.GameWindowSettings.html' title='piston::game_window::GameWindowSettings'>GameWindowSettings</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>Render</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>Update</a>;</code></td></tr><tr><td><code>pub use game_iterator::<a class='type' href='../piston/type.GameEvent.html' title='piston::GameEvent'>Input</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                     <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='event/index.html'
-                               title='piston::event'>event</a></td>
-                        <td class='docblock short'><p>Event data.</p>
-</td>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='cam/index.html'
+                               title='piston::cam'>cam</a></td>
+                        <td class='docblock short'></td>
                     </tr>
                 
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='game_window/index.html'
                                title='piston::game_window'>game_window</a></td>
-                        <td class='docblock short'><p>A trait for window operations.</p>
+                        <td class='docblock short'><p>Game window operations.</p>
 </td>
                     </tr>
                 
                     <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='keyboard/index.html'
-                               title='piston::keyboard'>keyboard</a></td>
-                        <td class='docblock short'><p>Back-end agnostic keyboard keys.</p>
-</td>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='gfx/index.html'
+                               title='piston::gfx'>gfx</a></td>
+                        <td class='docblock short'></td>
                     </tr>
                 
                     <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='mouse/index.html'
-                               title='piston::mouse'>mouse</a></td>
-                        <td class='docblock short'><p>Back-end agnostic mouse buttons.</p>
-</td>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='graphics/index.html'
+                               title='piston::graphics'>graphics</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='image/index.html'
+                               title='piston::image'>image</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='input/index.html'
+                               title='piston::input'>input</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='shader_version/index.html'
+                               title='piston::shader_version'>shader_version</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='vecmath/index.html'
+                               title='piston::vecmath'>vecmath</a></td>
+                        <td class='docblock short'></td>
                     </tr>
                 </table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
@@ -98,62 +121,6 @@
                     </tr>
                 
                     <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.GameWindowSettings.html'
-                               title='piston::GameWindowSettings'>GameWindowSettings</a></td>
-                        <td class='docblock short'><p>Settings for window behavior.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.KeyPressArgs.html'
-                               title='piston::KeyPressArgs'>KeyPressArgs</a></td>
-                        <td class='docblock short'><p>Key press arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.KeyReleaseArgs.html'
-                               title='piston::KeyReleaseArgs'>KeyReleaseArgs</a></td>
-                        <td class='docblock short'><p>Key release arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MouseMoveArgs.html'
-                               title='piston::MouseMoveArgs'>MouseMoveArgs</a></td>
-                        <td class='docblock short'><p>Mouse move arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MousePressArgs.html'
-                               title='piston::MousePressArgs'>MousePressArgs</a></td>
-                        <td class='docblock short'><p>Mouse press arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MouseRelativeMoveArgs.html'
-                               title='piston::MouseRelativeMoveArgs'>MouseRelativeMoveArgs</a></td>
-                        <td class='docblock short'><p>Mouse relative move arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MouseReleaseArgs.html'
-                               title='piston::MouseReleaseArgs'>MouseReleaseArgs</a></td>
-                        <td class='docblock short'><p>Mouse release arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.MouseScrollArgs.html'
-                               title='piston::MouseScrollArgs'>MouseScrollArgs</a></td>
-                        <td class='docblock short'><p>Mouse scroll arguments.</p>
-</td>
-                    </tr>
-                
-                    <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.RenderArgs.html'
                                title='piston::RenderArgs'>RenderArgs</a></td>
                         <td class='docblock short'><p>Render argument.</p>
@@ -172,21 +139,6 @@
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='type' href='type.GameEvent.html'
                                title='piston::GameEvent'>GameEvent</a></td>
                         <td class='docblock short'><p>Contains the different game events.</p>
-</td>
-                    </tr>
-                </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
-<table>
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.ConcurrentGame.html'
-                               title='piston::ConcurrentGame'>ConcurrentGame</a></td>
-                        <td class='docblock short'><p>Implemented by game applications.</p>
-</td>
-                    </tr>
-                
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Game.html'
-                               title='piston::Game'>Game</a></td>
-                        <td class='docblock short'><p>Implemented by game applications.</p>
 </td>
                     </tr>
                 </table></section>
@@ -218,7 +170,7 @@
             </p>
             <p>
                 Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>struct</code>, <code>enum</code>,
                 <code>trait</code>, <code>typedef</code> (or
                 <code>tdef</code>).
             </p>

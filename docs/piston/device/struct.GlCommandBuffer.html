@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GlCommandBuffer` struct in crate `device`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GlCommandBuffer">
+
+    <title>device::GlCommandBuffer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>device</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='attrib/index.html'>attrib</a><a class='mod ' href='draw/index.html'>draw</a><a class='mod ' href='shade/index.html'>shade</a><a class='mod ' href='state/index.html'>state</a><a class='mod ' href='target/index.html'>target</a><a class='mod ' href='tex/index.html'>tex</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.BufferHandle.html'>BufferHandle</a><a class='struct ' href='struct.BufferInfo.html'>BufferInfo</a><a class='struct ' href='struct.Capabilities.html'>Capabilities</a><a class='struct current' href='struct.GlCommandBuffer.html'>GlCommandBuffer</a><a class='struct ' href='struct.GlDevice.html'>GlDevice</a><a class='struct ' href='struct.Handle.html'>Handle</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Blob.html'>Blob</a><a class='trait ' href='trait.BoxBlobCast.html'>BoxBlobCast</a><a class='trait ' href='trait.Device.html'>Device</a><a class='trait ' href='trait.RefBlobCast.html'>RefBlobCast</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.get_main_frame_buffer.html'>get_main_frame_buffer</a><a class='fn ' href='fn.make_fake_buffer.html'>make_fake_buffer</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><div class='in-band'>Struct <a href='index.html'>device</a>::<wbr><a class='struct' href=''>GlCommandBuffer</a><wbr><a class='stability Experimental' title=''>Experimental</a></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-35063' href='../src/device/gl/draw.rs.html#20-22'>[src]</a></div></h1>
+<pre class='rust struct'>pub struct GlCommandBuffer {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Experimental' title='Experimental'></a><code>impl <a class='struct' href='../device/struct.GlCommandBuffer.html' title='device::GlCommandBuffer'>GlCommandBuffer</a></code></h3><div class='impl-methods'><h4 id='method.iter' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.iter' class='fnname'>iter</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class='struct' href='http://doc.rust-lang.org/master/core/slice/struct.Items.html' title='core::slice::Items'>Items</a>&lt;'a, <a class='type' href='../device/type.Command.html' title='device::Command'>Command</a>&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Experimental' title='Experimental'></a><code>impl <a class='struct' href='../device/struct.GlCommandBuffer.html' title='device::GlCommandBuffer'>GlCommandBuffer</a></code></h3><div class='impl-methods'><h4 id='method.iter' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.iter' class='fnname'>iter</a>&lt;'a&gt;(&amp;'a self) -&gt; <a class='struct' href='http://doc.rust-lang.org/master/core/slice/struct.Items.html' title='core::slice::Items'>Items</a>&lt;'a, <a class='type' href='../device/type.Command.html' title='device::Command'>Command</a>&gt;</code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Experimental' title='Experimental'></a><code>impl <a class='trait' href='../device/draw/trait.CommandBuffer.html' title='device::draw::CommandBuffer'>CommandBuffer</a> for <a class='struct' href='../device/struct.GlCommandBuffer.html' title='device::GlCommandBuffer'>GlCommandBuffer</a></code></h3><div class='impl-methods'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../device/struct.GlCommandBuffer.html' title='device::GlCommandBuffer'>GlCommandBuffer</a></code></h4>
+<h4 id='method.clear' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<h4 id='method.bind_program' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_program' class='fnname'>bind_program</a>(&amp;mut self, prog: Program)</code></h4>
+<h4 id='method.bind_array_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_array_buffer' class='fnname'>bind_array_buffer</a>(&amp;mut self, vao: ArrayBuffer)</code></h4>
+<h4 id='method.bind_attribute' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_attribute' class='fnname'>bind_attribute</a>(&amp;mut self, slot: <a class='type' href='../device/type.AttributeSlot.html' title='device::AttributeSlot'>AttributeSlot</a>, buf: Buffer, count: <a class='type' href='../device/attrib/type.Count.html' title='device::attrib::Count'>Count</a>, atype: <a class='type' href='../device/attrib/type.Type.html' title='device::attrib::Type'>Type</a>, stride: <a class='type' href='../device/attrib/type.Stride.html' title='device::attrib::Stride'>Stride</a>, offset: <a class='type' href='../device/attrib/type.Offset.html' title='device::attrib::Offset'>Offset</a>)</code></h4>
+<h4 id='method.bind_index' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_index' class='fnname'>bind_index</a>(&amp;mut self, buf: Buffer)</code></h4>
+<h4 id='method.bind_frame_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_frame_buffer' class='fnname'>bind_frame_buffer</a>(&amp;mut self, fbo: FrameBuffer)</code></h4>
+<h4 id='method.unbind_target' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.unbind_target' class='fnname'>unbind_target</a>(&amp;mut self, tar: <a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>)</code></h4>
+<h4 id='method.bind_target_surface' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_target_surface' class='fnname'>bind_target_surface</a>(&amp;mut self, tar: <a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>, suf: Surface)</code></h4>
+<h4 id='method.bind_target_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_target_texture' class='fnname'>bind_target_texture</a>(&amp;mut self, tar: <a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>, tex: Texture, level: <a class='type' href='../device/target/type.Level.html' title='device::target::Level'>Level</a>, layer: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../device/target/type.Layer.html' title='device::target::Layer'>Layer</a>&gt;)</code></h4>
+<h4 id='method.bind_uniform_block' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_uniform_block' class='fnname'>bind_uniform_block</a>(&amp;mut self, prog: Program, slot: <a class='type' href='../device/type.UniformBufferSlot.html' title='device::UniformBufferSlot'>UniformBufferSlot</a>, index: <a class='type' href='../device/type.UniformBlockIndex.html' title='device::UniformBlockIndex'>UniformBlockIndex</a>, buf: Buffer)</code></h4>
+<h4 id='method.bind_uniform' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_uniform' class='fnname'>bind_uniform</a>(&amp;mut self, loc: <a class='type' href='../device/shade/type.Location.html' title='device::shade::Location'>Location</a>, value: <a class='type' href='../device/shade/type.UniformValue.html' title='device::shade::UniformValue'>UniformValue</a>)</code></h4>
+<h4 id='method.bind_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_texture' class='fnname'>bind_texture</a>(&amp;mut self, slot: <a class='type' href='../device/type.TextureSlot.html' title='device::TextureSlot'>TextureSlot</a>, kind: <a class='type' href='../device/tex/type.TextureKind.html' title='device::tex::TextureKind'>TextureKind</a>, tex: Texture, sampler: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../device/type.SamplerHandle.html' title='device::SamplerHandle'>SamplerHandle</a>&gt;)</code></h4>
+<h4 id='method.set_primitive' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_primitive' class='fnname'>set_primitive</a>(&amp;mut self, prim: <a class='struct' href='../device/state/struct.Primitive.html' title='device::state::Primitive'>Primitive</a>)</code></h4>
+<h4 id='method.set_viewport' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_viewport' class='fnname'>set_viewport</a>(&amp;mut self, view: <a class='struct' href='../device/target/struct.Rect.html' title='device::target::Rect'>Rect</a>)</code></h4>
+<h4 id='method.set_scissor' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_scissor' class='fnname'>set_scissor</a>(&amp;mut self, rect: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/target/struct.Rect.html' title='device::target::Rect'>Rect</a>&gt;)</code></h4>
+<h4 id='method.set_depth_stencil' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_depth_stencil' class='fnname'>set_depth_stencil</a>(&amp;mut self, depth: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Depth.html' title='device::state::Depth'>Depth</a>&gt;, stencil: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Stencil.html' title='device::state::Stencil'>Stencil</a>&gt;, cull: <a class='type' href='../device/state/type.CullMode.html' title='device::state::CullMode'>CullMode</a>)</code></h4>
+<h4 id='method.set_blend' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_blend' class='fnname'>set_blend</a>(&amp;mut self, blend: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Blend.html' title='device::state::Blend'>Blend</a>&gt;)</code></h4>
+<h4 id='method.set_color_mask' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_color_mask' class='fnname'>set_color_mask</a>(&amp;mut self, mask: <a class='struct' href='../device/state/struct.ColorMask.html' title='device::state::ColorMask'>ColorMask</a>)</code></h4>
+<h4 id='method.update_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_buffer' class='fnname'>update_buffer</a>(&amp;mut self, buf: Buffer, data: <a class='struct' href='http://doc.rust-lang.org/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;, offset_bytes: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</code></h4>
+<h4 id='method.update_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_texture' class='fnname'>update_texture</a>(&amp;mut self, kind: <a class='type' href='../device/tex/type.TextureKind.html' title='device::tex::TextureKind'>TextureKind</a>, tex: Texture, info: <a class='struct' href='../device/tex/struct.ImageInfo.html' title='device::tex::ImageInfo'>ImageInfo</a>, data: <a class='struct' href='http://doc.rust-lang.org/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;)</code></h4>
+<h4 id='method.call_clear' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call_clear' class='fnname'>call_clear</a>(&amp;mut self, data: <a class='struct' href='../device/target/struct.ClearData.html' title='device::target::ClearData'>ClearData</a>)</code></h4>
+<h4 id='method.call_draw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call_draw' class='fnname'>call_draw</a>(&amp;mut self, ptype: <a class='type' href='../device/type.PrimitiveType.html' title='device::PrimitiveType'>PrimitiveType</a>, start: <a class='type' href='../device/type.VertexCount.html' title='device::VertexCount'>VertexCount</a>, count: <a class='type' href='../device/type.VertexCount.html' title='device::VertexCount'>VertexCount</a>)</code></h4>
+<h4 id='method.call_draw_indexed' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call_draw_indexed' class='fnname'>call_draw_indexed</a>(&amp;mut self, ptype: <a class='type' href='../device/type.PrimitiveType.html' title='device::PrimitiveType'>PrimitiveType</a>, itype: <a class='type' href='../device/type.IndexType.html' title='device::IndexType'>IndexType</a>, start: <a class='type' href='../device/type.IndexCount.html' title='device::IndexCount'>IndexCount</a>, count: <a class='type' href='../device/type.IndexCount.html' title='device::IndexCount'>IndexCount</a>)</code></h4>
+</div><h3 class='impl'><a class='stability Experimental' title='Experimental'></a><code>impl <a class='trait' href='../device/draw/trait.CommandBuffer.html' title='device::draw::CommandBuffer'>CommandBuffer</a> for <a class='struct' href='../device/struct.GlCommandBuffer.html' title='device::GlCommandBuffer'>GlCommandBuffer</a></code></h3><div class='impl-methods'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../device/struct.GlCommandBuffer.html' title='device::GlCommandBuffer'>GlCommandBuffer</a></code></h4>
+<h4 id='method.clear' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<h4 id='method.bind_program' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_program' class='fnname'>bind_program</a>(&amp;mut self, prog: Program)</code></h4>
+<h4 id='method.bind_array_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_array_buffer' class='fnname'>bind_array_buffer</a>(&amp;mut self, vao: ArrayBuffer)</code></h4>
+<h4 id='method.bind_attribute' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_attribute' class='fnname'>bind_attribute</a>(&amp;mut self, slot: <a class='type' href='../device/type.AttributeSlot.html' title='device::AttributeSlot'>AttributeSlot</a>, buf: Buffer, count: <a class='type' href='../device/attrib/type.Count.html' title='device::attrib::Count'>Count</a>, atype: <a class='type' href='../device/attrib/type.Type.html' title='device::attrib::Type'>Type</a>, stride: <a class='type' href='../device/attrib/type.Stride.html' title='device::attrib::Stride'>Stride</a>, offset: <a class='type' href='../device/attrib/type.Offset.html' title='device::attrib::Offset'>Offset</a>)</code></h4>
+<h4 id='method.bind_index' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_index' class='fnname'>bind_index</a>(&amp;mut self, buf: Buffer)</code></h4>
+<h4 id='method.bind_frame_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_frame_buffer' class='fnname'>bind_frame_buffer</a>(&amp;mut self, fbo: FrameBuffer)</code></h4>
+<h4 id='method.unbind_target' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.unbind_target' class='fnname'>unbind_target</a>(&amp;mut self, tar: <a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>)</code></h4>
+<h4 id='method.bind_target_surface' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_target_surface' class='fnname'>bind_target_surface</a>(&amp;mut self, tar: <a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>, suf: Surface)</code></h4>
+<h4 id='method.bind_target_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_target_texture' class='fnname'>bind_target_texture</a>(&amp;mut self, tar: <a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>, tex: Texture, level: <a class='type' href='../device/target/type.Level.html' title='device::target::Level'>Level</a>, layer: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../device/target/type.Layer.html' title='device::target::Layer'>Layer</a>&gt;)</code></h4>
+<h4 id='method.bind_uniform_block' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_uniform_block' class='fnname'>bind_uniform_block</a>(&amp;mut self, prog: Program, slot: <a class='type' href='../device/type.UniformBufferSlot.html' title='device::UniformBufferSlot'>UniformBufferSlot</a>, index: <a class='type' href='../device/type.UniformBlockIndex.html' title='device::UniformBlockIndex'>UniformBlockIndex</a>, buf: Buffer)</code></h4>
+<h4 id='method.bind_uniform' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_uniform' class='fnname'>bind_uniform</a>(&amp;mut self, loc: <a class='type' href='../device/shade/type.Location.html' title='device::shade::Location'>Location</a>, value: <a class='type' href='../device/shade/type.UniformValue.html' title='device::shade::UniformValue'>UniformValue</a>)</code></h4>
+<h4 id='method.bind_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.bind_texture' class='fnname'>bind_texture</a>(&amp;mut self, slot: <a class='type' href='../device/type.TextureSlot.html' title='device::TextureSlot'>TextureSlot</a>, kind: <a class='type' href='../device/tex/type.TextureKind.html' title='device::tex::TextureKind'>TextureKind</a>, tex: Texture, sampler: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../device/type.SamplerHandle.html' title='device::SamplerHandle'>SamplerHandle</a>&gt;)</code></h4>
+<h4 id='method.set_primitive' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_primitive' class='fnname'>set_primitive</a>(&amp;mut self, prim: <a class='struct' href='../device/state/struct.Primitive.html' title='device::state::Primitive'>Primitive</a>)</code></h4>
+<h4 id='method.set_viewport' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_viewport' class='fnname'>set_viewport</a>(&amp;mut self, view: <a class='struct' href='../device/target/struct.Rect.html' title='device::target::Rect'>Rect</a>)</code></h4>
+<h4 id='method.set_scissor' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_scissor' class='fnname'>set_scissor</a>(&amp;mut self, rect: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/target/struct.Rect.html' title='device::target::Rect'>Rect</a>&gt;)</code></h4>
+<h4 id='method.set_depth_stencil' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_depth_stencil' class='fnname'>set_depth_stencil</a>(&amp;mut self, depth: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Depth.html' title='device::state::Depth'>Depth</a>&gt;, stencil: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Stencil.html' title='device::state::Stencil'>Stencil</a>&gt;, cull: <a class='type' href='../device/state/type.CullMode.html' title='device::state::CullMode'>CullMode</a>)</code></h4>
+<h4 id='method.set_blend' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_blend' class='fnname'>set_blend</a>(&amp;mut self, blend: <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Blend.html' title='device::state::Blend'>Blend</a>&gt;)</code></h4>
+<h4 id='method.set_color_mask' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.set_color_mask' class='fnname'>set_color_mask</a>(&amp;mut self, mask: <a class='struct' href='../device/state/struct.ColorMask.html' title='device::state::ColorMask'>ColorMask</a>)</code></h4>
+<h4 id='method.update_buffer' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_buffer' class='fnname'>update_buffer</a>(&amp;mut self, buf: Buffer, data: <a class='struct' href='http://doc.rust-lang.org/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;, offset_bytes: <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>)</code></h4>
+<h4 id='method.update_texture' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.update_texture' class='fnname'>update_texture</a>(&amp;mut self, kind: <a class='type' href='../device/tex/type.TextureKind.html' title='device::tex::TextureKind'>TextureKind</a>, tex: Texture, info: <a class='struct' href='../device/tex/struct.ImageInfo.html' title='device::tex::ImageInfo'>ImageInfo</a>, data: <a class='struct' href='http://doc.rust-lang.org/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;)</code></h4>
+<h4 id='method.call_clear' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call_clear' class='fnname'>call_clear</a>(&amp;mut self, data: <a class='struct' href='../device/target/struct.ClearData.html' title='device::target::ClearData'>ClearData</a>)</code></h4>
+<h4 id='method.call_draw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call_draw' class='fnname'>call_draw</a>(&amp;mut self, ptype: <a class='type' href='../device/type.PrimitiveType.html' title='device::PrimitiveType'>PrimitiveType</a>, start: <a class='type' href='../device/type.VertexCount.html' title='device::VertexCount'>VertexCount</a>, count: <a class='type' href='../device/type.VertexCount.html' title='device::VertexCount'>VertexCount</a>)</code></h4>
+<h4 id='method.call_draw_indexed' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.call_draw_indexed' class='fnname'>call_draw_indexed</a>(&amp;mut self, ptype: <a class='type' href='../device/type.PrimitiveType.html' title='device::PrimitiveType'>PrimitiveType</a>, itype: <a class='type' href='../device/type.IndexType.html' title='device::IndexType'>IndexType</a>, start: <a class='type' href='../device/type.IndexCount.html' title='device::IndexCount'>IndexCount</a>, count: <a class='type' href='../device/type.IndexCount.html' title='device::IndexCount'>IndexCount</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "device";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

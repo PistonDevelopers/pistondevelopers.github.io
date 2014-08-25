@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Command` type in crate `device`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Command">
+
+    <title>device::Command - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>device</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='attrib/index.html'>attrib</a><a class='mod ' href='draw/index.html'>draw</a><a class='mod ' href='shade/index.html'>shade</a><a class='mod ' href='state/index.html'>state</a><a class='mod ' href='target/index.html'>target</a><a class='mod ' href='tex/index.html'>tex</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.BufferHandle.html'>BufferHandle</a><a class='struct ' href='struct.BufferInfo.html'>BufferInfo</a><a class='struct ' href='struct.Capabilities.html'>Capabilities</a><a class='struct ' href='struct.GlCommandBuffer.html'>GlCommandBuffer</a><a class='struct ' href='struct.GlDevice.html'>GlDevice</a><a class='struct ' href='struct.Handle.html'>Handle</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Blob.html'>Blob</a><a class='trait ' href='trait.BoxBlobCast.html'>BoxBlobCast</a><a class='trait ' href='trait.Device.html'>Device</a><a class='trait ' href='trait.RefBlobCast.html'>RefBlobCast</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.get_main_frame_buffer.html'>get_main_frame_buffer</a><a class='fn ' href='fn.make_fake_buffer.html'>make_fake_buffer</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content type">
+<h1 class='fqn'><div class='in-band'>Enum <a href='index.html'>device</a>::<wbr><a class='type' href=''>Command</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-124361' href='../src/device/lib.rs.html#283-311'>[src]</a></div></h1>
+<pre class='rust enum'>pub enum Command {
+    BindProgram(Program),
+    BindArrayBuffer(ArrayBuffer),
+    BindAttribute(<a class='type' href='../device/type.AttributeSlot.html' title='device::AttributeSlot'>AttributeSlot</a>, Buffer, <a class='type' href='../device/attrib/type.Count.html' title='device::attrib::Count'>Count</a>, <a class='type' href='../device/attrib/type.Type.html' title='device::attrib::Type'>Type</a>, <a class='type' href='../device/attrib/type.Stride.html' title='device::attrib::Stride'>Stride</a>, <a class='type' href='../device/attrib/type.Offset.html' title='device::attrib::Offset'>Offset</a>),
+    BindIndex(Buffer),
+    BindFrameBuffer(FrameBuffer),
+    UnbindTarget(<a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>),
+    BindTargetSurface(<a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>, Surface),
+    BindTargetTexture(<a class='type' href='../device/target/type.Target.html' title='device::target::Target'>Target</a>, Texture, <a class='type' href='../device/target/type.Level.html' title='device::target::Level'>Level</a>, <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../device/target/type.Layer.html' title='device::target::Layer'>Layer</a>&gt;),
+    BindUniformBlock(Program, <a class='type' href='../device/type.UniformBufferSlot.html' title='device::UniformBufferSlot'>UniformBufferSlot</a>, <a class='type' href='../device/type.UniformBlockIndex.html' title='device::UniformBlockIndex'>UniformBlockIndex</a>, Buffer),
+    BindUniform(<a class='type' href='../device/shade/type.Location.html' title='device::shade::Location'>Location</a>, <a class='type' href='../device/shade/type.UniformValue.html' title='device::shade::UniformValue'>UniformValue</a>),
+    BindTexture(<a class='type' href='../device/type.TextureSlot.html' title='device::TextureSlot'>TextureSlot</a>, <a class='type' href='../device/tex/type.TextureKind.html' title='device::tex::TextureKind'>TextureKind</a>, Texture, <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../device/type.SamplerHandle.html' title='device::SamplerHandle'>SamplerHandle</a>&gt;),
+    SetPrimitiveState(<a class='struct' href='../device/state/struct.Primitive.html' title='device::state::Primitive'>Primitive</a>),
+    SetViewport(<a class='struct' href='../device/target/struct.Rect.html' title='device::target::Rect'>Rect</a>),
+    SetScissor(<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/target/struct.Rect.html' title='device::target::Rect'>Rect</a>&gt;),
+    SetDepthStencilState(<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Depth.html' title='device::state::Depth'>Depth</a>&gt;, <a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Stencil.html' title='device::state::Stencil'>Stencil</a>&gt;, <a class='type' href='../device/state/type.CullMode.html' title='device::state::CullMode'>CullMode</a>),
+    SetBlendState(<a class='type' href='http://doc.rust-lang.org/master/core/option/type.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../device/state/struct.Blend.html' title='device::state::Blend'>Blend</a>&gt;),
+    SetColorMask(<a class='struct' href='../device/state/struct.ColorMask.html' title='device::state::ColorMask'>ColorMask</a>),
+    UpdateBuffer(Buffer, <a class='struct' href='http://doc.rust-lang.org/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;, <a href='http://doc.rust-lang.org/master/std/primitive.uint.html'>uint</a>),
+    UpdateTexture(<a class='type' href='../device/tex/type.TextureKind.html' title='device::tex::TextureKind'>TextureKind</a>, Texture, <a class='struct' href='../device/tex/struct.ImageInfo.html' title='device::tex::ImageInfo'>ImageInfo</a>, <a class='struct' href='http://doc.rust-lang.org/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../device/trait.Blob.html' title='device::Blob'>Blob</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.unit.html'>()</a>&gt; + <a class='trait' href='http://doc.rust-lang.org/master/core/kinds/trait.Send.html' title='core::kinds::Send'>Send</a>&gt;),
+    Clear(<a class='struct' href='../device/target/struct.ClearData.html' title='device::target::ClearData'>ClearData</a>),
+    Draw(<a class='type' href='../device/type.PrimitiveType.html' title='device::PrimitiveType'>PrimitiveType</a>, <a class='type' href='../device/type.VertexCount.html' title='device::VertexCount'>VertexCount</a>, <a class='type' href='../device/type.VertexCount.html' title='device::VertexCount'>VertexCount</a>),
+    DrawIndexed(<a class='type' href='../device/type.PrimitiveType.html' title='device::PrimitiveType'>PrimitiveType</a>, <a class='type' href='../device/type.IndexType.html' title='device::IndexType'>IndexType</a>, <a class='type' href='../device/type.IndexCount.html' title='device::IndexCount'>IndexCount</a>, <a class='type' href='../device/type.IndexCount.html' title='device::IndexCount'>IndexCount</a>),
+}</pre><div class='docblock'><p>Serialized device command.
+While this is supposed to be an internal detail of a device,
+this particular representation may be used by different backends,
+such as OpenGL (prior to GLNG) and DirectX (prior to DX12)</p>
+</div><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.BindProgram'><a class='stability Unmarked' title='No stability level'></a><code>BindProgram</code></td><td></td></tr><tr><td id='variant.BindArrayBuffer'><a class='stability Unmarked' title='No stability level'></a><code>BindArrayBuffer</code></td><td></td></tr><tr><td id='variant.BindAttribute'><a class='stability Unmarked' title='No stability level'></a><code>BindAttribute</code></td><td></td></tr><tr><td id='variant.BindIndex'><a class='stability Unmarked' title='No stability level'></a><code>BindIndex</code></td><td></td></tr><tr><td id='variant.BindFrameBuffer'><a class='stability Unmarked' title='No stability level'></a><code>BindFrameBuffer</code></td><td></td></tr><tr><td id='variant.UnbindTarget'><a class='stability Unmarked' title='No stability level'></a><code>UnbindTarget</code></td><td><div class='docblock'><p>Unbind any surface from the specified target slot</p>
+</div></td></tr><tr><td id='variant.BindTargetSurface'><a class='stability Unmarked' title='No stability level'></a><code>BindTargetSurface</code></td><td><div class='docblock'><p>Bind a surface to the specified target slot</p>
+</div></td></tr><tr><td id='variant.BindTargetTexture'><a class='stability Unmarked' title='No stability level'></a><code>BindTargetTexture</code></td><td><div class='docblock'><p>Bind a level of the texture to the specified target slot</p>
+</div></td></tr><tr><td id='variant.BindUniformBlock'><a class='stability Unmarked' title='No stability level'></a><code>BindUniformBlock</code></td><td></td></tr><tr><td id='variant.BindUniform'><a class='stability Unmarked' title='No stability level'></a><code>BindUniform</code></td><td></td></tr><tr><td id='variant.BindTexture'><a class='stability Unmarked' title='No stability level'></a><code>BindTexture</code></td><td></td></tr><tr><td id='variant.SetPrimitiveState'><a class='stability Unmarked' title='No stability level'></a><code>SetPrimitiveState</code></td><td></td></tr><tr><td id='variant.SetViewport'><a class='stability Unmarked' title='No stability level'></a><code>SetViewport</code></td><td></td></tr><tr><td id='variant.SetScissor'><a class='stability Unmarked' title='No stability level'></a><code>SetScissor</code></td><td></td></tr><tr><td id='variant.SetDepthStencilState'><a class='stability Unmarked' title='No stability level'></a><code>SetDepthStencilState</code></td><td></td></tr><tr><td id='variant.SetBlendState'><a class='stability Unmarked' title='No stability level'></a><code>SetBlendState</code></td><td></td></tr><tr><td id='variant.SetColorMask'><a class='stability Unmarked' title='No stability level'></a><code>SetColorMask</code></td><td></td></tr><tr><td id='variant.UpdateBuffer'><a class='stability Unmarked' title='No stability level'></a><code>UpdateBuffer</code></td><td></td></tr><tr><td id='variant.UpdateTexture'><a class='stability Unmarked' title='No stability level'></a><code>UpdateTexture</code></td><td></td></tr><tr><td id='variant.Clear'><a class='stability Unmarked' title='No stability level'></a><code>Clear</code></td><td></td></tr><tr><td id='variant.Draw'><a class='stability Unmarked' title='No stability level'></a><code>Draw</code></td><td></td></tr><tr><td id='variant.DrawIndexed'><a class='stability Unmarked' title='No stability level'></a><code>DrawIndexed</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/master/core/fmt/trait.Show.html' title='core::fmt::Show'>Show</a> for <a class='type' href='../device/type.Command.html' title='device::Command'>Command</a></code></h3><div class='impl-methods'><h4 id='method.fmt' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/master/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "device";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

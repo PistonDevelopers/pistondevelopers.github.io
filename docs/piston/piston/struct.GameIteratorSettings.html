@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The piston library documentation.">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GameIteratorSettings` struct in crate `piston`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GameIteratorSettings">
 
     <title>piston::GameIteratorSettings - Rust</title>
 
@@ -12,7 +14,7 @@
     
     
 </head>
-<body>
+<body class="rustdoc">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -24,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='event/index.html'>event</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='keyboard/index.html'>keyboard</a><a class='mod ' href='mouse/index.html'>mouse</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct current' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.GameWindowSettings.html'>GameWindowSettings</a><a class='struct ' href='struct.KeyPressArgs.html'>KeyPressArgs</a><a class='struct ' href='struct.KeyReleaseArgs.html'>KeyReleaseArgs</a><a class='struct ' href='struct.MouseMoveArgs.html'>MouseMoveArgs</a><a class='struct ' href='struct.MousePressArgs.html'>MousePressArgs</a><a class='struct ' href='struct.MouseRelativeMoveArgs.html'>MouseRelativeMoveArgs</a><a class='struct ' href='struct.MouseReleaseArgs.html'>MouseReleaseArgs</a><a class='struct ' href='struct.MouseScrollArgs.html'>MouseScrollArgs</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.ConcurrentGame.html'>ConcurrentGame</a><a class='trait ' href='trait.Game.html'>Game</a></div>
+        <p class='location'><a href='index.html'>piston</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='cam/index.html'>cam</a><a class='mod ' href='game_window/index.html'>game_window</a><a class='mod ' href='gfx/index.html'>gfx</a><a class='mod ' href='graphics/index.html'>graphics</a><a class='mod ' href='image/index.html'>image</a><a class='mod ' href='input/index.html'>input</a><a class='mod ' href='shader_version/index.html'>shader_version</a><a class='mod ' href='vecmath/index.html'>vecmath</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AssetStore.html'>AssetStore</a><a class='struct ' href='struct.GameIterator.html'>GameIterator</a><a class='struct current' href='struct.GameIteratorSettings.html'>GameIteratorSettings</a><a class='struct ' href='struct.RenderArgs.html'>RenderArgs</a><a class='struct ' href='struct.UpdateArgs.html'>UpdateArgs</a></div>
     </section>
 
     <nav class="sub">
@@ -39,10 +41,10 @@
     </nav>
 
     <section id='main' class="content struct">
-<h1 class='fqn'>Struct <a href='index.html'>piston</a>::<a class='struct' href=''>GameIteratorSettings</a><span class='out-of-band'><span id='render-detail'>
-            <a id="collapse-all" href="#">[collapse all]</a>
-            <a id="expand-all" href="#">[expand all]</a>
-        </span><a id='src-17536' href='../src/piston/src/game_iterator.rs.html#117-122'>[src]</a></span></h1>
+<h1 class='fqn'><div class='in-band'>Struct <a href='index.html'>piston</a>::<wbr><a class='struct' href=''>GameIteratorSettings</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-3176' href='../src/piston/src/game_iterator.rs.html#52-57'>[src]</a></div></h1>
 <pre class='rust struct'>pub struct GameIteratorSettings {
     pub updates_per_second: <a href='http://doc.rust-lang.org/master/std/primitive.u64.html'>u64</a>,
     pub max_frames_per_second: <a href='http://doc.rust-lang.org/master/std/primitive.u64.html'>u64</a>,
@@ -81,7 +83,7 @@
             </p>
             <p>
                 Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code> (or <code>str</code>), <code>enum</code>,
+                <code>struct</code>, <code>enum</code>,
                 <code>trait</code>, <code>typedef</code> (or
                 <code>tdef</code>).
             </p>

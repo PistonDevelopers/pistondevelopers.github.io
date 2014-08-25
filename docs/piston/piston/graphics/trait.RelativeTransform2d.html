@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RelativeTransform2d` trait in crate `piston`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RelativeTransform2d">
+
+    <title>piston::graphics::RelativeTransform2d - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>piston</a>::<wbr><a href='index.html'>graphics</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='internal/index.html'>internal</a><a class='mod ' href='interpolation/index.html'>interpolation</a><a class='mod ' href='modular_index/index.html'>modular_index</a><a class='mod ' href='triangulation/index.html'>triangulation</a><a class='mod ' href='vecmath/index.html'>vecmath</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Context.html'>Context</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.AddBevel.html'>AddBevel</a><a class='trait ' href='trait.AddBevelBorder.html'>AddBevelBorder</a><a class='trait ' href='trait.AddBorder.html'>AddBorder</a><a class='trait ' href='trait.AddColor.html'>AddColor</a><a class='trait ' href='trait.AddEllipse.html'>AddEllipse</a><a class='trait ' href='trait.AddImage.html'>AddImage</a><a class='trait ' href='trait.AddLine.html'>AddLine</a><a class='trait ' href='trait.AddPolygon.html'>AddPolygon</a><a class='trait ' href='trait.AddPolygons.html'>AddPolygons</a><a class='trait ' href='trait.AddRectangle.html'>AddRectangle</a><a class='trait ' href='trait.AddRound.html'>AddRound</a><a class='trait ' href='trait.AddRoundBorder.html'>AddRoundBorder</a><a class='trait ' href='trait.AddSquareBorder.html'>AddSquareBorder</a><a class='trait ' href='trait.AddTween.html'>AddTween</a><a class='trait ' href='trait.BackEnd.html'>BackEnd</a><a class='trait ' href='trait.Draw.html'>Draw</a><a class='trait ' href='trait.ImageSize.html'>ImageSize</a><a class='trait ' href='trait.RelativeColor.html'>RelativeColor</a><a class='trait ' href='trait.RelativeRectangle.html'>RelativeRectangle</a><a class='trait ' href='trait.RelativeSourceRectangle.html'>RelativeSourceRectangle</a><a class='trait current' href='trait.RelativeTransform2d.html'>RelativeTransform2d</a><a class='trait ' href='trait.View.html'>View</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><div class='in-band'>Trait <a href='../index.html'>piston</a>::<wbr><a href='index.html'>graphics</a>::<wbr><a class='trait' href=''>RelativeTransform2d</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-5258' href='../../graphics/relative/trait.RelativeTransform2d.html?gotosrc=5258'>[src]</a></div></h1>
+<pre class='rust trait'>pub trait RelativeTransform2d {
+    fn <a href='#tymethod.trans' class='fnname'>trans</a>(&amp;self, x: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self;
+    fn <a href='#tymethod.rot_rad' class='fnname'>rot_rad</a>(&amp;self, angle: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self;
+    fn <a href='#tymethod.orient' class='fnname'>orient</a>(&amp;self, x: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self;
+    fn <a href='#tymethod.scale' class='fnname'>scale</a>(&amp;self, sx: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, sy: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self;
+    fn <a href='#tymethod.shear' class='fnname'>shear</a>(&amp;self, sx: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, sy: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self;
+
+    fn <a href='#tymethod.rot_deg' class='fnname'>rot_deg</a>(&amp;self, angle: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self { ... }
+    fn <a href='#tymethod.zoom' class='fnname'>zoom</a>(&amp;self, s: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self { ... }
+    fn <a href='#tymethod.flip_v' class='fnname'>flip_v</a>(&amp;self) -&gt; Self { ... }
+    fn <a href='#tymethod.flip_h' class='fnname'>flip_h</a>(&amp;self) -&gt; Self { ... }
+    fn <a href='#tymethod.flip_hv' class='fnname'>flip_hv</a>(&amp;self) -&gt; Self { ... }
+}</pre><div class='docblock'><p>Implemented by contexts that can transform.</p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.trans' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.trans' class='fnname'>trans</a>(&amp;self, x: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Translate x an y in local coordinates.</p>
+</div><h3 id='tymethod.rot_rad' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rot_rad' class='fnname'>rot_rad</a>(&amp;self, angle: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Rotate radians in local coordinates.</p>
+</div><h3 id='tymethod.orient' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.orient' class='fnname'>orient</a>(&amp;self, x: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, y: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Orients x axis to look at point locally.</p>
+
+<p>Leaves x axis unchanged if the point to 
+look at is the origin.</p>
+</div><h3 id='tymethod.scale' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.scale' class='fnname'>scale</a>(&amp;self, sx: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, sy: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Scales in local coordinates.</p>
+</div><h3 id='tymethod.shear' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.shear' class='fnname'>shear</a>(&amp;self, sx: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, sy: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Shears in local coordinates.</p>
+</div></div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.rot_deg' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.rot_deg' class='fnname'>rot_deg</a>(&amp;self, angle: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Rotates degrees in local coordinates.</p>
+</div><h3 id='tymethod.zoom' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.zoom' class='fnname'>zoom</a>(&amp;self, s: <a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>) -&gt; Self</code></h3><div class='docblock'><p>Scales in both directions in local coordinates.</p>
+</div><h3 id='tymethod.flip_v' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.flip_v' class='fnname'>flip_v</a>(&amp;self) -&gt; Self</code></h3><div class='docblock'><p>Flips vertically in local coordinates.</p>
+</div><h3 id='tymethod.flip_h' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.flip_h' class='fnname'>flip_h</a>(&amp;self) -&gt; Self</code></h3><div class='docblock'><p>Flips horizontally in local coordinates.</p>
+</div><h3 id='tymethod.flip_hv' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.flip_hv' class='fnname'>flip_hv</a>(&amp;self) -&gt; Self</code></h3><div class='docblock'><p>Flips horizontally and vertically in local coordinates.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;T: <a class='trait' href='../../piston/graphics/internal/trait.CanTransform.html' title='piston::graphics::internal::CanTransform'>CanTransform</a>&lt;T, <a href='http://doc.rust-lang.org/master/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/master/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, ..3]</a>, ..2]</a>&gt; + <a class='trait' href='../../piston/graphics/internal/trait.HasTransform.html' title='piston::graphics::internal::HasTransform'>HasTransform</a>&lt;<a href='http://doc.rust-lang.org/master/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/master/std/primitive.slice.html'>[<a href='http://doc.rust-lang.org/master/std/primitive.f64.html'>f64</a>, ..3]</a>, ..2]</a>&gt;&gt; <a class='trait' href='../../piston/graphics/trait.RelativeTransform2d.html' title='piston::graphics::RelativeTransform2d'>RelativeTransform2d</a> for T</code></li>
+</ul><script type="text/javascript" async
+                              src="../../implementors/graphics/relative/trait.RelativeTransform2d.js">
+                      </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "piston";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

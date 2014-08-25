@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Frame` struct in crate `gfx`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Frame">
+
+    <title>gfx::Frame - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>gfx</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='attrib/index.html'>attrib</a><a class='mod ' href='front/index.html'>front</a><a class='mod ' href='shade/index.html'>shade</a><a class='mod ' href='state/index.html'>state</a><a class='mod ' href='tex/index.html'>tex</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Attribute.html'>Attribute</a><a class='struct ' href='struct.BufferHandle.html'>BufferHandle</a><a class='struct ' href='struct.BufferInfo.html'>BufferInfo</a><a class='struct ' href='struct.ClearData.html'>ClearData</a><a class='struct ' href='struct.DrawState.html'>DrawState</a><a class='struct current' href='struct.Frame.html'>Frame</a><a class='struct ' href='struct.GlDevice.html'>GlDevice</a><a class='struct ' href='struct.Mesh.html'>Mesh</a><a class='struct ' href='struct.ProgramInfo.html'>ProgramInfo</a><a class='struct ' href='struct.Renderer.html'>Renderer</a><a class='struct ' href='struct.ShaderSource.html'>ShaderSource</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Blob.html'>Blob</a><a class='trait ' href='trait.Device.html'>Device</a><a class='trait ' href='trait.DeviceHelper.html'>DeviceHelper</a><a class='trait ' href='trait.VertexFormat.html'>VertexFormat</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><div class='in-band'>Struct <a href='index.html'>gfx</a>::<wbr><a class='struct' href=''>Frame</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-7152' href='../render/target/struct.Frame.html?gotosrc=7152'>[src]</a></div></h1>
+<pre class='rust struct'>pub struct Frame {
+    pub width: <a href='http://doc.rust-lang.org/master/std/primitive.u16.html'>u16</a>,
+    pub height: <a href='http://doc.rust-lang.org/master/std/primitive.u16.html'>u16</a>,
+    pub colors: <a href='http://doc.rust-lang.org/master/std/primitive.slice.html'>[<a class='type' href='../gfx/type.Plane.html' title='gfx::Plane'>Plane</a>, ..4]</a>,
+    pub depth: <a class='type' href='../gfx/type.Plane.html' title='gfx::Plane'>Plane</a>,
+    pub stencil: <a class='type' href='../gfx/type.Plane.html' title='gfx::Plane'>Plane</a>,
+}</pre><div class='docblock'><p>A complete <code>Frame</code>, which is the result of rendering.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr><td id='structfield.width'><a class='stability Unmarked' title='No stability level'></a><code>width</code></td><td><div class='docblock'><p>The width of the viewport.</p>
+</div></td></tr><tr><td id='structfield.height'><a class='stability Unmarked' title='No stability level'></a><code>height</code></td><td><div class='docblock'><p>The height of the viewport.</p>
+</div></td></tr><tr><td id='structfield.colors'><a class='stability Unmarked' title='No stability level'></a><code>colors</code></td><td><div class='docblock'><p>Each color component has its own buffer.</p>
+</div></td></tr><tr><td id='structfield.depth'><a class='stability Unmarked' title='No stability level'></a><code>depth</code></td><td><div class='docblock'><p>The depth buffer for this frame.</p>
+</div></td></tr><tr><td id='structfield.stencil'><a class='stability Unmarked' title='No stability level'></a><code>stencil</code></td><td><div class='docblock'><p>The stencil buffer for this frame.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../gfx/struct.Frame.html' title='gfx::Frame'>Frame</a></code></h3><div class='impl-methods'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>(width: <a href='http://doc.rust-lang.org/master/std/primitive.u16.html'>u16</a>, height: <a href='http://doc.rust-lang.org/master/std/primitive.u16.html'>u16</a>) -&gt; <a class='struct' href='../gfx/struct.Frame.html' title='gfx::Frame'>Frame</a></code></h4>
+<div class='docblock'><p>Create an empty <code>Frame</code>, which corresponds to the &#39;default framebuffer&#39;, which for now
+renders directly to the window that was created with the OpenGL context.</p>
+</div><h4 id='method.is_default' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_default' class='fnname'>is_default</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/master/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if this framebuffer is associated with the main window (matches <code>Frame::new</code>
+exactly).</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gfx";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
