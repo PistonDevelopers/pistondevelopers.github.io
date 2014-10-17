@@ -71,9 +71,8 @@ use gfx::{Device, DeviceHelper }; use gfx_graphics::{ G2D, Texture };
 fn main() {
   let mut window = sdl2_game_window::WindowSDL2::new(
     shader_version::opengl::OpenGL_3_2, WindowSettings {
-      title: "Hello Piston".to_string(), 
-      size: [300, 300], fullscreen: false, exit_on_esc: true,
-      samples: 0 });
+      title: "Hello Piston".to_string(), samples: 0, 
+      size: [300, 300], fullscreen: false, exit_on_esc: true });
   let mut device = gfx::GlDevice::new(|s| unsafe {
     std::mem::transmute(sdl2::video::gl_get_proc_address(s)) });
   let (w, h) = window.get_size();
@@ -93,8 +92,7 @@ fn main() {
       device.submit(renderer.as_buffer()); renderer.reset();
     });
   }
-}
-</code></pre>
+}</code></pre>
             </div>
           </div>
 
