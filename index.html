@@ -49,39 +49,63 @@ categories : [piston]
 
   <div class="jumbotron piston-jumbotron">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-push-6 piston-heading-text">
-          <h3>Piston is a user friendly open source game engine written in Rust, started by Sven Nilsen.</h3>
+      <div class="col-md-6 col-md-push-6 piston-heading-text">
+        <h3>Piston is a user friendly open source game engine written in Rust, started by Sven Nilsen.</h3>
 
-          <p>The bricks are out of the box! Take a bite of some nice modular libraries for the real world, such as games and interactive applications, written for performance, ergonomics and cross platform development.</p>
+        <p>The bricks are out of the box! Take a bite of some nice modular libraries for the real world, such as games and interactive applications, written for performance, ergonomics and cross platform development.</p>
 
-          <p>Piston is made by some very smart, awesome and well connected people. We work in a flat structure with no leader, giving maintainers more responsibility and power to direct projects. Everybody has full write access, we share research and we are part of a greater community. Our goal is not just to make a game engine. We have different personal goals, but share the cost of maintaining important libraries together. We care about every aspect of development, which means designing for the programmer, to make it possible to reach our goals. You can be a part of it.</p>
+        <p>Piston is made by some very smart, awesome and well connected people. We work in a flat structure with no leader, giving maintainers more responsibility and power to direct projects. Everybody has full write access, we share research and we are part of a greater community. Our goal is not just to make a game engine. We have different personal goals, but share the cost of maintaining important libraries together. We care about every aspect of development, which means designing for the programmer, to make it possible to reach our goals. You can be a part of it.</p>
 
-          <p>
-            <a href="https://github.com/PistonDevelopers/Piston-Tutorials/tree/master/getting-started" class="btn btn-success piston-btn-primary">Getting started</a> <a href="https://github.com/PistonDevelopers/piston" class="btn btn-success"><i class="fa fa-github"></i> Source code</a>
-          </p>
-        </div>
+        <p>
+          <a href="https://github.com/PistonDevelopers/Piston-Tutorials/tree/master/getting-started" class="btn btn-success piston-btn-primary">Getting started</a> <a href="https://github.com/PistonDevelopers/piston" class="btn btn-success"><i class="fa fa-github"></i> Source code</a>
+        </p>
+      </div>
 
-        <div class="col-md-6 col-md-pull-6 piston-heading-example">
-          <div class="panel panel-default">
-            <div class="panel-heading">Quick example</div>
-            <div class="panel-body">
-              <pre><code class="rust">use event::{EventIterator, EventSettings, Window, WindowSettings};
-use gfx::{Device, DeviceHelper}; use gfx_graphics::{G2D, Texture};
+      <div class="col-md-6 col-md-pull-6 piston-heading-example">
+        <div class="panel panel-default">
+          <div class="panel-heading">Quick example</div>
+          <div class="panel-body">
+            <pre><code class="rust">use event::{
+  EventIterator,
+  EventSettings,
+  Window,
+  WindowSettings
+};
+use gfx::{Device, DeviceHelper};
+use gfx_graphics::{G2D, Texture};
+
 fn main() {
   let mut window = sdl2_game_window::WindowSDL2::new(
-    shader_version::opengl::OpenGL_3_2, WindowSettings {
-      title: "Hello Piston".to_string(), samples: 0, 
-      size: [300, 300], fullscreen: false, exit_on_esc: true });
-  let mut device = gfx::GlDevice::new(|s| unsafe {
-    std::mem::transmute(sdl2::video::gl_get_proc_address(s)) });
+    shader_version::opengl::OpenGL_3_2,
+    WindowSettings {
+      title: "Hello Piston".to_string(),
+      samples: 0, 
+      size: [300, 300],
+      fullscreen: false,
+      exit_on_esc: true
+    }
+  );
+
+  let mut device = gfx::GlDevice::new(
+    |s| unsafe {
+      std::mem::transmute(sdl2::video::gl_get_proc_address(s))
+    }
+  );
+
   let (w, h) = window.get_size();
   let frame = gfx::Frame::new(w as u16, h as u16);
   let mut renderer = device.create_renderer();
   let mut g2d = G2D::new(&mut device);
-  for e in EventIterator::new(&mut window, &EventSettings {
-    updates_per_second: 120, max_frames_per_second: 60 }) {
+
+  for e in EventIterator::new(
+    &mut window,
+    &EventSettings {
+      updates_per_second: 120,
+      max_frames_per_second: 60
+    }
+  ) {
     use event::RenderEvent;
+  
     e.render(|_| {
       g2d.draw(&mut renderer, &frame, |c, g| {
         use graphics::*;
@@ -89,16 +113,16 @@ fn main() {
         c.rect(0.0, 0.0, 100.0, 100.0).rgb(1.0, 0.0, 0.0).draw(g);
       });
       device.submit(renderer.as_buffer()); renderer.reset();
-    });
+   });
   }
 }</code></pre>
-            </div>
           </div>
-
-          <a href="https://github.com/pistondevelopers/piston-examples" class="pull-right">More examples &raquo;</a>
         </div>
+
+        <a href="https://github.com/pistondevelopers/piston-examples" class="pull-right">More examples &raquo;</a>
       </div>
     </div>
+
   </div>
   
   <div class="container">
@@ -132,8 +156,10 @@ fn main() {
         </li>
       </ul>
     </div>
+  </div>
 
-    <div class="col-md-6 col-md-pull-6 piston-blog-posts">
+  <div class="container">
+    <div class="col-md-6 col-md-push-6 piston-blog-posts">
       <h3>Latest blog posts</h3>
 
       <ul id="blog-posts">
