@@ -65,55 +65,34 @@ categories : [piston]
         <div class="panel panel-default">
           <div class="panel-heading">Quick example</div>
           <div class="panel-body">
-            <pre><code class="rust">use event::{
-  EventIterator,
-  EventSettings,
-  Window,
-  WindowSettings
-};
-use gfx::{Device, DeviceHelper};
-use gfx_graphics::{G2D, Texture};
+            <pre><code class="rust">extern crate piston;
 
 fn main() {
-  let mut window = sdl2_game_window::WindowSDL2::new(
-    shader_version::opengl::OpenGL_3_2,
-    WindowSettings {
+  piston::start(
+    piston::shader_version::OpenGL::_3_2,
+    piston::WindowSettings {
       title: "Hello Piston".to_string(),
-      samples: 0, 
+      samples: 0,
       size: [300, 300],
       fullscreen: false,
       exit_on_esc: true
-    }
+    },
+    || start()
   );
+}
 
-  let mut device = gfx::GlDevice::new(
-    |s| unsafe {
-      std::mem::transmute(sdl2::video::gl_get_proc_address(s))
-    }
-  );
+fn start() {
+  for e in piston::events() {
+    use piston::event::RenderEvent;
+    use piston::graphics::Rectangle;
 
-  let (w, h) = window.get_size();
-  let frame = gfx::Frame::new(w as u16, h as u16);
-  let mut renderer = device.create_renderer();
-  let mut g2d = G2D::new(&mut device);
-
-  for e in EventIterator::new(
-    &mut window,
-    &EventSettings {
-      updates_per_second: 120,
-      max_frames_per_second: 60
-    }
-  ) {
-    use event::RenderEvent;
-  
     e.render(|_| {
-      g2d.draw(&mut renderer, &frame, |c, g| {
-        use graphics::*;
-        c.rgb(1.0, 1.0, 1.0).draw(g);
-        c.rect(0.0, 0.0, 100.0, 100.0).rgb(1.0, 0.0, 0.0).draw(g);
+      piston::render_2d_opengl(
+        Some(piston::graphics::color::WHITE), |c, g| {
+          Rectangle::new([1.0, 0.0, 0.0, 1.0])
+            .draw([0.0, 0.0, 100.0, 100.0], &c, g);
       });
-      device.submit(renderer.as_buffer()); renderer.reset();
-   });
+    });
   }
 }</code></pre>
           </div>
