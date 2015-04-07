@@ -66,33 +66,36 @@ categories : [piston]
           <div class="panel-heading">Quick example</div>
           <div class="panel-body">
             <pre><code class="rust">extern crate piston;
+extern crate graphics;
+extern crate opengl_graphics;
+extern crate sdl2_window;
 
 fn main() {
-  piston::start(
-    piston::shader_version::OpenGL::_3_2,
-    piston::WindowSettings {
-      title: "Hello Piston".to_string(),
-      samples: 0,
-      size: [300, 300],
-      fullscreen: false,
-      exit_on_esc: true
-    },
-    || start()
-  );
-}
+  use piston::window::{ WindowSettings, Size };
+  use std::rc::Rc;
+  use std::cell::RefCell;
+  use sdl2_window::Sdl2Window;
 
-fn start() {
-  for e in piston::events() {
+  let opengl = opengl_graphics::OpenGL::_3_2;
+  let window = Rc::new(RefCell::new(
+    Sdl2Window::new(opengl,
+        WindowSettings::new("Hello Piston".to_string(),
+                            Size { width: 300, height: 300 })
+                            .exit_on_esc(true))));
+
+  let ref mut gl = opengl_graphics::GlGraphics::new(opengl);
+  for e in piston::events(window) {
     use piston::event::RenderEvent;
-    use piston::graphics::Rectangle;
+    use graphics::{ clear, rectangle };
 
-    e.render(|_| {
-      piston::render_2d_opengl(
-        Some(piston::graphics::color::WHITE), |c, g| {
-          Rectangle::new([1.0, 0.0, 0.0, 1.0])
-            .draw([0.0, 0.0, 100.0, 100.0], &c, g);
-      });
-    });
+    if let Some(args) = e.render_args() {
+        gl.draw([0, 0, args.width as i32, args.height as i32], |c, g| {
+            clear([1.0; 4], g);
+            rectangle([1.0, 0.0, 0.0, 1.0],
+                      [0.0, 0.0, 100.0, 100.0],
+                      c.transform, g);
+        });
+    }
   }
 }</code></pre>
           </div>
