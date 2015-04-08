@@ -72,29 +72,29 @@ extern crate sdl2_window;
 
 fn main() {
   use piston::window::{ WindowSettings, Size };
-  use std::rc::Rc;
-  use std::cell::RefCell;
+  use piston::event::*;
   use sdl2_window::Sdl2Window;
 
   let opengl = opengl_graphics::OpenGL::_3_2;
-  let window = Rc::new(RefCell::new(
-    Sdl2Window::new(opengl,
-        WindowSettings::new("Hello Piston".to_string(),
-                            Size { width: 300, height: 300 })
-                            .exit_on_esc(true))));
-
+  let window = Sdl2Window::new(
+    opengl,
+    WindowSettings::new("Hello Piston".to_string(),
+                        Size { width: 300, height: 300 })
+                       .exit_on_esc(true)
+  );
   let ref mut gl = opengl_graphics::GlGraphics::new(opengl);
-  for e in piston::events(window) {
-    use piston::event::RenderEvent;
+  for e in window.events() {
     use graphics::{ clear, rectangle };
 
     if let Some(args) = e.render_args() {
-        gl.draw([0, 0, args.width as i32, args.height as i32], |c, g| {
-            clear([1.0; 4], g);
-            rectangle([1.0, 0.0, 0.0, 1.0],
-                      [0.0, 0.0, 100.0, 100.0],
-                      c.transform, g);
-        });
+      gl.draw([0, 0, args.width as i32, args.height as i32],
+              |c, g| {
+                clear([1.0; 4], g);
+                rectangle([1.0, 0.0, 0.0, 1.0],
+                          [0.0, 0.0, 100.0, 100.0],
+                          c.transform, g);
+              }
+      );
     }
   }
 }</code></pre>
