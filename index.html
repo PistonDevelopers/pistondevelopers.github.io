@@ -87,7 +87,7 @@ fn main() {
     use graphics::{ clear, rectangle };
 
     if let Some(args) = e.render_args() {
-      gl.draw([0, 0, args.width as i32, args.height as i32],
+      gl.draw(args.viewport(),
               |c, g| {
                 clear([1.0; 4], g);
                 rectangle([1.0, 0.0, 0.0, 1.0],
