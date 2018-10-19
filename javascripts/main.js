@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	blogPosts = 4; // How many blog posts to display
 
-	// @source http://stackoverflow.com/a/6271906
+	// @source https://stackoverflow.com/a/6271906
 	function parseRSS(url, callback) {
 		$.ajax({
 			url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
@@ -10,7 +10,7 @@ $(document).ready(function() {
 				if (data.responseData != null) {
 					callback(data.responseData.feed);
 				} else {
-					$("#blog-posts").html("Cannot retrieve latest posts. <a href='http://blog.piston.rs'>Go to blog directly &raquo;</a>");
+					$("#blog-posts").html("Cannot retrieve latest posts. <a href='https://blog.piston.rs'>Go to blog directly &raquo;</a>");
 					$('.piston-blog-posts .piston-more').remove();
 				}
 			}
@@ -18,7 +18,7 @@ $(document).ready(function() {
 	}
 
 	// Get blog posts feed and display in website
-	parseRSS("http://blog.piston.rs/atom.xml", function(data) {
+	parseRSS("https://blog.piston.rs/atom.xml", function(data) {
 		count = 0;
 		$("#blog-posts").html("");
 		data.entries.forEach(function(post) {

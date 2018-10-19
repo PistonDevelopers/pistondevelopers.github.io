@@ -4,5 +4,5 @@ This is the repository that contains the piston website and related documentatio
 
 ## External Links
 
-*  [Piston Website](http://pistondevelopers.github.io)
+*  [Piston Website](https://www.piston.rs)
 *  [Piston Source Code](https://github.com/PistonDevelopers/piston)
